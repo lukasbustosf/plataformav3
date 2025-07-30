@@ -1,0 +1,10 @@
+client/
+tests/
+.github/
+*.md
+*.ps1
+*.py
+*.csv
+*.json
+!package.json
+!railway.json 

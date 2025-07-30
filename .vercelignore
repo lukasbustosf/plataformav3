@@ -1,0 +1,25 @@
+# Solo archivos del backend
+server/
+package-backend.json
+railway.json
+.railwayignore
+
+# Archivos de desarrollo
+*.ps1
+*.py
+tests/
+
+# Documentación
+*.md
+docs/
+
+# Logs y archivos temporales
+*.log
+logs/
+.env*
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/ 

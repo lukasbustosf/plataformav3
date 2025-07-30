@@ -1,0 +1,1972 @@
+﻿📚 MODULO II - Planificacion EDU21 Intranet – Módulo Quiz/Juego Gamificado
+Parte 1 – Visión General & Alcance
+Versión 2.0 · 19 jun 2025 – reemplaza íntegramente la versión 1.0
+________________
+
+
+1. Propósito del documento
+Entregar a todo el equipo (dirección, desarrollo, QA, DevOps y sostenedores) una visión única, actualizada e integral de EDU21 Intranet. Abarca los tres grandes dominios que ya definimos:
+Dominio
+	Descripción cortísima
+	Evaluación gamificada & IA
+	Cuestionarios, juegos, exámenes y tareas con corrección automática y rúbricas IA.
+	Currículo & Planificación
+	Catálogo OA MINEDUC, timetable oficial, libro de clases digital y control diario.
+	Gobierno & Analítica
+	Reportes OA/Bloom, bienestar, finanzas IA, panel Sostenedor y compliance legal.
+	
+
+
+
+┌─────────────────── EDU21 Core ───────────────────┐
+│  Auth · RBAC · Supabase DB · Storage · JWT       │
+├────────────────────────┬─────────────────────────┤
+│         BACKEND        │         FRONTEND        │
+│  Node/Express API      │  React/Next (SSR)       │
+│  WebSocket Edge        │  Tailwind + Storybook   │
+└───────────┬────────────┴──────────────┬──────────┘
+            │                           │
+    ┌───────▼─────────┐         ┌───────▼─────────┐
+    │ IA_Service      │         │ Game Engine     │
+    │  GPT-4o mini    │         │  (15+ formatos) │
+    │  Google TTS     │         └───────┬─────────┘
+    └────────┬────────┘                 │
+             │          realtime (WS)   │
+             │<────────────────────────▶│
+             ▼                          ▼
+         Analytics L2             Dashboards & Reportes
+
+
+
+
+4. Principios de diseño
+Principio
+	Aplicación práctica
+	Plug-and-Play
+	IA_Service y módulos avanzados pueden apagarse sin romper el flujo manual.
+	Multi-tenant hard
+	school_id presente en todas las tablas → RLS automáticas.
+	Accesibilidad first
+	WCAG 2.2 AA como mínimo; iconografía redundante, modo lectura fácil.
+	Costo controlado
+	Presupuesto IA por escuela; alerta 80 %.
+	Auditoría & firma
+	Hash SHA-256 + timestamp en exámenes sumativos y libro de clases.
+	Parte 2 – Roles & Permisos
+Versión 2.0 · 19 jun 2025 – Sustituye la versión 1.0
+Objetivo: dejar cristal-claras todas las capacidades de cada rol fusionado (Nivel 1 manual y Nivel 2-3 IA).
+Implementación: cada “✓” del cuadro es un permiso CRUD o de lectura; el backend aplica Row-Level Security (school_id) y el frontend oculta botones si el rol no lo posee.
+________________
+
+
+1. Tabla maestra de roles fusionados
+Rol final
+	Equivalentes originales
+	Usuarios previstos
+	Resumen de responsabilidad
+	SUPER_ADMIN_FULL
+	Super-Admin + Admin IT
+	1-3 globales
+	Infra, licencias, MFA, monitoreo, soporte 2ª línea
+	ADMIN_ESCOLAR
+	Director + UTP
+	1 por escuela
+	Curriculum, timetable, libro de notas, coberturas OA
+	BIENESTAR_ESCOLAR
+	Orientadora + Inspectoría
+	1-2 por escuela
+	Casos riesgo, PAI, bienestar socio-emocional
+	TEACHER
+	Profesor
+	~20 por escuela
+	Clases, evaluaciones, juegos, asistencia
+	STUDENT
+	Alumno
+	500+ por escuela
+	Participar clases/juegos, ver calendario y feedback
+	GUARDIAN
+	Apoderado
+	~900 por escuela
+	Recibir notificaciones, ver progreso/historial
+	SOSTENEDOR
+	Dueño / corporativo
+	1 por red
+	KPI Bloom, costos IA/licencias, presupuesto
+	2. Matriz de permisos CRUD (L1 = Nivel 1, L2 = Nivel 2+)
+Recurso / Acción
+	SUPER_ADMIN_FULL
+	ADMIN_ESCOLAR
+	BIENESTAR_ESCOLAR
+	TEACHER
+	STUDENT
+	GUARDIAN
+	SOSTENEDOR
+	Escuelas
+	C R U D
+	R
+	—
+	—
+	—
+	—
+	R
+	Usuarios
+	C R U D
+	C R U (su escuela)
+	R
+	—
+	—
+	—
+	—
+	Timetable
+	—
+	C R U D
+	R
+	R
+	R
+	R
+	—
+	Lesson Plan
+	—
+	R
+	—
+	C R U D
+	R
+	R
+	—
+	Quiz (manual)
+	R D
+	R
+	—
+	C R U D
+	R
+	—
+	—
+	Quiz (IA)
+	✓ L2 C R U D
+	✓ L2 R
+	—
+	✓ L2 C R U D (propios)
+	R
+	—
+	—
+	Game Session
+	R D
+	R
+	—
+	C R U D
+	Play
+	—
+	—
+	Evaluation (quiz/exam/task)
+	R D
+	C R U
+	—
+	C R U D
+	Attempt
+	R
+	R
+	Evaluation Attempt
+	R
+	R
+	—
+	R (su clase)
+	C R
+	—
+	—
+	Gradebook Entry
+	R
+	C R U
+	—
+	C R U (su clase)
+	R
+	R
+	R
+	Attendance
+	R
+	C R U D
+	—
+	C R U (su clase)
+	R
+	R
+	R
+	PAI / Support Case
+	—
+	R
+	C R U D
+	—
+	R (propio)
+	R (tutor)
+	—
+	OA / Curriculum
+	R D
+	C R U D
+	R
+	R
+	R
+	R
+	—
+	IA Presupuesto
+	C R U D
+	R
+	—
+	—
+	—
+	—
+	C R U
+	Dashboard OA/Bloom
+	R
+	R
+	R
+	R (clase)
+	R (pers.)
+	—
+	R
+	Costo IA / Licencias
+	C R U D
+	R
+	—
+	—
+	—
+	—
+	R
+	Logs & MFA
+	C R U D
+	—
+	—
+	—
+	—
+	—
+	—
+	R = Read, C = Create, U = Update, D = Delete
+“Quiz (IA)” y “Evaluation (task/exam)” sólo existen cuando FEATURE_AI=true en configuración global.
+
+
+3. Capacidades detalladas por rol
+3.1 SUPER_ADMIN_FULL
+Nivel
+	Capacidades clave
+	L1
+	– Alta/baja escuelas y usuarios
+– Desplegar actualizaciones y backups manuales
+– Impersonar cualquier rol (sólo lectura)
+– Política de contraseñas y MFA
+	L2
+	– Configurar presupuesto IA global/por escuela (owner_budget)
+– Ver dashboards de gasto tokens IA, latencia IA
+– Lockdown Mode global + shuffle preguntas
+– Forzar rotación de claves API externas
+	
+
+5. Interacción típica de datos (Nivel 2 completo)
+sequenceDiagram
+Teacher->>IA_Service: /ai/generate (OA=MAT05-OA04)
+IA_Service-->>Quiz: Inserta mode=ai questions
+Teacher->>GameEngine: POST /game (quiz_id)
+Student->>GameEngine: WS join (token)
+GameEngine-->>Evaluation_Attempt: score_raw
+Cron->>Gradebook: Calc nota_10 via grading_scale
+Admin_Escolar->>ReportAPI: /report/weekly
+ReportAPI-->>PDF: OA_heatmap.pdf
+Sostenedor->>BudgetAPI: /owner/budget (alert 80%)
+
+
+
+
+6. Escenarios de flujo de acceso
+1. Teacher clona planificación
+
+   * POST /lesson-plan/clone → nuevo plan, misma OA, nueva fecha.
+
+      2. Guardian recibe push tarea
+
+         * Trigger task_submission.deadline - 24h → FCM topic guardian.{student_id}.
+
+            3. Super-admin activa lockdown global
+
+               * PATCH /settings { lockdown:true } → Front oculta iconos y TTS en exámenes.
+
+________________
+
+
+Con esto queda la matriz de roles completamente alineada con los nuevos módulos de Planificación, Evaluación IA & Sumativa y Libro de Clases.
+
+
+Parte 3 – Historias de Usuario INVEST
+Versión 2.0 · 19 jun 2025 – integra Planificación, Evaluación IA/Sumativa y Libro de Clases
+________________
+
+
+1. Introducción
+Esta sección concentra TODO el backlog funcional de EDU21.
+Cada historia cumple el estándar INVEST (Independent · Negotiable · Valuable · Estimable · Small · Testable) y está puntuada en story-points (escala Fibonacci 1-13).
+Las prioridades P-1, P-2, P-3 se alinean con la roadmap (Part 6).
+________________
+
+
+2. Leyenda rápida
+Columna
+	Significado
+	ID
+	Etiqueta “P<prio>-<RolCode>-nn” para trazabilidad Jira
+	Rol
+	Actor principal beneficiado
+	Historia
+	Formato “Como… quiero… para…”
+	CA
+	Criterios de aceptación (SMART, resumidos)
+	Valor
+	🟢=Muy alto · 🟠=Medio · 🔴=Bajo
+	SP
+	Story-points (1–13)
+	P
+	Prioridad release (1, 2 o 3)
+	3. Backlog priorizado (completo)
+ID
+	Rol
+	Historia
+	CA resumido
+	Valor
+	SP
+	P
+	P1-T-01
+	Teacher
+	Generar automáticamente un cuestionario alineado a OA (curso + tema) con etiquetas Bloom y remediales sugeridos
+	< 60 s, 10 ítems, match OA ≥ 95 %
+	🟢
+	8
+	1
+	P1-T-02
+	Teacher
+	Convertir quiz → juego (15 formatos)
+	Botón, lobby, accesible
+	🟢
+	8
+	1
+	P1-S-01
+	Student
+	Jugar con iconos + TTS sin leer
+	WCAG AA, barra progreso
+	🟢
+	13
+	1
+	P1-ADM-01
+	Super_Admin
+	Vincular sostenedor ↔ escuelas
+	Wizard + audit log
+	🟢
+	5
+	1
+	P1-O-01
+	Sostenedor
+	Panel Salud (Bloom/OA/licencias)
+	KPI, filtro, export
+	🟢
+	8
+	1
+	P1-O-02
+	Sostenedor
+	Configurar presupuesto IA + alerta 80 %
+	Slider CLP→tokens
+	🟢
+	5
+	1
+	P1-C-01
+	Bienestar
+	Lista semanal alumnos riesgo
+	Filtro curso/causal
+	🟢
+	8
+	1
+	P1-C-02
+	Bienestar
+	Crear PAI wizard + PDF
+	≤ 5 min, firmas digitales
+	🟢
+	8
+	1
+	P1-ADMIN-ESC
+	Admin_Escolar
+	Reporte semanal OA/Bloom + remediales
+	PDF + CSV
+	🟢
+	8
+	1
+	P1-T-05
+	Teacher
+	Ver cursos asignados & calendario
+	Dashboard curso
+	🟢
+	5
+	1
+	P1-T-06
+	Teacher
+	Crear clase seleccionando OA
+	Paso a paso ≤ 8 min
+	🟢
+	8
+	1
+	P1-T-07
+	Teacher
+	Lanzar examen sumativo (serio)
+	Lockdown, peso 30 %
+	🟢
+	8
+	1
+	P1-T-10
+	Teacher
+	Crear examen con rúbrica IA editable
+	Rúbrica JSON, nota 1-7
+	🟢
+	8
+	1
+	P1-T-11
+	Teacher
+	Configurar tarea con archivo y nota auto
+	Deadline, late penalty
+	🟢
+	8
+	1
+	P1-S-04
+	Student
+	Recibir feedback diferido con TTS
+	Disponible tras cierre
+	🟠
+	5
+	1
+	P2-T-03
+	Teacher
+	Clonar juego y editar en < 5 min
+	Botón Clone
+	🟠
+	3
+	2
+	P2-T-08
+	Teacher
+	Autocompletar plan de clase IA
+	/ai/lesson-outline
+	🟠
+	8
+	2
+	P2-T-09
+	Teacher
+	Importar planificación año anterior
+	Wizard filtro
+	🟠
+	5
+	2
+	P2-T-04
+	Teacher
+	Ver quién responde live
+	WS panel avatar
+	🟠
+	8
+	2
+	P2-A-03
+	Admin_Escolar
+	Exportar Libro de Clases firmado
+	CSV+hash diario
+	🟢
+	8
+	2
+	P2-A-04
+	Admin_Escolar
+	Exportar Libro de Notas CSV
+	LibreOffice ready
+	🟢
+	8
+	2
+	P2-SA-01
+	Super_Admin
+	Limitar tokens IA por escuela
+	Slider, alerta 90 %
+	🟠
+	5
+	2
+	P2-SEC-01
+	Super_Admin
+	Activar lockdown mode global
+	Shuffle Q&A
+	🟠
+	5
+	2
+	P2-C-03
+	Bienestar
+	Registrar sesiones apoyo + notas privadas
+	Cifrado columna
+	🟠
+	8
+	2
+	P2-G-01
+	Guardian
+	Push tarea/examen inminente
+	FCM topic guardian
+	🟠
+	5
+	2
+	P2-O-04
+	Sostenedor
+	Resumen financiero mensual IA + HW
+	PDF + proyección 90 d
+	🟠
+	5
+	2
+	P3-S-02
+	Student
+	Radar Bloom personal + PDF
+	Audio tooltip
+	🔴
+	8
+	3
+	P3-S-03
+	Student
+	Ver atrasos / asistencias mes
+	Mobile chart
+	🔴
+	3
+	3
+	P3-D-02
+	Admin_Escolar
+	Benchmark inter-escuela anonimizado
+	Percentiles
+	🔴
+	13
+	3
+	P3-C-04
+	Bienestar
+	Dashboard evolución Bloom+asistencia
+	Sparkline, timeline
+	🔴
+	8
+	3
+	P3-C-05
+	Bienestar
+	Ver semáforo socio-emocional diario
+	Widget 3-emoji
+	🟠
+	8
+	3
+	P3-SEC-01
+	Super_Admin
+	MFA obligatorio por rol
+	Toggle & audit
+	🔴
+	3
+	3
+	
+
+4. Backlog visual – valor vs complejidad
+
+
+Valor ↑
+ P1-T-01 P1-T-02 P1-S-01 P1-T-05 P1-T-06 P1-T-07 P1-T-10 P1-T-11
+ P1-ADM-01 P1-O-01 P1-O-02 P1-C-01 P1-C-02 P1-ADMIN-ESC
+ P2-T-03 P2-T-08 P2-T-09 P2-T-04 P2-A-03 P2-A-04 P2-SA-01 P2-SEC-01 P2-C-03 P2-G-01 P2-O-04
+ P3-S-02 P3-S-03 P3-D-02 P3-C-04 P3-C-05 P3-SEC-01
+└────── Complejidad →
+
+
+(Eje X = story-points; eje Y = valor negocio)
+
+
+5. Dependencias destacadas
+Historia dependiente
+	Requiere
+	Nota
+	P1-T-07 / T-10 / T-11
+	evaluation tablas creadas (Parte 4-c)
+	Bloquea release v1.3
+	P2-A-03 (Libro Clases)
+	Attendance+Lesson Plan + firma electrónica
+	QA legal
+	P2-G-01
+	FCM setup + guardian rol
+	Fase 2-bis
+	P3-D-02
+	KPI Cross-school view
+	RLS multi-tenant safe
+	6. Criterios de aceptación comunes (extracto)
+Tema
+	Criterio
+	Performance
+	Generar IA ≤ 60 s, WS p95 < 200 ms, PDF < 5 s.
+	Accesibilidad
+	axe-core 0 violaciones critical/serious, navegación teclado completa.
+	Seguridad
+	Todas las mutaciones autenticadas; RLS returns ≤ own school rows.
+	Datos
+	Soft-delete sin pérdida FK; export CSV validador ESLint-CSV sin errores.
+	7. Progreso y tracking
+Las historias de prioridad P-1 están ya en Sprint Backlog v1.0.
+Burn-down chart y enlaces Jira se mantienen en el tablero EDU21 (URL interno).
+Parte 4 – Diseño Técnico
+Versión 2.0 · 19 jun 2025 – Combina 4-A (Core & Juego), 4-B (Currículo & Clase) y 4-C (Evaluación IA & Sumativa)
+________________
+
+
+4-A. Núcleo de Juego y Quiz
+Tabla
+	Campos clave
+	Comentario
+	quiz
+	quiz_id PK, author_id, mode manual/ai, title, metadata_json
+	­mode decide si se oculta botón “Generar IA”.
+	question
+	question_id PK, quiz_id, stem_md, type, difficulty, asset_url, tts_url L2
+	tts_url se llena al generar audio.
+	game_session
+	gsession_id PK, quiz_id, format, status, host_id, settings_json
+	WebSocket room ID = gsession_id.
+	participant
+	gsession_id, user_id, score, accuracy, time_ms
+	PK compuesto.
+	Endpoints clave
+POST /quiz                         -> Crear / editar (mode=manual)
+POST /quiz/{id}/generate-ia        -> IA genera preguntas (L2)
+POST /game                         -> Crear sesión (quiz_id + format)
+WS  /ws/game/{gsession_id}         -> Tráfico tiempo real
+GET /game/{id}/results             -> Ranking JSON
+
+
+Front-end componentes:
+<QuizEditorManual>, <AiGenerateDialog>, <GameFormatSelector>, <LobbyScreen>, <GamePlay>, <LiveResultsPanel>.
+________________
+
+
+4-B. Currículo & Control de Curso
+Esquema ER principal
+Tabla
+	Campos
+	Relación
+	grade_level
+	grade_code PK, grade_name, age_min, age_max
+	FK en class, learning_objective.
+	subject
+	subject_id PK, subject_code, subject_name
+	FK en class, learning_objective.
+	learning_objective
+	oa_id PK, oa_code, grade_code, subject_id, bloom_level, oa_version
+	OA seed MINEDUC.
+	unit, unit_oa
+	unit_id, oa_id[]
+	Planificación ministerial (100–120 clases).
+	class
+	class_id PK, school_id, grade_code, subject_id, year
+	
+
+	timetable
+	timetable_id, school_id, grade_code, subject_id, day_of_week, start_time, duration_min
+	
+
+	lesson_plan
+	plan_id PK, class_id, plan_date, oa_ids[], intro_md, desarrollo_md, cierre_md
+	
+
+	lesson_resource
+	resource_id PK, plan_id, file_url OR quiz_id, type
+	
+
+	attendance
+	att_id PK, class_id, att_date, student_id, status P/A/J/L/T
+	Enum ampliada.
+	Endpoints REST
+
+
+GET  /curriculum/grade?ciclo=EGB
+GET  /curriculum/oa?grade=2B&subject=MAT
+POST /lesson-plan                       (crear)
+POST /lesson-resource (multipart)       (adjunto)
+PATCH /attendance/bulk                  (lista día)
+GET  /daily-control?class=...&date=...  (Libro clase)
+
+
+
+
+Libro de Clases digital
+Exportar: GET /reports/libro-clases/2025-S1 → CSV + SHA-256 + JSON firma profesor/director.
+________________
+
+
+4-C. Evaluación IA & Sumativa
+Tablas nuevas
+Tabla
+	Campos clave
+	evaluation
+	eval_id PK, class_id, type quiz/exam/task, mode manual/ai, weight, rubric_json, grading_scale, attempt_limit, serious
+	evaluation_attempt
+	attempt_id PK, eval_id, student_id, score_raw, started_at, finished_at, proctored, anti_cheat_seed
+	gradebook_entry
+	entry_id PK, student_id, eval_id, nota_10, recorded_at
+	task_submission
+	submission_id PK, eval_id, student_id, file_url OR text_md, submitted_at, graded_at, score_raw
+	
+
+Endpoints REST
+POST /evaluation                       -> Nueva evaluación
+POST /evaluation/{id}/launch           -> Token intento
+POST /evaluation/{id}/grade            -> cierre + nota
+GET  /evaluation/{id}/report           -> PDF/CSV
+POST /ai/generate-quiz                 -> IA preguntas
+POST /ai/generate-rubric               -> IA rúbrica
+
+
+
+
+Lock-down Mode: serious=true => front oculta iconos, TTS opcional y activa shuffle preguntas/opciones.
+Cron Gradebook: nightly job convierte score_raw en nota_10 según grading_scale y llena gradebook_entry.
+________________
+
+
+4-D. Diagrama de Secuencia end-to-end (Clase + Examen IA)
+sequenceDiagram
+Teacher->>LessonAPI: POST /lesson-plan
+LessonAPI-->>DB: insert lesson_plan
+Teacher->>EvaluationAPI: POST /evaluation (mode=ai)
+EvaluationAPI->>IA_Service: /ai/generate-quiz
+IA_Service-->>QuizDB: insert quiz
+IA_Service-->>EvaluationAPI: quiz_id
+Teacher->>EvaluationAPI: /evaluation/{id}/launch
+Student->>EvaluationAPI: launch token
+Student->>GameEngine: WS join
+GameEngine-->>Evaluation_Attempt: save score
+Cron->>Gradebook: score_raw⇢nota_10
+Admin_Escolar->>ReportAPI: /report/oa-weekly
+ReportAPI-->>PDF: OA_heatmap.pdf
+
+
+
+
+4-E. Componentes React adicionales
+Componente
+	Props esenciales
+	Descripción
+	<LessonPlanWizard>
+	classId
+	Paso a paso Crear Clase
+	<LessonResourceList>
+	planId
+	Adjuntos + juegos
+	<EvaluationCreator>
+	classId, type
+	Wizard examen/quiz/tarea
+	<RubricEditor>
+	rubricJson, onChange
+	Rúbrica IA editable
+	<GradebookGrid>
+	classId
+	Libro notas 1-7 editable
+	
+
+4-F. Seguridad & Compliance ampliada
+Tema
+	Implementación
+	Firma digital
+	SHA-256 del CSV diario + ed25519 clave Director; guardado en class_signature.
+	Retención RGPD
+	deleted_at + cron purge 5 años para gradebook_entry, support_note.
+	Column Encryption
+	support_note.content_md + gradebook_entry.feedback.
+	Impersonation Banner
+	Banner rojo ARIA-live cada 30 s.
+	
+
+
+
+4-G. Diagramas & Recursos
+                  * ERD PNG completo (erd_v2.png) – generado en dbdiagram.io
+
+                  * OpenAPI 3.1 YAML (api_v2.yaml) – listo para Swagger UI
+
+                  * Storybook link – catálogo de componentes React.
+(todos incluidos en el ZIP /docs/assets/)
+
+________________
+
+
+Parte 4 finalizada. Próximas secciones ya actualizadas: Parte 5 (Infra & Costos v2) y Parte 6 (Roadmap & DevOps v2).
+📚 EDU21 – Parte 4‑bis: Modelo Curricular & Control de Curso
+Extiende Parte 4 (Diseño Técnico).
+Aporta las tablas, endpoints y flujos necesarios para manejar Objetivos de Aprendizaje (OA) MINEDUC, catálogos de cursos/asignaturas y el Libro de Clases digital.
+________________
+
+
+1. Nuevo esquema de base de datos
+erDiagram
+grade_level {
+varchar grade_code PK "Ej: 2B"
+text grade_name "2° Básico"
+int age_min
+int age_max
+}
+subject {
+uuid subject_id PK
+text subject_code "Ej: MAT"
+text subject_name "Matemática"
+}
+learning_objective {
+uuid oa_id PK
+text oa_code "MA02-OA-05"
+text oa_desc
+varchar grade_code FK
+uuid subject_id FK
+text bloom_level
+text oa_version "2023|2026"
+}
+unit {
+uuid unit_id PK
+varchar grade_code FK
+uuid subject_id FK
+text unit_title
+int unit_number
+}
+unit_oa {
+uuid unit_id FK
+uuid oa_id FK
+PRIMARY KEY(unit_id, oa_id)
+}
+lesson_plan {
+uuid plan_id PK
+uuid class_id FK
+date plan_date
+uuid unit_id FK
+text objective_summary
+jsonb activities_json
+uuid creator_id FK
+}
+attendance {
+uuid att_id PK
+uuid class_id FK
+date att_date
+uuid student_id FK
+text status "present|absent|late"
+}
+gradebook_item {
+uuid item_id PK
+uuid class_id FK
+text title
+date due_date
+decimal weight
+uuid creator_id FK
+}
+gradebook_score {
+uuid item_id FK
+uuid student_id FK
+decimal score
+text feedback
+PRIMARY KEY(item_id, student_id)
+Notas
+                     * grade_code simplifica filtrado ("PK", "1B", "2M").
+                     * oa_version permite coexistir mallas 2023 y 2026.
+                     * lesson_plan.activities_json: [{"type":"quiz","quiz_id":"…"}, {"type":"video","url":"…"}].
+________________
+
+
+2. Endpoints REST/GraphQL nuevos
+Método
+	Ruta
+	Rol
+	Descripción
+	GET
+	/curriculum/grade
+	Pública
+	Devuelve lista grade_code, grade_name.
+	GET
+	/curriculum/subjects
+	Pública
+	Lista subject_id, subject_name.
+	GET
+	/curriculum/oa?grade=2B&subject=MAT
+	Teacher
+	Devuelve OA filtrados.
+	POST
+	/class/{id}/lesson-plan
+	Teacher
+	Crea planificación diaria.
+	GET
+	/class/{id}/daily-control?date=YYYY-MM-DD
+	Teacher
+	Trae asistencia + actividades + calificaciones del día.
+	PATCH
+	/attendance
+	Teacher
+	Marca ausencia/presencia.
+	POST
+	/gradebook/item
+	Teacher
+	Crea ítem de evaluación.
+	PATCH
+	/gradebook/score
+	Teacher
+	Registra nota estudiante.
+	________________
+
+
+3. Flujo “Clase Hoy” (Libro de Clases digital)
+                     1. Teacher abre /teacher/class/{id}/today (auto date).
+                     2. API devuelve JSON:
+{
+"attendance": [...],
+"lesson_plan": {...},
+"activities": [ {"type":"game","quiz_id":"..."} ],
+"gradebook_items": [...]
+}
+                     3. Docente pasa lista (tap/space).
+                     4. Lanza quiz / juego según plan.
+                     5. Registra nota rápida (slider 1–7).
+                     6. Guarda.
+________________
+
+
+4. Reporte Cobertura Curricular
+                        * Query: SELECT oa_id FROM question_learning_objective WHERE class_id = $1
+                        * Calcula % covered = COUNT(DISTINCT oa_id_respondidas) / TOTAL_OA_GRADO_ASIG.
+                        * Se muestra en dashboard Admin_Escolar y Director.
+________________
+
+
+5. Seed de datos OA (ejemplo SQL)
+INSERT INTO grade_level VALUES ('2B','2° Básico',7,8);
+INSERT INTO subject VALUES (gen_random_uuid(),'MAT','Matemática');
+INSERT INTO learning_objective VALUES (gen_random_uuid(),'MA02-OA-05','Resuelve problemas con fracciones...', '2B', (SELECT subject_id FROM subject WHERE subject_code='MAT'), 'Aplicar','2023');
+(CSV completos en carpeta /datasets/mineduc_oa_2023/)
+________________
+
+
+6. Control de versiones de currículo
+Cambio MINEDUC
+	Acción técnica
+	Tiempo
+	Nuevo OA 2026
+	Insert oa_version='2026'; marcar viejo como deprecated_at.
+	1 h.
+	Cambia asignatura nombre
+	Update subject.subject_name; mantener código.
+	10 min.
+	________________
+
+
+7. Impacto en IA Service
+                        * Prompt IA debe incluir oa_version para generar preguntas correctas.
+                        * Endpoint /ai/generate añade parámetro oa_code.
+________________
+
+
+Fin Parte 4‑bis – Currículo & Control de Curso
+
+
+
+Flujo completo “Crear Clase / Planificación”
+(Profesor o Admin Escolar — Nivel 1 manual, preparado para Nivel 2 con IA)
+________________
+
+
+1. Resumen paso a paso
+Paso
+	Pantalla / Acción
+	Entradas clave
+	Guardado en BD
+	1. Seleccionar curso
+	/teacher/classes → botón ➕ Nueva Clase
+	Dropdown “Curso – Asignatura” (p.ej. 5°B Matemáticas)
+	class_id
+	2. Definir fecha & horario
+	Calendario emergente
+	Fecha, hora inicio, duración (pre-rellena desde timetable)
+	lesson_plan.date, start_time, duration_min
+	3. Elegir OA
+	Buscador por código o texto
+	Multi-select de learning_objective
+	lesson_plan.oa_ids[]
+	4. Editar estructura clase
+	Editor con tres tabs
+	Inicio, Desarrollo, Cierre (Markdown)
+	intro_md, desarrollo_md, cierre_md
+	5. Adjuntar recursos
+	Arrastrar / subir archivos
+	PDF, PPT, imágenes, enlace juego (quiz existente)
+	lesson_resource (1 :N)
+	6. Añadir evaluación (opcional)
+	Botón “Añadir Evaluación”
+• Quiz gamificado
+• Examen
+• Tarea
+	Usa wizard ya existente de Quiz
+	evaluation (type, quiz_id…)
+	7. Confirmar & Publicar
+	Resumen + botón Crear Clase
+	—
+	Inserta en lesson_plan; envía notificaciones
+	
+
+
+
+💰 EDU21 Intranet – Parte 5: Infraestructura & Costos
+Versión 1.0 · 19 jun 2025 · Basado en sizing MVP (1 colegio, 500 alumnos)
+Este documento entrega un presupuesto técnico mensual y un modelo de sensibilidad para escalar hasta 10 colegios. Los números se expresan en USD y CLP (tipo de cambio 1 USD ≈ $ 942CLP a 19 jun 2025).
+________________
+
+
+1. Stack de producción (Nivel 1 manual)
+Componente
+	Plan / proveedor
+	Precio USD
+	Precio CLP
+	Motivo
+	Capacidad cubierta
+	VPS APP (NextJS/Node)
+	DigitalOcean Droplet 2 vCPU · 4 GB RAM · 80 GB SSD
+	24
+	22 600
+	SSR + WS para 250 req/s (500 alumnos)
+	1 colegio
+	VPS DEMO
+	DO Droplet 1 vCPU · 1 GB RAM · 25 GB
+	6
+	5 650
+	Entorno aislado para prospectos
+	20 usuarios simultáneos
+	DB Gestionada
+	Supabase Pro Tier (8 GB)
+	25
+	23 550
+	PostgreSQL, Auth, Realtime
+	5 M filas ≈ 2 años
+	Storage + CDN
+	DO Spaces 250 GB + 1 TB egreso
+	5
+	4 710
+	PDFs, imágenes, audio
+	50 000 audios
+	Backups VPS
+	Snapshots 80 GB × 0,05
+	4
+	3 770
+	RPO ≤ 1 h
+	Semanal
+	Observabilidad
+	Datadog basic
+	15
+	14 130
+	APM, logs, alertas
+	30 d retención
+	TOTAL fijo
+	—
+	79 USD
+	$ 74 410 CLP
+	—
+	—
+	Costo fijo/alumno ≈ 0,16 USD (≈ $ 150 CLP) por mes
+________________
+
+
+2. Costos variables IA (Nivel 2)
+2.1 Colegio tipo (1 000 quizzes IA + 1 000 partidas)
+Servicio
+	Fórmula cálculo
+	Sub‑total USD
+	CLP
+	GPT‑4o mini
+	1 000 × 0,00153 USD
+	1,53
+	1 440
+	WebSocket Edge
+	1,25 M req × 0,60 USD/M
+	0,75
+	707
+	Google TTS
+	1 M car. < 4 M free
+	0
+	0
+	TOTAL IA
+	—
+	2,28
+	2 147
+	2.2 Red 10 colegios (10 000 quizzes + 10 000 partidas)
+Servicio
+	Sub‑total USD
+	CLP
+	GPT‑4o mini
+	15,3
+	14 400
+	WebSocket Edge
+	7,5
+	7 065
+	Google TTS
+	160
+	150 720
+	Observabilidad extra
+	45
+	42 390
+	TOTAL IA
+	≈ 228 USD
+	≈ 214 575 CLP
+	________________
+
+
+3. Proyección de escalado
+Escenario
+	Alumnos
+	Quizzes IA/mes
+	VPS upgrade
+	DB upgrade
+	IA variable
+	Total mensual
+	MVP
+	500
+	0 (manual)
+	24 USD
+	25 USD
+	 —
+	79 USD
+	Nivel 2 Básico
+	500
+	1 000
+	idem
+	idem
+	2,3 USD
+	81 USD
+	2 colegios
+	1 000
+	2 000
+	Upgrade VPS → 8 GB RAM (44 USD)
+	idem
+	5 USD
+	≈ 99 USD
+	Red 10
+	5 000
+	10 000
+	Kubernetes 3× (220 USD)
+	Supabase 50 GB (75 USD)
+	228 USD
+	≈ 598 USD
+	(Los costos de Spaces y snapshots escalan linealmente +0,02 USD/GB)
+________________
+
+
+4. Margen y pricing sugerido EDU21
+Plan comercial
+	Precio licenciamiento
+	Costo variable (promedio)
+	Margen bruto
+	BASE IA
+	350 CLP/alum·año
+	150 CLP
+	57 %
+	ILIMITADO IA
+	600 CLP/alum·año
+	220 CLP
+	63 %
+	Red ≥ 3 colegios
+	15 % descuento
+	~200 CLP
+	~53 %
+	________________
+
+
+5. Hoja de cálculo de sensibilidad
+Dado que las variables cambian (tipo de cambio, nº quizzes, alumnos), se adjunta enlace: Google Sheet: https://bit.ly/EDU21_cost_model_v1
+Incluye: selector alumnos, nº quizzes, modelos IA (GPT‑4o mini vs full) y proyección UF.
+________________
+
+
+6. DevOps Checklist rápido
+                        1. VPS hardening: UFW, fail2ban, SSH key‑only.
+                        2. Supabase: habilitar PITR 7 d, backups diarios.
+                        3. CDN: activar HTTP 3, compresión Brotli para MP3.
+                        4. Monitoreo: alertas CPU > 70 %, latencia WS > 200 ms.
+                        5. Cost guardrails: cron diario tokens IA → owner_budget.
+                        6. Cambio dólar: revisar cada trimestre; precio EDU21 expresado en UF opcional.
+________________
+
+
+Fin Parte 5 – Infraestructura & Costos
+🚀 EDU21 Intranet – Parte 6: Roadmap & DevOps
+Versión 1.0 · 19 jun 2025
+Complementa Partes 1 a 5. Concreta hitos, checklist de despliegue y políticas operativas para asegurar que la plataforma evolucione de forma controlada y segura.
+________________
+
+
+1. Roadmap de versiones
+Versión
+	Tiempo objetivo
+	Functionalidades clave
+	Dependencias
+	KPI “Done”
+	MVP (v1.0)
+	Sprint 1‑2 (4 semanas)
+	• Editor manual de quizzes.• 15 formatos de juegos.• Game Session WS.• Roles: Teacher, Student, Admin Escolar.• PDF export CSV.
+	DB, WS infra, Auth.
+	90 % tests verdes · Demo funcional colegio piloto.
+	v1.1
+	+4 semanas
+	• Panel Sostenedor (licencias).• Vincular sostenedor ↔ escuelas.• Lista riesgo (manual).
+	RLS completada.
+	1 sostenedor real usando dashboard.
+	v1.2
+	+4 semanas
+	• IA Service (GPT‑4o mini) para generar preguntas.• “Generar IA” botón.• Presupuesto IA + alerta 80 %.
+	Cuenta OpenAI, owner_budget.
+	<60 s generación / 95 % OA match QA.
+	v1.3
+	+6 semanas
+	• TTS automático (free).• Reportes OA/Bloom IA.• Plan PAI completo + PDF familia.• Dashboard ROI sostenedor.
+	Spaces audio, analytics_event pipeline.
+	TTS latencia < 150 ms; 80 % directores descargan PDF.
+	v1.4
+	backlog
+	• MFA obligatorio roles altos.• Benchmarks inter‑escuela.• Vector search preguntas similares.
+	pgvector, redis cache.
+	CSAT > 4/5 para directores.
+	________________
+
+
+2. Checklist de despliegue (por versión)
+2.1 MVP
+                        1. Infra
+                        2. DB
+                        3. Back‑end
+                        4. Front‑end
+                        5. QA
+                        6. Observabilidad
+                        7. Backups
+                        8. Go‑live
+2.2 IA Enable (v1.2)
+                        1. OpenAI
+                        2. Service IA
+                        3. Cost guardrail
+                        4. QA IA
+2.3 TTS (v1.3)
+                        1. Google Cloud
+                        2. Pre‑generate audio
+                        3. Player
+________________
+
+
+3. Plan de Backups & DR
+Recurso
+	Frecuencia
+	Retención
+	Ubicación secundaria
+	Supabase (Postgres)
+	PITR + snapshot diario
+	7 d + 30 d
+	Supabase east‑1
+	Spaces (audio/PDF)
+	Lifecycle Glacier 12 m
+	3 y
+	DO AMS3
+	Droplet snapshots
+	Semanal
+	4 sem
+	DO snapshot tier
+	Config repos (GitHub)
+	Instant → GitHub
+	infinito
+	GitHub infra
+	RPO máximo: 1 h · RTO máximo: 4 h.
+________________
+
+
+4. Monitorización & Alertas
+Métrica
+	Umbral
+	Acción
+	CPU Droplet
+	> 70 % 5 min
+	Slack #infra + escala vertical 8 GB droplet.
+	WebSocket latency
+	> 200 ms p95
+	Notif. on‑call · evaluar Edge region.
+	Tokens IA
+	> 80 % bud.
+	Email sostenedor + bloquear generación extra.
+	DB disk
+	> 80 %
+	Auto‑scale storage.
+	Error rate
+	> 2 % 5 min
+	PagerDuty.
+	________________
+
+
+5. Escalado
+Umbral
+	Acción
+	≥ 1 000 alumnos
+	Migrar APP droplet → 8 GB / 4 vCPU ($ 44).
+	DB > 80 % de 8 GB
+	Escalar Supabase plan 50 GB ($ 75).
+	≥ 300 k quizzes IA/mes
+	Considerar GPU propia (H100) + Llama3.
+	WS p95 > 250 ms
+	Implementar zonal WS clusters (SCL + GRU).
+	________________
+
+
+6. QA checklist por sprint
+                        * Unit tests cobertura ≥ 75 %.
+                        * 0 P1 defectos abiertos.
+                        * Seguridad Snyk → sin vuln. críticas.
+                        * QA accesibilidad axe-core violations = 0 (impact critical/serious).
+                        * Demo colegio piloto sin fallos durante 1 día.
+________________
+
+
+Fin Parte 6 – Roadmap & DevOps
+
+
+
+
+🎮 EDU21 – Catálogo de Formatos de Juego Gamificado
+Apéndice complementario a Parte 4 (Diseño Técnico).
+Proporciona al equipo Front‑end una lista de 16 juegos que el docente puede elegir al pulsar “Convertir a Juego”. Cada formato incluye nivel de complejidad sugerido por ciclo, mecánica principal, requisitos de accesibilidad y notas técnicas.
+1. Tabla resumen
+Código
+	Nombre (UI)
+	Mecánica clave
+	Ciclo sugerido
+	Jugabilidad accesible
+	Notas técnicas
+	G-01
+	Trivia Lightning
+	Pregunta MCQ → respuesta rápida
+	Prekínder → 4° Básico
+	Iconos grandes + TTS
+	Ya implementado MVP (websocket)
+	G-02
+	Color Match
+	Seleccionar color/figura que coincide con pregunta
+	Prekínder → 1° Básico
+	1 tocar/tecla; alto contraste
+	Componentes reutilizan <GamePlay> con paleta fija
+	G-03
+	Memory Flip
+	Parear cartas (pregunta↔respuesta)
+	1° → 3° Básico
+	Voltear con Enter/Space; narración opcional
+	Necesita grid dinámico & timer
+	G-04
+	Picture Bingo
+	Cartón 3×3 con imágenes; docente canta preguntas
+	1° → 4° Básico
+	TTS + highlight casillas
+	WS envía “llamada” a todos los clientes
+	G-05
+	Drag & Drop Sorting
+	Arrastrar fichas al contenedor correcto
+	2° → 5° Básico
+	Alternativa teclado (▲▼ Intro)
+	Usa <SortableJS>; mobile friendly
+	G-06
+	Número-Línea Race
+	Resolver operación y avanzar pez en línea
+	2° → 5° Básico
+	Narración números; barras progreso
+	Canvas + requestAnimationFrame
+	G-07
+	Word Builder
+	Arrastrar letras para formar palabra
+	1° → 3° Básico
+	Lectura fonética audio
+	Requiere diccionario ortográfico
+	G-08
+	Sopa de Letras
+	Encontrar palabras escondidas
+	3° → 6° Básico
+	Zoom + alto contraste; selector touch
+	Algoritmo generación matriz
+	G-09
+	Hangman Visual
+	Adivinar palabra con vidas (dibujos)
+	2° → 6° Básico
+	Pista TTS letra-sonido
+	Controlar contenido sensible
+	G-10
+	Escape Room Mini
+	Resolver 3 acertijos secuenciales
+	3° → 6° Básico
+	Audio pistas; temporizador visible
+	Mantener sesión localStorage
+	G-11
+	Story Path
+	Elección múltiple → rama historia
+	3° → 8° Básico
+	Narrador automático; ilustraciones
+	JSON story tree; IA puede expandir
+	G-12
+	Board Race
+	Tirar dado virtual y contestar para avanzar
+	2° → 6° Básico
+	Contraste tablero + TTS casilla
+	Sincronizar dado vía WS broadcast
+	G-13
+	Crossword
+	Rellenar crucigrama con pistas
+	4° → 8° Básico
+	Navegación flechas; pista audio
+	Generador fill-in server-side
+	G-14
+	Word Search Duel
+	Dos equipos encuentran palabras: duelo
+	4° → 8° Básico
+	Colores equipo; marcador lectura
+	WS para tiempo real por equipo
+	G-15
+	Timed Equation Duel
+	Operación matemática vs reloj
+	3° → 6° Básico
+	Lectura ecuación; tecla única
+	Utiliza motor cálculo rápido
+	G-16
+	Mystery Box Reveal
+	Responder bien para revelar pista imagen
+	PreK → 4° Básico
+	Iconos grandes; confeti audio
+	CSS clip-path animación
+	G-17
+	Debate Cards
+	Seleccionar postura y argumentar cartas evidencias
+	7° Básico → 4° Medio
+	Tiempo y lectura de apoyo; subtítulos
+	WS sincroniza turnos; IA puntúa argumentos (L2)
+	G-18
+	Case Study Sprint
+	Caso real con preguntas de opción múltiple cronometradas
+	7° Básico → Univ.
+	Lectura fácil toggle; audio resumen
+	Markdown case + temporizador por pregunta
+	G-19
+	Simulation Tycoon
+	Tomar decisiones y ver impacto en KPI (simulación)
+	8° Básico → Univ.
+	Indicadores visuales y texto alternativo
+	Motor sim JSON; saves localStorage
+	G-20
+	Coding Puzzle
+	Completar bloques de código/arrastrar
+	1° Medio → Univ.
+	Navegación teclado; lector pantalla code
+	Usa Monaco editor en modo bloque
+	G-21
+	Data Lab
+	Arrastrar columnas para crear gráfico y responder
+	1° Medio → Univ.
+	Tabla con atajos; descripciones audio
+	D3 + dataset CSV embebido
+	G-22
+	Timeline Builder
+	Ordenar eventos históricos en línea temporal
+	6° Básico → 2° Medio
+	Drag & drop + accesibilidad teclado
+	Evaluación automático order
+	G-23
+	Argument Map
+	Conectar burbujas causa/efecto
+	2° Medio → Univ.
+	Zoom + panning teclado; alt text
+	Graphlib layout
+	G-24
+	Advanced Escape Room
+	5 puzzles lógicos + código final
+	1° Medio → Univ.
+	Pistas texto+audio; modo ayuda
+	Gestiona estado multi-room
+	2. Selección automática por IA
+Cuando el docente pulse “Generar IA + Juego” el sistema detecta grade y subject, sugiere un formato por defecto, pero siempre permite cambio manual.
+Rango de grado
+	Formato sugerido
+	Razonamiento
+	PreK – 1° Básico
+	G‑02 Color Match
+	Reconocimiento visual y 1 input.
+	2° – 3° Básico
+	G‑05 Drag & Drop Sorting
+	Inicio de clasificación y lectura básica.
+	4° – 6° Básico
+	G‑12 Board Race
+	Competencia ligera y vocabulario lector.
+	7° – 8° Básico
+	G‑17 Debate Cards
+	Pensamiento crítico inicial.
+	1° – 2° Medio
+	G‑22 Timeline Builder
+	Orden temporal y síntesis.
+	3° Medio – Univ.
+	G‑24 Advanced Escape Room
+	Integración de múltiples habilidades.
+	Docente puede sobrescribir la sugerencia.
+3. Accesibilidad y Necesidades Especiales por formato avanzado
+Código
+	Barreras potenciales
+	Mitigaciones integradas
+	G‑17 Debate Cards
+	• Lectura de texto extenso.• Turn‑taking confuso.
+	• Botón "Leer carta" (TTS).• Indicador visual de turno con nombre y color.• Límite caracteres carta (140) para lectura fácil.
+	G‑18 Case Study Sprint
+	• Sobrecarga cognitiva (tiempo).
+	• Modo “tiempo extendido” +50 %.• Resumen IA de caso en 3 frases disponibles on‑hover.
+	G‑19 Simulation Tycoon
+	• Controles complejos; visión de KPI.
+	• Panel KPI alto contraste; descripciones aria‑label.• Teclas W‑A‑S‑D opcionales en vez de drag.
+	G‑20 Coding Puzzle
+	• Lectura de código para disléxicos.• Navegación con ratón fina.
+	• Fuente monospace “Fira Code Dyslexic Variant”.• Bloques drag‑and‑drop grandes; alternativamente lista select‑enter.
+	G‑21 Data Lab
+	• Manipular ejes y datos visuales.
+	• Narración de ejes via aria-describedby.• Preguntas se pueden responder con teclado numérico.
+	G‑22 Timeline Builder
+	• Precisión de arrastre en móvil.
+	• Snap automático a intervalos.• Alternativa teclado: seleccionar evento y usar flechas.
+	G‑23 Argument Map
+	• Zoom/pan complejo para motricidad reducida.
+	• Botones “Zoom +/‑” grandes.• Modo scroll‑solo; flechas mover vista lentamente.
+	G‑24 Advanced Escape Room
+	• Multitarea y puzles visuales/sonoros.
+	• Pistas texto+audio toggle.• Skip‑puzzle after 3 min con penalización suave.
+	4. Escalabilidad de complejidad (Bloom)
+Los juegos avanzan según la taxonomía Bloom:
+                        1. Recordar – G‑01, G‑02, G‑03, G‑04.
+                        2. Comprender – G‑05, G‑06, G‑07, G‑08, G‑09.
+                        3. Aplicar – G‑10, G‑11, G‑12, G‑13.
+                        4. Analizar – G‑17, G‑18, G‑22.
+                        5. Evaluar – G‑17 (debate), G‑23 (argument map).
+                        6. Crear – G‑19 (simulation design), G‑24 (escape design).
+El Analytics Engine etiquetará eventos con nivel Bloom; el docente podrá filtrar resultados.
+5. Implementación priorizada
+Sprint
+	Formatos
+	Dependencias
+	S1–S2 (MVP)
+	G‑01 – G‑06
+	Game Engine base, <GamePlay> universal.
+	S3
+	G‑07 – G‑10
+	Grid/Canvas helper + TTS toggle.
+	S4
+	G‑11 – G‑16
+	Story tree JSON loader, animation toolkit.
+	S5
+	G‑17 – G‑18
+	Card deck + timer engine.
+	S6
+	G‑19 – G‑21
+	Simulation mini-core, D3 wrapper.
+	S7
+	G‑22 – G‑24
+	Graph layout + multi‑puzzle orchestrator.
+	Cada formato se empaqueta como micro‑frontend anchor /_game/[slug], lo que permite lazy‑load y activar sólo los necesarios por ciclo.
+Fin documento – Catálogo de Formatos de Juego (v2)
+
+
+✅ EDU21 – Checklist de QA Inclusión y Accesibilidad (NEE)
+Versión 1.0 · 19 jun 2025
+Cada formato de juego incluye pasos verificables para garantizar cumplimiento WCAG 2.2 AA y adaptación NEE.
+________________
+
+
+Leyenda de columnas
+Etiqueta
+	Significado
+	K
+	Prekínder–Kinder
+	B1
+	1°–4° Básico
+	B2
+	5°–8° Básico
+	M
+	1°–4° Medio
+	U
+	Universitario
+	📄
+	Revisión manual QA
+	🧪
+	Test automatizado (axe-core / jest)
+	🔊
+	Prueba de audio/TTS
+	♿
+	Asistencia motriz/teclado
+	________________
+
+
+1. Checklist base (aplica a todos los juegos)
+                        1. Contraste color (≥ 4.5 : 1). 🧪
+                        2. Tamaño fuente mínimo 16 px. 📄
+                        3. Navegación teclado completa (Tab → Enter/Espacio para activar). ♿
+                        4. Atributos aria-label en botones interactivos. 🧪
+                        5. Sin animaciones > 3 Hz (riesgo epilepsia). 🧪
+                        6. TTS disponible para instrucciones/preguntas. 🔊
+                        7. Modo estímulo bajo (reduce animaciones/fondos). 📄
+________________
+
+
+2. Checklist por formato
+2.1 Juegos PreK – Básico inicial (G‑01 al G‑06)
+Código
+	Item QA
+	K
+	B1
+	B2
+	M
+	U
+	G‑01 Trivia Lightning
+	Iconos + audio presente
+	✅
+	✅
+	✅
+	—
+	—
+	
+
+	Barra tiempo visible & narrada
+	✅
+	✅
+	✅
+	—
+	—
+	G‑02 Color Match
+	Formas únicas para cada color
+	✅
+	✅
+	—
+	—
+	—
+	
+
+	Un tap/tecla respuesta
+	✅
+	✅
+	—
+	—
+	—
+	G‑03 Memory Flip
+	Flip con Enter / Space
+	—
+	✅
+	✅
+	—
+	—
+	
+
+	Narración de carta volteada
+	—
+	✅
+	✅
+	—
+	—
+	G‑04 Picture Bingo
+	Casillas resaltan al llamar
+	✅
+	✅
+	✅
+	—
+	—
+	
+
+	Anunciar “Bingo” con audio + vibración
+	✅
+	✅
+	✅
+	—
+	—
+	G‑05 Drag & Drop Sorting
+	Snap al contenedor; teclado ▲▼
+	—
+	✅
+	✅
+	—
+	—
+	G‑06 Número‑Línea Race
+	Narrar número que falta
+	—
+	✅
+	✅
+	—
+	—
+	
+
+	Avance pez animación < 3 Hz
+	—
+	✅
+	✅
+	—
+	—
+	2.2 Juegos Básico Avanzado (G‑07 al G‑16)
+Código
+	Item QA
+	K
+	B1
+	B2
+	M
+	U
+	G‑07 Word Builder
+	Lectura fonética botón “🔊”
+	—
+	✅
+	✅
+	—
+	—
+	G‑08 Sopa de Letras
+	Zoom 150 % sin perder legibilidad
+	—
+	—
+	✅
+	—
+	—
+	G‑09 Hangman Visual
+	Imágenes no violentas
+	—
+	—
+	✅
+	✅
+	—
+	G‑10 Escape Room Mini
+	Pista accesible cada 60 s
+	—
+	—
+	✅
+	✅
+	—
+	G‑11 Story Path
+	Texto ≤ 100 palabras por pantalla
+	—
+	—
+	✅
+	✅
+	—
+	G‑12 Board Race
+	Contador turnos voz + color
+	—
+	—
+	✅
+	✅
+	—
+	G‑13 Crossword
+	Naveg. flechas + “leer pista” audio
+	—
+	—
+	✅
+	✅
+	—
+	G‑14 Word Search Duel
+	Colores equipo daltónico‑safe
+	—
+	—
+	✅
+	✅
+	—
+	G‑15 Timed Equation Duel
+	TTS lee ecuación completa
+	—
+	—
+	✅
+	✅
+	—
+	G‑16 Mystery Box Reveal
+	Iluminación progresiva sin flash
+	—
+	—
+	✅
+	✅
+	—
+	2.3 Juegos Medio & Univ. (G‑17 al G‑24)
+Código
+	Item QA
+	K
+	B1
+	B2
+	M
+	U
+	G‑17 Debate Cards
+	Botón “Leer carta” TTS
+	—
+	—
+	—
+	✅
+	✅
+	
+
+	Turno con indicador color‑texto
+	—
+	—
+	—
+	✅
+	✅
+	G‑18 Case Study Sprint
+	Modo tiempo extendido +50 %
+	—
+	—
+	—
+	✅
+	✅
+	G‑19 Simulation Tycoon
+	Narrar cambios KPI on‑focus
+	—
+	—
+	—
+	✅
+	✅
+	G‑20 Coding Puzzle
+	Fuente dislexia + bloques grandes
+	—
+	—
+	—
+	✅
+	✅
+	G‑21 Data Lab
+	Narración de ejes dataset
+	—
+	—
+	—
+	✅
+	✅
+	G‑22 Timeline Builder
+	Snap automático; flechas mover
+	—
+	—
+	—
+	✅
+	✅
+	G‑23 Argument Map
+	Zoom botones grandes; alt text
+	—
+	—
+	—
+	✅
+	✅
+	G‑24 Advanced Escape
+	Pista audio + texto; skip puzzle
+	—
+	—
+	—
+	✅
+	✅
+	(✅ = requisito obligatorio en ese ciclo; — = no aplica)
+________________
+
+
+3. QA Automation hooks
+                        * axe-core: ejecuta con regla personalizada “axe‑core‑edu21” para validar aria‑label dinámico en <GamePlay>.
+                        * Cypress: usar cy.tab() plugin para navegar teclado.
+                        * Audio test: script Node que verifica existencia de tts_url en todas las preguntas L2.
+________________
+
+
+Fin documento – Checklist QA NEE
+
+
+
+
+
+🤖 EDU21 – Ejemplos de Prompts IA para Juegos Avanzados
+Versión 1.0 · 19 jun 2025
+Estos prompts sirven para la API /ai/generate cuando el docente elige “Generar IA + Juego” en formatos de los niveles Analizar, Evaluar y Crear.
+Tabla→YAML: estructura común
+format: G-XX  # Código juego
+metadata:
+  grade: "1° Medio"
+  subject: "Historia"
+  oa_code: "HI-MED-OA12"
+  language: "es-CL"
+prompt: |
+  <texto del prompt>
+output_schema: |
+  { ... estructura JSON que la IA debe devolver ... }
+
+________________
+1. G‑17 Debate Cards (Evaluar)
+format: G-17
+metadata:
+  grade: "2° Medio"
+  subject: "Ciencias Sociales"
+  oa_code: "CSM-OA08"
+  language: "es-CL"
+prompt: |
+  Genera 6 tarjetas de debate sobre el tema "¿Debería Chile priorizar la energía nuclear?".
+  Cada tarjeta debe contener:
+  - postura: "A favor" o "En contra"
+  - argumento: máx 140 caracteres, lenguaje B1 español neutro
+  - evidencia: fuente resumida (autor, año)
+output_schema: |
+  [{"postura":"A favor","argumento":"...","evidencia":"..."}, ...]
+
+________________
+2. G‑18 Case Study Sprint (Analizar)
+format: G-18
+metadata:
+  grade: "3° Medio"
+  subject: "Biología"
+  oa_code: "BIO-OA14"
+  language: "es-CL"
+prompt: |
+  Estructura un caso de estudio sobre "Resistencia bacteriana" de 250 palabras y 5 preguntas multirrespuesta.
+  Pregunta 1-2 nivel Comprender, 3-4 Aplicar, 5 Analizar (Bloom).
+output_schema: |
+  {
+    "case": "<texto 250 palabras>",
+    "questions": [
+      {"stem":"...","options":["A","B","C","D"],"answer":2}, ...
+    ]
+  }
+
+________________
+3. G‑19 Simulation Tycoon (Crear)
+format: G-19
+metadata:
+  grade: "4° Medio"
+  subject: "Economía"
+  oa_code: "ECO-OA05"
+  language: "es-CL"
+prompt: |
+  Diseña un escenario de simulación donde los estudiantes administren una microempresa de café.
+  Proporciona:
+  1. variables iniciales (capital, costo fijo, precio mercado)
+  2. 3 eventos aleatorios con impacto (texto breve y efecto numérico)
+  3. objetivo: margen 20 % en 4 turnos
+output_schema: |
+  {
+    "initial_vars":{"capital":...},
+    "events":[{"desc":"...","effect":{"demand":-0.1}}],
+    "objective":"..."
+  }
+
+________________
+4. G‑23 Argument Map (Evaluar)
+format: G-23
+metadata:
+  grade: "1° Medio"
+  subject: "Lengua y Literatura"
+  oa_code: "LEN-OA11"
+  language: "es-CL"
+prompt: |
+  Proporciona 5 nodos de argumento sobre el tema "Redes sociales en adolescentes".
+  Cada nodo debe incluir: claim, type (razón, evidencia, contraejemplo), relación (soporta/refuta) y link_to (id del nodo).
+output_schema: |
+  [{"id":1,"claim":"...","type":"razón","rel":"soporta","link_to":0}, ...]
+
+________________
+5. G‑24 Advanced Escape Room (Crear)
+format: G-24
+metadata:
+  grade: "Universitario"
+  subject: "Ingeniería Informática"
+  oa_code: "INF-IA02"
+  language: "es-CL"
+prompt: |
+  Construye un mini-escape room con 5 puzzles técnicos sobre "Seguridad de bases de datos".
+  Cada puzzle incluye:
+  - prompt: descripción 120 caracteres
+  - solution: texto clave o regex
+  - hint: ayuda breve
+  - type: multiple-choice, código, lógica
+  Ordenados de 1 a 5 creciente dificultad.
+output_schema: |
+  [{"index":1,"prompt":"...","solution":"...","hint":"...","type":"código"}, ...]
+
+________________
+6. Validación automatizada (Service IA)
+                        1. Regex match para campos obligatorios.
+                        2. Contador tokens in/out → aborta si > 3 000 tokens.
+                        3. QA script verifica spelling y longitud.
+________________
+
+
+Fin documento – Prompts IA Juegos Avanzados

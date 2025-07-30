@@ -1,0 +1,1 @@
+Fix: Agrega fallback para resolver 404 en Vercel
