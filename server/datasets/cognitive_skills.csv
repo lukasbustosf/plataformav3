@@ -1,0 +1,21 @@
+skill_name,skill_code,description,keywords,subject_affinity
+Memoria de Trabajo,memoria_trabajo,"Capacidad de mantener y manipular información temporalmente",""retener,mantener,recordar,seguir instrucciones"",MAT;LEN
+Atención Sostenida,atencion_sostenida,"Capacidad de mantener la concentración en una tarea",""concentrar,mantener atención,seguir secuencias"",MAT;CN
+Flexibilidad Cognitiva,flexibilidad,"Capacidad de cambiar entre diferentes tareas o enfoques",""cambiar,adaptar,ajustar,alternar"",MAT;HIS
+Inhibición,inhibicion,"Capacidad de suprimir respuestas inapropiadas",""controlar,resistir,evitar impulsos"",LEN;EDF
+Planificación,planificacion,"Capacidad de organizar y secuenciar actividades",""planificar,organizar,secuenciar,estructurar"",MAT;HIS
+Razonamiento Lógico,razonamiento_logico,"Capacidad de seguir reglas lógicas y hacer inferencias",""inferir,deducir,concluir,razonar"",MAT;CN
+Procesamiento Fonológico,proc_fonologico,"Habilidades relacionadas con los sonidos del lenguaje",""sonidos,pronunciar,rimar,silabear"",LEN
+Comprensión Verbal,comp_verbal,"Capacidad de entender y procesar información verbal",""comprender,interpretar,entender textos"",LEN;HIS
+Procesamiento Visual,proc_visual,"Habilidades de procesamiento de información visual",""visual,espacial,geométrico,figuras"",MAT;ART
+Velocidad de Procesamiento,vel_procesamiento,"Rapidez para realizar tareas cognitivas simples",""rápido,velocidad,fluido,automático"",MAT;LEN
+Memoria a Largo Plazo,memoria_largo,"Almacenamiento y recuperación de información",""recordar,memorizar,datos,información"",HIS;CN
+Secuenciación,secuenciacion,"Capacidad de ordenar elementos en secuencia",""ordenar,secuencia,seguir pasos"",MAT;LEN
+Categorización,categorizacion,"Habilidad para clasificar y agrupar elementos",""clasificar,agrupar,categorizar,tipos"",CN;MAT
+Análisis-Síntesis,analisis_sintesis,"Descomponer y recomponer información",""analizar,sintetizar,partes,todo"",CN;LEN
+Abstracción,abstraccion,"Capacidad de identificar conceptos abstractos",""abstracto,conceptual,general,teoría"",MAT;CN
+Metacognición,metacognicion,"Conciencia sobre los propios procesos de pensamiento",""reflexionar,evaluar,estrategias"",LEN;HIS
+Resolución de Problemas,resol_problemas,"Estrategias para resolver situaciones complejas",""resolver,problemas,estrategias,soluciones"",MAT;CN
+Creatividad,creatividad,"Capacidad de generar ideas originales",""crear,inventar,original,innovar"",ART;LEN
+Coordinación Motora,coord_motora,"Habilidades de coordinación y control motor",""motriz,coordinación,precisión,movimiento"",EDF;ART
+Percepción Auditiva,perc_auditiva,"Procesamiento de información auditiva",""escuchar,auditivo,sonidos,música"",LEN;MUS 

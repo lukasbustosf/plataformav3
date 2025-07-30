@@ -1,0 +1,954 @@
+{
+  "products": [
+    {
+      "name": "Bloques Lógicos Dienes",
+      "description": "Set completo de 48 bloques lógicos con 4 atributos: forma, color, tamaño y grosor",
+      "category": "logica_matematica",
+      "target_ages": ["3-4", "4-5", "5-6"],
+      "methodology": "montessori",
+      "status": "disponible",
+      "technical_specs": {
+        "material": "Madera pintada con pintura no tóxica",
+        "formas": ["círculo", "cuadrado", "triángulo", "rectángulo"],
+        "colores": ["rojo", "azul", "amarillo"],
+        "tamaños": ["grande", "pequeño"],
+        "grosores": ["grueso", "delgado"]
+      },
+      "safety_considerations": [
+        "Sin partes pequeñas que puedan tragarse",
+        "Bordes redondeados",
+        "Pintura no tóxica certificada"
+      ]
+    },
+    {
+      "name": "Microscopio Infantil 50x",
+      "description": "Microscopio adaptado para párvulos con aumento de 50x y base estable",
+      "category": "ciencias_naturales",
+      "target_ages": ["4-5", "5-6", "6-7"],
+      "methodology": "observacion_directa",
+      "status": "disponible",
+      "technical_specs": {
+        "aumento": "50x",
+        "iluminacion": "LED con control de intensidad",
+        "altura": "25cm adaptable",
+        "peso": "800g"
+      },
+      "safety_considerations": [
+        "Base antideslizante",
+        "Iluminación LED fría",
+        "Oculares grandes para fácil uso"
+      ]
+    },
+    {
+      "name": "Tangram Magnético",
+      "description": "Set de tangram con piezas magnéticas para facilitar la manipulación",
+      "category": "logica_matematica",
+      "target_ages": ["4-5", "5-6"],
+      "methodology": "montessori",
+      "status": "disponible",
+      "technical_specs": {
+        "piezas": 7,
+        "material": "EVA con imán",
+        "tamaño": "15cm x 15cm",
+        "colores": "Multicolor"
+      }
+    },
+    {
+      "name": "Kit de Lupa con Recolección",
+      "description": "Lupa de aumento 3x con contenedores para recolección de muestras",
+      "category": "ciencias_naturales",
+      "target_ages": ["3-4", "4-5", "5-6"],
+      "methodology": "observacion_directa",
+      "status": "disponible"
+    },
+    {
+      "name": "Balanza de Platillos",
+      "description": "Balanza de brazos con platillos para explorar conceptos de peso y medida",
+      "category": "logica_matematica",
+      "target_ages": ["4-5", "5-6", "6-7"],
+      "methodology": "experimentacion",
+      "status": "disponible"
+    },
+    {
+      "name": "Cuentas de Ensartar",
+      "description": "Set de cuentas grandes de colores para ensartar y crear patrones",
+      "category": "desarrollo_psicomotor",
+      "target_ages": ["3-4", "4-5"],
+      "methodology": "montessori",
+      "status": "disponible"
+    },
+    {
+      "name": "Rompecabezas del Cuerpo Humano",
+      "description": "Rompecabezas educativo con las partes principales del cuerpo humano",
+      "category": "ciencias_naturales",
+      "target_ages": ["4-5", "5-6"],
+      "methodology": "montessori",
+      "status": "disponible"
+    },
+    {
+      "name": "Juego de Memoria Táctil",
+      "description": "Cajas con diferentes texturas para desarrollar el sentido del tacto",
+      "category": "desarrollo_socioemocional",
+      "target_ages": ["3-4", "4-5"],
+      "methodology": "montessori",
+      "status": "disponible"
+    },
+    {
+      "name": "Cilindros con Botón",
+      "description": "Set de cilindros Montessori con botón para desarrollo de coordinación",
+      "category": "desarrollo_psicomotor",
+      "target_ages": ["3-4", "4-5"],
+      "methodology": "montessori",
+      "status": "disponible"
+    },
+    {
+      "name": "Kit de Plantación",
+      "description": "Kit completo para plantar semillas y observar el crecimiento",
+      "category": "ciencias_naturales",
+      "target_ages": ["4-5", "5-6"],
+      "methodology": "experimentacion",
+      "status": "disponible"
+    }
+  ],
+  "activities": [
+    {
+      "title": "Clasificación por Color con Bloques",
+      "description": "Los niños clasifican bloques lógicos únicamente por su color, desarrollando habilidades de observación y categorización básica",
+      "age_range": "3-4",
+      "estimated_duration": 20,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.01",
+      "bloom_level": "recordar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar solo bloques rojos, azules y amarillos",
+        "Mostrar cómo separar por color",
+        "Invitar al niño a continuar la clasificación",
+        "Reforzar positivamente cada clasificación correcta"
+      ],
+      "materials_needed": [1],
+      "difficulty": "básico",
+      "group_size": "individual"
+    },
+    {
+      "title": "Exploración Libre con Bloques",
+      "description": "Actividad de exploración sensorial libre donde los niños manipulan y conocen las características de los bloques",
+      "age_range": "3-4",
+      "estimated_duration": 25,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.01",
+      "bloom_level": "comprender",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar todos los bloques en una bandeja",
+        "Permitir exploración libre durante 10 minutos",
+        "Guiar la atención hacia diferencias de forma",
+        "Nombrar las formas: círculo, cuadrado, triángulo",
+        "Invitar a agrupar por forma sin presión"
+      ],
+      "materials_needed": [1],
+      "difficulty": "básico",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Construcción de Torres por Tamaño",
+      "description": "Los niños aplican conceptos de tamaño construyendo torres del más grande al más pequeño",
+      "age_range": "3-4",
+      "estimated_duration": 30,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.02",
+      "bloom_level": "aplicar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Seleccionar bloques de misma forma pero diferente tamaño",
+        "Demostrar construcción de torre grande a pequeño",
+        "Invitar al niño a construir su propia torre",
+        "Comparar alturas de diferentes torres",
+        "Introducir vocabulario: grande, pequeño, más grande, más pequeño"
+      ],
+      "materials_needed": [1],
+      "difficulty": "básico",
+      "group_size": "individual"
+    },
+    {
+      "title": "Comparación de Atributos",
+      "description": "Actividad avanzada donde los niños analizan y comparan múltiples atributos de los bloques",
+      "age_range": "4-5",
+      "estimated_duration": 35,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.03",
+      "bloom_level": "analizar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar dos bloques similares con una diferencia",
+        "Preguntar: '¿En qué se parecen? ¿En qué se diferencian?'",
+        "Introducir el concepto de atributo",
+        "Jugar a encontrar bloques con dos atributos iguales",
+        "Crear pequeños grupos según criterios específicos"
+      ],
+      "materials_needed": [1],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Evaluación de Patrones Simples",
+      "description": "Los niños evalúan si una secuencia de bloques sigue un patrón correcto y proponen correcciones",
+      "age_range": "4-5",
+      "estimated_duration": 40,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.04",
+      "bloom_level": "evaluar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Crear un patrón simple (rojo-azul-rojo-azul)",
+        "Introducir un error intencional en el patrón",
+        "Preguntar: '¿Está correcto este patrón?'",
+        "Invitar a encontrar y corregir el error",
+        "Crear nuevos patrones para evaluar juntos"
+      ],
+      "materials_needed": [1],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Creación de Nuevos Juegos con Bloques",
+      "description": "Actividad creativa donde los niños inventan sus propias reglas y juegos usando bloques lógicos",
+      "age_range": "5-6",
+      "estimated_duration": 45,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.05",
+      "bloom_level": "crear",
+      "methodology": "reggio_emilia",
+      "step_instructions": [
+        "Presentar todos los bloques sin instrucciones específicas",
+        "Preguntar: '¿Qué juego nuevo podríamos inventar?'",
+        "Facilitar la lluvia de ideas",
+        "Apoyar la implementación de las reglas creadas",
+        "Documentar el nuevo juego creado por los niños"
+      ],
+      "materials_needed": [1],
+      "difficulty": "avanzado",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Observación de Hojas con Lupa",
+      "description": "Primera exploración científica donde los niños observan diferentes tipos de hojas",
+      "age_range": "3-4",
+      "estimated_duration": 25,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.06",
+      "bloom_level": "recordar",
+      "methodology": "observacion_directa",
+      "step_instructions": [
+        "Recolectar hojas de diferentes formas en el patio",
+        "Presentar la lupa y mostrar cómo usarla",
+        "Observar las hojas una por una",
+        "Nombrar lo que ven: venas, bordes, colores",
+        "Dibujar lo observado en papel grande"
+      ],
+      "materials_needed": [4],
+      "difficulty": "básico",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Comprensión del Ciclo de Vida de las Plantas",
+      "description": "Los niños comprenden las etapas básicas del crecimiento de una planta a través de observación directa",
+      "age_range": "4-5",
+      "estimated_duration": 30,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.07",
+      "bloom_level": "comprender",
+      "methodology": "experimentacion",
+      "step_instructions": [
+        "Mostrar semillas, brotes y plantas adultas",
+        "Explicar el orden de crecimiento",
+        "Plantar semillas en el kit de plantación",
+        "Crear un calendario de observación",
+        "Predecir qué pasará en los próximos días"
+      ],
+      "materials_needed": [10],
+      "difficulty": "básico",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Aplicación del Microscopio para Observar Insectos",
+      "description": "Los niños aplican el uso del microscopio para observar insectos pequeños del jardín",
+      "age_range": "5-6",
+      "estimated_duration": 40,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.08",
+      "bloom_level": "aplicar",
+      "methodology": "observacion_directa",
+      "step_instructions": [
+        "Recolectar insectos pequeños cuidadosamente",
+        "Enseñar el uso seguro del microscopio",
+        "Observar las partes del insecto ampliadas",
+        "Comparar con dibujos de libros de ciencias",
+        "Registrar observaciones en diario científico"
+      ],
+      "materials_needed": [2],
+      "difficulty": "intermedio",
+      "group_size": "individual"
+    },
+    {
+      "title": "Análisis de Diferencias entre Semillas",
+      "description": "Actividad analítica donde los niños comparan y contrastan diferentes tipos de semillas",
+      "age_range": "5-6",
+      "estimated_duration": 35,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.09",
+      "bloom_level": "analizar",
+      "methodology": "observacion_directa",
+      "step_instructions": [
+        "Presentar 5 tipos diferentes de semillas",
+        "Usar lupa para observar detalles",
+        "Crear tabla de comparación simple",
+        "Identificar similitudes y diferencias",
+        "Predecir qué plantas crecerán de cada semilla"
+      ],
+      "materials_needed": [4, 10],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Evaluación de Hipótesis sobre Crecimiento",
+      "description": "Los niños evalúan sus predicciones sobre qué condiciones favorecen el crecimiento de plantas",
+      "age_range": "5-6",
+      "estimated_duration": 45,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.10",
+      "bloom_level": "evaluar",
+      "methodology": "experimentacion",
+      "step_instructions": [
+        "Revisar plantas sembradas hace una semana",
+        "Comparar con predicciones iniciales",
+        "Evaluar: '¿Qué predicción fue correcta?'",
+        "Discutir por qué algunas plantas crecieron más",
+        "Ajustar cuidados según lo aprendido"
+      ],
+      "materials_needed": [10],
+      "difficulty": "avanzado",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Creación de Jardín Experimental",
+      "description": "Proyecto creativo donde los niños diseñan y crean su propio jardín experimental",
+      "age_range": "6-7",
+      "estimated_duration": 60,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.11",
+      "bloom_level": "crear",
+      "methodology": "abp",
+      "step_instructions": [
+        "Planificar diseño del jardín en papel",
+        "Decidir qué plantas incluir y por qué",
+        "Implementar el diseño en un espacio real",
+        "Crear sistema de riego y cuidado",
+        "Documentar el proceso y resultados esperados"
+      ],
+      "materials_needed": [10, 4],
+      "difficulty": "avanzado",
+      "group_size": "grande"
+    },
+    {
+      "title": "Reconocimiento de Formas en Tangram",
+      "description": "Actividad básica de reconocimiento donde los niños identifican formas geométricas simples",
+      "age_range": "3-4",
+      "estimated_duration": 20,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.12",
+      "bloom_level": "recordar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar las 7 piezas del tangram por separado",
+        "Nombrar cada forma: triángulo, cuadrado, paralelogramo",
+        "Jugar a 'encuentra la forma que te digo'",
+        "Trazar contornos de las formas en papel",
+        "Crear collage con las formas trazadas"
+      ],
+      "materials_needed": [3],
+      "difficulty": "básico",
+      "group_size": "individual"
+    },
+    {
+      "title": "Comprensión de Combinaciones Simples",
+      "description": "Los niños comprenden cómo las piezas del tangram se pueden combinar para formar figuras nuevas",
+      "age_range": "4-5",
+      "estimated_duration": 30,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.13",
+      "bloom_level": "comprender",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Mostrar cómo dos triángulos forman un cuadrado",
+        "Demostrar otras combinaciones simples",
+        "Invitar a experimentar con 2-3 piezas",
+        "Hablar sobre cómo las formas 'encajan'",
+        "Reforzar el concepto de 'parte' y 'todo'"
+      ],
+      "materials_needed": [3],
+      "difficulty": "básico",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Aplicación para Crear Figuras Simples",
+      "description": "Los niños aplican su conocimiento del tangram para recrear figuras mostradas en tarjetas",
+      "age_range": "4-5",
+      "estimated_duration": 35,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.14",
+      "bloom_level": "aplicar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar tarjetas con figuras simples (casa, barco)",
+        "Analizar la figura antes de empezar",
+        "Intentar recrear usando las piezas disponibles",
+        "Pedir ayuda cuando sea necesario",
+        "Celebrar cada logro, sin importar el tiempo"
+      ],
+      "materials_needed": [3],
+      "difficulty": "intermedio",
+      "group_size": "individual"
+    },
+    {
+      "title": "Análisis de Estrategias de Resolución",
+      "description": "Actividad reflexiva donde los niños analizan diferentes formas de resolver un tangram",
+      "age_range": "5-6",
+      "estimated_duration": 40,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.15",
+      "bloom_level": "analizar",
+      "methodology": "reggio_emilia",
+      "step_instructions": [
+        "Proponer una figura desafiante del tangram",
+        "Permitir múltiples intentos",
+        "Preguntar: '¿Qué estrategia usaste?'",
+        "Comparar diferentes enfoques entre compañeros",
+        "Reflexionar sobre qué estrategia fue más efectiva"
+      ],
+      "materials_needed": [3],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Evaluación de Soluciones de Tangram",
+      "description": "Los niños evalúan si las soluciones de tangram propuestas por otros son correctas o incorrectas",
+      "age_range": "5-6",
+      "estimated_duration": 35,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.16",
+      "bloom_level": "evaluar",
+      "methodology": "waldorf",
+      "step_instructions": [
+        "Mostrar una figura 'resuelta' con un error sutil",
+        "Preguntar: '¿Está correcto este tangram?'",
+        "Invitar a revisar pieza por pieza",
+        "Encontrar y explicar el error",
+        "Proponer la corrección adecuada"
+      ],
+      "materials_needed": [3],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Creación de Figuras Originales",
+      "description": "Proyecto creativo donde los niños inventan sus propias figuras usando todas las piezas del tangram",
+      "age_range": "6-7",
+      "estimated_duration": 50,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.17",
+      "bloom_level": "crear",
+      "methodology": "reggio_emilia",
+      "step_instructions": [
+        "Desafío: crear una figura que nadie haya hecho antes",
+        "Experimentar libremente con todas las piezas",
+        "Una vez creada, darle un nombre especial",
+        "Explicar a los compañeros qué representa",
+        "Crear un libro de 'Nuestros Tangrams Originales'"
+      ],
+      "materials_needed": [3],
+      "difficulty": "avanzado",
+      "group_size": "individual"
+    },
+    {
+      "title": "Identificación de Pesos con Balanza",
+      "description": "Los niños identifican objetos pesados y livianos usando la balanza de platillos",
+      "age_range": "4-5",
+      "estimated_duration": 25,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.18",
+      "bloom_level": "recordar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar la balanza y explicar su funcionamiento",
+        "Mostrar objetos claramente pesados y livianos",
+        "Demostrar cómo la balanza 'baja' del lado pesado",
+        "Invitar a probar con objetos diversos",
+        "Introducir vocabulario: pesado, liviano, pesa más, pesa menos"
+      ],
+      "materials_needed": [5],
+      "difficulty": "básico",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Comprensión del Equilibrio",
+      "description": "Los niños comprenden el concepto de equilibrio experimentando con la balanza",
+      "age_range": "4-5",
+      "estimated_duration": 30,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.19",
+      "bloom_level": "comprender",
+      "methodology": "experimentacion",
+      "step_instructions": [
+        "Buscar objetos que hagan equilibrio perfecto",
+        "Experimentar con diferentes combinaciones",
+        "Observar cuándo los platillos quedan nivelados",
+        "Explicar con palabras simples por qué pasa esto",
+        "Jugar a 'balancear' con el propio cuerpo"
+      ],
+      "materials_needed": [5],
+      "difficulty": "básico",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Aplicación para Medir Ingredientes",
+      "description": "Actividad práctica donde los niños usan la balanza para medir ingredientes de una receta simple",
+      "age_range": "5-6",
+      "estimated_duration": 40,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.20",
+      "bloom_level": "aplicar",
+      "methodology": "abp",
+      "step_instructions": [
+        "Presentar una receta simple que requiera medición",
+        "Usar la balanza para medir harina, azúcar, etc.",
+        "Comparar pesos usando objetos de referencia",
+        "Aplicar conceptos de 'más' y 'menos'",
+        "Preparar la receta siguiendo las medidas"
+      ],
+      "materials_needed": [5],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Análisis de Masas de Objetos Cotidianos",
+      "description": "Los niños analizan y comparan las masas de objetos cotidianos usando la balanza",
+      "age_range": "5-6",
+      "estimated_duration": 35,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.21",
+      "bloom_level": "analizar",
+      "methodology": "observacion_directa",
+      "step_instructions": [
+        "Recolectar objetos diversos del aula",
+        "Crear predicciones sobre cuál pesará más",
+        "Verificar predicciones con la balanza",
+        "Ordenar objetos de liviano a pesado",
+        "Buscar patrones: ¿los grandes siempre pesan más?"
+      ],
+      "materials_needed": [5],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Evaluación de Predicciones de Peso",
+      "description": "Los niños evalúan sus predicciones sobre peso comparándolas con resultados reales",
+      "age_range": "5-6",
+      "estimated_duration": 40,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.22",
+      "bloom_level": "evaluar",
+      "methodology": "experimentacion",
+      "step_instructions": [
+        "Revisar las predicciones hechas la clase anterior",
+        "Comparar con los resultados reales obtenidos",
+        "Identificar cuáles predicciones fueron correctas",
+        "Reflexionar sobre por qué algunas estuvieron mal",
+        "Mejorar las estrategias de predicción"
+      ],
+      "materials_needed": [5],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Creación de Sistema de Medición Propio",
+      "description": "Proyecto creativo donde los niños inventan su propio sistema para medir pesos",
+      "age_range": "6-7",
+      "estimated_duration": 55,
+      "category": "logica_matematica",
+      "oa_alignment": "OA.23",
+      "bloom_level": "crear",
+      "methodology": "abp",
+      "step_instructions": [
+        "Desafío: crear una nueva forma de medir sin usar números",
+        "Elegir un objeto como 'unidad de medida'",
+        "Desarrollar un sistema de comparación propio",
+        "Probar el sistema con diferentes objetos",
+        "Enseñar el sistema a otros niños"
+      ],
+      "materials_needed": [5],
+      "difficulty": "avanzado",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Reconocimiento de Partes del Cuerpo",
+      "description": "Los niños identifican y nombran las partes principales del cuerpo usando el rompecabezas",
+      "age_range": "3-4",
+      "estimated_duration": 25,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.24",
+      "bloom_level": "recordar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar el rompecabezas desarmado",
+        "Nombrar cada parte mientras se señala",
+        "Invitar al niño a repetir los nombres",
+        "Armar el rompecabezas juntos",
+        "Jugar a señalar partes en el propio cuerpo"
+      ],
+      "materials_needed": [7],
+      "difficulty": "básico",
+      "group_size": "individual"
+    },
+    {
+      "title": "Comprensión de Funciones Corporales",
+      "description": "Los niños comprenden para qué sirve cada parte del cuerpo a través del rompecabezas",
+      "age_range": "4-5",
+      "estimated_duration": 30,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.25",
+      "bloom_level": "comprender",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Armar el rompecabezas mientras se habla de funciones",
+        "Explicar: 'Los ojos sirven para ver, las manos para tocar'",
+        "Hacer ejercicios usando cada parte del cuerpo",
+        "Conectar partes del rompecabezas con movimientos reales",
+        "Crear canciones sobre las funciones corporales"
+      ],
+      "materials_needed": [7],
+      "difficulty": "básico",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Aplicación de Cuidados del Cuerpo",
+      "description": "Los niños aplican conocimientos sobre el cuerpo para proponer cuidados específicos",
+      "age_range": "4-5",
+      "estimated_duration": 35,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.26",
+      "bloom_level": "aplicar",
+      "methodology": "abp",
+      "step_instructions": [
+        "Usar el rompecabezas para hablar de cuidados",
+        "Proponer cuidados para cada parte del cuerpo",
+        "Demostrar: lavarse las manos, cepillarse los dientes",
+        "Crear rutina de cuidado personal",
+        "Practicar la rutina usando el rompecabezas como guía"
+      ],
+      "materials_needed": [7],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Análisis de Diferencias Individuales",
+      "description": "Los niños analizan las diferencias entre las personas comparando con el rompecabezas estándar",
+      "age_range": "5-6",
+      "estimated_duration": 40,
+      "category": "desarrollo_socioemocional",
+      "oa_alignment": "OA.27",
+      "bloom_level": "analizar",
+      "methodology": "reggio_emilia",
+      "step_instructions": [
+        "Comparar el rompecabezas con fotos de personas reales",
+        "Observar diferencias: color de piel, cabello, altura",
+        "Discutir cómo todos somos diferentes pero similares",
+        "Encontrar similitudes fundamentales",
+        "Celebrar la diversidad humana"
+      ],
+      "materials_needed": [7],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Evaluación de Hábitos Saludables",
+      "description": "Los niños evalúan diferentes hábitos y determinan cuáles son saludables para el cuerpo",
+      "age_range": "5-6",
+      "estimated_duration": 35,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.28",
+      "bloom_level": "evaluar",
+      "methodology": "abp",
+      "step_instructions": [
+        "Presentar tarjetas con diferentes hábitos",
+        "Usar el rompecabezas para señalar partes afectadas",
+        "Evaluar: '¿Es bueno o malo para nuestro cuerpo?'",
+        "Justificar las respuestas",
+        "Proponer alternativas saludables"
+      ],
+      "materials_needed": [7],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Creación de Manual de Cuidado Corporal",
+      "description": "Proyecto creativo donde los niños crean su propio manual ilustrado de cuidado del cuerpo",
+      "age_range": "6-7",
+      "estimated_duration": 60,
+      "category": "ciencias_naturales",
+      "oa_alignment": "OA.29",
+      "bloom_level": "crear",
+      "methodology": "abp",
+      "step_instructions": [
+        "Planificar qué incluir en el manual",
+        "Usar el rompecabezas como referencia visual",
+        "Dibujar y escribir consejos para cada parte del cuerpo",
+        "Incluir ilustraciones de hábitos saludables",
+        "Presentar el manual a familias"
+      ],
+      "materials_needed": [7],
+      "difficulty": "avanzado",
+      "group_size": "individual"
+    },
+    {
+      "title": "Identificación de Texturas Básicas",
+      "description": "Los niños identifican diferentes texturas usando el juego de memoria táctil",
+      "age_range": "3-4",
+      "estimated_duration": 20,
+      "category": "desarrollo_socioemocional",
+      "oa_alignment": "OA.30",
+      "bloom_level": "recordar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar las cajas táctiles una por una",
+        "Permitir exploración libre con las manos",
+        "Nombrar las texturas: suave, áspero, liso",
+        "Jugar a adivinar la textura con ojos cerrados",
+        "Buscar objetos similares en el entorno"
+      ],
+      "materials_needed": [8],
+      "difficulty": "básico",
+      "group_size": "individual"
+    },
+    {
+      "title": "Comprensión de Sensaciones Táctiles",
+      "description": "Los niños comprenden cómo diferentes texturas producen diferentes sensaciones",
+      "age_range": "3-4",
+      "estimated_duration": 25,
+      "category": "desarrollo_socioemocional",
+      "oa_alignment": "OA.31",
+      "bloom_level": "comprender",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Explorar texturas y hablar de sensaciones",
+        "Conectar texturas con emociones: 'suave me calma'",
+        "Comparar sensaciones entre diferentes texturas",
+        "Usar vocabulario emocional: agradable, desagradable",
+        "Crear asociaciones personales con cada textura"
+      ],
+      "materials_needed": [8],
+      "difficulty": "básico",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Aplicación en Juegos de Memorización",
+      "description": "Los niños aplican su conocimiento táctil en juegos de memoria y concentración",
+      "age_range": "4-5",
+      "estimated_duration": 30,
+      "category": "desarrollo_socioemocional",
+      "oa_alignment": "OA.32",
+      "bloom_level": "aplicar",
+      "methodology": "juego_simbolico",
+      "step_instructions": [
+        "Crear secuencias de texturas para memorizar",
+        "Jugar al 'teléfono táctil'",
+        "Aplicar memoria táctil en juegos de parejas",
+        "Usar texturas para contar historias",
+        "Incorporar movimiento corporal con texturas"
+      ],
+      "materials_needed": [8],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Análisis de Preferencias Táctiles",
+      "description": "Los niños analizan sus preferencias táctiles y las comparan con las de otros",
+      "age_range": "4-5",
+      "estimated_duration": 35,
+      "category": "desarrollo_socioemocional",
+      "oa_alignment": "OA.33",
+      "bloom_level": "analizar",
+      "methodology": "reggio_emilia",
+      "step_instructions": [
+        "Explorar todas las texturas individualmente",
+        "Identificar favoritas y menos favoritas",
+        "Explicar por qué prefieren ciertas texturas",
+        "Comparar preferencias con compañeros",
+        "Buscar patrones en las preferencias grupales"
+      ],
+      "materials_needed": [8],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Evaluación de Respuestas Emocionales",
+      "description": "Los niños evalúan cómo diferentes texturas afectan sus emociones y bienestar",
+      "age_range": "5-6",
+      "estimated_duration": 40,
+      "category": "desarrollo_socioemocional",
+      "oa_alignment": "OA.34",
+      "bloom_level": "evaluar",
+      "methodology": "waldorf",
+      "step_instructions": [
+        "Explorar texturas prestando atención a emociones",
+        "Evaluar: '¿Cómo me hace sentir esta textura?'",
+        "Identificar texturas que calman o activan",
+        "Discutir por qué ciertas texturas generan reacciones",
+        "Proponer usos emocionales para cada textura"
+      ],
+      "materials_needed": [8],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Creación de Kit de Relajación Táctil",
+      "description": "Proyecto creativo donde los niños crean su propio kit de texturas para relajación",
+      "age_range": "5-6",
+      "estimated_duration": 50,
+      "category": "desarrollo_socioemocional",
+      "oa_alignment": "OA.35",
+      "bloom_level": "crear",
+      "methodology": "waldorf",
+      "step_instructions": [
+        "Seleccionar texturas que les produzcan calma",
+        "Crear contenedores personalizados",
+        "Diseñar secuencias de relajación táctil",
+        "Probar el kit en momentos de estrés",
+        "Enseñar a otros a usar su kit de relajación"
+      ],
+      "materials_needed": [8],
+      "difficulty": "avanzado",
+      "group_size": "individual"
+    },
+    {
+      "title": "Reconocimiento de Secuencias con Cuentas",
+      "description": "Los niños identifican y reproducen secuencias simples de colores usando cuentas",
+      "age_range": "3-4",
+      "estimated_duration": 25,
+      "category": "desarrollo_psicomotor",
+      "oa_alignment": "OA.36",
+      "bloom_level": "recordar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar cuentas de dos colores alternados",
+        "Mostrar secuencia simple: rojo-azul-rojo-azul",
+        "Invitar a continuar la secuencia",
+        "Practicar ensartado básico",
+        "Reforzar el patrón con canciones rítmicas"
+      ],
+      "materials_needed": [6],
+      "difficulty": "básico",
+      "group_size": "individual"
+    },
+    {
+      "title": "Comprensión de Patrones Complejos",
+      "description": "Los niños comprenden patrones más complejos usando múltiples atributos de las cuentas",
+      "age_range": "4-5",
+      "estimated_duration": 30,
+      "category": "desarrollo_psicomotor",
+      "oa_alignment": "OA.37",
+      "bloom_level": "comprender",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Introducir patrones con forma y color",
+        "Demostrar: redonda-azul, cuadrada-roja",
+        "Explicar cómo el patrón se repite",
+        "Practicar identificación antes de ensartar",
+        "Crear collares siguiendo patrones específicos"
+      ],
+      "materials_needed": [6],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Aplicación en Creación de Joyas",
+      "description": "Los niños aplican conceptos de patrón y secuencia para crear joyas decorativas",
+      "age_range": "4-5",
+      "estimated_duration": 40,
+      "category": "desarrollo_psicomotor",
+      "oa_alignment": "OA.38",
+      "bloom_level": "aplicar",
+      "methodology": "freinet",
+      "step_instructions": [
+        "Planificar diseño de collar o pulsera",
+        "Aplicar patrones aprendidos anteriormente",
+        "Ensartar con cuidado y precisión",
+        "Ajustar el patrón si es necesario",
+        "Presentar la joya creada a la familia"
+      ],
+      "materials_needed": [6],
+      "difficulty": "intermedio",
+      "group_size": "individual"
+    },
+    {
+      "title": "Análisis de Errores en Patrones",
+      "description": "Los niños analizan secuencias con errores y proponen correcciones",
+      "age_range": "5-6",
+      "estimated_duration": 35,
+      "category": "desarrollo_psicomotor",
+      "oa_alignment": "OA.39",
+      "bloom_level": "analizar",
+      "methodology": "montessori",
+      "step_instructions": [
+        "Presentar collar con patrón incorrecto",
+        "Invitar a encontrar dónde está el error",
+        "Analizar por qué se rompió el patrón",
+        "Desensartar solo la parte incorrecta",
+        "Corregir manteniendo el patrón original"
+      ],
+      "materials_needed": [6],
+      "difficulty": "intermedio",
+      "group_size": "pequeño"
+    },
+    {
+      "title": "Evaluación de Calidad de Ensartado",
+      "description": "Los niños evalúan la calidad técnica y estética de sus trabajos de ensartado",
+      "age_range": "5-6",
+      "estimated_duration": 40,
+      "category": "desarrollo_psicomotor",
+      "oa_alignment": "OA.40",
+      "bloom_level": "evaluar",
+      "methodology": "reggio_emilia",
+      "step_instructions": [
+        "Revisar trabajos de ensartado completados",
+        "Evaluar: '¿Está bien hecho? ¿Se ve bonito?'",
+        "Identificar aspectos a mejorar",
+        "Comparar con trabajos anteriores",
+        "Establecer metas para próximos proyectos"
+      ],
+      "materials_needed": [6],
+      "difficulty": "intermedio",
+      "group_size": "individual"
+    },
+    {
+      "title": "Creación de Sistema de Notación de Patrones",
+      "description": "Proyecto avanzado donde los niños crean su propio sistema para documentar patrones",
+      "age_range": "6-7",
+      "estimated_duration": 55,
+      "category": "desarrollo_psicomotor",
+      "oa_alignment": "OA.41",
+      "bloom_level": "crear",
+      "methodology": "reggio_emilia",
+      "step_instructions": [
+        "Desafío: crear forma de 'escribir' patrones sin cuentas",
+        "Inventar símbolos para diferentes cuentas",
+        "Probar el sistema con patrones conocidos",
+        "Refinar el sistema basado en pruebas",
+        "Enseñar el sistema a otros niños"
+      ],
+      "materials_needed": [6],
+      "difficulty": "avanzado",
+      "group_size": "pequeño"
+    }
+  ]
+} 

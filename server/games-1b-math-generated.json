@@ -1,0 +1,450 @@
+[
+  {
+    "game_id": "1b-math-ma01oa01",
+    "oa_code": "MA01OA01",
+    "title": "🧮 Contar números del 0 al 100",
+    "description": "Juego de Contar de 1 en 1, de 2 en 2, de 5 en 5 y de 10 en 10 usando Counter/Number Line",
+    "engine_id": "ENG01",
+    "engine_name": "Counter/Number Line",
+    "format": "number_line_race",
+    "grade": "1B",
+    "subject": "MAT",
+    "bloom_level": "Recordar",
+    "complexity": 1,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "max_range": 20,
+        "min_range": 0,
+        "step_size": 1,
+        "difficulty_1b": "easy"
+      },
+      "game_mechanics": [
+        "count",
+        "increment",
+        "decrement",
+        "position_on_line"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "large_buttons": true
+      }
+    },
+    "questions": [
+      {
+        "id": "1350bf6b-308c-409d-b7d0-9700898906ec",
+        "question": "¿Cuál número viene después del 5?",
+        "type": "multiple_choice",
+        "options": [
+          "4",
+          "6",
+          "7",
+          "8"
+        ],
+        "correct_answer": "6",
+        "feedback": "¡Correcto! Después del 5 viene el 6.",
+        "engine_data": {
+          "number_line_position": 5,
+          "next_step": 6
+        }
+      },
+      {
+        "id": "97e3d3cd-dd96-40da-adfa-9e993c206122",
+        "question": "Cuenta de 2 en 2: 2, 4, 6, ¿?",
+        "type": "multiple_choice",
+        "options": [
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "correct_answer": "8",
+        "feedback": "¡Excelente! Siguiendo la secuencia de 2 en 2: 2, 4, 6, 8",
+        "engine_data": {
+          "sequence_type": "by_2",
+          "current_position": 6
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T16:51:01.851Z"
+  },
+  {
+    "game_id": "1b-math-ma01oa02",
+    "oa_code": "MA01OA02",
+    "title": "🧮 Números ordinales 1º al 10º",
+    "description": "Juego de Identificar orden usando números ordinales usando Counter/Number Line",
+    "engine_id": "ENG01",
+    "engine_name": "Counter/Number Line",
+    "format": "trivia_lightning",
+    "grade": "1B",
+    "subject": "MAT",
+    "bloom_level": "Recordar",
+    "complexity": 1,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "max_range": 20,
+        "min_range": 0,
+        "step_size": 1,
+        "difficulty_1b": "easy"
+      },
+      "game_mechanics": [
+        "count",
+        "increment",
+        "decrement",
+        "position_on_line"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "large_buttons": true
+      }
+    },
+    "questions": [
+      {
+        "id": "84aa5d4d-947f-47c4-8242-3dccadbe8f2b",
+        "question": "¿Quién está en SEGUNDO lugar?",
+        "type": "image_selection",
+        "image_description": "Tres niños en fila",
+        "options": [
+          "Niño A (1º)",
+          "Niño B (2º)",
+          "Niño C (3º)"
+        ],
+        "correct_answer": "Niño B (2º)",
+        "feedback": "¡Muy bien! El segundo lugar es después del primero.",
+        "engine_data": {
+          "ordinal_position": 2,
+          "total_positions": 3
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T16:51:01.851Z"
+  },
+  {
+    "game_id": "1b-math-ma01oa03",
+    "oa_code": "MA01OA03",
+    "title": "🧮 Leer números 0 al 20",
+    "description": "Juego de Representar en forma concreta, pictórica y simbólica usando Counter/Number Line",
+    "engine_id": "ENG01",
+    "engine_name": "Counter/Number Line",
+    "format": "trivia_lightning",
+    "grade": "1B",
+    "subject": "MAT",
+    "bloom_level": "Recordar",
+    "complexity": 1,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "max_range": 20,
+        "min_range": 0,
+        "step_size": 1,
+        "difficulty_1b": "easy"
+      },
+      "game_mechanics": [
+        "count",
+        "increment",
+        "decrement",
+        "position_on_line"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "large_buttons": true
+      }
+    },
+    "questions": [
+      {
+        "id": "89a8d873-5038-4b68-9ec2-4b4402cf7167",
+        "question": "¿Qué número ves?",
+        "type": "image_to_text",
+        "image_description": "Número 15 grande y claro",
+        "options": [
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "correct_answer": "15",
+        "feedback": "¡Perfecto! Es el número quince (15).",
+        "engine_data": {
+          "number_value": 15,
+          "representation": "symbolic"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T16:51:01.852Z"
+  },
+  {
+    "game_id": "1b-math-ma01oa04",
+    "oa_code": "MA01OA04",
+    "title": "🧮 Comparar y ordenar 0-20",
+    "description": "Juego de De menor a mayor y viceversa con material concreto usando Drag-Drop Numbers",
+    "engine_id": "ENG02",
+    "engine_name": "Drag-Drop Numbers",
+    "format": "drag_drop_sorting",
+    "grade": "1B",
+    "subject": "MAT",
+    "bloom_level": "Comprender",
+    "complexity": 2,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "max_items": 6,
+        "operations": [
+          "sort_ascending",
+          "simple_addition",
+          "group_by_value"
+        ],
+        "difficulty_1b": "easy"
+      },
+      "game_mechanics": [
+        "drag",
+        "drop",
+        "sort",
+        "group",
+        "match"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "large_buttons": true
+      }
+    },
+    "questions": [
+      {
+        "id": "df5b6b17-4c71-4109-96db-bd10f57d5fa7",
+        "question": "Ordena de MENOR a MAYOR",
+        "type": "drag_drop",
+        "items": [
+          "8",
+          "3",
+          "12",
+          "7"
+        ],
+        "correct_order": [
+          "3",
+          "7",
+          "8",
+          "12"
+        ],
+        "feedback": "¡Genial! El orden correcto es: 3, 7, 8, 12",
+        "engine_data": {
+          "sort_type": "ascending",
+          "max_value": 20
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T16:51:01.852Z"
+  },
+  {
+    "game_id": "1b-math-ma01oa06",
+    "oa_code": "MA01OA06",
+    "title": "🧮 Componer/descomponer 0-20",
+    "description": "Juego de De manera aditiva en forma concreta y pictórica usando Drag-Drop Numbers",
+    "engine_id": "ENG02",
+    "engine_name": "Drag-Drop Numbers",
+    "format": "drag_drop_sorting",
+    "grade": "1B",
+    "subject": "MAT",
+    "bloom_level": "Recordar",
+    "complexity": 1,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "max_items": 6,
+        "operations": [
+          "sort_ascending",
+          "simple_addition",
+          "group_by_value"
+        ],
+        "difficulty_1b": "easy"
+      },
+      "game_mechanics": [
+        "drag",
+        "drop",
+        "sort",
+        "group",
+        "match"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "large_buttons": true
+      }
+    },
+    "questions": [
+      {
+        "id": "787a22fa-3bfa-4cc2-8e07-8341c0b832d3",
+        "question": "10 se puede formar con:",
+        "type": "multiple_choice",
+        "options": [
+          "5 + 5",
+          "6 + 3",
+          "7 + 3",
+          "Todas las anteriores"
+        ],
+        "correct_answer": "Todas las anteriores",
+        "feedback": "¡Excelente! Hay muchas formas de formar el 10.",
+        "engine_data": {
+          "target_number": 10,
+          "composition_type": "additive"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T16:51:01.852Z"
+  },
+  {
+    "game_id": "1b-math-ma01oa09",
+    "oa_code": "MA01OA09",
+    "title": "🧮 Adición y sustracción 0-20",
+    "description": "Juego de Comprender progresivamente las operaciones usando Drag-Drop Numbers",
+    "engine_id": "ENG02",
+    "engine_name": "Drag-Drop Numbers",
+    "format": "trivia_lightning",
+    "grade": "1B",
+    "subject": "MAT",
+    "bloom_level": "Aplicar",
+    "complexity": 3,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "max_items": 6,
+        "operations": [
+          "sort_ascending",
+          "simple_addition",
+          "group_by_value"
+        ],
+        "difficulty_1b": "easy"
+      },
+      "game_mechanics": [
+        "drag",
+        "drop",
+        "sort",
+        "group",
+        "match"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "large_buttons": true
+      }
+    },
+    "questions": [
+      {
+        "id": "7a04217d-8c58-4469-a50c-17313bf7b386",
+        "question": "3 + 4 = ?",
+        "type": "number_input",
+        "correct_answer": "7",
+        "feedback": "¡Correcto! 3 más 4 es igual a 7.",
+        "engine_data": {
+          "operation": "addition",
+          "operand1": 3,
+          "operand2": 4
+        }
+      },
+      {
+        "id": "01d0e707-4e0b-484b-b9ce-88d9cdd79581",
+        "question": "8 - 3 = ?",
+        "type": "number_input",
+        "correct_answer": "5",
+        "feedback": "¡Muy bien! 8 menos 3 es igual a 5.",
+        "engine_data": {
+          "operation": "subtraction",
+          "operand1": 8,
+          "operand2": 3
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T16:51:01.852Z"
+  },
+  {
+    "game_id": "1b-math-ma01oa11",
+    "oa_code": "MA01OA11",
+    "title": "🧮 Patrones repetitivos",
+    "description": "Juego de Reconocer, crear y continuar patrones hasta el 20 usando Counter/Number Line",
+    "engine_id": "ENG01",
+    "engine_name": "Counter/Number Line",
+    "format": "trivia_lightning",
+    "grade": "1B",
+    "subject": "MAT",
+    "bloom_level": "Recordar",
+    "complexity": 1,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "max_range": 20,
+        "min_range": 0,
+        "step_size": 1,
+        "difficulty_1b": "easy"
+      },
+      "game_mechanics": [
+        "count",
+        "increment",
+        "decrement",
+        "position_on_line"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "large_buttons": true
+      }
+    },
+    "questions": [
+      {
+        "id": "12b7b8fd-1ae1-459e-a048-5c1619a7d1f4",
+        "question": "¿Qué sigue? 🔴🔵🔴🔵🔴__",
+        "type": "pattern_completion",
+        "pattern": [
+          "🔴",
+          "🔵",
+          "🔴",
+          "🔵",
+          "🔴"
+        ],
+        "options": [
+          "🔴",
+          "🔵",
+          "🟡",
+          "🟢"
+        ],
+        "correct_answer": "🔵",
+        "feedback": "¡Perfecto! El patrón continúa con azul (🔵).",
+        "engine_data": {
+          "pattern_type": "alternating",
+          "sequence_length": 2
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T16:51:01.852Z"
+  }
+]

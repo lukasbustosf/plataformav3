@@ -1,0 +1,1802 @@
+[
+  {
+    "skin_id": "1b-eng01-animals_farm-v1",
+    "name": "Granja Divertida - Counter/Number Line",
+    "description": "Skin de Animales de la granja que ayudan a aprender optimizado para Counter/Number Line en 1° Básico",
+    "engine_id": "ENG01",
+    "engine_name": "Counter/Number Line",
+    "theme": {
+      "name": "animals_farm",
+      "display_name": "Granja Divertida",
+      "target_age": "6-7 años",
+      "appeal_factors": "familiar, seguro, conocido"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#FFD700",
+        "#FF6B6B",
+        "#4ECDC4",
+        "#45B7D1"
+      ],
+      "characters": [
+        "🐄",
+        "🐷",
+        "🐔",
+        "🐑",
+        "🐰"
+      ],
+      "ui_elements": {
+        "number_line": "visual_track",
+        "counters": "character_tokens",
+        "background": "themed_landscape",
+        "feedback": "character_reactions"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_animals_farm_main.png",
+        "bg_animals_farm_success.png",
+        "bg_animals_farm_thinking.png"
+      ],
+      "characters": [
+        "char_animals_farm_128004.png",
+        "char_animals_farm_128055.png",
+        "char_animals_farm_128020.png",
+        "char_animals_farm_128017.png",
+        "char_animals_farm_128048.png"
+      ],
+      "ui_elements": [
+        "btn_animals_farm_primary.png",
+        "btn_animals_farm_secondary.png",
+        "icon_animals_farm_correct.png",
+        "icon_animals_farm_incorrect.png",
+        "icon_animals_farm_hint.png"
+      ],
+      "sounds": [
+        "sfx_animals_farm_success.mp3",
+        "sfx_animals_farm_click.mp3",
+        "sfx_animals_farm_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🐄",
+        "🐷",
+        "🐔",
+        "🐑",
+        "🐰"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "MAT",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.882Z"
+  },
+  {
+    "skin_id": "1b-eng01-forest_friends-v2",
+    "name": "Amigos del Bosque - Counter/Number Line",
+    "description": "Skin de Aventuras con animales del bosque optimizado para Counter/Number Line en 1° Básico",
+    "engine_id": "ENG01",
+    "engine_name": "Counter/Number Line",
+    "theme": {
+      "name": "forest_friends",
+      "display_name": "Amigos del Bosque",
+      "target_age": "6-7 años",
+      "appeal_factors": "aventura, naturaleza"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#2ECC71",
+        "#F39C12",
+        "#E74C3C",
+        "#9B59B6"
+      ],
+      "characters": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "ui_elements": {
+        "number_line": "visual_track",
+        "counters": "character_tokens",
+        "background": "themed_landscape",
+        "feedback": "character_reactions"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_forest_friends_main.png",
+        "bg_forest_friends_success.png",
+        "bg_forest_friends_thinking.png"
+      ],
+      "characters": [
+        "char_forest_friends_129418.png",
+        "char_forest_friends_128059.png",
+        "char_forest_friends_129437.png",
+        "char_forest_friends_128063.png",
+        "char_forest_friends_129417.png"
+      ],
+      "ui_elements": [
+        "btn_forest_friends_primary.png",
+        "btn_forest_friends_secondary.png",
+        "icon_forest_friends_correct.png",
+        "icon_forest_friends_incorrect.png",
+        "icon_forest_friends_hint.png"
+      ],
+      "sounds": [
+        "sfx_forest_friends_success.mp3",
+        "sfx_forest_friends_click.mp3",
+        "sfx_forest_friends_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "MAT",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.883Z"
+  },
+  {
+    "skin_id": "1b-eng01-space_adventure-v3",
+    "name": "Aventura Espacial - Counter/Number Line",
+    "description": "Skin de Viaja por el espacio con aliens amigables optimizado para Counter/Number Line en 1° Básico",
+    "engine_id": "ENG01",
+    "engine_name": "Counter/Number Line",
+    "theme": {
+      "name": "space_adventure",
+      "display_name": "Aventura Espacial",
+      "target_age": "6-7 años",
+      "appeal_factors": "fantasía, exploración"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#8E44AD",
+        "#3498DB",
+        "#F39C12",
+        "#E74C3C"
+      ],
+      "characters": [
+        "🚀",
+        "👽",
+        "🌟",
+        "🪐",
+        "🌙"
+      ],
+      "ui_elements": {
+        "number_line": "visual_track",
+        "counters": "character_tokens",
+        "background": "themed_landscape",
+        "feedback": "character_reactions"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_space_adventure_main.png",
+        "bg_space_adventure_success.png",
+        "bg_space_adventure_thinking.png"
+      ],
+      "characters": [
+        "char_space_adventure_128640.png",
+        "char_space_adventure_128125.png",
+        "char_space_adventure_127775.png",
+        "char_space_adventure_129680.png",
+        "char_space_adventure_127769.png"
+      ],
+      "ui_elements": [
+        "btn_space_adventure_primary.png",
+        "btn_space_adventure_secondary.png",
+        "icon_space_adventure_correct.png",
+        "icon_space_adventure_incorrect.png",
+        "icon_space_adventure_hint.png"
+      ],
+      "sounds": [
+        "sfx_space_adventure_success.mp3",
+        "sfx_space_adventure_click.mp3",
+        "sfx_space_adventure_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🚀",
+        "👽",
+        "🌟",
+        "🪐",
+        "🌙"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "MAT",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.883Z"
+  },
+  {
+    "skin_id": "1b-eng02-underwater_world-v1",
+    "name": "Mundo Submarino - Drag-Drop Numbers",
+    "description": "Skin de Explora el océano con peces amigables optimizado para Drag-Drop Numbers en 1° Básico",
+    "engine_id": "ENG02",
+    "engine_name": "Drag-Drop Numbers",
+    "theme": {
+      "name": "underwater_world",
+      "display_name": "Mundo Submarino",
+      "target_age": "6-7 años",
+      "appeal_factors": "misterio, exploración"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#3498DB",
+        "#1ABC9C",
+        "#F1C40F",
+        "#E67E22"
+      ],
+      "characters": [
+        "🐠",
+        "🐙",
+        "🐟",
+        "🐢",
+        "⭐"
+      ],
+      "ui_elements": {
+        "drag_items": "themed_objects",
+        "drop_zones": "themed_containers",
+        "background": "immersive_environment",
+        "feedback": "character_celebrations"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_underwater_world_main.png",
+        "bg_underwater_world_success.png",
+        "bg_underwater_world_thinking.png"
+      ],
+      "characters": [
+        "char_underwater_world_128032.png",
+        "char_underwater_world_128025.png",
+        "char_underwater_world_128031.png",
+        "char_underwater_world_128034.png",
+        "char_underwater_world_11088.png"
+      ],
+      "ui_elements": [
+        "btn_underwater_world_primary.png",
+        "btn_underwater_world_secondary.png",
+        "icon_underwater_world_correct.png",
+        "icon_underwater_world_incorrect.png",
+        "icon_underwater_world_hint.png"
+      ],
+      "sounds": [
+        "sfx_underwater_world_success.mp3",
+        "sfx_underwater_world_click.mp3",
+        "sfx_underwater_world_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🐠",
+        "🐙",
+        "🐟",
+        "🐢",
+        "⭐"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "MAT",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.883Z"
+  },
+  {
+    "skin_id": "1b-eng02-fairy_tale-v2",
+    "name": "Cuentos de Hadas - Drag-Drop Numbers",
+    "description": "Skin de Mundo mágico con princesas y castillos optimizado para Drag-Drop Numbers en 1° Básico",
+    "engine_id": "ENG02",
+    "engine_name": "Drag-Drop Numbers",
+    "theme": {
+      "name": "fairy_tale",
+      "display_name": "Cuentos de Hadas",
+      "target_age": "6-7 años",
+      "appeal_factors": "magia, fantasía"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#E91E63",
+        "#9C27B0",
+        "#F06292",
+        "#FFB74D"
+      ],
+      "characters": [
+        "👸",
+        "🏰",
+        "🦄",
+        "🌈",
+        "⭐"
+      ],
+      "ui_elements": {
+        "drag_items": "themed_objects",
+        "drop_zones": "themed_containers",
+        "background": "immersive_environment",
+        "feedback": "character_celebrations"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_fairy_tale_main.png",
+        "bg_fairy_tale_success.png",
+        "bg_fairy_tale_thinking.png"
+      ],
+      "characters": [
+        "char_fairy_tale_128120.png",
+        "char_fairy_tale_127984.png",
+        "char_fairy_tale_129412.png",
+        "char_fairy_tale_127752.png",
+        "char_fairy_tale_11088.png"
+      ],
+      "ui_elements": [
+        "btn_fairy_tale_primary.png",
+        "btn_fairy_tale_secondary.png",
+        "icon_fairy_tale_correct.png",
+        "icon_fairy_tale_incorrect.png",
+        "icon_fairy_tale_hint.png"
+      ],
+      "sounds": [
+        "sfx_fairy_tale_success.mp3",
+        "sfx_fairy_tale_click.mp3",
+        "sfx_fairy_tale_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "👸",
+        "🏰",
+        "🦄",
+        "🌈",
+        "⭐"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "MAT",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.884Z"
+  },
+  {
+    "skin_id": "1b-eng02-dinosaur_park-v3",
+    "name": "Parque de Dinosaurios - Drag-Drop Numbers",
+    "description": "Skin de Aprende con dinosaurios amigables optimizado para Drag-Drop Numbers en 1° Básico",
+    "engine_id": "ENG02",
+    "engine_name": "Drag-Drop Numbers",
+    "theme": {
+      "name": "dinosaur_park",
+      "display_name": "Parque de Dinosaurios",
+      "target_age": "6-7 años",
+      "appeal_factors": "aventura, prehistoria"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#4CAF50",
+        "#FF9800",
+        "#795548",
+        "#607D8B"
+      ],
+      "characters": [
+        "🦕",
+        "🦖",
+        "🥚",
+        "🌴",
+        "🏔️"
+      ],
+      "ui_elements": {
+        "drag_items": "themed_objects",
+        "drop_zones": "themed_containers",
+        "background": "immersive_environment",
+        "feedback": "character_celebrations"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_dinosaur_park_main.png",
+        "bg_dinosaur_park_success.png",
+        "bg_dinosaur_park_thinking.png"
+      ],
+      "characters": [
+        "char_dinosaur_park_129429.png",
+        "char_dinosaur_park_129430.png",
+        "char_dinosaur_park_129370.png",
+        "char_dinosaur_park_127796.png",
+        "char_dinosaur_park_127956.png"
+      ],
+      "ui_elements": [
+        "btn_dinosaur_park_primary.png",
+        "btn_dinosaur_park_secondary.png",
+        "icon_dinosaur_park_correct.png",
+        "icon_dinosaur_park_incorrect.png",
+        "icon_dinosaur_park_hint.png"
+      ],
+      "sounds": [
+        "sfx_dinosaur_park_success.mp3",
+        "sfx_dinosaur_park_click.mp3",
+        "sfx_dinosaur_park_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🦕",
+        "🦖",
+        "🥚",
+        "🌴",
+        "🏔️"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "MAT",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.884Z"
+  },
+  {
+    "skin_id": "1b-eng02-forest_friends-v4",
+    "name": "Amigos del Bosque - Drag-Drop Numbers",
+    "description": "Skin de Aventuras con animales del bosque optimizado para Drag-Drop Numbers en 1° Básico",
+    "engine_id": "ENG02",
+    "engine_name": "Drag-Drop Numbers",
+    "theme": {
+      "name": "forest_friends",
+      "display_name": "Amigos del Bosque",
+      "target_age": "6-7 años",
+      "appeal_factors": "aventura, naturaleza"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#2ECC71",
+        "#F39C12",
+        "#E74C3C",
+        "#9B59B6"
+      ],
+      "characters": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "ui_elements": {
+        "drag_items": "themed_objects",
+        "drop_zones": "themed_containers",
+        "background": "immersive_environment",
+        "feedback": "character_celebrations"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_forest_friends_main.png",
+        "bg_forest_friends_success.png",
+        "bg_forest_friends_thinking.png"
+      ],
+      "characters": [
+        "char_forest_friends_129418.png",
+        "char_forest_friends_128059.png",
+        "char_forest_friends_129437.png",
+        "char_forest_friends_128063.png",
+        "char_forest_friends_129417.png"
+      ],
+      "ui_elements": [
+        "btn_forest_friends_primary.png",
+        "btn_forest_friends_secondary.png",
+        "icon_forest_friends_correct.png",
+        "icon_forest_friends_incorrect.png",
+        "icon_forest_friends_hint.png"
+      ],
+      "sounds": [
+        "sfx_forest_friends_success.mp3",
+        "sfx_forest_friends_click.mp3",
+        "sfx_forest_friends_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "MAT",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.884Z"
+  },
+  {
+    "skin_id": "1b-eng05-animals_farm-v1",
+    "name": "Granja Divertida - Text Recognition",
+    "description": "Skin de Animales de la granja que ayudan a aprender optimizado para Text Recognition en 1° Básico",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "theme": {
+      "name": "animals_farm",
+      "display_name": "Granja Divertida",
+      "target_age": "6-7 años",
+      "appeal_factors": "familiar, seguro, conocido"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#FFD700",
+        "#FF6B6B",
+        "#4ECDC4",
+        "#45B7D1"
+      ],
+      "characters": [
+        "🐄",
+        "🐷",
+        "🐔",
+        "🐑",
+        "🐰"
+      ],
+      "ui_elements": {
+        "text_display": "story_book_style",
+        "letter_cards": "themed_tiles",
+        "background": "reading_environment",
+        "feedback": "character_encouragement"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_animals_farm_main.png",
+        "bg_animals_farm_success.png",
+        "bg_animals_farm_thinking.png"
+      ],
+      "characters": [
+        "char_animals_farm_128004.png",
+        "char_animals_farm_128055.png",
+        "char_animals_farm_128020.png",
+        "char_animals_farm_128017.png",
+        "char_animals_farm_128048.png"
+      ],
+      "ui_elements": [
+        "btn_animals_farm_primary.png",
+        "btn_animals_farm_secondary.png",
+        "icon_animals_farm_correct.png",
+        "icon_animals_farm_incorrect.png",
+        "icon_animals_farm_hint.png"
+      ],
+      "sounds": [
+        "sfx_animals_farm_success.mp3",
+        "sfx_animals_farm_click.mp3",
+        "sfx_animals_farm_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🐄",
+        "🐷",
+        "🐔",
+        "🐑",
+        "🐰"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.884Z"
+  },
+  {
+    "skin_id": "1b-eng05-forest_friends-v2",
+    "name": "Amigos del Bosque - Text Recognition",
+    "description": "Skin de Aventuras con animales del bosque optimizado para Text Recognition en 1° Básico",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "theme": {
+      "name": "forest_friends",
+      "display_name": "Amigos del Bosque",
+      "target_age": "6-7 años",
+      "appeal_factors": "aventura, naturaleza"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#2ECC71",
+        "#F39C12",
+        "#E74C3C",
+        "#9B59B6"
+      ],
+      "characters": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "ui_elements": {
+        "text_display": "story_book_style",
+        "letter_cards": "themed_tiles",
+        "background": "reading_environment",
+        "feedback": "character_encouragement"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_forest_friends_main.png",
+        "bg_forest_friends_success.png",
+        "bg_forest_friends_thinking.png"
+      ],
+      "characters": [
+        "char_forest_friends_129418.png",
+        "char_forest_friends_128059.png",
+        "char_forest_friends_129437.png",
+        "char_forest_friends_128063.png",
+        "char_forest_friends_129417.png"
+      ],
+      "ui_elements": [
+        "btn_forest_friends_primary.png",
+        "btn_forest_friends_secondary.png",
+        "icon_forest_friends_correct.png",
+        "icon_forest_friends_incorrect.png",
+        "icon_forest_friends_hint.png"
+      ],
+      "sounds": [
+        "sfx_forest_friends_success.mp3",
+        "sfx_forest_friends_click.mp3",
+        "sfx_forest_friends_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.884Z"
+  },
+  {
+    "skin_id": "1b-eng05-fairy_tale-v3",
+    "name": "Cuentos de Hadas - Text Recognition",
+    "description": "Skin de Mundo mágico con princesas y castillos optimizado para Text Recognition en 1° Básico",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "theme": {
+      "name": "fairy_tale",
+      "display_name": "Cuentos de Hadas",
+      "target_age": "6-7 años",
+      "appeal_factors": "magia, fantasía"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#E91E63",
+        "#9C27B0",
+        "#F06292",
+        "#FFB74D"
+      ],
+      "characters": [
+        "👸",
+        "🏰",
+        "🦄",
+        "🌈",
+        "⭐"
+      ],
+      "ui_elements": {
+        "text_display": "story_book_style",
+        "letter_cards": "themed_tiles",
+        "background": "reading_environment",
+        "feedback": "character_encouragement"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_fairy_tale_main.png",
+        "bg_fairy_tale_success.png",
+        "bg_fairy_tale_thinking.png"
+      ],
+      "characters": [
+        "char_fairy_tale_128120.png",
+        "char_fairy_tale_127984.png",
+        "char_fairy_tale_129412.png",
+        "char_fairy_tale_127752.png",
+        "char_fairy_tale_11088.png"
+      ],
+      "ui_elements": [
+        "btn_fairy_tale_primary.png",
+        "btn_fairy_tale_secondary.png",
+        "icon_fairy_tale_correct.png",
+        "icon_fairy_tale_incorrect.png",
+        "icon_fairy_tale_hint.png"
+      ],
+      "sounds": [
+        "sfx_fairy_tale_success.mp3",
+        "sfx_fairy_tale_click.mp3",
+        "sfx_fairy_tale_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "👸",
+        "🏰",
+        "🦄",
+        "🌈",
+        "⭐"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.884Z"
+  },
+  {
+    "skin_id": "1b-eng05-space_adventure-v4",
+    "name": "Aventura Espacial - Text Recognition",
+    "description": "Skin de Viaja por el espacio con aliens amigables optimizado para Text Recognition en 1° Básico",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "theme": {
+      "name": "space_adventure",
+      "display_name": "Aventura Espacial",
+      "target_age": "6-7 años",
+      "appeal_factors": "fantasía, exploración"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#8E44AD",
+        "#3498DB",
+        "#F39C12",
+        "#E74C3C"
+      ],
+      "characters": [
+        "🚀",
+        "👽",
+        "🌟",
+        "🪐",
+        "🌙"
+      ],
+      "ui_elements": {
+        "text_display": "story_book_style",
+        "letter_cards": "themed_tiles",
+        "background": "reading_environment",
+        "feedback": "character_encouragement"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_space_adventure_main.png",
+        "bg_space_adventure_success.png",
+        "bg_space_adventure_thinking.png"
+      ],
+      "characters": [
+        "char_space_adventure_128640.png",
+        "char_space_adventure_128125.png",
+        "char_space_adventure_127775.png",
+        "char_space_adventure_129680.png",
+        "char_space_adventure_127769.png"
+      ],
+      "ui_elements": [
+        "btn_space_adventure_primary.png",
+        "btn_space_adventure_secondary.png",
+        "icon_space_adventure_correct.png",
+        "icon_space_adventure_incorrect.png",
+        "icon_space_adventure_hint.png"
+      ],
+      "sounds": [
+        "sfx_space_adventure_success.mp3",
+        "sfx_space_adventure_click.mp3",
+        "sfx_space_adventure_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🚀",
+        "👽",
+        "🌟",
+        "🪐",
+        "🌙"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.884Z"
+  },
+  {
+    "skin_id": "1b-eng05-underwater_world-v5",
+    "name": "Mundo Submarino - Text Recognition",
+    "description": "Skin de Explora el océano con peces amigables optimizado para Text Recognition en 1° Básico",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "theme": {
+      "name": "underwater_world",
+      "display_name": "Mundo Submarino",
+      "target_age": "6-7 años",
+      "appeal_factors": "misterio, exploración"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#3498DB",
+        "#1ABC9C",
+        "#F1C40F",
+        "#E67E22"
+      ],
+      "characters": [
+        "🐠",
+        "🐙",
+        "🐟",
+        "🐢",
+        "⭐"
+      ],
+      "ui_elements": {
+        "text_display": "story_book_style",
+        "letter_cards": "themed_tiles",
+        "background": "reading_environment",
+        "feedback": "character_encouragement"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_underwater_world_main.png",
+        "bg_underwater_world_success.png",
+        "bg_underwater_world_thinking.png"
+      ],
+      "characters": [
+        "char_underwater_world_128032.png",
+        "char_underwater_world_128025.png",
+        "char_underwater_world_128031.png",
+        "char_underwater_world_128034.png",
+        "char_underwater_world_11088.png"
+      ],
+      "ui_elements": [
+        "btn_underwater_world_primary.png",
+        "btn_underwater_world_secondary.png",
+        "icon_underwater_world_correct.png",
+        "icon_underwater_world_incorrect.png",
+        "icon_underwater_world_hint.png"
+      ],
+      "sounds": [
+        "sfx_underwater_world_success.mp3",
+        "sfx_underwater_world_click.mp3",
+        "sfx_underwater_world_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🐠",
+        "🐙",
+        "🐟",
+        "🐢",
+        "⭐"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.885Z"
+  },
+  {
+    "skin_id": "1b-eng06-animals_farm-v1",
+    "name": "Granja Divertida - Letter-Sound Matching",
+    "description": "Skin de Animales de la granja que ayudan a aprender optimizado para Letter-Sound Matching en 1° Básico",
+    "engine_id": "ENG06",
+    "engine_name": "Letter-Sound Matching",
+    "theme": {
+      "name": "animals_farm",
+      "display_name": "Granja Divertida",
+      "target_age": "6-7 años",
+      "appeal_factors": "familiar, seguro, conocido"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#FFD700",
+        "#FF6B6B",
+        "#4ECDC4",
+        "#45B7D1"
+      ],
+      "characters": [
+        "🐄",
+        "🐷",
+        "🐔",
+        "🐑",
+        "🐰"
+      ],
+      "ui_elements": {
+        "sound_buttons": "character_speakers",
+        "letter_display": "magical_letters",
+        "background": "sound_landscape",
+        "feedback": "audio_visual_celebration"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_animals_farm_main.png",
+        "bg_animals_farm_success.png",
+        "bg_animals_farm_thinking.png"
+      ],
+      "characters": [
+        "char_animals_farm_128004.png",
+        "char_animals_farm_128055.png",
+        "char_animals_farm_128020.png",
+        "char_animals_farm_128017.png",
+        "char_animals_farm_128048.png"
+      ],
+      "ui_elements": [
+        "btn_animals_farm_primary.png",
+        "btn_animals_farm_secondary.png",
+        "icon_animals_farm_correct.png",
+        "icon_animals_farm_incorrect.png",
+        "icon_animals_farm_hint.png"
+      ],
+      "sounds": [
+        "sfx_animals_farm_success.mp3",
+        "sfx_animals_farm_click.mp3",
+        "sfx_animals_farm_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🐄",
+        "🐷",
+        "🐔",
+        "🐑",
+        "🐰"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.885Z"
+  },
+  {
+    "skin_id": "1b-eng06-forest_friends-v2",
+    "name": "Amigos del Bosque - Letter-Sound Matching",
+    "description": "Skin de Aventuras con animales del bosque optimizado para Letter-Sound Matching en 1° Básico",
+    "engine_id": "ENG06",
+    "engine_name": "Letter-Sound Matching",
+    "theme": {
+      "name": "forest_friends",
+      "display_name": "Amigos del Bosque",
+      "target_age": "6-7 años",
+      "appeal_factors": "aventura, naturaleza"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#2ECC71",
+        "#F39C12",
+        "#E74C3C",
+        "#9B59B6"
+      ],
+      "characters": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "ui_elements": {
+        "sound_buttons": "character_speakers",
+        "letter_display": "magical_letters",
+        "background": "sound_landscape",
+        "feedback": "audio_visual_celebration"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_forest_friends_main.png",
+        "bg_forest_friends_success.png",
+        "bg_forest_friends_thinking.png"
+      ],
+      "characters": [
+        "char_forest_friends_129418.png",
+        "char_forest_friends_128059.png",
+        "char_forest_friends_129437.png",
+        "char_forest_friends_128063.png",
+        "char_forest_friends_129417.png"
+      ],
+      "ui_elements": [
+        "btn_forest_friends_primary.png",
+        "btn_forest_friends_secondary.png",
+        "icon_forest_friends_correct.png",
+        "icon_forest_friends_incorrect.png",
+        "icon_forest_friends_hint.png"
+      ],
+      "sounds": [
+        "sfx_forest_friends_success.mp3",
+        "sfx_forest_friends_click.mp3",
+        "sfx_forest_friends_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.885Z"
+  },
+  {
+    "skin_id": "1b-eng06-fairy_tale-v3",
+    "name": "Cuentos de Hadas - Letter-Sound Matching",
+    "description": "Skin de Mundo mágico con princesas y castillos optimizado para Letter-Sound Matching en 1° Básico",
+    "engine_id": "ENG06",
+    "engine_name": "Letter-Sound Matching",
+    "theme": {
+      "name": "fairy_tale",
+      "display_name": "Cuentos de Hadas",
+      "target_age": "6-7 años",
+      "appeal_factors": "magia, fantasía"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#E91E63",
+        "#9C27B0",
+        "#F06292",
+        "#FFB74D"
+      ],
+      "characters": [
+        "👸",
+        "🏰",
+        "🦄",
+        "🌈",
+        "⭐"
+      ],
+      "ui_elements": {
+        "sound_buttons": "character_speakers",
+        "letter_display": "magical_letters",
+        "background": "sound_landscape",
+        "feedback": "audio_visual_celebration"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_fairy_tale_main.png",
+        "bg_fairy_tale_success.png",
+        "bg_fairy_tale_thinking.png"
+      ],
+      "characters": [
+        "char_fairy_tale_128120.png",
+        "char_fairy_tale_127984.png",
+        "char_fairy_tale_129412.png",
+        "char_fairy_tale_127752.png",
+        "char_fairy_tale_11088.png"
+      ],
+      "ui_elements": [
+        "btn_fairy_tale_primary.png",
+        "btn_fairy_tale_secondary.png",
+        "icon_fairy_tale_correct.png",
+        "icon_fairy_tale_incorrect.png",
+        "icon_fairy_tale_hint.png"
+      ],
+      "sounds": [
+        "sfx_fairy_tale_success.mp3",
+        "sfx_fairy_tale_click.mp3",
+        "sfx_fairy_tale_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "👸",
+        "🏰",
+        "🦄",
+        "🌈",
+        "⭐"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.885Z"
+  },
+  {
+    "skin_id": "1b-eng06-dinosaur_park-v4",
+    "name": "Parque de Dinosaurios - Letter-Sound Matching",
+    "description": "Skin de Aprende con dinosaurios amigables optimizado para Letter-Sound Matching en 1° Básico",
+    "engine_id": "ENG06",
+    "engine_name": "Letter-Sound Matching",
+    "theme": {
+      "name": "dinosaur_park",
+      "display_name": "Parque de Dinosaurios",
+      "target_age": "6-7 años",
+      "appeal_factors": "aventura, prehistoria"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#4CAF50",
+        "#FF9800",
+        "#795548",
+        "#607D8B"
+      ],
+      "characters": [
+        "🦕",
+        "🦖",
+        "🥚",
+        "🌴",
+        "🏔️"
+      ],
+      "ui_elements": {
+        "sound_buttons": "character_speakers",
+        "letter_display": "magical_letters",
+        "background": "sound_landscape",
+        "feedback": "audio_visual_celebration"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_dinosaur_park_main.png",
+        "bg_dinosaur_park_success.png",
+        "bg_dinosaur_park_thinking.png"
+      ],
+      "characters": [
+        "char_dinosaur_park_129429.png",
+        "char_dinosaur_park_129430.png",
+        "char_dinosaur_park_129370.png",
+        "char_dinosaur_park_127796.png",
+        "char_dinosaur_park_127956.png"
+      ],
+      "ui_elements": [
+        "btn_dinosaur_park_primary.png",
+        "btn_dinosaur_park_secondary.png",
+        "icon_dinosaur_park_correct.png",
+        "icon_dinosaur_park_incorrect.png",
+        "icon_dinosaur_park_hint.png"
+      ],
+      "sounds": [
+        "sfx_dinosaur_park_success.mp3",
+        "sfx_dinosaur_park_click.mp3",
+        "sfx_dinosaur_park_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🦕",
+        "🦖",
+        "🥚",
+        "🌴",
+        "🏔️"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.885Z"
+  },
+  {
+    "skin_id": "1b-eng07-fairy_tale-v1",
+    "name": "Cuentos de Hadas - Reading Fluency",
+    "description": "Skin de Mundo mágico con princesas y castillos optimizado para Reading Fluency en 1° Básico",
+    "engine_id": "ENG07",
+    "engine_name": "Reading Fluency",
+    "theme": {
+      "name": "fairy_tale",
+      "display_name": "Cuentos de Hadas",
+      "target_age": "6-7 años",
+      "appeal_factors": "magia, fantasía"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#E91E63",
+        "#9C27B0",
+        "#F06292",
+        "#FFB74D"
+      ],
+      "characters": [
+        "👸",
+        "🏰",
+        "🦄",
+        "🌈",
+        "⭐"
+      ],
+      "ui_elements": {
+        "text_flow": "story_progression",
+        "reading_cursor": "character_guide",
+        "background": "narrative_setting",
+        "feedback": "story_rewards"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_fairy_tale_main.png",
+        "bg_fairy_tale_success.png",
+        "bg_fairy_tale_thinking.png"
+      ],
+      "characters": [
+        "char_fairy_tale_128120.png",
+        "char_fairy_tale_127984.png",
+        "char_fairy_tale_129412.png",
+        "char_fairy_tale_127752.png",
+        "char_fairy_tale_11088.png"
+      ],
+      "ui_elements": [
+        "btn_fairy_tale_primary.png",
+        "btn_fairy_tale_secondary.png",
+        "icon_fairy_tale_correct.png",
+        "icon_fairy_tale_incorrect.png",
+        "icon_fairy_tale_hint.png"
+      ],
+      "sounds": [
+        "sfx_fairy_tale_success.mp3",
+        "sfx_fairy_tale_click.mp3",
+        "sfx_fairy_tale_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "👸",
+        "🏰",
+        "🦄",
+        "🌈",
+        "⭐"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.885Z"
+  },
+  {
+    "skin_id": "1b-eng07-forest_friends-v2",
+    "name": "Amigos del Bosque - Reading Fluency",
+    "description": "Skin de Aventuras con animales del bosque optimizado para Reading Fluency en 1° Básico",
+    "engine_id": "ENG07",
+    "engine_name": "Reading Fluency",
+    "theme": {
+      "name": "forest_friends",
+      "display_name": "Amigos del Bosque",
+      "target_age": "6-7 años",
+      "appeal_factors": "aventura, naturaleza"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#2ECC71",
+        "#F39C12",
+        "#E74C3C",
+        "#9B59B6"
+      ],
+      "characters": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "ui_elements": {
+        "text_flow": "story_progression",
+        "reading_cursor": "character_guide",
+        "background": "narrative_setting",
+        "feedback": "story_rewards"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_forest_friends_main.png",
+        "bg_forest_friends_success.png",
+        "bg_forest_friends_thinking.png"
+      ],
+      "characters": [
+        "char_forest_friends_129418.png",
+        "char_forest_friends_128059.png",
+        "char_forest_friends_129437.png",
+        "char_forest_friends_128063.png",
+        "char_forest_friends_129417.png"
+      ],
+      "ui_elements": [
+        "btn_forest_friends_primary.png",
+        "btn_forest_friends_secondary.png",
+        "icon_forest_friends_correct.png",
+        "icon_forest_friends_incorrect.png",
+        "icon_forest_friends_hint.png"
+      ],
+      "sounds": [
+        "sfx_forest_friends_success.mp3",
+        "sfx_forest_friends_click.mp3",
+        "sfx_forest_friends_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🦊",
+        "🐻",
+        "🦝",
+        "🐿️",
+        "🦉"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.886Z"
+  },
+  {
+    "skin_id": "1b-eng07-space_adventure-v3",
+    "name": "Aventura Espacial - Reading Fluency",
+    "description": "Skin de Viaja por el espacio con aliens amigables optimizado para Reading Fluency en 1° Básico",
+    "engine_id": "ENG07",
+    "engine_name": "Reading Fluency",
+    "theme": {
+      "name": "space_adventure",
+      "display_name": "Aventura Espacial",
+      "target_age": "6-7 años",
+      "appeal_factors": "fantasía, exploración"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#8E44AD",
+        "#3498DB",
+        "#F39C12",
+        "#E74C3C"
+      ],
+      "characters": [
+        "🚀",
+        "👽",
+        "🌟",
+        "🪐",
+        "🌙"
+      ],
+      "ui_elements": {
+        "text_flow": "story_progression",
+        "reading_cursor": "character_guide",
+        "background": "narrative_setting",
+        "feedback": "story_rewards"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_space_adventure_main.png",
+        "bg_space_adventure_success.png",
+        "bg_space_adventure_thinking.png"
+      ],
+      "characters": [
+        "char_space_adventure_128640.png",
+        "char_space_adventure_128125.png",
+        "char_space_adventure_127775.png",
+        "char_space_adventure_129680.png",
+        "char_space_adventure_127769.png"
+      ],
+      "ui_elements": [
+        "btn_space_adventure_primary.png",
+        "btn_space_adventure_secondary.png",
+        "icon_space_adventure_correct.png",
+        "icon_space_adventure_incorrect.png",
+        "icon_space_adventure_hint.png"
+      ],
+      "sounds": [
+        "sfx_space_adventure_success.mp3",
+        "sfx_space_adventure_click.mp3",
+        "sfx_space_adventure_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🚀",
+        "👽",
+        "🌟",
+        "🪐",
+        "🌙"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.886Z"
+  },
+  {
+    "skin_id": "1b-eng07-underwater_world-v4",
+    "name": "Mundo Submarino - Reading Fluency",
+    "description": "Skin de Explora el océano con peces amigables optimizado para Reading Fluency en 1° Básico",
+    "engine_id": "ENG07",
+    "engine_name": "Reading Fluency",
+    "theme": {
+      "name": "underwater_world",
+      "display_name": "Mundo Submarino",
+      "target_age": "6-7 años",
+      "appeal_factors": "misterio, exploración"
+    },
+    "visual_config": {
+      "primary_colors": [
+        "#3498DB",
+        "#1ABC9C",
+        "#F1C40F",
+        "#E67E22"
+      ],
+      "characters": [
+        "🐠",
+        "🐙",
+        "🐟",
+        "🐢",
+        "⭐"
+      ],
+      "ui_elements": {
+        "text_flow": "story_progression",
+        "reading_cursor": "character_guide",
+        "background": "narrative_setting",
+        "feedback": "story_rewards"
+      },
+      "font_size": "large",
+      "contrast": "high",
+      "animations": "gentle",
+      "sounds": "soft",
+      "button_style": "rounded_friendly",
+      "icon_style": "cartoon_simple",
+      "background_complexity": "low",
+      "character_expressions": "always_positive"
+    },
+    "required_assets": {
+      "backgrounds": [
+        "bg_underwater_world_main.png",
+        "bg_underwater_world_success.png",
+        "bg_underwater_world_thinking.png"
+      ],
+      "characters": [
+        "char_underwater_world_128032.png",
+        "char_underwater_world_128025.png",
+        "char_underwater_world_128031.png",
+        "char_underwater_world_128034.png",
+        "char_underwater_world_11088.png"
+      ],
+      "ui_elements": [
+        "btn_underwater_world_primary.png",
+        "btn_underwater_world_secondary.png",
+        "icon_underwater_world_correct.png",
+        "icon_underwater_world_incorrect.png",
+        "icon_underwater_world_hint.png"
+      ],
+      "sounds": [
+        "sfx_underwater_world_success.mp3",
+        "sfx_underwater_world_click.mp3",
+        "sfx_underwater_world_transition.mp3"
+      ]
+    },
+    "pedagogical_features": {
+      "distraction_level": "minimal",
+      "motivation_elements": [
+        "🐠",
+        "🐙",
+        "🐟",
+        "🐢",
+        "⭐"
+      ],
+      "reward_system": "character_based",
+      "accessibility": {
+        "colorblind_friendly": true,
+        "high_contrast_available": true,
+        "audio_cues": true,
+        "simplified_mode": true
+      }
+    },
+    "target_grade": "1B",
+    "subject_compatibility": "LEN",
+    "difficulty_level": "beginner",
+    "created_for": "primero_basico_specific",
+    "created_at": "2025-07-09T18:56:41.886Z"
+  }
+]

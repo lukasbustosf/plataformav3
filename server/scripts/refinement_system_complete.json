@@ -1,0 +1,590 @@
+{
+  "metadata": {
+    "title": "Sistema de Refinamiento EDU21",
+    "version": "1.0",
+    "created_at": "2025-07-08T12:36:08.413348",
+    "purpose": "Mejora continua basada en feedback del piloto"
+  },
+  "feedback_collection": {
+    "student_feedback": {
+      "collection_methods": [
+        {
+          "method": "in_app_ratings",
+          "frequency": "after_each_session",
+          "questions": [
+            {
+              "q": "¿Te gustó este juego?",
+              "type": "emoji_scale",
+              "scale": 5
+            },
+            {
+              "q": "¿Fue fácil o difícil?",
+              "type": "difficulty_scale",
+              "scale": 5
+            },
+            {
+              "q": "¿Entendiste las instrucciones?",
+              "type": "yes_no_maybe"
+            }
+          ],
+          "target": "all_students",
+          "automated": true
+        },
+        {
+          "method": "weekly_surveys",
+          "frequency": "weekly",
+          "questions": [
+            {
+              "q": "¿Cuál fue tu juego favorito esta semana?",
+              "type": "multiple_choice"
+            },
+            {
+              "q": "¿Qué fue lo más difícil?",
+              "type": "open_text"
+            },
+            {
+              "q": "¿Qué te gustaría cambiar?",
+              "type": "open_text"
+            },
+            {
+              "q": "¿Recomendarías estos juegos?",
+              "type": "yes_no"
+            }
+          ],
+          "target": "sample_students",
+          "automated": false
+        },
+        {
+          "method": "focus_groups",
+          "frequency": "bi_weekly",
+          "questions": [
+            "¿Qué personajes/temas te gustan más?",
+            "¿Qué juegos son muy fáciles/difíciles?",
+            "¿Cómo te sientes cuando juegas?",
+            "¿Qué otros juegos te gustaría tener?"
+          ],
+          "target": "representative_sample",
+          "automated": false,
+          "moderator_required": true
+        }
+      ],
+      "analytics_capture": [
+        "time_per_session",
+        "completion_rates",
+        "error_patterns",
+        "help_requests",
+        "rage_quit_moments",
+        "skin_preferences",
+        "replay_behavior"
+      ]
+    },
+    "teacher_feedback": {
+      "collection_methods": [
+        {
+          "method": "daily_quick_check",
+          "frequency": "after_each_class",
+          "questions": [
+            {
+              "q": "¿Cómo fue la respuesta de los estudiantes?",
+              "type": "scale_5"
+            },
+            {
+              "q": "¿Hubo problemas técnicos?",
+              "type": "yes_no_details"
+            },
+            {
+              "q": "¿Se cumplieron los objetivos de la clase?",
+              "type": "scale_5"
+            }
+          ],
+          "target": "all_teachers",
+          "automated": true,
+          "time_limit": "2 minutes"
+        },
+        {
+          "method": "weekly_reflection",
+          "frequency": "weekly",
+          "questions": [
+            {
+              "q": "¿Qué funcionó mejor esta semana?",
+              "type": "open_text"
+            },
+            {
+              "q": "¿Qué obstáculos encontraste?",
+              "type": "open_text"
+            },
+            {
+              "q": "¿Cómo impactó en el aprendizaje?",
+              "type": "scale_impact"
+            },
+            {
+              "q": "¿Qué mejoras sugieres?",
+              "type": "prioritized_list"
+            }
+          ],
+          "target": "all_teachers",
+          "automated": false
+        },
+        {
+          "method": "monthly_interviews",
+          "frequency": "monthly",
+          "format": "semi_structured_interview",
+          "topics": [
+            "Integración curricular",
+            "Cambios en dinámicas de clase",
+            "Percepción de aprendizaje estudiantes",
+            "Satisfacción personal docente",
+            "Sugerencias específicas mejora"
+          ],
+          "target": "all_teachers",
+          "duration": "30 minutes",
+          "automated": false
+        }
+      ],
+      "classroom_observations": [
+        "student_engagement_levels",
+        "collaborative_behaviors",
+        "frustration_indicators",
+        "success_celebrations",
+        "help_seeking_patterns",
+        "curriculum_alignment_evidence"
+      ]
+    },
+    "technical_feedback": {
+      "automated_collection": [
+        {
+          "metric": "performance_data",
+          "indicators": [
+            "load_times",
+            "crash_reports",
+            "error_frequencies",
+            "device_compatibility_issues",
+            "network_performance",
+            "battery_usage"
+          ],
+          "frequency": "real_time",
+          "threshold_alerts": true
+        },
+        {
+          "metric": "usage_patterns",
+          "indicators": [
+            "peak_usage_times",
+            "session_durations",
+            "feature_adoption_rates",
+            "navigation_flows",
+            "drop_off_points",
+            "accessibility_feature_usage"
+          ],
+          "frequency": "continuous",
+          "ml_analysis": true
+        }
+      ],
+      "user_reported_issues": [
+        "bug_reports",
+        "feature_requests",
+        "usability_complaints",
+        "accessibility_barriers",
+        "content_errors",
+        "suggestion_submissions"
+      ]
+    },
+    "administrative_feedback": {
+      "school_coordinators": [
+        {
+          "method": "monthly_reports",
+          "metrics": [
+            "teacher_adoption_rates",
+            "student_engagement_trends",
+            "technical_support_needs",
+            "curriculum_integration_success",
+            "parent_reactions",
+            "administrative_overhead"
+          ],
+          "format": "structured_report",
+          "automated_data": true
+        }
+      ],
+      "parent_feedback": [
+        {
+          "method": "quarterly_survey",
+          "questions": [
+            {
+              "q": "¿Cómo percibe el impacto en su hijo/a?",
+              "type": "scale_5"
+            },
+            {
+              "q": "¿Su hijo/a comenta sobre los juegos en casa?",
+              "type": "frequency_scale"
+            },
+            {
+              "q": "¿Ha notado cambios en su actitud hacia el aprendizaje?",
+              "type": "yes_no_details"
+            },
+            {
+              "q": "¿Qué beneficios o preocupaciones tiene?",
+              "type": "open_text"
+            }
+          ],
+          "target": "representative_sample",
+          "method_delivery": "digital_survey"
+        }
+      ]
+    }
+  },
+  "analysis_engine": {
+    "quantitative_analysis": {
+      "engagement_metrics": {
+        "indicators": [
+          "session_completion_rate",
+          "average_session_duration",
+          "return_user_percentage",
+          "activities_per_session",
+          "help_request_frequency"
+        ],
+        "benchmarks": {
+          "excellent": "> 90%",
+          "good": "70-90%",
+          "needs_improvement": "< 70%"
+        },
+        "trend_analysis": "weekly_moving_average",
+        "segmentation": [
+          "by_school",
+          "by_grade",
+          "by_subject",
+          "by_engine"
+        ]
+      },
+      "learning_outcomes": {
+        "indicators": [
+          "pre_post_test_improvement",
+          "skill_progression_rate",
+          "error_reduction_over_time",
+          "bloom_level_advancement",
+          "curriculum_objective_mastery"
+        ],
+        "statistical_tests": [
+          "paired_t_test",
+          "effect_size_calculation",
+          "confidence_intervals",
+          "regression_analysis"
+        ],
+        "control_comparisons": "traditional_teaching_methods"
+      },
+      "usability_metrics": {
+        "indicators": [
+          "task_completion_rate",
+          "time_to_complete_task",
+          "error_rate_per_task",
+          "satisfaction_scores",
+          "feature_adoption_rate"
+        ],
+        "user_experience_scoring": "standardized_sus_scale",
+        "accessibility_compliance": "wcag_2_2_aa_audit"
+      }
+    },
+    "qualitative_analysis": {
+      "sentiment_analysis": {
+        "text_sources": [
+          "open_feedback_responses",
+          "teacher_interview_transcripts",
+          "focus_group_recordings",
+          "support_ticket_descriptions"
+        ],
+        "nlp_techniques": [
+          "sentiment_scoring",
+          "emotion_detection",
+          "theme_extraction",
+          "keyword_frequency_analysis"
+        ],
+        "language_support": [
+          "spanish",
+          "mapudungun_basic"
+        ]
+      },
+      "thematic_analysis": {
+        "coding_framework": [
+          "user_experience_themes",
+          "learning_impact_themes",
+          "technical_issue_themes",
+          "curriculum_integration_themes",
+          "accessibility_themes"
+        ],
+        "analysis_method": "inductive_thematic_analysis",
+        "inter_rater_reliability": "minimum_80_percent_agreement"
+      }
+    },
+    "predictive_analysis": {
+      "machine_learning_models": [
+        {
+          "model": "churn_prediction",
+          "purpose": "identify_students_at_risk_of_disengagement",
+          "features": [
+            "session_frequency",
+            "completion_rates",
+            "error_patterns"
+          ],
+          "action_triggers": "early_intervention_alerts"
+        },
+        {
+          "model": "difficulty_optimization",
+          "purpose": "recommend_optimal_difficulty_progression",
+          "features": [
+            "current_skill_level",
+            "error_patterns",
+            "time_spent"
+          ],
+          "action_triggers": "adaptive_difficulty_adjustment"
+        },
+        {
+          "model": "content_recommendation",
+          "purpose": "suggest_most_effective_engines_and_skins",
+          "features": [
+            "learning_objectives",
+            "student_preferences",
+            "performance_data"
+          ],
+          "action_triggers": "personalized_content_delivery"
+        }
+      ]
+    }
+  },
+  "prioritization": {
+    "impact_assessment": {
+      "dimensions": [
+        {
+          "dimension": "learning_impact",
+          "weight": 40,
+          "criteria": [
+            "improvement_in_learning_outcomes",
+            "curriculum_alignment_enhancement",
+            "accessibility_improvement",
+            "engagement_increase"
+          ],
+          "scoring": "1_to_5_scale"
+        },
+        {
+          "dimension": "user_experience_impact",
+          "weight": 25,
+          "criteria": [
+            "usability_improvement",
+            "satisfaction_increase",
+            "frustration_reduction",
+            "adoption_facilitation"
+          ],
+          "scoring": "1_to_5_scale"
+        },
+        {
+          "dimension": "technical_impact",
+          "weight": 20,
+          "criteria": [
+            "performance_improvement",
+            "stability_enhancement",
+            "scalability_benefit",
+            "security_strengthening"
+          ],
+          "scoring": "1_to_5_scale"
+        },
+        {
+          "dimension": "business_impact",
+          "weight": 15,
+          "criteria": [
+            "market_differentiation",
+            "competitive_advantage",
+            "revenue_potential",
+            "strategic_alignment"
+          ],
+          "scoring": "1_to_5_scale"
+        }
+      ],
+      "calculation_method": "weighted_average"
+    },
+    "effort_assessment": {
+      "factors": [
+        {
+          "factor": "development_complexity",
+          "levels": [
+            "low",
+            "medium",
+            "high",
+            "very_high"
+          ],
+          "time_estimates": [
+            "< 1 week",
+            "1-2 weeks",
+            "3-4 weeks",
+            "> 1 month"
+          ]
+        },
+        {
+          "factor": "resource_requirements",
+          "types": [
+            "developer_hours",
+            "designer_hours",
+            "qa_hours",
+            "infrastructure_costs"
+          ],
+          "estimation_method": "expert_judgment_with_historical_data"
+        },
+        {
+          "factor": "risk_level",
+          "categories": [
+            "low_risk",
+            "medium_risk",
+            "high_risk"
+          ],
+          "considerations": [
+            "technical_feasibility",
+            "user_acceptance",
+            "timeline_pressure"
+          ]
+        }
+      ]
+    },
+    "prioritization_matrix": {
+      "quadrants": [
+        {
+          "name": "quick_wins",
+          "criteria": "high_impact_low_effort",
+          "action": "implement_immediately",
+          "timeline": "current_sprint"
+        },
+        {
+          "name": "major_projects",
+          "criteria": "high_impact_high_effort",
+          "action": "plan_for_next_release",
+          "timeline": "next_quarter"
+        },
+        {
+          "name": "fill_ins",
+          "criteria": "low_impact_low_effort",
+          "action": "implement_when_capacity_available",
+          "timeline": "ongoing"
+        },
+        {
+          "name": "questionable",
+          "criteria": "low_impact_high_effort",
+          "action": "reconsider_or_postpone",
+          "timeline": "future_consideration"
+        }
+      ]
+    }
+  },
+  "implementation_roadmap": {
+    "immediate_actions": {
+      "timeline": "0-2 weeks",
+      "focus": "critical_fixes_and_quick_wins",
+      "typical_improvements": [
+        "critical_bug_fixes",
+        "performance_optimizations",
+        "usability_quick_fixes",
+        "content_error_corrections",
+        "accessibility_urgent_issues"
+      ],
+      "approval_process": "fast_track",
+      "testing_requirements": "smoke_testing_minimum"
+    },
+    "short_term_improvements": {
+      "timeline": "2-8 weeks",
+      "focus": "medium_impact_enhancements",
+      "typical_improvements": [
+        "new_skin_variations",
+        "engine_behavior_refinements",
+        "ui_ux_improvements",
+        "additional_accessibility_features",
+        "teacher_dashboard_enhancements"
+      ],
+      "approval_process": "standard_review",
+      "testing_requirements": "full_regression_testing"
+    },
+    "medium_term_developments": {
+      "timeline": "2-6 months",
+      "focus": "major_feature_additions",
+      "typical_improvements": [
+        "new_game_engines",
+        "advanced_analytics_features",
+        "ai_powered_recommendations",
+        "multi_language_support",
+        "advanced_assessment_tools"
+      ],
+      "approval_process": "product_committee_review",
+      "testing_requirements": "comprehensive_testing_including_pilots"
+    },
+    "long_term_innovations": {
+      "timeline": "6+ months",
+      "focus": "strategic_platform_evolution",
+      "typical_improvements": [
+        "ar_vr_integration",
+        "advanced_ai_tutoring",
+        "social_learning_features",
+        "international_expansion",
+        "enterprise_features"
+      ],
+      "approval_process": "executive_board_approval",
+      "testing_requirements": "extensive_pilot_programs"
+    }
+  },
+  "continuous_improvement": {
+    "feedback_loops": {
+      "rapid_iteration_cycle": {
+        "duration": "2 weeks",
+        "steps": [
+          "collect_feedback",
+          "analyze_patterns",
+          "prioritize_improvements",
+          "implement_changes",
+          "test_with_users",
+          "measure_impact",
+          "adjust_if_needed"
+        ],
+        "success_metrics": [
+          "cycle_completion_time",
+          "user_satisfaction_improvement",
+          "issue_resolution_rate"
+        ]
+      },
+      "monthly_optimization_cycle": {
+        "duration": "4 weeks",
+        "focus": "deeper_analysis_and_strategic_improvements",
+        "includes": [
+          "comprehensive_data_analysis",
+          "user_research_studies",
+          "competitive_analysis",
+          "technology_trend_assessment",
+          "strategic_planning_adjustment"
+        ]
+      }
+    },
+    "quality_assurance": {
+      "automated_testing": [
+        "regression_testing_suite",
+        "performance_benchmarking",
+        "accessibility_compliance_checks",
+        "cross_platform_compatibility",
+        "security_vulnerability_scans"
+      ],
+      "user_testing": [
+        "usability_testing_sessions",
+        "a_b_testing_framework",
+        "focus_group_evaluations",
+        "accessibility_user_testing",
+        "pilot_group_validation"
+      ]
+    },
+    "knowledge_management": {
+      "documentation": [
+        "improvement_decision_rationale",
+        "user_feedback_insights_database",
+        "best_practices_repository",
+        "lessons_learned_archive",
+        "design_pattern_library"
+      ],
+      "team_learning": [
+        "regular_retrospectives",
+        "cross_functional_knowledge_sharing",
+        "external_expert_consultations",
+        "industry_conference_insights",
+        "research_paper_reviews"
+      ]
+    }
+  }
+}

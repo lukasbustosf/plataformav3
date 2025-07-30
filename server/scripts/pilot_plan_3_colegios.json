@@ -1,0 +1,568 @@
+{
+  "metadata": {
+    "title": "Plan Piloto EDU21 - 3 Colegios",
+    "version": "1.0",
+    "created_at": "2025-07-08T12:31:55.947009",
+    "duration_weeks": "17 semanas total",
+    "target_students": 210,
+    "target_teachers": 9
+  },
+  "pilot_schools": [
+    {
+      "school_id": "PILOT_001",
+      "name": "Colegio Público Santiago Centro",
+      "type": "público_municipal",
+      "location": "Santiago Centro, RM",
+      "socioeconomic_level": "medio",
+      "tech_infrastructure": "básica",
+      "students_count": 450,
+      "teachers_count": 18,
+      "pilot_focus": "accesibilidad_inclusión",
+      "target_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "target_subjects": [
+        "MAT",
+        "LEN"
+      ],
+      "special_characteristics": [
+        "Estudiantes con NEE",
+        "Conectividad variable",
+        "Docentes con experiencia tecnológica mixta",
+        "Infraestructura básica pero funcional"
+      ],
+      "pilot_coordinator": {
+        "name": "Prof. María González",
+        "role": "Jefa UTP",
+        "email": "m.gonzalez@escola.santiago.cl",
+        "phone": "+56912345001"
+      },
+      "selected_teachers": [
+        {
+          "name": "Ana Torres",
+          "grade": "1B",
+          "subject": "MAT",
+          "tech_level": "básico"
+        },
+        {
+          "name": "Carlos Ruiz",
+          "grade": "2B",
+          "subject": "LEN",
+          "tech_level": "intermedio"
+        },
+        {
+          "name": "Elena Morales",
+          "grade": "3B",
+          "subject": "MAT",
+          "tech_level": "básico"
+        }
+      ],
+      "pilot_metrics": {
+        "target_students": 90,
+        "sessions_per_week": 3,
+        "duration_weeks": 8,
+        "engines_to_test": [
+          "ENG01",
+          "ENG05"
+        ],
+        "skins_to_test": [
+          "high_appeal",
+          "easy_medium"
+        ]
+      }
+    },
+    {
+      "school_id": "PILOT_002",
+      "name": "Colegio Particular Subvencionado Las Condes",
+      "type": "particular_subvencionado",
+      "location": "Las Condes, RM",
+      "socioeconomic_level": "medio_alto",
+      "tech_infrastructure": "avanzada",
+      "students_count": 320,
+      "teachers_count": 14,
+      "pilot_focus": "rendimiento_académico",
+      "target_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "target_subjects": [
+        "MAT",
+        "LEN",
+        "CN"
+      ],
+      "special_characteristics": [
+        "Alta conectividad",
+        "Tablets disponibles",
+        "Docentes tech-savvy",
+        "Padres comprometidos digitalmente"
+      ],
+      "pilot_coordinator": {
+        "name": "Prof. Roberto Sánchez",
+        "role": "Director Académico",
+        "email": "r.sanchez@colegiolascondes.cl",
+        "phone": "+56912345002"
+      },
+      "selected_teachers": [
+        {
+          "name": "Patricia Luna",
+          "grade": "2B",
+          "subject": "MAT",
+          "tech_level": "avanzado"
+        },
+        {
+          "name": "Miguel Vargas",
+          "grade": "3B",
+          "subject": "LEN",
+          "tech_level": "avanzado"
+        },
+        {
+          "name": "Sofía Castro",
+          "grade": "4B",
+          "subject": "CN",
+          "tech_level": "intermedio"
+        }
+      ],
+      "pilot_metrics": {
+        "target_students": 75,
+        "sessions_per_week": 4,
+        "duration_weeks": 8,
+        "engines_to_test": [
+          "ENG01",
+          "ENG02",
+          "ENG05",
+          "ENG09"
+        ],
+        "skins_to_test": [
+          "all_difficulties",
+          "high_medium_appeal"
+        ]
+      }
+    },
+    {
+      "school_id": "PILOT_003",
+      "name": "Escuela Rural Melipilla",
+      "type": "público_rural",
+      "location": "Melipilla, RM",
+      "socioeconomic_level": "medio_bajo",
+      "tech_infrastructure": "limitada",
+      "students_count": 180,
+      "teachers_count": 8,
+      "pilot_focus": "equidad_digital",
+      "target_grades": [
+        "1B",
+        "2B"
+      ],
+      "target_subjects": [
+        "MAT",
+        "LEN"
+      ],
+      "special_characteristics": [
+        "Conectividad intermitente",
+        "Pocos dispositivos",
+        "Multigrado",
+        "Contexto rural específico"
+      ],
+      "pilot_coordinator": {
+        "name": "Prof. Carmen Díaz",
+        "role": "Directora",
+        "email": "c.diaz@escuela.melipilla.cl",
+        "phone": "+56912345003"
+      },
+      "selected_teachers": [
+        {
+          "name": "Juan Pérez",
+          "grade": "1B",
+          "subject": "MAT",
+          "tech_level": "básico"
+        },
+        {
+          "name": "Laura Medina",
+          "grade": "1B",
+          "subject": "LEN",
+          "tech_level": "básico"
+        },
+        {
+          "name": "Andrés Silva",
+          "grade": "2B",
+          "subject": "MAT",
+          "tech_level": "intermedio"
+        }
+      ],
+      "pilot_metrics": {
+        "target_students": 45,
+        "sessions_per_week": 2,
+        "duration_weeks": 10,
+        "engines_to_test": [
+          "ENG01",
+          "ENG05"
+        ],
+        "skins_to_test": [
+          "high_appeal",
+          "easy_only"
+        ]
+      }
+    }
+  ],
+  "timeline": {
+    "fase_preparacion": {
+      "duration": "4 semanas",
+      "start_date": "2025-08-01",
+      "end_date": "2025-08-29",
+      "activities": [
+        {
+          "activity": "Configuración técnica Supabase",
+          "duration": "1 semana",
+          "responsible": "Equipo Técnico EDU21",
+          "deliverables": [
+            "847 OA cargados en producción",
+            "6 engines básicos implementados",
+            "90 skins desplegados",
+            "Dashboard analytics configurado"
+          ]
+        },
+        {
+          "activity": "Capacitación docentes",
+          "duration": "2 semanas",
+          "responsible": "Equipo Pedagógico EDU21",
+          "deliverables": [
+            "9 docentes capacitados",
+            "Manuales de uso entregados",
+            "Credenciales de acceso asignadas",
+            "Plan de acompañamiento definido"
+          ]
+        },
+        {
+          "activity": "Setup técnico colegios",
+          "duration": "2 semanas",
+          "responsible": "Soporte Técnico EDU21",
+          "deliverables": [
+            "Conectividad validada",
+            "Dispositivos configurados",
+            "Aplicación instalada",
+            "Tests de conectividad completados"
+          ]
+        },
+        {
+          "activity": "Selección contenidos piloto",
+          "duration": "1 semana",
+          "responsible": "Equipo Curricular EDU21",
+          "deliverables": [
+            "OA prioritarios seleccionados por colegio",
+            "Skins asignadas por contexto",
+            "Secuencias didácticas diseñadas",
+            "Instrumentos de evaluación preparados"
+          ]
+        }
+      ]
+    },
+    "fase_implementacion": {
+      "duration": "8-10 semanas",
+      "start_date": "2025-08-29",
+      "end_date": "2025-11-07",
+      "activities": [
+        {
+          "activity": "Piloto intensivo",
+          "duration": "8-10 semanas",
+          "responsible": "Docentes + Acompañamiento EDU21",
+          "weekly_structure": {
+            "sessions_per_week": "2-4 según colegio",
+            "session_duration": "45 minutos",
+            "subjects_covered": "MAT, LEN, CN",
+            "students_per_session": "15-30"
+          },
+          "monitoring": [
+            "Observación de clases semanal",
+            "Entrevistas docentes quincenales",
+            "Focus groups estudiantes mensuales",
+            "Analytics automático diario"
+          ]
+        }
+      ]
+    },
+    "fase_evaluacion": {
+      "duration": "3 semanas",
+      "start_date": "2025-11-07",
+      "end_date": "2025-11-28",
+      "activities": [
+        {
+          "activity": "Análisis de resultados",
+          "duration": "2 semanas",
+          "responsible": "Equipo Analytics EDU21",
+          "deliverables": [
+            "Reporte de engagement por colegio",
+            "Análisis de rendimiento académico",
+            "Evaluación de usabilidad",
+            "Identificación de mejoras críticas"
+          ]
+        },
+        {
+          "activity": "Presentación de resultados",
+          "duration": "1 semana",
+          "responsible": "Equipo Ejecutivo EDU21",
+          "deliverables": [
+            "Presentación ejecutiva",
+            "Recomendaciones de refinamiento",
+            "Roadmap de escalamiento",
+            "Casos de éxito documentados"
+          ]
+        }
+      ]
+    }
+  },
+  "content_assignment": {
+    "PILOT_001": {
+      "focus": "Accesibilidad e Inclusión",
+      "oa_selection": {
+        "MAT": [
+          "MA01OA01",
+          "MA01OA02",
+          "MA01OA03",
+          "MA02OA01",
+          "MA02OA02",
+          "MA03OA01"
+        ],
+        "LEN": [
+          "LE01OA01",
+          "LE01OA02",
+          "LE01OA03",
+          "LE02OA03",
+          "LE02OA04",
+          "LE03OA01"
+        ]
+      },
+      "engine_assignment": {
+        "ENG01": {
+          "priority": "alta",
+          "usage": "40%"
+        },
+        "ENG05": {
+          "priority": "alta",
+          "usage": "60%"
+        }
+      },
+      "skin_selection": {
+        "MAT": [
+          "Reino Animal",
+          "Chef en Acción",
+          "Naturaleza Viva"
+        ],
+        "LEN": [
+          "Mundo de Cuentos",
+          "Gran Biblioteca",
+          "Jardín de Letras"
+        ]
+      },
+      "special_adaptations": [
+        "Skins con alto contraste activadas",
+        "TTS habilitado por defecto",
+        "Tiempo extendido para NEE",
+        "Navegación por teclado disponible"
+      ]
+    },
+    "PILOT_002": {
+      "focus": "Rendimiento Académico Avanzado",
+      "oa_selection": {
+        "MAT": [
+          "MA02OA01",
+          "MA02OA04",
+          "MA02OA09",
+          "MA03OA09",
+          "MA03OA01",
+          "MA04OA02",
+          "MA04OA01"
+        ],
+        "LEN": [
+          "LE02OA05",
+          "LE03OA01",
+          "LE03OA05",
+          "LE04OA01",
+          "LE04OA05"
+        ],
+        "CN": [
+          "CN01OA01",
+          "CN02OA01",
+          "CN03OA01"
+        ]
+      },
+      "engine_assignment": {
+        "ENG01": {
+          "priority": "media",
+          "usage": "25%"
+        },
+        "ENG02": {
+          "priority": "alta",
+          "usage": "30%"
+        },
+        "ENG05": {
+          "priority": "media",
+          "usage": "25%"
+        },
+        "ENG09": {
+          "priority": "alta",
+          "usage": "20%"
+        }
+      },
+      "skin_selection": {
+        "MAT": [
+          "Aventura Espacial",
+          "Mundo Fantástico",
+          "Aventura Pirata"
+        ],
+        "LEN": [
+          "Detective de Palabras",
+          "Letras Musicales",
+          "Gran Teatro"
+        ],
+        "CN": [
+          "Laboratorio Lingüístico"
+        ]
+      },
+      "special_features": [
+        "Modo competitivo habilitado",
+        "Analytics avanzados para docentes",
+        "Progresión acelerada disponible",
+        "Retos adicionales activados"
+      ]
+    },
+    "PILOT_003": {
+      "focus": "Equidad Digital y Contexto Rural",
+      "oa_selection": {
+        "MAT": [
+          "MA01OA01",
+          "MA01OA02",
+          "MA01OA04",
+          "MA02OA01",
+          "MA02OA04"
+        ],
+        "LEN": [
+          "LE01OA01",
+          "LE01OA03",
+          "LE01OA04",
+          "LE02OA03",
+          "LE02OA04"
+        ]
+      },
+      "engine_assignment": {
+        "ENG01": {
+          "priority": "alta",
+          "usage": "60%"
+        },
+        "ENG05": {
+          "priority": "alta",
+          "usage": "40%"
+        }
+      },
+      "skin_selection": {
+        "MAT": [
+          "Reino Animal",
+          "Naturaleza Viva",
+          "Cocina de Palabras"
+        ],
+        "LEN": [
+          "Jardín de Letras",
+          "Mundo de Cuentos",
+          "Gran Biblioteca"
+        ]
+      },
+      "rural_adaptations": [
+        "Modo offline disponible",
+        "Sincronización automática",
+        "Contenidos contextualizados rurales",
+        "Menor consumo de datos"
+      ]
+    }
+  },
+  "evaluation_metrics": {
+    "engagement_metrics": {
+      "time_on_platform": {
+        "target": "> 15 minutos por sesión",
+        "measurement": "Analytics automático",
+        "frequency": "Diario"
+      },
+      "completion_rate": {
+        "target": "> 80% actividades completadas",
+        "measurement": "Sistema tracking",
+        "frequency": "Semanal"
+      },
+      "return_rate": {
+        "target": "> 90% estudiantes retornan",
+        "measurement": "Login analytics",
+        "frequency": "Semanal"
+      },
+      "fun_factor": {
+        "target": "> 4.0/5.0 en encuestas",
+        "measurement": "Encuestas estudiantes",
+        "frequency": "Quincenal"
+      }
+    },
+    "learning_metrics": {
+      "pre_post_assessment": {
+        "target": "> 20% mejora en evaluaciones",
+        "measurement": "Pruebas estandarizadas",
+        "frequency": "Pre y post piloto"
+      },
+      "skill_progression": {
+        "target": "Progresión natural por OA",
+        "measurement": "Analytics de rendimiento",
+        "frequency": "Continuo"
+      },
+      "error_analysis": {
+        "target": "< 30% errores recurrentes",
+        "measurement": "AI error tracking",
+        "frequency": "Semanal"
+      },
+      "bloom_progression": {
+        "target": "Avance en niveles Bloom",
+        "measurement": "Análisis cognitivo",
+        "frequency": "Mensual"
+      }
+    },
+    "teacher_metrics": {
+      "ease_of_use": {
+        "target": "> 4.0/5.0 usabilidad",
+        "measurement": "Encuestas docentes",
+        "frequency": "Quincenal"
+      },
+      "time_saving": {
+        "target": "> 30% reducción prep clase",
+        "measurement": "Time tracking",
+        "frequency": "Semanal"
+      },
+      "curriculum_alignment": {
+        "target": "> 4.5/5.0 alineación",
+        "measurement": "Evaluación curricular",
+        "frequency": "Mensual"
+      },
+      "professional_development": {
+        "target": "Mejora competencias digitales",
+        "measurement": "Pre/post evaluación",
+        "frequency": "Pre y post piloto"
+      }
+    },
+    "technical_metrics": {
+      "system_uptime": {
+        "target": "> 99% disponibilidad",
+        "measurement": "Monitoring automático",
+        "frequency": "Continuo"
+      },
+      "load_times": {
+        "target": "< 3 segundos carga",
+        "measurement": "Performance monitoring",
+        "frequency": "Continuo"
+      },
+      "error_rate": {
+        "target": "< 1% errores críticos",
+        "measurement": "Error logging",
+        "frequency": "Diario"
+      },
+      "device_compatibility": {
+        "target": "100% dispositivos soportados",
+        "measurement": "Compatibility testing",
+        "frequency": "Semanal"
+      }
+    }
+  }
+}

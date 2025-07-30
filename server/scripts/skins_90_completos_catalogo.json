@@ -1,0 +1,4258 @@
+{
+  "metadata": {
+    "total_skins": 90,
+    "math_skins": 45,
+    "language_skins": 45,
+    "created_at": "2025-07-08T12:26:58.402523",
+    "version": "1.0"
+  },
+  "math_skins": [
+    {
+      "skin_id": "SKIN_MAT_001",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Easy 1",
+      "description": "Conteo con perros del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "perros",
+        "ui_complexity": "simple"
+      },
+      "gameplay_config": {
+        "max_count": 10,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_002",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Easy 2",
+      "description": "Conteo con gatos del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "pattern",
+        "animation_style": "bounce",
+        "element_style": "gatos",
+        "ui_complexity": "simple"
+      },
+      "gameplay_config": {
+        "max_count": 10,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_003",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Easy 3",
+      "description": "Conteo con pájaros del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "pájaros",
+        "ui_complexity": "simple"
+      },
+      "gameplay_config": {
+        "max_count": 10,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_004",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Easy 4",
+      "description": "Conteo con peces del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "pattern",
+        "animation_style": "bounce",
+        "element_style": "peces",
+        "ui_complexity": "simple"
+      },
+      "gameplay_config": {
+        "max_count": 10,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_005",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Easy 5",
+      "description": "Conteo con insectos del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "insectos",
+        "ui_complexity": "simple"
+      },
+      "gameplay_config": {
+        "max_count": 10,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_006",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Medium 1",
+      "description": "Conteo con perros del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "perros",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 50,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_007",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Medium 2",
+      "description": "Conteo con gatos del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "pattern",
+        "animation_style": "bounce",
+        "element_style": "gatos",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 50,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_008",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Medium 3",
+      "description": "Conteo con pájaros del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "pájaros",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 50,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_009",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Medium 4",
+      "description": "Conteo con peces del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "pattern",
+        "animation_style": "bounce",
+        "element_style": "peces",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 50,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_010",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Medium 5",
+      "description": "Conteo con insectos del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "insectos",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 50,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_011",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Hard 1",
+      "description": "Conteo con perros del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "perros",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 100,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": false
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_012",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Hard 2",
+      "description": "Conteo con gatos del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "pattern",
+        "animation_style": "bounce",
+        "element_style": "gatos",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 100,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": false
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_013",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Hard 3",
+      "description": "Conteo con pájaros del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "pájaros",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 100,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": false
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_014",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Hard 4",
+      "description": "Conteo con peces del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "pattern",
+        "animation_style": "bounce",
+        "element_style": "peces",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 100,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": false
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_015",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Reino Animal - Contador Hard 5",
+      "description": "Conteo con insectos del reino animal",
+      "theme": "animales",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B6B",
+        "secondary_color": "#4ECDC4",
+        "accent_color": "#45B7D1",
+        "background_style": "gradient",
+        "animation_style": "bounce",
+        "element_style": "insectos",
+        "ui_complexity": "detailed"
+      },
+      "gameplay_config": {
+        "max_count": 100,
+        "counting_style": "visual_objects",
+        "feedback_type": "immediate_positive",
+        "sound_effects": true,
+        "voice_narration": true,
+        "hint_system": false
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA02",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "3 days",
+      "assets_needed": {
+        "sprites": 15,
+        "sounds": 8,
+        "animations": 6,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_016",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Easy 1",
+      "description": "Arrastrar y soltar pelotas ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "pelotas",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 4,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_017",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Easy 2",
+      "description": "Arrastrar y soltar uniformes ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "uniformes",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 4,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_018",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Easy 3",
+      "description": "Arrastrar y soltar medallas ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "medallas",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 4,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_019",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Easy 4",
+      "description": "Arrastrar y soltar campos ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "campos",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 4,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_020",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Easy 5",
+      "description": "Arrastrar y soltar equipos ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "equipos",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 4,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_021",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Medium 1",
+      "description": "Arrastrar y soltar pelotas ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "pelotas",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 8,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_022",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Medium 2",
+      "description": "Arrastrar y soltar uniformes ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "uniformes",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 8,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_023",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Medium 3",
+      "description": "Arrastrar y soltar medallas ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "medallas",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 8,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_024",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Medium 4",
+      "description": "Arrastrar y soltar campos ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "campos",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 8,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_025",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Medium 5",
+      "description": "Arrastrar y soltar equipos ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "equipos",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 8,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": true,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_026",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Hard 1",
+      "description": "Arrastrar y soltar pelotas ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "pelotas",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 12,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": false,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_027",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Hard 2",
+      "description": "Arrastrar y soltar uniformes ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "uniformes",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 12,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": false,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_028",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Hard 3",
+      "description": "Arrastrar y soltar medallas ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "medallas",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 12,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": false,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_029",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Hard 4",
+      "description": "Arrastrar y soltar campos ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "campos",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 12,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": false,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_030",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Mundo Deportivo - Arrastrar Hard 5",
+      "description": "Arrastrar y soltar equipos ordenadamente",
+      "theme": "deportes",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF9500",
+        "secondary_color": "#00B894",
+        "accent_color": "#0984E3",
+        "background_style": "illustrated",
+        "animation_style": "smooth_drag",
+        "element_style": "equipos",
+        "drop_zone_style": "highlighted_areas"
+      },
+      "gameplay_config": {
+        "max_items": 12,
+        "drag_sensitivity": "child_friendly",
+        "snap_assistance": false,
+        "operation_types": [
+          "sort",
+          "group",
+          "match"
+        ],
+        "feedback_type": "visual_audio_combined",
+        "celebration_animation": true
+      },
+      "learning_objectives": [
+        "MA01OA04",
+        "MA01OA09",
+        "MA02OA04"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 10,
+        "animations": 8,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_031",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Chef en Acción - Especial 1",
+      "description": "Skin especial de chef en acción con elementos únicos",
+      "theme": "cocina",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#E17055",
+        "secondary_color": "#FDCB6E",
+        "accent_color": "#00B894",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "frutas",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_032",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Aventura Pirata - Especial 2",
+      "description": "Skin especial de aventura pirata con elementos únicos",
+      "theme": "piratas",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#8B4513",
+        "secondary_color": "#FFD700",
+        "accent_color": "#000080",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "tesoros",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_033",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Gran Circo - Especial 3",
+      "description": "Skin especial de gran circo con elementos únicos",
+      "theme": "circo",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#FF1493",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "trapecistas",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_034",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Chef en Acción - Especial 4",
+      "description": "Skin especial de chef en acción con elementos únicos",
+      "theme": "cocina",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#E17055",
+        "secondary_color": "#FDCB6E",
+        "accent_color": "#00B894",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "utensilios",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_035",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Aventura Pirata - Especial 5",
+      "description": "Skin especial de aventura pirata con elementos únicos",
+      "theme": "piratas",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#8B4513",
+        "secondary_color": "#FFD700",
+        "accent_color": "#000080",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "islas",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_036",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Gran Circo - Especial 6",
+      "description": "Skin especial de gran circo con elementos únicos",
+      "theme": "circo",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#FF1493",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "payasos",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_037",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Chef en Acción - Especial 7",
+      "description": "Skin especial de chef en acción con elementos únicos",
+      "theme": "cocina",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#E17055",
+        "secondary_color": "#FDCB6E",
+        "accent_color": "#00B894",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "verduras",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_038",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Aventura Pirata - Especial 8",
+      "description": "Skin especial de aventura pirata con elementos únicos",
+      "theme": "piratas",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#8B4513",
+        "secondary_color": "#FFD700",
+        "accent_color": "#000080",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "mapas",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_039",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Gran Circo - Especial 9",
+      "description": "Skin especial de gran circo con elementos únicos",
+      "theme": "circo",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#FF1493",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "malabares",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_040",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Chef en Acción - Especial 10",
+      "description": "Skin especial de chef en acción con elementos únicos",
+      "theme": "cocina",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#E17055",
+        "secondary_color": "#FDCB6E",
+        "accent_color": "#00B894",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "recetas",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_041",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Aventura Pirata - Especial 11",
+      "description": "Skin especial de aventura pirata con elementos únicos",
+      "theme": "piratas",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#8B4513",
+        "secondary_color": "#FFD700",
+        "accent_color": "#000080",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "barcos",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_042",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Gran Circo - Especial 12",
+      "description": "Skin especial de gran circo con elementos únicos",
+      "theme": "circo",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#FF1493",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "leones",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_043",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Chef en Acción - Especial 13",
+      "description": "Skin especial de chef en acción con elementos únicos",
+      "theme": "cocina",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#E17055",
+        "secondary_color": "#FDCB6E",
+        "accent_color": "#00B894",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "pasteles",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_044",
+      "engine_id": "ENG02",
+      "engine_code": "DRAG_DROP_NUM",
+      "name": "Aventura Pirata - Especial 14",
+      "description": "Skin especial de aventura pirata con elementos únicos",
+      "theme": "piratas",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#8B4513",
+        "secondary_color": "#FFD700",
+        "accent_color": "#000080",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "loros",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_MAT_045",
+      "engine_id": "ENG01",
+      "engine_code": "COUNTER",
+      "name": "Gran Circo - Especial 15",
+      "description": "Skin especial de gran circo con elementos únicos",
+      "theme": "circo",
+      "subject": "MAT",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#FF1493",
+        "background_style": "immersive",
+        "animation_style": "theme_specific",
+        "element_style": "carpa",
+        "special_effects": true
+      },
+      "gameplay_config": {
+        "hybrid_mechanics": true,
+        "difficulty_adaptive": true,
+        "reward_system": "advanced",
+        "social_features": true,
+        "progression_tracking": true
+      },
+      "learning_objectives": [
+        "MA01OA01",
+        "MA01OA04",
+        "MA02OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 25,
+        "sounds": 12,
+        "animations": 10,
+        "backgrounds": 4
+      }
+    }
+  ],
+  "language_skins": [
+    {
+      "skin_id": "SKIN_LEN_001",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Easy 1",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "princesas",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "letters",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_002",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Easy 2",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "dragones",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "letters",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_003",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Easy 3",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "castillos",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "letters",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_004",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Easy 4",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "bosques",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "letters",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_005",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Easy 5",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "hadas",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "letters",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_006",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Medium 1",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "princesas",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "words",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_007",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Medium 2",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "dragones",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "words",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_008",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Medium 3",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "castillos",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "words",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_009",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Medium 4",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "bosques",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "words",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_010",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Medium 5",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "hadas",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "words",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_011",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Hard 1",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "princesas",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "sentences",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_012",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Hard 2",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "dragones",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "sentences",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_013",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Hard 3",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "castillos",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "sentences",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_014",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Hard 4",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "bosques",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "sentences",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_015",
+      "engine_id": "ENG05",
+      "engine_code": "TEXT_RECOG",
+      "name": "Mundo de Cuentos - Reconocer Hard 5",
+      "description": "Reconocimiento de letras y palabras en el mundo de cuentos",
+      "theme": "cuentos",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#FF6B9D",
+        "secondary_color": "#C44569",
+        "accent_color": "#F8B500",
+        "background_style": "storybook",
+        "animation_style": "gentle_fade",
+        "element_style": "hadas",
+        "typography": "child_friendly",
+        "font_scaling": true
+      },
+      "gameplay_config": {
+        "text_complexity": "sentences",
+        "recognition_type": "visual_matching",
+        "hint_system": "progressive",
+        "audio_support": true,
+        "dyslexia_friendly": true,
+        "feedback_type": "encouraging"
+      },
+      "learning_objectives": [
+        "LE01OA01",
+        "LE01OA02",
+        "LE02OA03"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "4 days",
+      "assets_needed": {
+        "sprites": 18,
+        "sounds": 15,
+        "animations": 8,
+        "fonts": 3,
+        "backgrounds": 3
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_016",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Easy 1",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "notas",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "vowels",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_017",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Easy 2",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "instrumentos",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "vowels",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_018",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Easy 3",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "partituras",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "vowels",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_019",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Easy 4",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "micrófonos",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "vowels",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_020",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Easy 5",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "escenarios",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "vowels",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_021",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Medium 1",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "notas",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "consonants",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_022",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Medium 2",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "instrumentos",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "consonants",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_023",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Medium 3",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "partituras",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "consonants",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_024",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Medium 4",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "micrófonos",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "consonants",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_025",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Medium 5",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Recordar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "escenarios",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "consonants",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_026",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Hard 1",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "notas",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "combinations",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_027",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Hard 2",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "instrumentos",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "combinations",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_028",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Hard 3",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "partituras",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "combinations",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_029",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Hard 4",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "micrófonos",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "combinations",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_030",
+      "engine_id": "ENG06",
+      "engine_code": "LETTER_SOUND",
+      "name": "Letras Musicales - Sonidos Hard 5",
+      "description": "Asociación letra-sonido en el contexto de letras musicales",
+      "theme": "musicales",
+      "subject": "LEN",
+      "recommended_grades": [
+        "1B",
+        "2B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#9370DB",
+        "secondary_color": "#FF69B4",
+        "accent_color": "#FFD700",
+        "background_style": "interactive",
+        "animation_style": "sound_waves",
+        "element_style": "escenarios",
+        "phonetic_visualization": true
+      },
+      "gameplay_config": {
+        "phoneme_complexity": "combinations",
+        "audio_quality": "crystal_clear",
+        "voice_variety": true,
+        "recording_capability": true,
+        "pronunciation_feedback": "real_time",
+        "hearing_impaired_support": true
+      },
+      "learning_objectives": [
+        "LE01OA03",
+        "LE01OA04",
+        "LE02OA04"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "5 days",
+      "assets_needed": {
+        "sprites": 20,
+        "sounds": 25,
+        "animations": 12,
+        "voice_clips": 50,
+        "backgrounds": 2
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_031",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Cocina de Palabras - Fluidez Easy 1",
+      "description": "Desarrollo de fluidez lectora en el ambiente de cocina de palabras",
+      "theme": "cocina_letras",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF4500",
+        "secondary_color": "#FFFF00",
+        "accent_color": "#32CD32",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "recetas",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "sentences",
+        "wpm_target": 30,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_032",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Laboratorio Lingüístico - Fluidez Medium 1",
+      "description": "Desarrollo de fluidez lectora en el ambiente de laboratorio lingüístico",
+      "theme": "laboratorio",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#4169E1",
+        "secondary_color": "#32CD32",
+        "accent_color": "#FF6347",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "fórmulas",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "paragraphs",
+        "wpm_target": 60,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_033",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Gran Teatro - Fluidez Hard 1",
+      "description": "Desarrollo de fluidez lectora en el ambiente de gran teatro",
+      "theme": "teatro",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#8B0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#4B0082",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "máscaras",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "stories",
+        "wpm_target": 90,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_034",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Cocina de Palabras - Fluidez Easy 2",
+      "description": "Desarrollo de fluidez lectora en el ambiente de cocina de palabras",
+      "theme": "cocina_letras",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF4500",
+        "secondary_color": "#FFFF00",
+        "accent_color": "#32CD32",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "cucharas",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "sentences",
+        "wpm_target": 30,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_035",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Laboratorio Lingüístico - Fluidez Medium 2",
+      "description": "Desarrollo de fluidez lectora en el ambiente de laboratorio lingüístico",
+      "theme": "laboratorio",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#4169E1",
+        "secondary_color": "#32CD32",
+        "accent_color": "#FF6347",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "cristales",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "paragraphs",
+        "wpm_target": 60,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_036",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Gran Teatro - Fluidez Hard 2",
+      "description": "Desarrollo de fluidez lectora en el ambiente de gran teatro",
+      "theme": "teatro",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#8B0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#4B0082",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "escenarios",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "stories",
+        "wpm_target": 90,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_037",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Cocina de Palabras - Fluidez Easy 3",
+      "description": "Desarrollo de fluidez lectora en el ambiente de cocina de palabras",
+      "theme": "cocina_letras",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF4500",
+        "secondary_color": "#FFFF00",
+        "accent_color": "#32CD32",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "ingredientes",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "sentences",
+        "wpm_target": 30,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_038",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Laboratorio Lingüístico - Fluidez Medium 3",
+      "description": "Desarrollo de fluidez lectora en el ambiente de laboratorio lingüístico",
+      "theme": "laboratorio",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#4169E1",
+        "secondary_color": "#32CD32",
+        "accent_color": "#FF6347",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "microscopios",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "paragraphs",
+        "wpm_target": 60,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_039",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Gran Teatro - Fluidez Hard 3",
+      "description": "Desarrollo de fluidez lectora en el ambiente de gran teatro",
+      "theme": "teatro",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#8B0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#4B0082",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "vestuarios",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "stories",
+        "wpm_target": 90,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_040",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Cocina de Palabras - Fluidez Easy 4",
+      "description": "Desarrollo de fluidez lectora en el ambiente de cocina de palabras",
+      "theme": "cocina_letras",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF4500",
+        "secondary_color": "#FFFF00",
+        "accent_color": "#32CD32",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "hornos",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "sentences",
+        "wpm_target": 30,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_041",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Laboratorio Lingüístico - Fluidez Medium 4",
+      "description": "Desarrollo de fluidez lectora en el ambiente de laboratorio lingüístico",
+      "theme": "laboratorio",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#4169E1",
+        "secondary_color": "#32CD32",
+        "accent_color": "#FF6347",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "tubos",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "paragraphs",
+        "wpm_target": 60,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_042",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Gran Teatro - Fluidez Hard 4",
+      "description": "Desarrollo de fluidez lectora en el ambiente de gran teatro",
+      "theme": "teatro",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#8B0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#4B0082",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "telones",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "stories",
+        "wpm_target": 90,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_043",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Cocina de Palabras - Fluidez Easy 5",
+      "description": "Desarrollo de fluidez lectora en el ambiente de cocina de palabras",
+      "theme": "cocina_letras",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Comprender",
+      "difficulty": "easy",
+      "visual_config": {
+        "primary_color": "#FF4500",
+        "secondary_color": "#FFFF00",
+        "accent_color": "#32CD32",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "ollas",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "sentences",
+        "wpm_target": 30,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_044",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Laboratorio Lingüístico - Fluidez Medium 5",
+      "description": "Desarrollo de fluidez lectora en el ambiente de laboratorio lingüístico",
+      "theme": "laboratorio",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "medium",
+      "visual_config": {
+        "primary_color": "#4169E1",
+        "secondary_color": "#32CD32",
+        "accent_color": "#FF6347",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "experimentos",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "paragraphs",
+        "wpm_target": 60,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "medium",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    },
+    {
+      "skin_id": "SKIN_LEN_045",
+      "engine_id": "ENG07",
+      "engine_code": "READING_FLUENCY",
+      "name": "Gran Teatro - Fluidez Hard 5",
+      "description": "Desarrollo de fluidez lectora en el ambiente de gran teatro",
+      "theme": "teatro",
+      "subject": "LEN",
+      "recommended_grades": [
+        "2B",
+        "3B",
+        "4B"
+      ],
+      "bloom_level": "Aplicar",
+      "difficulty": "hard",
+      "visual_config": {
+        "primary_color": "#8B0000",
+        "secondary_color": "#FFD700",
+        "accent_color": "#4B0082",
+        "background_style": "immersive_environment",
+        "animation_style": "text_highlighting",
+        "element_style": "luces",
+        "reading_aids": true
+      },
+      "gameplay_config": {
+        "text_length": "stories",
+        "wpm_target": 90,
+        "comprehension_checks": true,
+        "adaptive_difficulty": true,
+        "progress_visualization": "detailed",
+        "social_reading": true
+      },
+      "learning_objectives": [
+        "LE02OA05",
+        "LE03OA01",
+        "LE04OA01"
+      ],
+      "appeal_rating": "high",
+      "estimated_dev_time": "6 days",
+      "assets_needed": {
+        "sprites": 22,
+        "sounds": 18,
+        "animations": 15,
+        "text_content": 100,
+        "backgrounds": 4
+      }
+    }
+  ]
+}

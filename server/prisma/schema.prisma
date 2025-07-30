@@ -1,0 +1,713 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../generated/prisma"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["auth", "public"]
+}
+
+model audit_log_entries {
+  instance_id String?   @db.Uuid
+  id          String    @id @db.Uuid
+  payload     Json?     @db.Json
+  created_at  DateTime? @db.Timestamptz(6)
+  ip_address  String    @default("") @db.VarChar(64)
+
+  @@index([instance_id], map: "audit_logs_instance_id_idx")
+  @@schema("auth")
+}
+
+model flow_state {
+  id                     String                @id @db.Uuid
+  user_id                String?               @db.Uuid
+  auth_code              String
+  code_challenge_method  code_challenge_method
+  code_challenge         String
+  provider_type          String
+  provider_access_token  String?
+  provider_refresh_token String?
+  created_at             DateTime?             @db.Timestamptz(6)
+  updated_at             DateTime?             @db.Timestamptz(6)
+  authentication_method  String
+  auth_code_issued_at    DateTime?             @db.Timestamptz(6)
+  saml_relay_states      saml_relay_states[]
+
+  @@index([created_at(sort: Desc)])
+  @@index([auth_code], map: "idx_auth_code")
+  @@index([user_id, authentication_method], map: "idx_user_id_auth_method")
+  @@schema("auth")
+}
+
+model identities {
+  provider_id     String
+  user_id         String     @db.Uuid
+  identity_data   Json
+  provider        String
+  last_sign_in_at DateTime?  @db.Timestamptz(6)
+  created_at      DateTime?  @db.Timestamptz(6)
+  updated_at      DateTime?  @db.Timestamptz(6)
+  email           String?    @default(dbgenerated("lower((identity_data ->> 'email'::text))"))
+  id              String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  users           auth_users @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([provider_id, provider], map: "identities_provider_id_provider_unique")
+  @@index([email])
+  @@index([user_id])
+  @@schema("auth")
+}
+
+model instances {
+  id              String    @id @db.Uuid
+  uuid            String?   @db.Uuid
+  raw_base_config String?
+  created_at      DateTime? @db.Timestamptz(6)
+  updated_at      DateTime? @db.Timestamptz(6)
+
+  @@schema("auth")
+}
+
+model mfa_amr_claims {
+  session_id            String   @db.Uuid
+  created_at            DateTime @db.Timestamptz(6)
+  updated_at            DateTime @db.Timestamptz(6)
+  authentication_method String
+  id                    String   @id(map: "amr_id_pk") @db.Uuid
+  sessions              sessions @relation(fields: [session_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([session_id, authentication_method], map: "mfa_amr_claims_session_id_authentication_method_pkey")
+  @@schema("auth")
+}
+
+model mfa_challenges {
+  id                     String      @id @db.Uuid
+  factor_id              String      @db.Uuid
+  created_at             DateTime    @db.Timestamptz(6)
+  verified_at            DateTime?   @db.Timestamptz(6)
+  ip_address             String      @db.Inet
+  otp_code               String?
+  web_authn_session_data Json?
+  mfa_factors            mfa_factors @relation(fields: [factor_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "mfa_challenges_auth_factor_id_fkey")
+
+  @@index([created_at(sort: Desc)], map: "mfa_challenge_created_at_idx")
+  @@schema("auth")
+}
+
+model mfa_factors {
+  id                   String           @id @db.Uuid
+  user_id              String           @db.Uuid
+  friendly_name        String?
+  factor_type          factor_type
+  status               factor_status
+  created_at           DateTime         @db.Timestamptz(6)
+  updated_at           DateTime         @db.Timestamptz(6)
+  secret               String?
+  phone                String?
+  last_challenged_at   DateTime?        @unique @db.Timestamptz(6)
+  web_authn_credential Json?
+  web_authn_aaguid     String?          @db.Uuid
+  mfa_challenges       mfa_challenges[]
+  users                auth_users       @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([user_id, phone], map: "unique_phone_factor_per_user")
+  @@index([user_id, created_at], map: "factor_id_created_at_idx")
+  @@index([user_id])
+  @@schema("auth")
+}
+
+model one_time_tokens {
+  id         String              @id @db.Uuid
+  user_id    String              @db.Uuid
+  token_type one_time_token_type
+  token_hash String
+  relates_to String
+  created_at DateTime            @default(now()) @db.Timestamp(6)
+  updated_at DateTime            @default(now()) @db.Timestamp(6)
+  users      auth_users          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([user_id, token_type])
+  @@index([relates_to], map: "one_time_tokens_relates_to_hash_idx", type: Hash)
+  @@index([token_hash], map: "one_time_tokens_token_hash_hash_idx", type: Hash)
+  @@schema("auth")
+}
+
+model refresh_tokens {
+  instance_id String?   @db.Uuid
+  id          BigInt    @id @default(autoincrement())
+  token       String?   @unique(map: "refresh_tokens_token_unique") @db.VarChar(255)
+  user_id     String?   @db.VarChar(255)
+  revoked     Boolean?
+  created_at  DateTime? @db.Timestamptz(6)
+  updated_at  DateTime? @db.Timestamptz(6)
+  parent      String?   @db.VarChar(255)
+  session_id  String?   @db.Uuid
+  sessions    sessions? @relation(fields: [session_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([instance_id])
+  @@index([instance_id, user_id])
+  @@index([parent])
+  @@index([session_id, revoked])
+  @@index([updated_at(sort: Desc)])
+  @@schema("auth")
+}
+
+model saml_providers {
+  id                String        @id @db.Uuid
+  sso_provider_id   String        @db.Uuid
+  entity_id         String        @unique
+  metadata_xml      String
+  metadata_url      String?
+  attribute_mapping Json?
+  created_at        DateTime?     @db.Timestamptz(6)
+  updated_at        DateTime?     @db.Timestamptz(6)
+  name_id_format    String?
+  sso_providers     sso_providers @relation(fields: [sso_provider_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([sso_provider_id])
+  @@schema("auth")
+}
+
+model saml_relay_states {
+  id              String        @id @db.Uuid
+  sso_provider_id String        @db.Uuid
+  request_id      String
+  for_email       String?
+  redirect_to     String?
+  created_at      DateTime?     @db.Timestamptz(6)
+  updated_at      DateTime?     @db.Timestamptz(6)
+  flow_state_id   String?       @db.Uuid
+  flow_state      flow_state?   @relation(fields: [flow_state_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  sso_providers   sso_providers @relation(fields: [sso_provider_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([created_at(sort: Desc)])
+  @@index([for_email])
+  @@index([sso_provider_id])
+  @@schema("auth")
+}
+
+model schema_migrations {
+  version String @id @db.VarChar(255)
+
+  @@schema("auth")
+}
+
+model sessions {
+  id             String           @id @db.Uuid
+  user_id        String           @db.Uuid
+  created_at     DateTime?        @db.Timestamptz(6)
+  updated_at     DateTime?        @db.Timestamptz(6)
+  factor_id      String?          @db.Uuid
+  aal            aal_level?
+  not_after      DateTime?        @db.Timestamptz(6)
+  refreshed_at   DateTime?        @db.Timestamp(6)
+  user_agent     String?
+  ip             String?          @db.Inet
+  tag            String?
+  mfa_amr_claims mfa_amr_claims[]
+  refresh_tokens refresh_tokens[]
+  users          auth_users       @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([not_after(sort: Desc)])
+  @@index([user_id])
+  @@index([user_id, created_at], map: "user_id_created_at_idx")
+  @@schema("auth")
+}
+
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model sso_domains {
+  id              String        @id @db.Uuid
+  sso_provider_id String        @db.Uuid
+  domain          String
+  created_at      DateTime?     @db.Timestamptz(6)
+  updated_at      DateTime?     @db.Timestamptz(6)
+  sso_providers   sso_providers @relation(fields: [sso_provider_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([sso_provider_id])
+  @@schema("auth")
+}
+
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model sso_providers {
+  id                String              @id @db.Uuid
+  resource_id       String?
+  created_at        DateTime?           @db.Timestamptz(6)
+  updated_at        DateTime?           @db.Timestamptz(6)
+  saml_providers    saml_providers[]
+  saml_relay_states saml_relay_states[]
+  sso_domains       sso_domains[]
+
+  @@schema("auth")
+}
+
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model auth_users {
+  instance_id                 String?           @db.Uuid
+  id                          String            @id @db.Uuid
+  aud                         String?           @db.VarChar(255)
+  role                        String?           @db.VarChar(255)
+  email                       String?           @db.VarChar(255)
+  encrypted_password          String?           @db.VarChar(255)
+  email_confirmed_at          DateTime?         @db.Timestamptz(6)
+  invited_at                  DateTime?         @db.Timestamptz(6)
+  confirmation_token          String?           @db.VarChar(255)
+  confirmation_sent_at        DateTime?         @db.Timestamptz(6)
+  recovery_token              String?           @db.VarChar(255)
+  recovery_sent_at            DateTime?         @db.Timestamptz(6)
+  email_change_token_new      String?           @db.VarChar(255)
+  email_change                String?           @db.VarChar(255)
+  email_change_sent_at        DateTime?         @db.Timestamptz(6)
+  last_sign_in_at             DateTime?         @db.Timestamptz(6)
+  raw_app_meta_data           Json?
+  raw_user_meta_data          Json?
+  is_super_admin              Boolean?
+  created_at                  DateTime?         @db.Timestamptz(6)
+  updated_at                  DateTime?         @db.Timestamptz(6)
+  phone                       String?           @unique
+  phone_confirmed_at          DateTime?         @db.Timestamptz(6)
+  phone_change                String?           @default("")
+  phone_change_token          String?           @default("") @db.VarChar(255)
+  phone_change_sent_at        DateTime?         @db.Timestamptz(6)
+  confirmed_at                DateTime?         @default(dbgenerated("LEAST(email_confirmed_at, phone_confirmed_at)")) @db.Timestamptz(6)
+  email_change_token_current  String?           @default("") @db.VarChar(255)
+  email_change_confirm_status Int?              @default(0) @db.SmallInt
+  banned_until                DateTime?         @db.Timestamptz(6)
+  reauthentication_token      String?           @default("") @db.VarChar(255)
+  reauthentication_sent_at    DateTime?         @db.Timestamptz(6)
+  is_sso_user                 Boolean           @default(false)
+  deleted_at                  DateTime?         @db.Timestamptz(6)
+  is_anonymous                Boolean           @default(false)
+  identities                  identities[]
+  mfa_factors                 mfa_factors[]
+  one_time_tokens             one_time_tokens[]
+  sessions                    sessions[]
+
+  @@index([instance_id])
+  @@index([is_anonymous])
+  @@map("users")
+  @@schema("auth")
+}
+
+model lab_activity {
+  id                        String                      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  lab_material_id           Int?
+  title                     String
+  slug                      String                      @unique
+  description               String?
+  oa_ids                    String[]
+  bloom_level               bloom_level_enum?
+  target_cycle              cycle_enum?
+  duration_minutes          Int?
+  group_size                Int?
+  difficulty_level          Int?
+  cover_image_url           String?
+  steps_markdown            String?
+  video_url                 String?
+  resource_urls             String[]
+  required_material_ids     Int[]
+  assessment_markdown       String?
+  learning_objectives       String[]
+  preparation_time_minutes  Int?                        @default(5)
+  cleanup_time_minutes      Int?                        @default(5)
+  author                    String?
+  reviewed_by               String?
+  tags                      String[]
+  status                    activity_status?            @default(active)
+  created_at                DateTime?                   @default(now()) @db.Timestamptz(6)
+  updated_at                DateTime?                   @default(now()) @db.Timestamptz(6)
+  subject                   String?                     @db.VarChar(255)
+  grade_level               String?                     @db.VarChar(255)
+  indicators_markdown       String?
+  creator_id                String?                     @db.Uuid
+  users                     public_users?               @relation(fields: [creator_id], references: [user_id], onUpdate: NoAction)
+  lab_material              lab_material?               @relation(fields: [lab_material_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  lab_activity_favorites    lab_activity_favorites[]
+  lab_activity_log          lab_activity_log[]
+  lab_activity_metrics      lab_activity_metrics?
+  lab_collection_activities lab_collection_activities[]
+  lab_work_sessions         lab_work_sessions[]
+
+  @@index([bloom_level, target_cycle], map: "idx_lab_activity_bloom_cycle")
+  @@index([oa_ids], map: "idx_lab_activity_oa_ids", type: Gin)
+  @@schema("public")
+}
+
+model lab_activity_metrics {
+  activity_id          String       @id @db.Uuid
+  total_executions     Int?         @default(0)
+  unique_teachers      Int?         @default(0)
+  unique_schools       Int?         @default(0)
+  avg_rating           Decimal?     @db.Decimal(3, 2)
+  avg_duration_minutes Decimal?     @db.Decimal(5, 2)
+  avg_preparation_time Decimal?     @db.Decimal(5, 2)
+  total_evidence_count Int?         @default(0)
+  last_execution_date  DateTime?    @db.Timestamptz(6)
+  trend_7d             Int?         @default(0)
+  trend_30d            Int?         @default(0)
+  updated_at           DateTime?    @default(now()) @db.Timestamptz(6)
+  lab_activity         lab_activity @relation(fields: [activity_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@schema("public")
+}
+
+model lab_material {
+  id               Int                  @id @default(autoincrement())
+  lab_product_id   String?              @db.Uuid
+  name             String
+  internal_code    String               @unique
+  specifications   Json?                @default("{}")
+  cover_image_url  String?
+  quantity_per_kit Int?                 @default(1)
+  weight_grams     Int?
+  dimensions       Json?
+  safety_info      Json?
+  status           lab_material_status? @default(active)
+  created_at       DateTime?            @default(now()) @db.Timestamptz(6)
+  updated_at       DateTime?            @default(now()) @db.Timestamptz(6)
+  lab_activity     lab_activity[]
+  lab_product      lab_product?         @relation(fields: [lab_product_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@schema("public")
+}
+
+model lab_product {
+  id              String              @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name            String
+  code            String              @unique
+  description     String?
+  target_cycles   cycle_enum[]
+  cover_image_url String?
+  price_clp       Int?
+  specifications  Json?               @default("{}")
+  status          lab_product_status? @default(active)
+  created_at      DateTime?           @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime?           @default(now()) @db.Timestamptz(6)
+  lab_material    lab_material[]
+
+  @@schema("public")
+}
+
+model schools {
+  school_id        String             @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  school_name      String             @db.VarChar(255)
+  school_code      String             @unique @db.VarChar(50)
+  sostenedor_id    String?            @db.Uuid
+  address          String?
+  phone            String?            @db.VarChar(20)
+  email            String?            @db.VarChar(255)
+  director_id      String?            @db.Uuid
+  region           String?            @db.VarChar(100)
+  comuna           String?            @db.VarChar(100)
+  rbd              String?            @unique @db.VarChar(20)
+  school_type      String?            @default("particular") @db.VarChar(50)
+  active           Boolean?           @default(true)
+  created_at       DateTime?          @default(now()) @db.Timestamptz(6)
+  updated_at       DateTime?          @default(now()) @db.Timestamptz(6)
+  courses          courses[]
+  lab_activity_log lab_activity_log[]
+  users            public_users[]
+
+  @@schema("public")
+}
+
+model public_users {
+  user_id                  String                     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  school_id                String?                    @db.Uuid
+  email                    String                     @unique @db.VarChar(255)
+  password_hash            String                     @db.VarChar(255)
+  first_name               String                     @db.VarChar(100)
+  last_name                String                     @db.VarChar(100)
+  rut                      String?                    @unique @db.VarChar(12)
+  role                     String                     @db.VarChar(50)
+  phone                    String?                    @db.VarChar(20)
+  address                  String?
+  emergency_contact_name   String?                    @db.VarChar(100)
+  emergency_contact_phone  String?                    @db.VarChar(20)
+  date_of_birth            DateTime?                  @db.Date
+  gender                   String?                    @db.VarChar(10)
+  profile_picture_url      String?
+  permissions              Json?                      @default("{}")
+  role_permissions         Json?                      @default("{}")
+  last_role_update         DateTime?                  @db.Timestamptz(6)
+  email_verified           Boolean?                   @default(false)
+  email_verification_token String?                    @db.VarChar(255)
+  password_reset_token     String?                    @db.VarChar(255)
+  password_reset_expires   DateTime?                  @db.Timestamptz(6)
+  last_login               DateTime?                  @db.Timestamptz(6)
+  login_attempts           Int?                       @default(0)
+  locked_until             DateTime?                  @db.Timestamptz(6)
+  active                   Boolean?                   @default(true)
+  created_at               DateTime?                  @default(now()) @db.Timestamptz(6)
+  updated_at               DateTime?                  @default(now()) @db.Timestamptz(6)
+  lab_activity             lab_activity[]
+  lab_activity_collections lab_activity_collections[]
+  lab_activity_favorites   lab_activity_favorites[]
+  lab_activity_log         lab_activity_log[]
+  lab_evidence             lab_evidence[]
+  lab_work_sessions        lab_work_sessions[]
+  schools                  schools?                   @relation(fields: [school_id], references: [school_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([active], map: "idx_users_active")
+  @@index([email], map: "idx_users_email")
+  @@index([role], map: "idx_users_role")
+  @@index([school_id], map: "idx_users_school_id")
+  @@map("users")
+  @@schema("public")
+}
+
+model courses {
+  course_id         String              @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  school_id         String              @db.Uuid
+  subject_id        String              @db.Uuid
+  grade_code        String?             @db.VarChar(10)
+  course_name       String              @db.VarChar(255)
+  course_code       String?             @unique @db.VarChar(50)
+  description       String?
+  year              Int
+  is_active         Boolean?            @default(true)
+  created_at        DateTime?           @default(now()) @db.Timestamptz(6)
+  updated_at        DateTime?           @default(now()) @db.Timestamptz(6)
+  schools           schools             @relation(fields: [school_id], references: [school_id], onDelete: Cascade, onUpdate: NoAction)
+  lab_activity_log  lab_activity_log[]
+  lab_work_sessions lab_work_sessions[]
+
+  @@unique([school_id, subject_id, grade_code, year])
+  @@schema("public")
+}
+
+model lab_activity_collections {
+  id                        String                      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  teacher_id                String?                     @db.Uuid
+  name                      String
+  description               String?
+  is_public                 Boolean?                    @default(false)
+  tags                      String[]
+  color                     String?                     @default("#3B82F6")
+  created_at                DateTime?                   @default(now()) @db.Timestamptz(6)
+  updated_at                DateTime?                   @default(now()) @db.Timestamptz(6)
+  users                     public_users?               @relation(fields: [teacher_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+  lab_collection_activities lab_collection_activities[]
+
+  @@schema("public")
+}
+
+model lab_activity_favorites {
+  id           String        @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  teacher_id   String?       @db.Uuid
+  activity_id  String?       @db.Uuid
+  notes        String?
+  created_at   DateTime?     @default(now()) @db.Timestamptz(6)
+  lab_activity lab_activity? @relation(fields: [activity_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  users        public_users? @relation(fields: [teacher_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([teacher_id, activity_id])
+  @@schema("public")
+}
+
+model lab_activity_log {
+  id                      String         @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  activity_id             String?        @db.Uuid
+  teacher_id              String?        @db.Uuid
+  school_id               String?        @db.Uuid
+  course_id               String?        @db.Uuid
+  execution_date          DateTime       @db.Timestamptz(6)
+  student_count           Int
+  duration_actual_minutes Int?
+  preparation_time_actual Int?
+  success_rating          Int?
+  engagement_rating       Int?
+  difficulty_perceived    Int?
+  notes                   String?
+  challenges_faced        String[]
+  student_feedback        String?
+  would_repeat            Boolean?
+  location                String?        @default("classroom")
+  weather_conditions      String?
+  adaptations_made        String?
+  created_at              DateTime?      @default(now()) @db.Timestamptz(6)
+  lab_activity            lab_activity?  @relation(fields: [activity_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  courses                 courses?       @relation(fields: [course_id], references: [course_id], onDelete: Cascade, onUpdate: NoAction)
+  schools                 schools?       @relation(fields: [school_id], references: [school_id], onDelete: Cascade, onUpdate: NoAction)
+  users                   public_users?  @relation(fields: [teacher_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+  lab_evidence            lab_evidence[]
+
+  @@index([execution_date(sort: Desc)], map: "idx_lab_activity_log_date")
+  @@index([school_id, execution_date(sort: Desc)], map: "idx_lab_activity_log_school")
+  @@index([teacher_id, execution_date(sort: Desc)], map: "idx_lab_activity_log_teacher")
+  @@schema("public")
+}
+
+model lab_collection_activities {
+  id                       String                    @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  collection_id            String?                   @db.Uuid
+  activity_id              String?                   @db.Uuid
+  sort_order               Int?                      @default(0)
+  notes                    String?
+  added_at                 DateTime?                 @default(now()) @db.Timestamptz(6)
+  lab_activity             lab_activity?             @relation(fields: [activity_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  lab_activity_collections lab_activity_collections? @relation(fields: [collection_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([collection_id, activity_id])
+  @@schema("public")
+}
+
+model lab_evidence {
+  id                String             @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  activity_log_id   String?            @db.Uuid
+  file_url          String
+  file_type         evidence_type_enum
+  file_size_bytes   Int?
+  file_name         String?
+  mime_type         String?
+  description       String?
+  capture_timestamp DateTime?          @db.Timestamptz(6)
+  is_student_work   Boolean?           @default(false)
+  student_names     String[]
+  is_approved       Boolean?
+  approved_by       String?            @db.Uuid
+  approval_notes    String?
+  is_featured       Boolean?           @default(false)
+  privacy_level     String?            @default("school")
+  created_at        DateTime?          @default(now()) @db.Timestamptz(6)
+  lab_activity_log  lab_activity_log?  @relation(fields: [activity_log_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  users             public_users?      @relation(fields: [approved_by], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([file_type], map: "idx_lab_evidence_type")
+  @@schema("public")
+}
+
+model lab_work_groups {
+  id                String             @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  session_id        String?            @db.Uuid
+  group_name        String?
+  student_names     String[]
+  progress_data     Json?              @default("{}")
+  final_result      Json?
+  created_at        DateTime?          @default(now()) @db.Timestamptz(6)
+  lab_work_sessions lab_work_sessions? @relation(fields: [session_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@schema("public")
+}
+
+model lab_work_sessions {
+  id              String            @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  activity_id     String?           @db.Uuid
+  teacher_id      String?           @db.Uuid
+  course_id       String?           @db.Uuid
+  session_name    String?
+  start_time      DateTime          @db.Timestamptz(6)
+  end_time        DateTime?         @db.Timestamptz(6)
+  max_groups      Int?
+  group_size      Int?
+  is_active       Boolean?          @default(true)
+  session_data    Json?             @default("{}")
+  created_at      DateTime?         @default(now()) @db.Timestamptz(6)
+  lab_work_groups lab_work_groups[]
+  lab_activity    lab_activity?     @relation(fields: [activity_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  courses         courses?          @relation(fields: [course_id], references: [course_id], onDelete: Cascade, onUpdate: NoAction)
+  users           public_users?     @relation(fields: [teacher_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@schema("public")
+}
+
+enum aal_level {
+  aal1
+  aal2
+  aal3
+
+  @@schema("auth")
+}
+
+enum code_challenge_method {
+  s256
+  plain
+
+  @@schema("auth")
+}
+
+enum factor_status {
+  unverified
+  verified
+
+  @@schema("auth")
+}
+
+enum factor_type {
+  totp
+  webauthn
+  phone
+
+  @@schema("auth")
+}
+
+enum one_time_token_type {
+  confirmation_token
+  reauthentication_token
+  recovery_token
+  email_change_token_new
+  email_change_token_current
+  phone_change_token
+
+  @@schema("auth")
+}
+
+enum activity_status {
+  draft
+  active
+  archived
+
+  @@schema("public")
+}
+
+enum bloom_level_enum {
+  recordar
+  comprender
+  aplicar
+  analizar
+  evaluar
+  crear
+
+  @@schema("public")
+}
+
+enum cycle_enum {
+  PK
+  K1
+  K2
+  B1 @map("1B")
+  B2 @map("2B")
+  B3 @map("3B")
+  B4 @map("4B")
+  B5 @map("5B")
+  B6 @map("6B")
+
+  @@schema("public")
+}
+
+enum evidence_type_enum {
+  photo
+  video
+  audio
+  document
+
+  @@schema("public")
+}
+
+enum lab_material_status {
+  draft
+  active
+  out_of_stock
+  discontinued
+
+  @@schema("public")
+}
+
+enum lab_product_status {
+  draft
+  active
+  archived
+
+  @@schema("public")
+}

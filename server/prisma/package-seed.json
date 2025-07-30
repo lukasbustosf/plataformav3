@@ -1,0 +1,22 @@
+{
+  "name": "edu21-seed-scripts",
+  "version": "1.0.0",
+  "description": "Scripts de seed para la plataforma EDU21",
+  "main": "seed-modular.js",
+  "scripts": {
+    "seed:modular": "node seed-modular.js",
+    "seed:legacy": "node seed.js",
+    "convert:csv": "node scripts/convert-csv-to-activities.js",
+    "test:seed": "node -e \"console.log('Probando conexión a base de datos...')\"",
+    "help": "echo 'Comandos disponibles:' && echo '  npm run seed:modular    - Ejecutar seed modular (recomendado)' && echo '  npm run seed:legacy     - Ejecutar seed original' && echo '  npm run convert:csv     - Convertir CSV a archivos individuales' && echo '  npm run test:seed      - Probar conexión'"
+  },
+  "keywords": ["seed", "prisma", "supabase", "edu21"],
+  "author": "EDU21 Team",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^5.0.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0"
+  }
+} 

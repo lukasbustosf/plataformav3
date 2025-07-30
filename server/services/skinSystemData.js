@@ -1,0 +1,432 @@
+// 🎨 EDU21 - SISTEMA COMPLETO DE SKINS PARA ENGINES
+// Versión 1.0 - Skins originales limpios
+
+const MATH_SKINS_ENG01 = [
+  {
+    id: 'skin-math-001',
+    engine_id: 'ENG01',
+    name: 'Números Espaciales',
+    description: 'Conteo con temática espacial y astronautas',
+    category: 'space',
+    subject: 'MAT',
+    grades: ['1B', '2B', '3B'],
+    theme: {
+      primary_color: '#2563EB',
+      secondary_color: '#1E3A8A',
+      accent_color: '#F59E0B',
+      background: 'linear-gradient(135deg, #1e3a8a, #3730a3)',
+      font_family: 'Space Grotesk',
+      animations: 'space_bounce'
+    },
+    elements: {
+      counters: ['🚀', '👨‍🚀', '🌟', '🪐', '🛸'],
+      number_line_style: 'space_track',
+      progress_indicators: 'rocket_progression',
+      sound_effects: 'space_themed',
+      visual_effects: 'star_particles'
+    },
+    engine_config: {
+      animation_speed: 'medium',
+      counter_style: 'floating_3d',
+      number_display: 'cosmic_font',
+      interaction_feedback: 'space_sound_visual'
+    },
+    preview_url: '/previews/skin-math-001.jpg',
+    active: true,
+    created_at: new Date().toISOString()
+  },
+  // 🎯 SKIN DE 1° BÁSICO
+  {
+    id: 'skin-1b-farm',
+    engine_id: 'ENG01',
+    name: '🐄 Granja 1° Básico',
+    description: 'Conteo con animales de granja para 1° básico',
+    category: 'animals',
+    subject: 'MAT',
+    grades: ['1B'],
+    theme: {
+      primary_color: '#F59E0B',
+      secondary_color: '#92400E',
+      accent_color: '#FDE047',
+      background: 'linear-gradient(135deg, #92400e, #f59e0b)',
+      font_family: 'Fredoka One',
+      animations: 'farm_bounce'
+    },
+    elements: {
+      counters: ['🐄', '🐷', '🐔', '🐑', '🐰'],
+      number_line_style: 'farm_path',
+      progress_indicators: 'farm_progression',
+      sound_effects: 'farm_sounds',
+      visual_effects: 'hay_particles'
+    },
+    engine_config: {
+      animation_speed: 'slow',
+      counter_style: 'bouncing_animals',
+      number_display: 'large_friendly_font',
+      interaction_feedback: 'farm_sound_visual'
+    },
+    preview_url: '/previews/1b-farm.jpg',
+    active: true,
+    created_at: new Date().toISOString()
+  }
+];
+
+const MATH_SKINS_ENG02 = [
+  {
+    id: 'skin-math-101',
+    engine_id: 'ENG02',
+    name: 'Drag Numbers Safari',
+    description: 'Arrastrar números con animales africanos',
+    category: 'animals',
+    subject: 'MAT',
+    grades: ['1B', '2B', '3B'],
+    theme: {
+      primary_color: '#059669',
+      secondary_color: '#064E3B',
+      accent_color: '#F59E0B',
+      background: 'linear-gradient(135deg, #064e3b, #059669)',
+      font_family: 'Fredoka One',
+      animations: 'safari_bounce'
+    },
+    elements: {
+      numbers: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'],
+      drag_zones: 'animal_habitats',
+      progress_indicators: 'animal_tracks',
+      sound_effects: 'safari_sounds',
+      visual_effects: 'dust_particles'
+    },
+    engine_config: {
+      drag_sensitivity: 'high',
+      drop_zone_style: 'highlighted_areas',
+      number_display: 'large_bold',
+      interaction_feedback: 'animal_sound_visual'
+    },
+    preview_url: '/previews/skin-math-101.jpg',
+    active: true,
+    created_at: new Date().toISOString()
+  }
+];
+
+const LANGUAGE_SKINS_ENG05 = [
+  {
+    id: 'skin-lang-201',
+    engine_id: 'ENG05',
+    name: 'Letras Mágicas',
+    description: 'Reconocimiento de texto con temática fantástica',
+    category: 'fantasy',
+    subject: 'LEN',
+    grades: ['1B', '2B', '3B'],
+    theme: {
+      primary_color: '#EC4899',
+      secondary_color: '#BE185D',
+      accent_color: '#F9A8D4',
+      background: 'linear-gradient(135deg, #be185d, #ec4899)',
+      font_family: 'Dancing Script',
+      animations: 'magical_sparkle'
+    },
+    elements: {
+      letters: ['📝', '✨', '📚', '🪄', '💫'],
+      text_display: 'magical_scroll',
+      progress_indicators: 'sparkle_trail',
+      sound_effects: 'magical_chimes',
+      visual_effects: 'letter_sparkles'
+    },
+    engine_config: {
+      text_size: 'large',
+      recognition_sensitivity: 'medium',
+      feedback_style: 'magical_glow',
+      interaction_feedback: 'sparkle_visual'
+    },
+    preview_url: '/previews/skin-lang-201.jpg',
+    active: true,
+    created_at: new Date().toISOString()
+  }
+];
+
+const LANGUAGE_SKINS_ENG06 = [
+  {
+    id: 'skin-lang-301',
+    engine_id: 'ENG06',
+    name: 'Sonidos del Bosque',
+    description: 'Asociación letra-sonido con animales del bosque',
+    category: 'nature',
+    subject: 'LEN',
+    grades: ['1B', '2B', '3B'],
+    theme: {
+      primary_color: '#16A34A',
+      secondary_color: '#14532D',
+      accent_color: '#84CC16',
+      background: 'linear-gradient(135deg, #14532d, #16a34a)',
+      font_family: 'Comfortaa',
+      animations: 'forest_breeze'
+    },
+    elements: {
+      letters: ['🦉', '🐿️', '🦌', '🐰', '🦔'],
+      sound_indicators: 'forest_sounds',
+      progress_indicators: 'leaf_trail',
+      sound_effects: 'nature_sounds',
+      visual_effects: 'falling_leaves'
+    },
+    engine_config: {
+      sound_quality: 'high',
+      letter_display: 'friendly_animals',
+      matching_style: 'sound_wave_visual',
+      interaction_feedback: 'nature_sound_visual'
+    },
+    preview_url: '/previews/skin-lang-301.jpg',
+    active: true,
+    created_at: new Date().toISOString()
+  }
+];
+
+const LANGUAGE_SKINS_ENG07 = [
+  {
+    id: 'skin-lang-401',
+    engine_id: 'ENG07',
+    name: 'Lectura Espacial',
+    description: 'Fluidez lectora con aventuras espaciales',
+    category: 'space',
+    subject: 'LEN',
+    grades: ['1B', '2B', '3B'],
+    theme: {
+      primary_color: '#7C3AED',
+      secondary_color: '#4C1D95',
+      accent_color: '#A78BFA',
+      background: 'linear-gradient(135deg, #4c1d95, #7c3aed)',
+      font_family: 'Space Grotesk',
+      animations: 'space_float'
+    },
+    elements: {
+      reading_elements: ['🚀', '👽', '🌟', '🪐', '🛸'],
+      text_flow: 'space_scroll',
+      progress_indicators: 'rocket_progression',
+      sound_effects: 'space_ambience',
+      visual_effects: 'star_trail'
+    },
+    engine_config: {
+      reading_speed: 'adjustable',
+      text_highlighting: 'cosmic_glow',
+      fluency_tracking: 'rocket_progress',
+      interaction_feedback: 'space_visual_audio'
+    },
+    preview_url: '/previews/skin-lang-401.jpg',
+    active: true,
+    created_at: new Date().toISOString()
+  }
+];
+
+const SCIENCE_SKINS_ENG09 = [
+  {
+    id: 'skin-science-501',
+    engine_id: 'ENG09',
+    name: 'Ciclo Mariposa',
+    description: 'Simulador del ciclo de vida de las mariposas',
+    category: 'nature',
+    subject: 'CN',
+    grades: ['1B', '2B', '3B'],
+    theme: {
+      primary_color: '#06B6D4',
+      secondary_color: '#0C4A6E',
+      accent_color: '#FDE047',
+      background: 'linear-gradient(135deg, #0c4a6e, #06b6d4)',
+      font_family: 'Nunito',
+      animations: 'lifecycle_transform'
+    },
+    elements: {
+      lifecycle_stages: ['🥚', '🐛', '🛡️', '🦋'],
+      environment: 'garden_scene',
+      progress_indicators: 'transformation_stages',
+      sound_effects: 'nature_garden',
+      visual_effects: 'metamorphosis_animation'
+    },
+    engine_config: {
+      simulation_speed: 'educational',
+      stage_transitions: 'smooth_morphing',
+      interaction_style: 'guided_discovery',
+      feedback_style: 'educational_narration'
+    },
+    preview_url: '/previews/skin-science-501.jpg',
+    active: true,
+    created_at: new Date().toISOString()
+  }
+];
+
+class SkinSystemService {
+  constructor() {
+    this.allSkins = [
+      ...MATH_SKINS_ENG01,
+      ...MATH_SKINS_ENG02,
+      ...LANGUAGE_SKINS_ENG05,
+      ...LANGUAGE_SKINS_ENG06,
+      ...LANGUAGE_SKINS_ENG07,
+      ...SCIENCE_SKINS_ENG09
+    ];
+    
+    // Store applied skins in memory
+    this.appliedSkins = new Map(); // gameSessionId -> skinConfig
+  }
+
+  getAllSkins() {
+    return {
+      success: true,
+      data: this.allSkins,
+      total: this.allSkins.length
+    };
+  }
+
+  getSkinsByEngine(engineId) {
+    const engineSkins = this.allSkins.filter(skin => skin.engine_id === engineId);
+    return {
+      success: true,
+      data: engineSkins,
+      total: engineSkins.length,
+      engine_id: engineId
+    };
+  }
+
+  getSkinsBySubject(subject) {
+    const subjectSkins = this.allSkins.filter(skin => skin.subject === subject);
+    return {
+      success: true,
+      data: subjectSkins,
+      total: subjectSkins.length,
+      subject: subject
+    };
+  }
+
+  getSkinById(skinId) {
+    const skin = this.allSkins.find(skin => skin.id === skinId);
+    if (skin) {
+      return {
+        success: true,
+        data: skin
+      };
+    }
+    return {
+      success: false,
+      error: 'Skin not found'
+    };
+  }
+
+  getSkinStats() {
+    const statsByEngine = {};
+    const statsBySubject = {};
+    const statsByCategory = {};
+
+    this.allSkins.forEach(skin => {
+      if (!statsByEngine[skin.engine_id]) {
+        statsByEngine[skin.engine_id] = 0;
+      }
+      statsByEngine[skin.engine_id]++;
+
+      if (!statsBySubject[skin.subject]) {
+        statsBySubject[skin.subject] = 0;
+      }
+      statsBySubject[skin.subject]++;
+
+      if (!statsByCategory[skin.category]) {
+        statsByCategory[skin.category] = 0;
+      }
+      statsByCategory[skin.category]++;
+    });
+
+    return {
+      success: true,
+      data: {
+        total_skins: this.allSkins.length,
+        by_engine: statsByEngine,
+        by_subject: statsBySubject,
+        by_category: statsByCategory,
+        engines_covered: Object.keys(statsByEngine),
+        subjects_covered: Object.keys(statsBySubject)
+      }
+    };
+  }
+
+  applySkinToGame(skinId, gameSessionId) {
+    const skin = this.getSkinById(skinId);
+    if (!skin.success) {
+      return skin;
+    }
+
+    const skinConfig = {
+      session_id: gameSessionId,
+      skin_id: skinId,
+      skin_name: skin.data.name,
+      applied_at: new Date().toISOString(),
+      theme: skin.data.theme,
+      elements: skin.data.elements,
+      engine_config: skin.data.engine_config,
+      engine_id: skin.data.engine_id,
+      preview_url: skin.data.preview_url
+    };
+
+    // 🔄 PERSIST: Store the applied skin configuration
+    this.appliedSkins.set(gameSessionId, skinConfig);
+    
+    console.log(`🎨 STORED: Skin "${skin.data.name}" applied to game ${gameSessionId}`);
+    console.log(`🎨 STORED CONFIG:`, skinConfig);
+
+    return {
+      success: true,
+      data: skinConfig,
+      message: `Skin "${skin.data.name}" applied successfully`
+    };
+  }
+
+  // NEW: Get applied skin for a game session
+  getAppliedSkin(gameSessionId) {
+    const appliedSkin = this.appliedSkins.get(gameSessionId);
+    if (appliedSkin) {
+      return {
+        success: true,
+        data: appliedSkin
+      };
+    }
+    return {
+      success: false,
+      error: 'No skin applied to this game session'
+    };
+  }
+
+  // NEW: Get all applied skins
+  getAllAppliedSkins() {
+    const appliedSkinsArray = Array.from(this.appliedSkins.entries()).map(([sessionId, config]) => ({
+      ...config,
+      session_id: sessionId
+    }));
+    
+    return {
+      success: true,
+      data: appliedSkinsArray,
+      total: appliedSkinsArray.length
+    };
+  }
+
+  // NEW: Remove applied skin from a game session
+  removeAppliedSkin(gameSessionId) {
+    if (this.appliedSkins.has(gameSessionId)) {
+      this.appliedSkins.delete(gameSessionId);
+      return {
+        success: true,
+        message: 'Skin removed successfully'
+      };
+    }
+    return {
+      success: false,
+      error: 'No skin applied to this game session'
+    };
+  }
+}
+
+const skinSystemService = new SkinSystemService();
+
+module.exports = {
+  skinSystemService,
+  MATH_SKINS_ENG01,
+  MATH_SKINS_ENG02,
+  LANGUAGE_SKINS_ENG05,
+  LANGUAGE_SKINS_ENG06,
+  LANGUAGE_SKINS_ENG07,
+  SCIENCE_SKINS_ENG09
+}; 

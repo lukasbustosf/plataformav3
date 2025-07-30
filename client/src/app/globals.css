@@ -1,0 +1,766 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS for EDU21 Platform */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+  
+  /* Focus styles for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@layer components {
+  /* Button variants - now fully responsive */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus-ring text-sm sm:text-base;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-900 font-medium py-2 px-4 rounded-md transition-colors duration-200 focus-ring text-sm sm:text-base;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus-ring text-sm sm:text-base;
+  }
+  
+  .btn-game {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base;
+  }
+  
+  /* Responsive button sizes */
+  .btn-responsive {
+    @apply px-3 py-2 text-xs sm:px-4 sm:py-2 sm:text-sm md:px-6 md:py-3 md:text-base;
+  }
+  
+  /* Card components - enhanced for mobile */
+  .card {
+    @apply bg-white rounded-lg shadow-card border border-gray-200;
+  }
+  
+  .card-game {
+    @apply bg-white rounded-xl shadow-game border border-gray-200 overflow-hidden;
+  }
+  
+  .card-responsive {
+    @apply bg-white rounded-lg shadow-card border border-gray-200 mx-2 sm:mx-0 my-2 sm:my-4;
+  }
+  
+  /* Form inputs - mobile optimized */
+  .input-field {
+    @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-3;
+  }
+  
+  .input-field-mobile {
+    @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 text-base px-4 py-3 touch-manipulation;
+  }
+  
+  /* Navigation styles - responsive */
+  .nav-link {
+    @apply flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 sm:text-base;
+  }
+  
+  .nav-link-active {
+    @apply bg-primary-100 text-primary-700;
+  }
+  
+  .nav-link-inactive {
+    @apply text-gray-600 hover:bg-gray-50 hover:text-gray-900;
+  }
+  
+  /* Mobile navigation */
+  .nav-mobile {
+    @apply flex items-center justify-center p-3 text-sm font-medium rounded-md transition-colors duration-200;
+  }
+  
+  /* Grid layouts - responsive by default */
+  .grid-responsive-1 {
+    @apply grid grid-cols-1;
+  }
+  
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2;
+  }
+  
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  
+  .grid-responsive-5 {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
+  }
+  
+  .grid-responsive-6 {
+    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6;
+  }
+  
+  /* Table responsive containers */
+  .table-container {
+    @apply overflow-x-auto -mx-4 sm:mx-0 sm:rounded-lg;
+  }
+  
+  .table-responsive {
+    @apply min-w-full divide-y divide-gray-200;
+  }
+  
+  .table-mobile-card {
+    @apply block sm:hidden space-y-4;
+  }
+  
+  .table-desktop {
+    @apply hidden sm:table min-w-full divide-y divide-gray-200;
+  }
+  
+  /* Modal responsive classes */
+  .modal-container {
+    @apply fixed inset-0 z-50 overflow-y-auto;
+  }
+  
+  .modal-backdrop {
+    @apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
+  }
+  
+  .modal-wrapper {
+    @apply flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0;
+  }
+  
+  .modal-panel {
+    @apply relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl mx-4 sm:mx-6;
+  }
+  
+  .modal-panel-sm {
+    @apply relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-sm sm:max-w-md mx-4;
+  }
+  
+  .modal-panel-lg {
+    @apply relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-md sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-4 sm:mx-6;
+  }
+  
+  .modal-panel-full {
+    @apply relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-sm sm:max-w-full sm:mx-4 md:mx-8 lg:mx-12 xl:mx-16;
+  }
+  
+  /* Dashboard layout responsive classes */
+  .dashboard-main {
+    @apply flex-1 flex flex-col overflow-hidden;
+  }
+  
+  .dashboard-header {
+    @apply sticky top-0 z-40 flex h-14 sm:h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8;
+  }
+  
+  .dashboard-content {
+    @apply flex-1 overflow-auto p-4 sm:p-6 lg:p-8;
+  }
+  
+  .dashboard-content-tight {
+    @apply flex-1 overflow-auto p-2 sm:p-4 lg:p-6;
+  }
+  
+  /* Page headers - responsive */
+  .page-header {
+    @apply mb-6 sm:mb-8;
+  }
+  
+  .page-title {
+    @apply text-xl font-bold text-gray-900 sm:text-2xl lg:text-3xl;
+  }
+  
+  .page-subtitle {
+    @apply mt-1 text-sm text-gray-600 sm:text-base;
+  }
+  
+  /* Section spacing - responsive */
+  .section-spacing {
+    @apply space-y-4 sm:space-y-6 lg:space-y-8;
+  }
+  
+  .section-spacing-tight {
+    @apply space-y-3 sm:space-y-4 lg:space-y-6;
+  }
+  
+  /* Stats grid - mobile optimized */
+  .stats-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6;
+  }
+  
+  .stats-card {
+    @apply bg-white overflow-hidden shadow rounded-lg px-4 py-5 sm:p-6;
+  }
+  
+  /* Game specific styles - responsive */
+  .game-board {
+    @apply grid gap-2 p-2 sm:gap-4 sm:p-4 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl;
+  }
+  
+  .game-card {
+    @apply bg-white rounded-lg shadow-md border-2 border-transparent hover:border-primary-300 transition-all duration-200 cursor-pointer p-3 sm:p-4;
+  }
+  
+  .game-card-selected {
+    @apply border-primary-500 bg-primary-50;
+  }
+  
+  /* Chart containers - responsive */
+  .chart-container {
+    @apply h-64 sm:h-72 md:h-80 lg:h-96 w-full;
+  }
+  
+  .chart-container-small {
+    @apply h-48 sm:h-56 md:h-64 w-full;
+  }
+  
+  /* Form layouts - mobile first */
+  .form-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6;
+  }
+  
+  .form-grid-3 {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6;
+  }
+  
+  .form-section {
+    @apply space-y-4 sm:space-y-6;
+  }
+  
+  /* Mobile-specific utilities */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .safe-area-inset {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Animation classes - performance optimized for mobile */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.2s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.4s ease-out;
+  }
+  
+  /* Mobile-specific overrides */
+  @media (max-width: 640px) {
+    .mobile-full-width {
+      @apply w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw];
+    }
+    
+    .mobile-sticky-bottom {
+      @apply sticky bottom-0 bg-white border-t border-gray-200 p-4;
+    }
+    
+    .mobile-safe-bottom {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+  
+  /* Tablet-specific optimizations */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .tablet-grid-2 {
+      @apply grid-cols-2;
+    }
+    
+    .tablet-grid-3 {
+      @apply grid-cols-3;
+    }
+  }
+}
+
+@layer utilities {
+  /* Custom utilities - enhanced for mobile */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+  
+  /* Mobile typography scale */
+  .text-mobile-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-mobile-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-mobile-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-mobile-lg {
+    @apply text-lg sm:text-xl;
+  }
+  
+  .text-mobile-xl {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  /* Action buttons - mobile optimized */
+  .action-buttons {
+    @apply flex flex-col sm:flex-row gap-2 sm:gap-4;
+  }
+  
+  .action-buttons-center {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4;
+  }
+  
+  /* Page headers - improved mobile */
+  .page-header-mobile {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6;
+  }
+  
+  .page-title-mobile {
+    @apply text-lg font-bold text-gray-900 sm:text-xl lg:text-2xl;
+  }
+  
+  /* Filters - mobile stacked */
+  .filters-mobile {
+    @apply flex flex-col sm:flex-row gap-2 sm:gap-3;
+  }
+  
+  /* Card grids - responsive */
+  .card-grid-1 {
+    @apply grid grid-cols-1 gap-4 sm:gap-6;
+  }
+  
+  .card-grid-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6;
+  }
+  
+  .card-grid-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+  }
+  
+  .card-grid-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+  }
+  
+  /* Progress bars - mobile friendly */
+  .progress-bar-mobile {
+    @apply w-12 sm:w-16 bg-gray-200 rounded-full h-2;
+  }
+  
+  /* Icon buttons - touch friendly */
+  .icon-button {
+    @apply p-2 rounded-lg hover:bg-gray-100 transition-colors touch-manipulation;
+  }
+  
+  .icon-button-sm {
+    @apply p-1 rounded hover:bg-gray-100 transition-colors touch-manipulation;
+  }
+  
+  /* Spacing utilities - mobile first */
+  .p-mobile {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  .px-mobile {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .py-mobile {
+    @apply py-4 sm:py-6 lg:py-8;
+  }
+  
+  .m-mobile {
+    @apply m-2 sm:m-4 lg:m-6;
+  }
+  
+  .gap-mobile {
+    @apply gap-3 sm:gap-4 lg:gap-6;
+  }
+  
+  /* Accessibility utilities */
+  .skip-link {
+    @apply absolute left-0 top-0 bg-primary-600 text-white px-4 py-2 rounded-br-md -translate-y-full focus:translate-y-0 transition-transform duration-200 z-50;
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .card {
+      @apply border-2 border-gray-800;
+    }
+    
+    .btn-primary {
+      @apply border-2 border-primary-800;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Dark mode utilities (future-ready) */
+  @media (prefers-color-scheme: dark) {
+    .dark-mode-text {
+      @apply text-gray-100;
+    }
+    
+    .dark-mode-bg {
+      @apply bg-gray-900;
+    }
+  }
+}
+
+/* Keyframes - optimized for mobile performance */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-friendly {
+    color: black !important;
+    background: white !important;
+  }
+  
+  .print-page-break {
+    page-break-before: always;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .ios-fix {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"], 
+  textarea, 
+  select {
+    @apply ios-fix;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Android Chrome specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .android-fix {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Landscape mobile specific styles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .landscape-mobile-header {
+    @apply h-12;
+  }
+  
+  .landscape-mobile-content {
+    @apply py-2;
+  }
+}
+
+/* ============================
+   TTS (Text-to-Speech) Styles
+   ============================ */
+
+/* Indicador global cuando TTS está hablando */
+.tts-speaking {
+  --tts-accent: #3b82f6;
+  --tts-pulse: 0 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+.tts-speaking *:focus {
+  box-shadow: var(--tts-pulse);
+}
+
+/* Botón TTS */
+.tts-button {
+  @apply relative inline-flex items-center justify-center;
+  @apply px-3 py-2 text-sm font-medium;
+  @apply bg-blue-100 hover:bg-blue-200 text-blue-800;
+  @apply border border-blue-300 rounded-lg;
+  @apply transition-all duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.tts-button:hover {
+  transform: translateY(-1px);
+}
+
+.tts-button.speaking {
+  @apply bg-blue-500 text-white;
+  animation: tts-pulse 1.5s infinite;
+}
+
+.tts-button.disabled {
+  @apply bg-gray-100 text-gray-400 cursor-not-allowed;
+}
+
+.tts-button .icon {
+  @apply w-4 h-4 mr-1;
+}
+
+/* Animación de pulso para TTS activo */
+@keyframes tts-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Indicador de TTS en elementos de texto */
+.tts-speakable {
+  @apply relative cursor-pointer;
+  @apply hover:bg-blue-50 hover:border-blue-200;
+  @apply transition-colors duration-200;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.tts-speakable::before {
+  content: '🔊';
+  @apply absolute -top-2 -right-2;
+  @apply w-5 h-5 text-xs;
+  @apply bg-blue-500 text-white rounded-full;
+  @apply flex items-center justify-center;
+  @apply opacity-0 hover:opacity-100;
+  @apply transition-opacity duration-200;
+  font-size: 10px;
+}
+
+.tts-speakable.speaking {
+  @apply bg-blue-100 border-blue-300;
+  animation: tts-glow 2s infinite;
+}
+
+@keyframes tts-glow {
+  0%, 100% {
+    background-color: rgb(219 234 254);
+  }
+  50% {
+    background-color: rgb(147 197 253);
+  }
+}
+
+/* Panel de control TTS */
+.tts-controls {
+  @apply fixed bottom-4 right-4 z-50;
+  @apply bg-white border border-gray-300 rounded-lg shadow-lg;
+  @apply p-3 space-y-2;
+  @apply opacity-90 hover:opacity-100;
+  @apply transition-all duration-200;
+}
+
+.tts-controls.hidden {
+  @apply translate-y-full opacity-0 pointer-events-none;
+}
+
+.tts-control-row {
+  @apply flex items-center space-x-2;
+}
+
+.tts-slider {
+  @apply w-16 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer;
+}
+
+.tts-slider::-webkit-slider-thumb {
+  @apply appearance-none w-3 h-3 bg-blue-500 rounded-full cursor-pointer;
+}
+
+.tts-label {
+  @apply text-xs text-gray-600 min-w-12 text-right;
+}
+
+/* Estados de accesibilidad mejorados */
+.accessibility-mode .tts-button {
+  @apply text-lg px-4 py-3;
+  min-height: 44px; /* Mínimo táctil */
+}
+
+.accessibility-mode .tts-speakable {
+  @apply text-lg leading-relaxed;
+  padding: 8px;
+}
+
+.accessibility-mode .tts-controls {
+  @apply text-base p-4;
+  @apply bottom-6 right-6;
+}
+
+/* Alto contraste */
+.high-contrast .tts-button {
+  @apply bg-black text-white border-white;
+}
+
+.high-contrast .tts-button:hover,
+.high-contrast .tts-button.speaking {
+  @apply bg-white text-black border-black;
+}
+
+.high-contrast .tts-speakable {
+  @apply bg-black text-white;
+}
+
+.high-contrast .tts-controls {
+  @apply bg-black text-white border-white;
+}
+
+/* Indicadores para lectores de pantalla */
+.sr-tts-status {
+  @apply sr-only;
+}
+
+.tts-speaking .sr-tts-status::before {
+  content: "Reproduciendo audio: ";
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .tts-controls {
+    @apply bottom-2 right-2 left-2;
+    @apply flex-row justify-between;
+    @apply p-2;
+  }
+  
+  .tts-control-row {
+    @apply flex-col space-y-1 space-x-0;
+  }
+  
+  .tts-slider {
+    @apply w-full;
+  }
+}
+
+/* Reducir movimiento para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+  .tts-button.speaking,
+  .tts-speakable.speaking {
+    animation: none;
+  }
+  
+  .tts-button:hover {
+    transform: none;
+  }
+}
+
+/* Indicador de carga TTS */
+.tts-loading {
+  @apply inline-flex items-center;
+}
+
+.tts-loading::after {
+  content: '';
+  @apply w-3 h-3 ml-2;
+  @apply border-2 border-blue-500 border-t-transparent;
+  @apply rounded-full animate-spin;
+}
+
+/* Estilos para diferentes tipos de contenido TTS */
+.tts-question {
+  @apply border-l-4 border-blue-500 pl-3;
+  @apply bg-blue-50 rounded-r-lg;
+}
+
+.tts-instruction {
+  @apply border-l-4 border-green-500 pl-3;
+  @apply bg-green-50 rounded-r-lg;
+}
+
+.tts-feedback {
+  @apply border-l-4 border-yellow-500 pl-3;
+  @apply bg-yellow-50 rounded-r-lg;
+}
+
+.tts-feedback.correct {
+  @apply border-green-500 bg-green-50;
+}
+
+.tts-feedback.incorrect {
+  @apply border-red-500 bg-red-50;
+} 

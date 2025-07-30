@@ -1,0 +1,681 @@
+[
+  {
+    "game_id": "1b-language-le01oa01",
+    "oa_code": "LE01OA01",
+    "title": "📚 Reconocer textos escritos",
+    "description": "Juego de Reconocer que los textos transmiten mensajes y tienen un propósito usando Text Recognition",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "format": "word_builder",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Recordar",
+    "complexity": 1,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "text_complexity": "simple_words",
+        "letter_support": true,
+        "visual_cues": true,
+        "tts_enabled": true
+      },
+      "game_mechanics": [
+        "text_recognition",
+        "pattern_matching",
+        "letter_identification",
+        "word_building"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "bdec3c71-15ca-4c43-a366-b9a12d7de2a4",
+        "question": "¿Para qué sirve este cartel?",
+        "type": "image_selection",
+        "image_description": "Cartel de 'PARE' en la calle",
+        "options": [
+          "Para decorar",
+          "Para parar los autos",
+          "Para jugar",
+          "Para contar"
+        ],
+        "correct_answer": "Para parar los autos",
+        "feedback": "¡Correcto! Los carteles nos dan información importante.",
+        "engine_data": {
+          "text_type": "instructional_sign",
+          "purpose": "traffic_control"
+        }
+      },
+      {
+        "id": "eef42e0d-2586-4c42-89d4-baba6a1aac00",
+        "question": "¿Qué tipo de texto es este?",
+        "type": "text_classification",
+        "text_sample": "Había una vez un ratón...",
+        "options": [
+          "Cuento",
+          "Receta",
+          "Lista",
+          "Carta"
+        ],
+        "correct_answer": "Cuento",
+        "feedback": "¡Excelente! 'Había una vez...' nos dice que es un cuento.",
+        "engine_data": {
+          "text_type": "narrative",
+          "genre": "fairy_tale"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.534Z"
+  },
+  {
+    "game_id": "1b-language-le01oa02",
+    "oa_code": "LE01OA02",
+    "title": "📚 Palabras como unidades",
+    "description": "Juego de Reconocer palabras separadas por espacios en el texto usando Text Recognition",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "format": "word_builder",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Recordar",
+    "complexity": 1,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "text_complexity": "simple_words",
+        "letter_support": true,
+        "visual_cues": true,
+        "tts_enabled": true
+      },
+      "game_mechanics": [
+        "text_recognition",
+        "pattern_matching",
+        "letter_identification",
+        "word_building"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "568c1401-ff17-471c-95b7-9bc59888943e",
+        "question": "¿Cuántas palabras hay? 'Mi gato come'",
+        "type": "word_counting",
+        "text": "Mi gato come",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "correct_answer": "3",
+        "feedback": "¡Muy bien! Las palabras son: Mi - gato - come",
+        "engine_data": {
+          "word_count": 3,
+          "sentence": "Mi gato come"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.535Z"
+  },
+  {
+    "game_id": "1b-language-le01oa03",
+    "oa_code": "LE01OA03",
+    "title": "📚 Conciencia fonológica",
+    "description": "Juego de Identificar sonidos, separar y combinar fonemas y sílabas usando Letter-Sound Matching",
+    "engine_id": "ENG06",
+    "engine_name": "Letter-Sound Matching",
+    "format": "color_match",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Recordar",
+    "complexity": 2,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "phonetic_precision": "basic_sounds",
+        "audio_quality": "high_fidelity",
+        "visual_feedback": true,
+        "pronunciation_practice": true
+      },
+      "game_mechanics": [
+        "phonetic_matching",
+        "audio_recognition",
+        "sound_synthesis",
+        "letter_sound_mapping"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "ce62ec1c-912f-4d9f-9ade-358613766fd8",
+        "question": "¿Con qué sonido empieza 'MESA'?",
+        "type": "sound_identification",
+        "word": "MESA",
+        "audio_cue": "/sounds/m-sound.mp3",
+        "options": [
+          "M",
+          "E",
+          "S",
+          "A"
+        ],
+        "correct_answer": "M",
+        "feedback": "¡Perfecto! MESA empieza con el sonido M.",
+        "engine_data": {
+          "word": "mesa",
+          "initial_sound": "m",
+          "phoneme_position": "initial"
+        }
+      },
+      {
+        "id": "c040372c-ae7b-47a7-a7d5-efcaee511e8b",
+        "question": "Divide en sílabas: CA-SA",
+        "type": "syllable_division",
+        "word": "CASA",
+        "options": [
+          "CA-SA",
+          "C-ASA",
+          "CAS-A",
+          "C-A-S-A"
+        ],
+        "correct_answer": "CA-SA",
+        "feedback": "¡Genial! CASA se divide en CA-SA (2 sílabas).",
+        "engine_data": {
+          "word": "casa",
+          "syllables": [
+            "ca",
+            "sa"
+          ],
+          "syllable_count": 2
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.535Z"
+  },
+  {
+    "game_id": "1b-language-le01oa04",
+    "oa_code": "LE01OA04",
+    "title": "📚 Correspondencia letra-sonido",
+    "description": "Juego de Leer aplicando conocimiento letra-sonido (sílabas, dígrafos) usando Letter-Sound Matching",
+    "engine_id": "ENG06",
+    "engine_name": "Letter-Sound Matching",
+    "format": "memory_flip",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Recordar",
+    "complexity": 2,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "phonetic_precision": "basic_sounds",
+        "audio_quality": "high_fidelity",
+        "visual_feedback": true,
+        "pronunciation_practice": true
+      },
+      "game_mechanics": [
+        "phonetic_matching",
+        "audio_recognition",
+        "sound_synthesis",
+        "letter_sound_mapping"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "de4decd7-d419-4469-8a86-09232b21c126",
+        "question": "¿Qué letra hace el sonido /s/?",
+        "type": "sound_to_letter",
+        "audio_cue": "/sounds/s-sound.mp3",
+        "options": [
+          "S",
+          "C",
+          "Z",
+          "X"
+        ],
+        "correct_answer": "S",
+        "feedback": "¡Correcto! La letra S hace el sonido /s/.",
+        "engine_data": {
+          "sound": "/s/",
+          "letter": "S",
+          "phoneme_type": "consonant"
+        }
+      },
+      {
+        "id": "530604ac-5532-46eb-8921-6d59b585b6dd",
+        "question": "Lee esta palabra: MAMA",
+        "type": "word_reading",
+        "word_display": "MAMA",
+        "options": [
+          "MAMA",
+          "PAPA",
+          "NANA",
+          "LALA"
+        ],
+        "correct_answer": "MAMA",
+        "feedback": "¡Excelente lectura! Es MAMA.",
+        "engine_data": {
+          "word": "mama",
+          "complexity": "simple_cv",
+          "syllable_pattern": "CV-CV"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.535Z"
+  },
+  {
+    "game_id": "1b-language-le01oa05",
+    "oa_code": "LE01OA05",
+    "title": "📚 Leer en voz alta",
+    "description": "Juego de Leer textos breves en voz alta para adquirir fluidez usando Reading Fluency",
+    "engine_id": "ENG07",
+    "engine_name": "Reading Fluency",
+    "format": "story_path",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Recordar",
+    "complexity": 2,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "text_length": "short_sentences",
+        "reading_speed_target": "age_appropriate",
+        "comprehension_level": "basic",
+        "visual_support": true
+      },
+      "game_mechanics": [
+        "reading_tracking",
+        "fluency_measurement",
+        "comprehension_check",
+        "pace_control"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "5c5f23b9-bcf5-4aec-8bc3-eeeb435a16e8",
+        "question": "Lee en voz alta: 'El sol sale'",
+        "type": "reading_aloud",
+        "text": "El sol sale",
+        "instruction": "Lee con voz clara y pausada",
+        "evaluation_criteria": [
+          "pronunciation",
+          "pace",
+          "clarity"
+        ],
+        "feedback": "¡Muy bien! Tu lectura fue clara.",
+        "engine_data": {
+          "text": "El sol sale",
+          "difficulty": "beginner",
+          "word_count": 3
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.535Z"
+  },
+  {
+    "game_id": "1b-language-le01oa06",
+    "oa_code": "LE01OA06",
+    "title": "📚 Comprensión lectora",
+    "description": "Juego de Comprender textos aplicando estrategias de comprensión usando Reading Fluency",
+    "engine_id": "ENG07",
+    "engine_name": "Reading Fluency",
+    "format": "trivia_lightning",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Comprender",
+    "complexity": 3,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "text_length": "short_sentences",
+        "reading_speed_target": "age_appropriate",
+        "comprehension_level": "basic",
+        "visual_support": true
+      },
+      "game_mechanics": [
+        "reading_tracking",
+        "fluency_measurement",
+        "comprehension_check",
+        "pace_control"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "a0545cc7-53d2-4721-a146-322785fe60ba",
+        "question": "Lee: 'Ana tiene un perro. El perro es café.' ¿De qué color es el perro?",
+        "type": "reading_comprehension",
+        "text": "Ana tiene un perro. El perro es café.",
+        "options": [
+          "Negro",
+          "Café",
+          "Blanco",
+          "Gris"
+        ],
+        "correct_answer": "Café",
+        "feedback": "¡Correcto! El texto dice que el perro es café.",
+        "engine_data": {
+          "text_length": "short",
+          "comprehension_type": "literal",
+          "detail": "color"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.535Z"
+  },
+  {
+    "game_id": "1b-language-le01oa07",
+    "oa_code": "LE01OA07",
+    "title": "📚 Repertorio literario",
+    "description": "Juego de Leer independientemente y ampliar repertorio literario usando Reading Fluency",
+    "engine_id": "ENG07",
+    "engine_name": "Reading Fluency",
+    "format": "story_path",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Recordar",
+    "complexity": 2,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "text_length": "short_sentences",
+        "reading_speed_target": "age_appropriate",
+        "comprehension_level": "basic",
+        "visual_support": true
+      },
+      "game_mechanics": [
+        "reading_tracking",
+        "fluency_measurement",
+        "comprehension_check",
+        "pace_control"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "51f154fd-9e5e-4f20-b613-b24493752185",
+        "question": "¿Qué tipo de historia es 'Los Tres Cerditos'?",
+        "type": "literary_classification",
+        "story_title": "Los Tres Cerditos",
+        "options": [
+          "Cuento",
+          "Poema",
+          "Canción",
+          "Carta"
+        ],
+        "correct_answer": "Cuento",
+        "feedback": "¡Excelente! Los Tres Cerditos es un cuento clásico.",
+        "engine_data": {
+          "story": "tres_cerditos",
+          "genre": "folk_tale",
+          "classification": "narrative"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.536Z"
+  },
+  {
+    "game_id": "1b-language-le01oa08",
+    "oa_code": "LE01OA08",
+    "title": "📚 Comprender narraciones",
+    "description": "Juego de Comprender narraciones sobre temas familiares usando Reading Fluency",
+    "engine_id": "ENG07",
+    "engine_name": "Reading Fluency",
+    "format": "story_path",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Comprender",
+    "complexity": 3,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "text_length": "short_sentences",
+        "reading_speed_target": "age_appropriate",
+        "comprehension_level": "basic",
+        "visual_support": true
+      },
+      "game_mechanics": [
+        "reading_tracking",
+        "fluency_measurement",
+        "comprehension_check",
+        "pace_control"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "a493b1c0-d0ba-4e53-ae87-89ad2ff0fc1f",
+        "question": "En el cuento, ¿quién sopló las casas?",
+        "type": "story_comprehension",
+        "story_context": "Cuento de Los Tres Cerditos",
+        "options": [
+          "Los cerditos",
+          "El lobo",
+          "El viento",
+          "Nadie"
+        ],
+        "correct_answer": "El lobo",
+        "feedback": "¡Perfecto! El lobo sopló las casas de los cerditos.",
+        "engine_data": {
+          "story": "tres_cerditos",
+          "question_type": "character_action",
+          "comprehension_level": "literal"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.536Z"
+  },
+  {
+    "game_id": "1b-language-le01oa13",
+    "oa_code": "LE01OA13",
+    "title": "📚 Experimentar escritura",
+    "description": "Juego de Experimentar con escritura para comunicar ideas y sentimientos usando Text Recognition",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "format": "word_builder",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Recordar",
+    "complexity": 2,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "text_complexity": "simple_words",
+        "letter_support": true,
+        "visual_cues": true,
+        "tts_enabled": true
+      },
+      "game_mechanics": [
+        "text_recognition",
+        "pattern_matching",
+        "letter_identification",
+        "word_building"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "40d50a71-6345-4538-b48d-bdd3e483accd",
+        "question": "Escribe tu nombre:",
+        "type": "writing_practice",
+        "instruction": "Usa las letras para escribir tu nombre",
+        "available_letters": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "feedback": "¡Muy bien! Escribiste tu nombre.",
+        "engine_data": {
+          "activity_type": "name_writing",
+          "complexity": "personal_identification"
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.536Z"
+  },
+  {
+    "game_id": "1b-language-le01oa14",
+    "oa_code": "LE01OA14",
+    "title": "📚 Escribir oraciones",
+    "description": "Juego de Escribir oraciones completas para transmitir mensajes usando Text Recognition",
+    "engine_id": "ENG05",
+    "engine_name": "Text Recognition",
+    "format": "word_builder",
+    "grade": "1B",
+    "subject": "LEN",
+    "bloom_level": "Recordar",
+    "complexity": 2,
+    "estimated_duration": 10,
+    "max_players": 25,
+    "settings": {
+      "engine_config": {
+        "text_complexity": "simple_words",
+        "letter_support": true,
+        "visual_cues": true,
+        "tts_enabled": true
+      },
+      "game_mechanics": [
+        "text_recognition",
+        "pattern_matching",
+        "letter_identification",
+        "word_building"
+      ],
+      "difficulty": "beginner",
+      "tts_enabled": true,
+      "accessibility": {
+        "keyboard_navigation": true,
+        "high_contrast": true,
+        "audio_support": true,
+        "visual_cues": true
+      }
+    },
+    "questions": [
+      {
+        "id": "fe0cc93a-3baf-4369-ad90-71afac2f1c28",
+        "question": "Ordena las palabras: 'gato - el - come'",
+        "type": "sentence_construction",
+        "words": [
+          "gato",
+          "el",
+          "come"
+        ],
+        "correct_order": [
+          "el",
+          "gato",
+          "come"
+        ],
+        "feedback": "¡Excelente! La oración correcta es: 'El gato come'",
+        "engine_data": {
+          "sentence_type": "simple",
+          "structure": "subject_verb",
+          "word_count": 3
+        }
+      }
+    ],
+    "created_for": "primero_basico",
+    "created_at": "2025-07-09T18:49:21.536Z"
+  }
+]

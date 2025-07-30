@@ -1,0 +1,77 @@
+{
+  "fase_1_fundacion": {
+    "duracion": "4 semanas",
+    "engines": [
+      "ENG01-COUNTER",
+      "ENG02-DRAG_DROP_NUM"
+    ],
+    "objetivos": [
+      "Implementar arquitectura base de engines",
+      "Crear sistema de configuración JSON",
+      "Desarrollar interfaz común de engines",
+      "Testing básico con matemáticas 1° básico"
+    ],
+    "entregables": [
+      "Engine Counter funcional",
+      "Engine DragDrop funcional",
+      "Documentación técnica",
+      "Suite de tests unitarios"
+    ]
+  },
+  "fase_2_expansion": {
+    "duracion": "4 semanas",
+    "engines": [
+      "ENG05-TEXT_RECOG",
+      "ENG06-LETTER_SOUND"
+    ],
+    "objetivos": [
+      "Implementar engines de lenguaje",
+      "Integrar TTS y reconocimiento de voz",
+      "Crear sistema de accesibilidad",
+      "Testing con lectoescritura 1°-2° básico"
+    ],
+    "entregables": [
+      "Engine TextRecog funcional",
+      "Engine LetterSound funcional",
+      "Sistema TTS integrado",
+      "Herramientas de accesibilidad"
+    ]
+  },
+  "fase_3_avanzados": {
+    "duracion": "4 semanas",
+    "engines": [
+      "ENG07-READING_FLUENCY",
+      "ENG09-LIFE_CYCLE"
+    ],
+    "objetivos": [
+      "Implementar engines complejos",
+      "Sistema de analytics avanzado",
+      "Integración con IA para recomendaciones",
+      "Testing integral con docentes"
+    ],
+    "entregables": [
+      "Engine ReadingFluency funcional",
+      "Engine LifeCycle funcional",
+      "Dashboard de analytics",
+      "Sistema de recomendaciones IA"
+    ]
+  },
+  "fase_4_integracion": {
+    "duracion": "2 semanas",
+    "engines": [
+      "TODOS"
+    ],
+    "objetivos": [
+      "Integración completa en plataforma",
+      "Optimización de rendimiento",
+      "Testing de carga",
+      "Preparación para producción"
+    ],
+    "entregables": [
+      "6 engines completamente integrados",
+      "Documentación de usuario",
+      "Manual de implementación",
+      "Sistema listo para skins"
+    ]
+  }
+}
