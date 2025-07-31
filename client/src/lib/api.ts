@@ -25,7 +25,8 @@ class ApiService {
     // Si estamos en producción y no hay NEXT_PUBLIC_API_URL configurada,
     // usar la URL de Vercel para que las rutas funcionen con vercel.json
     if (typeof window !== 'undefined' && window.location.hostname === 'plataformav3.vercel.app') {
-      baseURL = 'https://plataformav3.vercel.app';
+      // En producción, usar el servidor backend desplegado
+      baseURL = 'https://plataformav3-server.vercel.app';
     }
     
     this.baseURL = baseURL;
