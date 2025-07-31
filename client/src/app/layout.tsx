@@ -7,14 +7,18 @@ import { Toaster } from 'react-hot-toast'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'EDU21 - Plataforma Educativa Gamificada',
-  description: 'Plataforma educativa gamificada para colegios chilenos con evaluación IA, currículo MINEDUC y analíticas avanzadas.',
-  keywords: 'educación, gamificación, chile, MINEDUC, evaluación, IA, colegios',
-  authors: [{ name: 'EDU21 Team' }],
+  title: 'OALabs - Laboratorios de Objetivos de Aprendizaje',
+  description: 'Plataforma de laboratorios interactivos para el desarrollo de Objetivos de Aprendizaje con evaluación IA y currículo MINEDUC.',
+  keywords: 'laboratorios, objetivos de aprendizaje, educación, chile, MINEDUC, evaluación, IA, OA',
+  authors: [{ name: 'OALabs Team' }],
   robots: 'index, follow',
+  icons: {
+    icon: '/logo/favicon.svg',
+    apple: '/logo/favicon.svg',
+  },
   openGraph: {
-    title: 'EDU21 - Plataforma Educativa Gamificada',
-    description: 'Transforma la educación con juegos interactivos y evaluación inteligente',
+    title: 'OALabs - Laboratorios de Objetivos de Aprendizaje',
+    description: 'Transforma el aprendizaje con laboratorios interactivos y evaluación inteligente',
     type: 'website',
     locale: 'es_CL'
   }

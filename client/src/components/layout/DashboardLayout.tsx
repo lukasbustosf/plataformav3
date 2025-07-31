@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useAuth } from '@/store/auth'
 import { cn } from '@/lib/utils'
 import toast from 'react-hot-toast'
+import Logo from '@/components/ui/Logo'
 
 import {
   Bars3Icon,
@@ -532,10 +533,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 
                 <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-4 pb-4 safe-area-inset">
                   <div className="flex h-16 shrink-0 items-center">
-                    <div className="h-8 w-8 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
-                      <span className="text-lg font-bold text-white">E21</span>
-                    </div>
-                    <span className="ml-2 text-xl font-bold text-gray-900">EDU21</span>
+                    <Logo variant="compact" size="sm" />
                   </div>
                   <nav className="flex flex-1 flex-col">
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -597,10 +595,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
         <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
           <div className="flex h-16 shrink-0 items-center">
-            <div className="h-8 w-8 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
-              <span className="text-lg font-bold text-white">E21</span>
-            </div>
-            <span className="ml-2 text-xl font-bold text-gray-900">EDU21</span>
+            <Logo variant="horizontal" size="md" />
           </div>
           
           <nav className="flex flex-1 flex-col">

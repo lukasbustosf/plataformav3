@@ -9,6 +9,7 @@ import * as yup from 'yup'
 import toast from 'react-hot-toast'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline'
 import { useAuth } from '@/store/auth'
+import Logo from '@/components/ui/Logo'
 import type { LoginCredentials } from '@/types'
 
 const loginSchema = yup.object({
@@ -38,7 +39,7 @@ export default function LoginPage() {
   const onSubmit = async (data: LoginCredentials) => {
     try {
       await login(data)
-      toast.success('¡Bienvenido a EDU21!')
+      toast.success('¡Bienvenido a OALabs!')
       // Redirect to home page which will handle role-based routing
       router.push('/')
     } catch (error) {
@@ -53,14 +54,12 @@ export default function LoginPage() {
         <div className="mx-auto w-full max-w-sm lg:w-96">
           {/* Logo and Header */}
           <div className="text-center">
-            <div className="mx-auto h-16 w-16 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center">
-              <span className="text-2xl font-bold text-white">E21</span>
-            </div>
+            <Logo />
             <h2 className="mt-6 text-3xl font-bold tracking-tight text-gray-900">
-              Inicia sesión en EDU21
+              Inicia sesión en OALabs
             </h2>
             <p className="mt-2 text-sm text-gray-600">
-              Plataforma educativa gamificada para colegios chilenos
+              Laboratorios de Objetivos de Aprendizaje
             </p>
           </div>
 

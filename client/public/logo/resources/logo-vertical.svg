@@ -1,0 +1,45 @@
+<svg width="120" height="160" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icono de laboratorio centrado -->
+  <g transform="translate(30, 20)">
+    <!-- Tubo de ensayo -->
+    <ellipse cx="12" cy="12" rx="4" ry="4" fill="url(#gradient)" opacity="0.9"/>
+    <rect x="8" y="12" width="8" height="16" fill="url(#gradient)" opacity="0.9"/>
+    <rect x="10" y="14" width="4" height="12" fill="white" opacity="0.3"/>
+    
+    <!-- Líquido en el tubo -->
+    <ellipse cx="12" cy="24" rx="3" ry="3" fill="url(#accent)" opacity="0.8"/>
+    
+    <!-- Microscopio -->
+    <circle cx="30" cy="15" r="5" fill="url(#gradient)" opacity="0.8"/>
+    <rect x="27" y="20" width="6" height="10" fill="url(#gradient)" opacity="0.8"/>
+    <rect x="24" y="30" width="12" height="3" fill="url(#gradient)" opacity="0.8"/>
+    
+    <!-- Lupa -->
+    <circle cx="48" cy="18" r="4" fill="none" stroke="url(#gradient)" stroke-width="2"/>
+    <line x1="51" y1="21" x2="55" y2="25" stroke="url(#gradient)" stroke-width="2"/>
+    
+    <!-- Partículas de datos -->
+    <circle cx="42" cy="8" r="1.5" fill="url(#accent)" opacity="0.7"/>
+    <circle cx="46" cy="12" r="1.2" fill="url(#accent)" opacity="0.6"/>
+    <circle cx="38" cy="16" r="1" fill="url(#accent)" opacity="0.8"/>
+  </g>
+  
+  <!-- Texto OALabs vertical -->
+  <text x="60" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1F2937">OA</text>
+  <text x="60" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="url(#gradient)">Labs</text>
+  
+  <!-- Tagline -->
+  <text x="60" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">Laboratorios de Objetivos</text>
+  <text x="60" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">de Aprendizaje</text>
+</svg> 
