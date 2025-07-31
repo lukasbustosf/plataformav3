@@ -19,7 +19,16 @@ class ApiService {
   private baseURL: string
 
   constructor() {
-    this.baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+    // Detectar automáticamente la URL base correcta
+    let baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    
+    // Si estamos en producción y no hay NEXT_PUBLIC_API_URL configurada,
+    // usar la URL de Vercel para que las rutas funcionen con vercel.json
+    if (typeof window !== 'undefined' && window.location.hostname === 'plataformav3.vercel.app') {
+      baseURL = 'https://plataformav3.vercel.app';
+    }
+    
+    this.baseURL = baseURL;
     
     this.client = axios.create({
       baseURL: this.baseURL,
