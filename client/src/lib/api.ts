@@ -107,6 +107,37 @@ class ApiService {
     }
   }
 
+  // Lab-specific request handler (doesn't add /api prefix)
+  private async labRequest<T>(
+    method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE',
+    endpoint: string,
+    data?: any,
+    config?: any
+  ): Promise<T> {
+    try {
+      const response: AxiosResponse<APIResponse<T>> = await this.client.request({
+        method,
+        url: endpoint,
+        data,
+        ...config,
+      })
+
+      if (response.data.error) {
+        const error = response.data.error
+        const message = typeof error === 'string' ? error : (error as any)?.message || 'API Error'
+        throw new Error(message)
+      }
+
+      return (response.data.data || response.data) as T
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const message = error.response?.data?.error?.message || error.message
+        throw new Error(message)
+      }
+      throw error
+    }
+  }
+
   // Authentication APIs
   async login(credentials: LoginCredentials): Promise<{ user: User; token: string }> {
     const response = await this.request<{ user: User; token: string }>(
@@ -618,24 +649,24 @@ class ApiService {
 
   // Lab Activities methods
   async getLabActivity(id: string): Promise<any> {
-    return this.request('GET', `/lab/activities/id/${id}`)
+    return this.labRequest('GET', `/lab/activities/id/${id}`)
   }
 
   async getLabMaterials(): Promise<any> {
-    return this.request('GET', '/lab/materials')
+    return this.labRequest('GET', '/lab/materials')
   }
 
   async getLabActivities(params?: any): Promise<any> {
     const queryString = params ? `?${new URLSearchParams(params).toString()}` : '';
-    return this.request('GET', `/lab/activities${queryString}`)
+    return this.labRequest('GET', `/lab/activities${queryString}`)
   }
 
   async deleteLabActivity(id: string): Promise<any> {
-    return this.request('DELETE', `/lab/activities/${id}`)
+    return this.labRequest('DELETE', `/lab/activities/${id}`)
   }
 
   async updateLabActivity(id: string, data: any): Promise<any> {
-    return this.request('PUT', `/lab/activities/${id}`, data)
+    return this.labRequest('PUT', `/lab/activities/${id}`, data)
   }
 }
 
