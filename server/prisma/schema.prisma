@@ -711,3 +711,100 @@ enum lab_product_status {
 
   @@schema("public")
 }
+
+// =====================================================
+// MODELOS PARA EXPERIENCIAS GAMIFICADAS
+// =====================================================
+
+model gamified_experiences {
+  experience_id    String   @id @default(uuid())
+  oa_id           String
+  experience_type String
+  title           String
+  description     String?
+  settings_json   Json     @default("{}")
+  active          Boolean  @default(true)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  // Relaciones
+  learning_objectives learning_objectives @relation(fields: [oa_id], references: [oa_id])
+  experience_sessions experience_sessions[]
+
+  @@schema("public")
+}
+
+model experience_sessions {
+  session_id      String   @id @default(uuid())
+  experience_id   String
+  user_id         String
+  school_id       String
+  start_time      DateTime @default(now())
+  end_time        DateTime?
+  progress_json   Json     @default("{}")
+  rewards_json    Json     @default("{}")
+  metadata_json   Json     @default("{}")
+  status          String   @default("active")
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  // Relaciones
+  gamified_experiences gamified_experiences @relation(fields: [experience_id], references: [experience_id])
+  users               public_users         @relation(fields: [user_id], references: [user_id])
+  schools             schools              @relation(fields: [school_id], references: [school_id])
+  family_participation family_participation[]
+
+  @@schema("public")
+}
+
+model family_participation {
+  participation_id String   @id @default(uuid())
+  session_id      String
+  guardian_id     String
+  student_id      String
+  activity_type   String
+  duration_minutes Int?
+  details_json    Json     @default("{}")
+  created_at      DateTime @default(now())
+
+  // Relaciones
+  experience_sessions experience_sessions @relation(fields: [session_id], references: [session_id])
+  guardian           public_users        @relation("guardian_participation", fields: [guardian_id], references: [user_id])
+  student            public_users        @relation("student_participation", fields: [student_id], references: [user_id])
+
+  @@schema("public")
+}
+
+// =====================================================
+// ENUMS PARA EXPERIENCIAS GAMIFICADAS
+// =====================================================
+
+enum experience_type_enum {
+  Discovery_Learning
+  Project_Based_Learning
+  Multi_Device_Interactive
+  Adaptive_Learning
+  Inquiry_Based_Learning
+  Collaborative_Learning
+
+  @@schema("public")
+}
+
+enum session_status_enum {
+  active
+  paused
+  completed
+  abandoned
+
+  @@schema("public")
+}
+
+enum family_activity_type_enum {
+  Modo_Aventura_Familiar
+  Compartir_Descubrimientos
+  Actividad_Sin_Pantalla
+  Celebración_de_Logros
+  Ayuda_con_Tareas
+
+  @@schema("public")
+}

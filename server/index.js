@@ -32,6 +32,7 @@ const oaRoutes = require('./routes/oa');
 const questionBankRoutes = require('./routes/questionBank');
 const notificationRoutes = require('./routes/notifications'); // New import
 const labRoutes = require('./routes/lab'); // Importar rutas de laboratorio
+const gamifiedExperiencesRoutes = require('./routes/gamified-experiences'); // Importar rutas de experiencias gamificadas
 const { authenticateToken } = require('./middleware/auth');
 const { rateLimiter } = require('./middleware/rateLimiter');
 const logger = require('./utils/logger');
@@ -104,6 +105,7 @@ app.use('/api/question-bank', authenticateToken, questionBankRoutes);
 app.use('/api/notifications', authenticateToken, notificationRoutes); // New route
 app.use('/api/lab', labRoutes); // Registrar rutas de laboratorio
 app.use('/lab', labRoutes); // Ruta adicional para compatibilidad con frontend
+app.use('/api', gamifiedExperiencesRoutes); // Registrar rutas de experiencias gamificadas
 app.use('/api/demo', authenticateToken, require('./routes/demo'));
 app.use('/api/skins', require('./routes/skins'));
 app.use('/api/security', require('./routes/security'));

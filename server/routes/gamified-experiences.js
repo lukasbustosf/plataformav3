@@ -67,12 +67,137 @@ router.get('/experiences', authenticateUser, async (req, res) => {
             }
         });
         
+        // Transformar datos para el frontend
+        const transformedExperiences = experiences.map(exp => ({
+            id: exp.experience_id,
+            title: exp.title,
+            description: exp.description,
+            subject: exp.learning_objectives.subjects.subject_name,
+            grade: exp.learning_objectives.grade_code,
+            oa_code: exp.learning_objectives.oa_code,
+            experience_type: exp.experience_type,
+            icon: '🔍', // Por defecto, se puede personalizar
+            color: '#4CAF50', // Por defecto, se puede personalizar
+            status: 'available', // Por defecto, se puede calcular basado en progreso
+            progress: 0 // Por defecto, se puede calcular
+        }));
+        
         res.json({
             success: true,
-            data: experiences
+            experiences: transformedExperiences
         });
     } catch (error) {
         console.error('Error al obtener experiencias:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+// GET /api/experiences/{id} - Obtener experiencia específica
+router.get('/experiences/:id', authenticateUser, async (req, res) => {
+    try {
+        const { id } = req.params;
+        
+        const experience = await prisma.gamified_experiences.findUnique({
+            where: { experience_id: id },
+            include: {
+                learning_objectives: {
+                    select: {
+                        oa_code: true,
+                        oa_desc: true,
+                        grade_code: true,
+                        subjects: {
+                            select: {
+                                subject_name: true
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        if (!experience) {
+            return res.status(404).json({ error: 'Experiencia no encontrada' });
+        }
+        
+        res.json({
+            success: true,
+            experience: {
+                id: experience.experience_id,
+                title: experience.title,
+                description: experience.description,
+                subject: experience.learning_objectives.subjects.subject_name,
+                grade: experience.learning_objectives.grade_code,
+                oa_code: experience.learning_objectives.oa_code,
+                experience_type: experience.experience_type,
+                settings: experience.settings_json
+            }
+        });
+    } catch (error) {
+        console.error('Error al obtener experiencia:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+// POST /api/experiences/{id}/session - Crear o cargar sesión de experiencia
+router.post('/experiences/:id/session', authenticateUser, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { user_id, school_id } = req.body;
+        
+        // Verificar que la experiencia existe y está activa
+        const experience = await prisma.gamified_experiences.findUnique({
+            where: { 
+                experience_id: id,
+                active: true
+            }
+        });
+        
+        if (!experience) {
+            return res.status(404).json({ error: 'Experiencia no encontrada o inactiva' });
+        }
+        
+        // Buscar sesión existente o crear nueva
+        let session = await prisma.experience_sessions.findFirst({
+            where: {
+                experience_id: id,
+                user_id: user_id,
+                status: { in: ['active', 'paused'] }
+            }
+        });
+        
+        if (!session) {
+            // Crear nueva sesión
+            session = await prisma.experience_sessions.create({
+                data: {
+                    experience_id: id,
+                    user_id: user_id,
+                    school_id: school_id,
+                    progress_json: {
+                        current_world: 'bosque_decenas',
+                        completed_challenges: [],
+                        unlocked_tools: [],
+                        unlocked_worlds: ['bosque_decenas']
+                    },
+                    rewards_json: [],
+                    metadata_json: {
+                        total_actions: 0,
+                        patterns_discovered: 0,
+                        tools_used: 0,
+                        family_activities: 0,
+                        achievements_earned: 0
+                    },
+                    status: 'active'
+                }
+            });
+        }
+        
+        res.json({
+            success: true,
+            session_id: session.session_id,
+            status: session.status
+        });
+    } catch (error) {
+        console.error('Error al crear/cargar sesión:', error);
         res.status(500).json({ error: 'Error interno del servidor' });
     }
 });
