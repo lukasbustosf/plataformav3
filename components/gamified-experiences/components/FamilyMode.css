@@ -1,0 +1,1133 @@
+/* =====================================================
+   ESTILOS PARA MODO FAMILIAR
+   Optimizados para familias con niños de 6-7 años
+   ===================================================== */
+
+.family-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* =====================================================
+   HEADER FAMILIAR
+   ===================================================== */
+
+.family-header {
+    background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.family-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* =====================================================
+   PESTAÑAS FAMILIARES
+   ===================================================== */
+
+.family-tabs {
+    background: white;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.family-tab-button {
+    background: white;
+    border: 3px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.family-tab-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.family-tab-button.active {
+    border-color: #9C27B0;
+    background: linear-gradient(135deg, #9C27B020, #9C27B040);
+    transform: scale(1.02);
+}
+
+.family-tab-icon {
+    font-size: 2rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.family-tab-content {
+    flex: 1;
+}
+
+.family-tab-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 0.3rem 0;
+}
+
+.family-tab-description {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* =====================================================
+   CONTENIDO FAMILIAR
+   ===================================================== */
+
+.family-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* =====================================================
+   ACTIVIDADES FAMILIARES
+   ===================================================== */
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.family-activity-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.family-activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--category-color, #9C27B0)10, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.family-activity-card:hover::before {
+    opacity: 1;
+}
+
+.family-activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--category-color, #9C27B0);
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.activity-icon {
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.activity-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: right;
+}
+
+.activity-duration {
+    background: var(--category-color, #9C27B0);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.activity-difficulty {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.activity-content {
+    margin-bottom: 1.5rem;
+}
+
+.activity-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+}
+
+.activity-description {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+}
+
+.activity-materials {
+    background: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.activity-objectives {
+    background: #e8f5e8;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.activity-objectives strong {
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.activity-objectives ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.activity-objectives li {
+    margin-bottom: 0.3rem;
+    color: #555;
+}
+
+.activity-actions {
+    text-align: center;
+}
+
+.start-activity-button {
+    background: linear-gradient(45deg, var(--category-color, #9C27B0), #7B1FA2);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.start-activity-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   PROGRESO DEL ESTUDIANTE
+   ===================================================== */
+
+.student-progress {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.progress-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.progress-header h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+}
+
+.progress-header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.progress-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.progress-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.progress-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.progress-info {
+    flex: 1;
+}
+
+.progress-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.current-world-info {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.current-world-info h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+}
+
+.world-display {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.world-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* =====================================================
+   DESCUBRIMIENTOS
+   ===================================================== */
+
+.discoveries-list {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.discoveries-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.discoveries-header h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+}
+
+.discoveries-header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.no-discoveries {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.no-discoveries-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.no-discoveries p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin: 0.5rem 0;
+}
+
+.discoveries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.discovery-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.discovery-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-color: #9C27B0;
+}
+
+.discovery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.discovery-icon {
+    font-size: 2rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.discovery-date {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    background: #f8f9fa;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+}
+
+.discovery-content {
+    margin-bottom: 1rem;
+}
+
+.discovery-pattern {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+}
+
+.discovery-description {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.discovery-actions {
+    text-align: center;
+}
+
+.share-discovery-button {
+    background: linear-gradient(45deg, #9C27B0, #7B1FA2);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.share-discovery-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.shared-badge {
+    background: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+/* =====================================================
+   RECOMPENSAS FAMILIARES
+   ===================================================== */
+
+.family-rewards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reward-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.reward-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.reward-icon {
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.reward-info {
+    flex: 1;
+}
+
+.reward-info h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+}
+
+.reward-info p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* =====================================================
+   MODAL DE ACTIVIDAD
+   ===================================================== */
+
+.activity-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    animation: fadeIn 0.3s ease;
+}
+
+.activity-modal {
+    background: white;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 0.3s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.modal-content {
+    padding: 2rem;
+}
+
+.activity-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.activity-info {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.activity-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.activity-instructions {
+    background: #e8f5e8;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.activity-instructions h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+}
+
+.activity-instructions ol {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.activity-instructions li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.activity-objectives {
+    background: #fff3e0;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.activity-objectives h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+}
+
+.activity-objectives ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.activity-objectives li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.modal-actions {
+    padding: 1.5rem 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    border-top: 1px solid #e0e0e0;
+}
+
+.cancel-button {
+    background: #f5f5f5;
+    color: #666;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+    background: #e0e0e0;
+    transform: translateY(-1px);
+}
+
+.confirm-button {
+    background: linear-gradient(45deg, #9C27B0, #7B1FA2);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .family-header {
+        padding: 1rem;
+    }
+    
+    .family-title {
+        font-size: 1.5rem;
+    }
+    
+    .family-tabs {
+        padding: 0.8rem;
+        gap: 0.5rem;
+    }
+    
+    .family-tab-button {
+        min-width: 150px;
+        padding: 0.8rem 1rem;
+    }
+    
+    .family-tab-icon {
+        font-size: 1.5rem;
+    }
+    
+    .family-tab-title {
+        font-size: 1rem;
+    }
+    
+    .family-content {
+        padding: 1rem;
+    }
+    
+    .section-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
+    
+    .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .family-activity-card {
+        padding: 1rem;
+    }
+    
+    .activity-icon {
+        font-size: 2.5rem;
+    }
+    
+    .activity-name {
+        font-size: 1.2rem;
+    }
+    
+    .progress-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .progress-item {
+        padding: 1rem;
+    }
+    
+    .progress-icon {
+        font-size: 2rem;
+    }
+    
+    .progress-value {
+        font-size: 1.5rem;
+    }
+    
+    .discoveries-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .discovery-card {
+        padding: 1rem;
+    }
+    
+    .family-rewards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .reward-item {
+        padding: 1rem;
+    }
+    
+    .reward-icon {
+        font-size: 2.5rem;
+    }
+    
+    .activity-modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .modal-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+    }
+    
+    .modal-actions {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .family-header {
+        padding: 0.8rem;
+    }
+    
+    .family-title {
+        font-size: 1.3rem;
+    }
+    
+    .close-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .family-tabs {
+        padding: 0.5rem;
+        gap: 0.3rem;
+    }
+    
+    .family-tab-button {
+        min-width: 120px;
+        padding: 0.6rem 0.8rem;
+        gap: 0.5rem;
+    }
+    
+    .family-tab-icon {
+        font-size: 1.2rem;
+    }
+    
+    .family-tab-title {
+        font-size: 0.9rem;
+    }
+    
+    .family-tab-description {
+        font-size: 0.7rem;
+    }
+    
+    .family-content {
+        padding: 0.8rem;
+    }
+    
+    .section-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .section-header p {
+        font-size: 0.9rem;
+    }
+    
+    .family-activity-card {
+        padding: 0.8rem;
+    }
+    
+    .activity-icon {
+        font-size: 2rem;
+    }
+    
+    .activity-name {
+        font-size: 1.1rem;
+    }
+    
+    .activity-description {
+        font-size: 0.9rem;
+    }
+    
+    .activity-materials,
+    .activity-objectives {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+    
+    .start-activity-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .progress-item {
+        padding: 0.8rem;
+    }
+    
+    .progress-icon {
+        font-size: 1.8rem;
+    }
+    
+    .progress-value {
+        font-size: 1.3rem;
+    }
+    
+    .progress-label {
+        font-size: 0.8rem;
+    }
+    
+    .discovery-card {
+        padding: 0.8rem;
+    }
+    
+    .discovery-icon {
+        font-size: 1.5rem;
+    }
+    
+    .discovery-pattern {
+        font-size: 1.1rem;
+    }
+    
+    .discovery-description {
+        font-size: 0.8rem;
+    }
+    
+    .share-discovery-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    .reward-item {
+        padding: 0.8rem;
+    }
+    
+    .reward-icon {
+        font-size: 2rem;
+    }
+    
+    .reward-info h4 {
+        font-size: 1.1rem;
+    }
+    
+    .reward-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA TOUCH DEVICES
+   ===================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    .close-button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .start-activity-button {
+        min-height: 44px;
+    }
+    
+    .family-activity-card {
+        min-height: 150px;
+    }
+    
+    .share-discovery-button {
+        min-height: 44px;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA ACCESIBILIDAD
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .family-activity-card {
+        transition: none;
+    }
+    
+    .progress-item {
+        transition: none;
+    }
+    
+    .discovery-card {
+        transition: none;
+    }
+    
+    .reward-item {
+        transition: none;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA ALTO CONTRASTE
+   ===================================================== */
+
+@media (prefers-contrast: high) {
+    .family-mode {
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .family-header {
+        background: #000;
+        border: 3px solid #fff;
+    }
+    
+    .family-tabs {
+        background: white;
+        border: 2px solid #000;
+    }
+    
+    .family-tab-button {
+        background: white;
+        border: 3px solid #000;
+    }
+    
+    .family-tab-button.active {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+    }
+    
+    .family-activity-card {
+        background: white;
+        border: 3px solid #000;
+    }
+    
+    .discovery-card {
+        background: white;
+        border: 3px solid #000;
+    }
+    
+    .reward-item {
+        background: white;
+        border: 3px solid #000;
+    }
+    
+    .activity-modal {
+        background: white;
+        border: 3px solid #000;
+    }
+} 
