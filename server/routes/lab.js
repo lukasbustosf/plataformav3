@@ -37,7 +37,7 @@ router.get('/products', authenticateToken, async (req, res) => {
   }
 });
 
-router.get('/materials', authenticateToken, async (req, res) => {
+router.get('/materials', async (req, res) => {
   try {
     const materials = await prisma.lab_material.findMany({
       include: { lab_product: true },
@@ -77,7 +77,7 @@ router.get('/materials/:id', authenticateToken, async (req, res) => {
 // ACTIVIDADES (CON PRISMA)
 // ============================================================================
 
-router.get('/activities', authenticateToken, async (req, res) => {
+router.get('/activities', async (req, res) => {
   const maxRetries = 3;
   let retryCount = 0;
 
