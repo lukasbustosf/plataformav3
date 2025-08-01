@@ -1,0 +1,532 @@
+/* =====================================================
+   ESTILOS PARA NAVEGACIÓN DE MUNDOS
+   Optimizados para niños de 6-7 años
+   ===================================================== */
+
+.world-navigation {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid #e0e0e0;
+}
+
+/* =====================================================
+   MUNDO ACTUAL - VISTA PRINCIPAL
+   ===================================================== */
+
+.current-world-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.current-world-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 3px solid;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.current-world-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.world-icon {
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.world-info {
+    flex: 1;
+}
+
+.world-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.world-range,
+.world-pattern {
+    font-size: 1.1rem;
+    margin: 0.2rem 0;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.world-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.expand-button {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expand-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   LISTA DE MUNDOS - VISTA EXPANDIDA
+   ===================================================== */
+
+.worlds-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.world-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.world-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.world-item.current {
+    border-color: #4CAF50;
+    background: linear-gradient(135deg, #4CAF5020, #4CAF5040);
+    transform: scale(1.02);
+}
+
+.world-item.locked {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: #f5f5f5;
+}
+
+.world-item.locked:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.world-item-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.world-item-info {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.world-item-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.current-badge {
+    background: #4CAF50;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.world-item-range,
+.world-item-pattern {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+    color: #7f8c8d;
+}
+
+.world-item-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.progress-bar-small {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill-small {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.progress-text-small {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.locked-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.lock-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.lock-text {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+.select-world-button {
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.select-world-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   PROGRESO GLOBAL
+   ===================================================== */
+
+.global-progress {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e0e0e0;
+}
+
+.progress-summary {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.progress-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 500;
+    text-align: center;
+}
+
+.progress-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .world-navigation {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .current-world-display {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .current-world-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .world-icon {
+        font-size: 2.5rem;
+    }
+    
+    .world-name {
+        font-size: 1.5rem;
+    }
+    
+    .world-range,
+    .world-pattern {
+        font-size: 1rem;
+    }
+    
+    .worlds-list {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .world-item {
+        padding: 1rem;
+    }
+    
+    .world-item-icon {
+        font-size: 2rem;
+    }
+    
+    .world-item-name {
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    
+    .progress-summary {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .progress-item {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .world-navigation {
+        padding: 0.8rem;
+    }
+    
+    .current-world-card {
+        padding: 0.8rem;
+    }
+    
+    .world-icon {
+        font-size: 2rem;
+    }
+    
+    .world-name {
+        font-size: 1.3rem;
+    }
+    
+    .world-range,
+    .world-pattern {
+        font-size: 0.9rem;
+    }
+    
+    .expand-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .world-item {
+        padding: 0.8rem;
+    }
+    
+    .world-item-icon {
+        font-size: 1.8rem;
+    }
+    
+    .world-item-name {
+        font-size: 1.1rem;
+    }
+    
+    .select-world-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA TOUCH DEVICES
+   ===================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    .expand-button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .select-world-button {
+        min-height: 44px;
+    }
+    
+    .world-item {
+        min-height: 120px;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA ACCESIBILIDAD
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .current-world-card::before {
+        animation: none;
+    }
+    
+    .world-icon {
+        animation: none;
+    }
+    
+    .world-item:hover {
+        transform: none;
+    }
+    
+    .select-world-button:hover {
+        transform: none;
+    }
+    
+    .expand-button:hover {
+        transform: none;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA ALTO CONTRASTE
+   ===================================================== */
+
+@media (prefers-contrast: high) {
+    .world-navigation {
+        background: white;
+        border: 3px solid #000;
+    }
+    
+    .current-world-card {
+        border: 3px solid #000;
+        background: white;
+    }
+    
+    .world-item {
+        border: 2px solid #000;
+        background: white;
+    }
+    
+    .world-item.current {
+        border: 3px solid #000;
+        background: #f0f0f0;
+    }
+    
+    .world-item.locked {
+        background: #e0e0e0;
+        border: 2px solid #666;
+    }
+    
+    .progress-bar,
+    .progress-bar-small {
+        background: #ccc;
+        border: 1px solid #000;
+    }
+    
+    .expand-button,
+    .select-world-button {
+        background: #000;
+        color: #fff;
+        border: 2px solid #000;
+    }
+} 
