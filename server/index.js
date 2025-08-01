@@ -101,7 +101,6 @@ app.use('/api/oa', authenticateToken, oaRoutes);
 app.use('/api/question-bank', authenticateToken, questionBankRoutes);
 app.use('/api/notifications', authenticateToken, notificationRoutes); // New route
 app.use('/api/lab', labRoutes); // Registrar rutas de laboratorio
-app.use('/lab', labRoutes); // Ruta adicional para compatibilidad con frontend
 app.use('/api/demo', authenticateToken, require('./routes/demo'));
 app.use('/api/skins', require('./routes/skins'));
 app.use('/api/security', require('./routes/security'));

@@ -3,74 +3,76 @@ const axios = require('axios');
 console.log('🔍 DIAGNÓSTICO DE ACTIVIDADES EN PRODUCCIÓN');
 console.log('==========================================\n');
 
-const BASE_URL = 'https://plataformav3-production.up.railway.app';
+const BASE_URL = 'https://plataformav3.vercel.app';
 
 async function testEndpoint(endpoint, description) {
   try {
-    console.log(`\n1️⃣ Probando ${description}...`);
+    console.log(`\n${description}...`);
     console.log(`URL: ${BASE_URL}${endpoint}`);
     
     const response = await axios.get(`${BASE_URL}${endpoint}`, {
       timeout: 10000,
       headers: {
-        'Content-Type': 'application/json'
+        'User-Agent': 'Diagnostico-Produccion/1.0'
       }
     });
     
-    console.log(`✅ ${description} funciona`);
-    console.log(`Status: ${response.status}`);
-    console.log(`Datos: ${JSON.stringify(response.data, null, 2).substring(0, 200)}...`);
+    console.log(`✅ Status: ${response.status}`);
+    console.log(`📊 Datos recibidos:`, response.data);
+    
+    if (response.data && Array.isArray(response.data)) {
+      console.log(`📋 Cantidad de actividades: ${response.data.length}`);
+    }
     
     return true;
   } catch (error) {
-    console.log(`❌ Error en ${description}:`);
-    console.log(`Status: ${error.response?.status || 'No response'}`);
-    console.log(`Error: ${error.message}`);
-    if (error.response?.data) {
-      console.log(`Data: ${JSON.stringify(error.response.data, null, 2)}`);
+    console.log(`❌ Error: ${error.message}`);
+    if (error.response) {
+      console.log(`Status: ${error.response.status}`);
+      console.log(`Data:`, error.response.data);
     }
     return false;
   }
 }
 
-async function testFrontendURLs() {
-  console.log('\n2️⃣ Probando URLs del frontend...');
+async function runDiagnostic() {
+  console.log('1️⃣ Probando rutas de API...');
   
-  const frontendURLs = [
-    'https://plataformav3.vercel.app/teacher/labs/activities',
-    'https://plataformav3.vercel.app/teacher/labs/activity/quien-come-que'
-  ];
+  // Test 1: API directa
+  await testEndpoint('/api/lab/activities', 'API directa /api/lab/activities');
   
-  for (const url of frontendURLs) {
-    try {
-      console.log(`\nProbando: ${url}`);
-      const response = await axios.get(url, {
-        timeout: 10000,
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
-      });
-      console.log(`✅ Status: ${response.status}`);
-    } catch (error) {
-      console.log(`❌ Error: ${error.message}`);
-      console.log(`Status: ${error.response?.status || 'No response'}`);
-    }
+  // Test 2: Ruta /lab
+  await testEndpoint('/lab/activities', 'Ruta /lab/activities');
+  
+  // Test 3: Ruta con autenticación simulada
+  console.log('\n2️⃣ Probando con headers de autenticación...');
+  try {
+    const response = await axios.get(`${BASE_URL}/lab/activities`, {
+      headers: {
+        'Authorization': 'Bearer demo-token',
+        'Content-Type': 'application/json'
+      },
+      timeout: 10000
+    });
+    console.log('✅ Con autenticación simulada:', response.status);
+    console.log('📊 Datos:', response.data);
+  } catch (error) {
+    console.log('❌ Error con auth:', error.message);
   }
+  
+  // Test 4: Verificar configuración de Vercel
+  console.log('\n3️⃣ Verificando configuración de Vercel...');
+  try {
+    const vercelResponse = await axios.get(`${BASE_URL}/api/health`, {
+      timeout: 5000
+    });
+    console.log('✅ Health check:', vercelResponse.status);
+  } catch (error) {
+    console.log('❌ Health check falló:', error.message);
+  }
+  
+  console.log('\n🔍 DIAGNÓSTICO COMPLETADO');
+  console.log('==========================');
 }
 
-async function main() {
-  // Test backend endpoints
-  await testEndpoint('/api/lab/activities', 'API /api/lab/activities');
-  await testEndpoint('/lab/activities', 'API /lab/activities');
-  await testEndpoint('/api/lab/materials', 'API /api/lab/materials');
-  await testEndpoint('/lab/materials', 'API /lab/materials');
-  
-  // Test frontend URLs
-  await testFrontendURLs();
-  
-  console.log('\n🎯 RESUMEN:');
-  console.log('Si /api/lab/activities funciona pero /lab/activities no,');
-  console.log('el problema es que el backend en producción no tiene la nueva ruta /lab');
-}
-
-main().catch(console.error); 
+runDiagnostic().catch(console.error); 

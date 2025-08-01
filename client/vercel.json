@@ -7,11 +7,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://plataformav3-server.vercel.app/api/$1"
+      "destination": "https://plataformav3-production.up.railway.app/api/$1"
     },
     {
       "source": "/lab/(.*)",
-      "destination": "https://plataformav3-server.vercel.app/api/lab/$1"
+      "destination": "https://plataformav3-production.up.railway.app/api/lab/$1"
     }
   ],
   "headers": [
