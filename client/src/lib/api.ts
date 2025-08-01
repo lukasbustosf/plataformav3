@@ -127,7 +127,7 @@ class ApiService {
     try {
       const response: AxiosResponse<APIResponse<T>> = await this.client.request({
         method,
-        url: endpoint,
+        url: `/api${endpoint}`,
         data,
         ...config,
       })
