@@ -259,7 +259,7 @@ function slugify(text) {
   return text
     .toString()
     .toLowerCase()
-    .normalize('NFD').replace(/[ \-]/g, '')
+    .normalize('NFD').replace(/[ -]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     .replace(/--+/g, '-');
@@ -409,7 +409,33 @@ router.put('/activities/:id', authenticateToken, requireRole('SUPER_ADMIN_FULL',
 });
 
 router.delete('/activities/:id', authenticateToken, async (req, res) => {
-  // ... (código de la ruta de eliminación)
+  try {
+    const { id } = req.params;
+    const userId = req.user.user_id;
+    
+    // Verificar que la actividad existe
+    const activity = await prisma.lab_activity.findUnique({
+      where: { id: id }
+    });
+    
+    if (!activity) {
+      return res.status(404).json({ success: false, message: 'Actividad no encontrada' });
+    }
+    
+    // Solo el creador puede eliminar la actividad
+    if (activity.creator_id !== userId) {
+      return res.status(403).json({ success: false, message: 'No tienes permisos para eliminar esta actividad' });
+    }
+    
+    await prisma.lab_activity.delete({
+      where: { id: id }
+    });
+    
+    res.json({ success: true, message: 'Actividad eliminada exitosamente' });
+  } catch (error) {
+    console.error('Error eliminando actividad:', error);
+    res.status(500).json({ success: false, message: 'Error al eliminar actividad', error: error.message });
+  }
 });
 
 // ============================================================================
