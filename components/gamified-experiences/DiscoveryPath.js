@@ -8,14 +8,16 @@ import FamilyMode from './components/FamilyMode';
 import './DiscoveryPath.css';
 
 const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
-    const { gameState, updateProgress, addReward, recordHypothesis } = useContext(GameSessionContext);
+    const { gameState, updateProgress, addReward, recordHypothesis, updateMetadata } = useContext(GameSessionContext);
     
     // Estados locales del componente
     const [currentWorld, setCurrentWorld] = useState('bosque_decenas');
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [familyMode, setFamilyMode] = useState(false);
+    const [showFamilyMode, setShowFamilyMode] = useState(false);
     const [showRewards, setShowRewards] = useState(false);
+    const [currentAction, setCurrentAction] = useState(null);
+    const [feedbackQueue, setFeedbackQueue] = useState([]);
     
     // Configuración de la experiencia
     const experienceConfig = {
@@ -98,7 +100,6 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
             }
         } catch (err) {
             setError(err.message);
-            console.error('Error al cargar sesión:', err);
         } finally {
             setIsLoading(false);
         }
@@ -110,9 +111,11 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
         updateProgress({ currentWorld: worldId });
     };
 
-    // Manejar acción del usuario
+    // Manejar acciones del usuario
     const handleUserAction = async (actionType, actionData) => {
         try {
+            setCurrentAction(actionType);
+            
             const response = await fetch(`/api/experiences/discovery-path/${sessionId}/action`, {
                 method: 'POST',
                 headers: {
@@ -121,7 +124,8 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
                 },
                 body: JSON.stringify({
                     action_type: actionType,
-                    data: actionData,
+                    action_data: actionData,
+                    world_id: currentWorld,
                     timestamp: new Date().toISOString()
                 })
             });
@@ -133,35 +137,74 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
             const data = await response.json();
             
             if (data.success) {
-                // Actualizar estado local
-                if (data.data.progress_update) {
-                    updateProgress(data.data.progress_update);
-                }
-                
-                // Agregar recompensas si las hay
-                if (data.data.rewards && data.data.rewards.length > 0) {
-                    data.data.rewards.forEach(reward => {
-                        addReward({
-                            id: reward,
-                            type: 'achievement',
-                            earned_at: new Date().toISOString()
+                // Procesar respuesta según el tipo de acción
+                switch (actionType) {
+                    case 'pattern_discovery':
+                        if (data.data.isValid) {
+                            recordHypothesis({
+                                id: `hypothesis_${Date.now()}`,
+                                pattern: data.data.pattern,
+                                description: `Descubrí el patrón: ${data.data.pattern}`,
+                                numbers: actionData.selectedNumbers,
+                                isValid: true
+                            });
+                            
+                            // Agregar feedback
+                            addFeedbackToQueue('pattern_discovery', {
+                                isValid: true,
+                                pattern: data.data.pattern
+                            });
+                            
+                            // Verificar si desbloquea nueva herramienta
+                            if (data.data.unlocksTool) {
+                                updateProgress({ 
+                                    unlockedTools: [...gameState.unlockedTools, data.data.toolId] 
+                                });
+                                addFeedbackToQueue('tool_unlocked', {
+                                    toolId: data.data.toolId,
+                                    toolName: data.data.toolName
+                                });
+                            }
+                        } else {
+                            addFeedbackToQueue('pattern_discovery', {
+                                isValid: false,
+                                pattern: actionData.selectedNumbers.join(', ')
+                            });
+                        }
+                        break;
+                        
+                    case 'voice_command':
+                        addFeedbackToQueue('voice_command', {
+                            isValid: data.data.isValid,
+                            pattern: data.data.recognizedPattern
                         });
-                    });
+                        break;
+                        
+                    case 'tool_activation':
+                        updateMetadata({ toolsUsed: (gameState.metadata?.toolsUsed || 0) + 1 });
+                        break;
+                        
+                    default:
+                        break;
                 }
                 
-                // Mostrar feedback
-                if (data.data.feedback) {
-                    // Aquí se mostraría el feedback visual/auditivo
-                    console.log('Feedback:', data.data.feedback);
+                // Actualizar progreso general
+                updateMetadata({ totalActions: (gameState.metadata?.totalActions || 0) + 1 });
+                
+                // Notificar actualización de sesión
+                if (onSessionUpdate) {
+                    onSessionUpdate(data.data);
                 }
             }
         } catch (err) {
-            console.error('Error al procesar acción:', err);
-            setError(err.message);
+            console.error('Error en acción del usuario:', err);
+            addFeedbackToQueue('error', { message: 'Error al procesar la acción' });
+        } finally {
+            setCurrentAction(null);
         }
     };
 
-    // Manejar completar desafío
+    // Manejar completación de desafío
     const handleChallengeComplete = async (challengeId, performanceMetrics) => {
         try {
             const response = await fetch(`/api/experiences/discovery-path/${sessionId}/complete-challenge`, {
@@ -172,7 +215,9 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
                 },
                 body: JSON.stringify({
                     challenge_id: challengeId,
-                    performance_metrics: performanceMetrics
+                    performance_metrics: performanceMetrics,
+                    world_id: currentWorld,
+                    completion_time: new Date().toISOString()
                 })
             });
             
@@ -186,33 +231,32 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
                 // Actualizar progreso
                 updateProgress({
                     completedChallenges: [...gameState.completedChallenges, challengeId],
-                    worldUnlocked: data.data.world_unlocked,
-                    nextWorld: data.data.next_world
+                    score: gameState.score + (data.data.points || 25)
                 });
                 
-                // Si se desbloqueó un nuevo mundo, cambiar a él
-                if (data.data.world_unlocked && data.data.next_world) {
-                    setCurrentWorld(data.data.next_world);
+                // Agregar recompensa si corresponde
+                if (data.data.reward) {
+                    addReward(data.data.reward);
+                    addFeedbackToQueue('challenge_completed', {
+                        challengeId,
+                        challengeName: data.data.challengeName,
+                        points: data.data.points
+                    });
                 }
                 
-                // Agregar recompensas
-                if (data.data.rewards && data.data.rewards.length > 0) {
-                    data.data.rewards.forEach(reward => {
-                        addReward({
-                            id: reward,
-                            type: 'world_access',
-                            earned_at: new Date().toISOString()
-                        });
+                // Verificar si desbloquea nuevo mundo
+                if (data.data.unlocksWorld) {
+                    updateProgress({
+                        unlockedWorlds: [...gameState.unlockedWorlds, data.data.worldId]
                     });
                 }
             }
         } catch (err) {
             console.error('Error al completar desafío:', err);
-            setError(err.message);
         }
     };
 
-    // Manejar reclamar recompensa
+    // Manejar reclamación de recompensa
     const handleClaimReward = async (rewardId, rewardType) => {
         try {
             const response = await fetch(`/api/experiences/discovery-path/${sessionId}/claim-reward`, {
@@ -222,8 +266,9 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
                     'user-id': gameState.userId
                 },
                 body: JSON.stringify({
+                    reward_id: rewardId,
                     reward_type: rewardType,
-                    reward_id: rewardId
+                    claim_time: new Date().toISOString()
                 })
             });
             
@@ -234,24 +279,47 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
             const data = await response.json();
             
             if (data.success) {
-                // Actualizar estado local
-                updateProgress({
-                    rewards: [...gameState.rewards, {
-                        id: rewardId,
-                        type: rewardType,
-                        claimed_at: new Date().toISOString()
-                    }]
+                // La recompensa ya se agregó en el contexto
+                addFeedbackToQueue('reward_claimed', {
+                    rewardId,
+                    rewardName: data.data.rewardName,
+                    points: data.data.points
                 });
             }
         } catch (err) {
             console.error('Error al reclamar recompensa:', err);
-            setError(err.message);
         }
     };
 
     // Manejar modo familiar
     const handleFamilyModeToggle = () => {
-        setFamilyMode(!familyMode);
+        setShowFamilyMode(!showFamilyMode);
+    };
+
+    // Manejar inicio de actividad familiar
+    const handleStartFamilyActivity = (activity) => {
+        updateMetadata({ 
+            familyActivities: (gameState.metadata?.familyActivities || 0) + 1 
+        });
+        
+        addFeedbackToQueue('family_activity', {
+            activityName: activity.name,
+            activityType: activity.category
+        });
+        
+        setShowFamilyMode(false);
+    };
+
+    // Manejar compartir descubrimiento
+    const handleShareDiscovery = (discovery) => {
+        updateMetadata({ 
+            familyActivities: (gameState.metadata?.familyActivities || 0) + 1 
+        });
+        
+        addFeedbackToQueue('family_activity', {
+            activityName: 'Descubrimiento Compartido',
+            discoveryPattern: discovery.pattern
+        });
     };
 
     // Manejar mostrar recompensas
@@ -259,13 +327,25 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
         setShowRewards(!showRewards);
     };
 
+    // Agregar feedback a la cola
+    const addFeedbackToQueue = (type, data) => {
+        setFeedbackQueue(prev => [...prev, { type, data, timestamp: Date.now() }]);
+    };
+
+    // Manejar procesamiento de feedback
+    const handleFeedbackProcess = (action, data) => {
+        // Esta función será llamada por el FeedbackSystem
+        // para procesar las acciones y generar feedback
+        addFeedbackToQueue(action, data);
+    };
+
     // Renderizar pantalla de carga
     if (isLoading) {
         return (
             <div className="discovery-path-loading">
-                <div className="loading-spinner">🔄</div>
-                <h2>Cargando tu aventura numérica...</h2>
-                <p>Preparando el Bosque de las Decenas</p>
+                <div className="loading-spinner">🌳</div>
+                <h2>Cargando Experiencia de Descubrimiento...</h2>
+                <p>Preparando tu aventura numérica</p>
             </div>
         );
     }
@@ -274,94 +354,83 @@ const DiscoveryPath = ({ sessionId, onSessionUpdate }) => {
     if (error) {
         return (
             <div className="discovery-path-error">
-                <div className="error-icon">⚠️</div>
-                <h2>¡Ups! Algo salió mal</h2>
+                <div className="error-icon">❌</div>
+                <h2>Error al Cargar la Experiencia</h2>
                 <p>{error}</p>
-                <button 
-                    className="retry-button"
-                    onClick={loadSessionState}
-                >
-                    Intentar de nuevo
-                </button>
+                <button onClick={loadSessionState}>Reintentar</button>
             </div>
         );
     }
 
-    // Obtener configuración del mundo actual
-    const currentWorldConfig = experienceConfig.worlds.find(w => w.id === currentWorld);
-
     return (
         <div className="discovery-path">
-            {/* Header con navegación y controles */}
-            <header className="discovery-header">
+            {/* Header con controles principales */}
+            <div className="discovery-header">
                 <div className="header-left">
-                    <h1 className="experience-title">
-                        🎮 Descubriendo la Ruta Numérica
-                    </h1>
-                    <p className="experience-subtitle">
-                        Explora patrones numéricos en el {currentWorldConfig?.name}
-                    </p>
+                    <h1>🔍 Descubriendo la Ruta Numérica</h1>
+                    <p>Explora patrones y secuencias matemáticas</p>
                 </div>
                 
-                <div className="header-right">
+                <div className="header-controls">
                     <button 
                         className="family-mode-button"
                         onClick={handleFamilyModeToggle}
-                        data-active={familyMode}
+                        disabled={showRewards}
                     >
-                        👨‍👩‍👧‍👦 {familyMode ? 'Modo Familiar' : 'Modo Individual'}
+                        👨‍👩‍👧‍👦 Modo Familiar
                     </button>
                     
                     <button 
                         className="rewards-button"
                         onClick={handleShowRewards}
+                        disabled={showFamilyMode}
                     >
                         🏆 Recompensas
                     </button>
                 </div>
-            </header>
+            </div>
 
-            {/* Navegación por mundos */}
+            {/* Navegación de mundos */}
             <WorldNavigation 
                 worlds={experienceConfig.worlds}
                 currentWorld={currentWorld}
-                unlockedWorlds={gameState.unlockedWorlds || []}
+                unlockedWorlds={gameState.unlockedWorlds}
                 onWorldSelect={handleWorldChange}
             />
 
             {/* Área principal de descubrimiento */}
-            <main className="discovery-main">
-                <PatternDiscoveryArea 
-                    worldConfig={currentWorldConfig}
-                    tools={experienceConfig.tools}
-                    unlockedTools={gameState.unlockedTools || []}
-                    onUserAction={handleUserAction}
-                    onChallengeComplete={handleChallengeComplete}
-                    familyMode={familyMode}
-                />
-            </main>
+            <PatternDiscoveryArea 
+                currentWorld={currentWorld}
+                worldConfig={experienceConfig.worlds.find(w => w.id === currentWorld)}
+                tools={experienceConfig.tools.filter(tool => 
+                    gameState.unlockedTools.includes(tool.id)
+                )}
+                onUserAction={handleUserAction}
+                onChallengeComplete={handleChallengeComplete}
+                isProcessing={currentAction !== null}
+            />
 
             {/* Sistema de feedback */}
             <FeedbackSystem 
                 gameState={gameState}
-                onAction={handleUserAction}
+                onAction={handleFeedbackProcess}
             />
 
             {/* Interfaz de recompensas */}
             {showRewards && (
                 <RewardsInterface 
-                    rewards={gameState.rewards || []}
+                    rewards={gameState.rewards}
                     onClaimReward={handleClaimReward}
                     onClose={() => setShowRewards(false)}
                 />
             )}
 
             {/* Modo familiar */}
-            {familyMode && (
+            {showFamilyMode && (
                 <FamilyMode 
-                    sessionId={sessionId}
-                    currentWorld={currentWorld}
-                    onSessionUpdate={onSessionUpdate}
+                    onClose={() => setShowFamilyMode(false)}
+                    onStartActivity={handleStartFamilyActivity}
+                    onShareDiscovery={handleShareDiscovery}
                 />
             )}
         </div>
