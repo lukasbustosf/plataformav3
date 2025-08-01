@@ -4,6 +4,14 @@ const nextConfig = {
   experimental: {
     // App Router is enabled by default in Next.js 14+
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:5000/api/:path*',
+      },
+    ];
+  },
   images: {
     domains: ['localhost', 'supabase.co'],
     remotePatterns: [

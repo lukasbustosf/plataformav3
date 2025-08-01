@@ -390,64 +390,68 @@ model lab_product {
 }
 
 model schools {
-  school_id        String             @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  school_name      String             @db.VarChar(255)
-  school_code      String             @unique @db.VarChar(50)
-  sostenedor_id    String?            @db.Uuid
-  address          String?
-  phone            String?            @db.VarChar(20)
-  email            String?            @db.VarChar(255)
-  director_id      String?            @db.Uuid
-  region           String?            @db.VarChar(100)
-  comuna           String?            @db.VarChar(100)
-  rbd              String?            @unique @db.VarChar(20)
-  school_type      String?            @default("particular") @db.VarChar(50)
-  active           Boolean?           @default(true)
-  created_at       DateTime?          @default(now()) @db.Timestamptz(6)
-  updated_at       DateTime?          @default(now()) @db.Timestamptz(6)
-  courses          courses[]
-  lab_activity_log lab_activity_log[]
-  users            public_users[]
+  school_id           String                @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  school_name         String                @db.VarChar(255)
+  school_code         String                @unique @db.VarChar(50)
+  sostenedor_id       String?               @db.Uuid
+  address             String?
+  phone               String?               @db.VarChar(20)
+  email               String?               @db.VarChar(255)
+  director_id         String?               @db.Uuid
+  region              String?               @db.VarChar(100)
+  comuna              String?               @db.VarChar(100)
+  rbd                 String?               @unique @db.VarChar(20)
+  school_type         String?               @default("particular") @db.VarChar(50)
+  active              Boolean?              @default(true)
+  created_at          DateTime?             @default(now()) @db.Timestamptz(6)
+  updated_at          DateTime?             @default(now()) @db.Timestamptz(6)
+  courses             courses[]
+  experience_sessions experience_sessions[]
+  lab_activity_log    lab_activity_log[]
+  users               public_users[]
 
   @@schema("public")
 }
 
 model public_users {
-  user_id                  String                     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  school_id                String?                    @db.Uuid
-  email                    String                     @unique @db.VarChar(255)
-  password_hash            String                     @db.VarChar(255)
-  first_name               String                     @db.VarChar(100)
-  last_name                String                     @db.VarChar(100)
-  rut                      String?                    @unique @db.VarChar(12)
-  role                     String                     @db.VarChar(50)
-  phone                    String?                    @db.VarChar(20)
-  address                  String?
-  emergency_contact_name   String?                    @db.VarChar(100)
-  emergency_contact_phone  String?                    @db.VarChar(20)
-  date_of_birth            DateTime?                  @db.Date
-  gender                   String?                    @db.VarChar(10)
-  profile_picture_url      String?
-  permissions              Json?                      @default("{}")
-  role_permissions         Json?                      @default("{}")
-  last_role_update         DateTime?                  @db.Timestamptz(6)
-  email_verified           Boolean?                   @default(false)
-  email_verification_token String?                    @db.VarChar(255)
-  password_reset_token     String?                    @db.VarChar(255)
-  password_reset_expires   DateTime?                  @db.Timestamptz(6)
-  last_login               DateTime?                  @db.Timestamptz(6)
-  login_attempts           Int?                       @default(0)
-  locked_until             DateTime?                  @db.Timestamptz(6)
-  active                   Boolean?                   @default(true)
-  created_at               DateTime?                  @default(now()) @db.Timestamptz(6)
-  updated_at               DateTime?                  @default(now()) @db.Timestamptz(6)
-  lab_activity             lab_activity[]
-  lab_activity_collections lab_activity_collections[]
-  lab_activity_favorites   lab_activity_favorites[]
-  lab_activity_log         lab_activity_log[]
-  lab_evidence             lab_evidence[]
-  lab_work_sessions        lab_work_sessions[]
-  schools                  schools?                   @relation(fields: [school_id], references: [school_id], onDelete: Cascade, onUpdate: NoAction)
+  user_id                                                      String                     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  school_id                                                    String?                    @db.Uuid
+  email                                                        String                     @unique @db.VarChar(255)
+  password_hash                                                String                     @db.VarChar(255)
+  first_name                                                   String                     @db.VarChar(100)
+  last_name                                                    String                     @db.VarChar(100)
+  rut                                                          String?                    @unique @db.VarChar(12)
+  role                                                         String                     @db.VarChar(50)
+  phone                                                        String?                    @db.VarChar(20)
+  address                                                      String?
+  emergency_contact_name                                       String?                    @db.VarChar(100)
+  emergency_contact_phone                                      String?                    @db.VarChar(20)
+  date_of_birth                                                DateTime?                  @db.Date
+  gender                                                       String?                    @db.VarChar(10)
+  profile_picture_url                                          String?
+  permissions                                                  Json?                      @default("{}")
+  role_permissions                                             Json?                      @default("{}")
+  last_role_update                                             DateTime?                  @db.Timestamptz(6)
+  email_verified                                               Boolean?                   @default(false)
+  email_verification_token                                     String?                    @db.VarChar(255)
+  password_reset_token                                         String?                    @db.VarChar(255)
+  password_reset_expires                                       DateTime?                  @db.Timestamptz(6)
+  last_login                                                   DateTime?                  @db.Timestamptz(6)
+  login_attempts                                               Int?                       @default(0)
+  locked_until                                                 DateTime?                  @db.Timestamptz(6)
+  active                                                       Boolean?                   @default(true)
+  created_at                                                   DateTime?                  @default(now()) @db.Timestamptz(6)
+  updated_at                                                   DateTime?                  @default(now()) @db.Timestamptz(6)
+  experience_sessions                                          experience_sessions[]
+  family_participation_family_participation_guardian_idTousers family_participation[]     @relation("family_participation_guardian_idTousers")
+  family_participation_family_participation_student_idTousers  family_participation[]     @relation("family_participation_student_idTousers")
+  lab_activity                                                 lab_activity[]
+  lab_activity_collections                                     lab_activity_collections[]
+  lab_activity_favorites                                       lab_activity_favorites[]
+  lab_activity_log                                             lab_activity_log[]
+  lab_evidence                                                 lab_evidence[]
+  lab_work_sessions                                            lab_work_sessions[]
+  schools                                                      schools?                   @relation(fields: [school_id], references: [school_id], onDelete: Cascade, onUpdate: NoAction)
 
   @@index([active], map: "idx_users_active")
   @@index([email], map: "idx_users_email")
@@ -612,6 +616,73 @@ model lab_work_sessions {
   @@schema("public")
 }
 
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model experience_sessions {
+  session_id           String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  experience_id        String                 @db.Uuid
+  user_id              String                 @db.Uuid
+  school_id            String                 @db.Uuid
+  start_time           DateTime?              @default(now()) @db.Timestamptz(6)
+  end_time             DateTime?              @db.Timestamptz(6)
+  progress_json        Json?                  @default("{}")
+  rewards_json         Json?                  @default("{}")
+  metadata_json        Json?                  @default("{}")
+  status               String?                @default("active") @db.VarChar(50)
+  created_at           DateTime?              @default(now()) @db.Timestamptz(6)
+  updated_at           DateTime?              @default(now()) @db.Timestamptz(6)
+  gamified_experiences gamified_experiences   @relation(fields: [experience_id], references: [experience_id], onDelete: Cascade, onUpdate: NoAction)
+  schools              schools                @relation(fields: [school_id], references: [school_id], onDelete: Cascade, onUpdate: NoAction)
+  users                public_users           @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+  family_participation family_participation[]
+
+  @@index([experience_id], map: "idx_experience_sessions_experience_id")
+  @@index([school_id], map: "idx_experience_sessions_school_id")
+  @@index([start_time], map: "idx_experience_sessions_start_time")
+  @@index([status], map: "idx_experience_sessions_status")
+  @@index([user_id], map: "idx_experience_sessions_user_id")
+  @@schema("public")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model family_participation {
+  participation_id                              String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  session_id                                    String              @db.Uuid
+  guardian_id                                   String              @db.Uuid
+  student_id                                    String              @db.Uuid
+  activity_type                                 String              @db.VarChar(100)
+  duration_minutes                              Int?
+  details_json                                  Json?               @default("{}")
+  created_at                                    DateTime?           @default(now()) @db.Timestamptz(6)
+  users_family_participation_guardian_idTousers public_users        @relation("family_participation_guardian_idTousers", fields: [guardian_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+  experience_sessions                           experience_sessions @relation(fields: [session_id], references: [session_id], onDelete: Cascade, onUpdate: NoAction)
+  users_family_participation_student_idTousers  public_users        @relation("family_participation_student_idTousers", fields: [student_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([activity_type], map: "idx_family_participation_activity_type")
+  @@index([guardian_id], map: "idx_family_participation_guardian_id")
+  @@index([session_id], map: "idx_family_participation_session_id")
+  @@index([student_id], map: "idx_family_participation_student_id")
+  @@schema("public")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model gamified_experiences {
+  experience_id       String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  oa_id               String                @db.VarChar(50)
+  experience_type     String                @db.VarChar(100)
+  title               String                @db.VarChar(255)
+  description         String?
+  settings_json       Json?                 @default("{}")
+  active              Boolean?              @default(true)
+  created_at          DateTime?             @default(now()) @db.Timestamptz(6)
+  updated_at          DateTime?             @default(now()) @db.Timestamptz(6)
+  experience_sessions experience_sessions[]
+
+  @@index([active], map: "idx_gamified_experiences_active")
+  @@index([oa_id], map: "idx_gamified_experiences_oa_id")
+  @@index([experience_type], map: "idx_gamified_experiences_type")
+  @@schema("public")
+}
+
 enum aal_level {
   aal1
   aal2
@@ -708,103 +779,6 @@ enum lab_product_status {
   draft
   active
   archived
-
-  @@schema("public")
-}
-
-// =====================================================
-// MODELOS PARA EXPERIENCIAS GAMIFICADAS
-// =====================================================
-
-model gamified_experiences {
-  experience_id    String   @id @default(uuid())
-  oa_id           String
-  experience_type String
-  title           String
-  description     String?
-  settings_json   Json     @default("{}")
-  active          Boolean  @default(true)
-  created_at      DateTime @default(now())
-  updated_at      DateTime @updatedAt
-
-  // Relaciones
-  learning_objectives learning_objectives @relation(fields: [oa_id], references: [oa_id])
-  experience_sessions experience_sessions[]
-
-  @@schema("public")
-}
-
-model experience_sessions {
-  session_id      String   @id @default(uuid())
-  experience_id   String
-  user_id         String
-  school_id       String
-  start_time      DateTime @default(now())
-  end_time        DateTime?
-  progress_json   Json     @default("{}")
-  rewards_json    Json     @default("{}")
-  metadata_json   Json     @default("{}")
-  status          String   @default("active")
-  created_at      DateTime @default(now())
-  updated_at      DateTime @updatedAt
-
-  // Relaciones
-  gamified_experiences gamified_experiences @relation(fields: [experience_id], references: [experience_id])
-  users               public_users         @relation(fields: [user_id], references: [user_id])
-  schools             schools              @relation(fields: [school_id], references: [school_id])
-  family_participation family_participation[]
-
-  @@schema("public")
-}
-
-model family_participation {
-  participation_id String   @id @default(uuid())
-  session_id      String
-  guardian_id     String
-  student_id      String
-  activity_type   String
-  duration_minutes Int?
-  details_json    Json     @default("{}")
-  created_at      DateTime @default(now())
-
-  // Relaciones
-  experience_sessions experience_sessions @relation(fields: [session_id], references: [session_id])
-  guardian           public_users        @relation("guardian_participation", fields: [guardian_id], references: [user_id])
-  student            public_users        @relation("student_participation", fields: [student_id], references: [user_id])
-
-  @@schema("public")
-}
-
-// =====================================================
-// ENUMS PARA EXPERIENCIAS GAMIFICADAS
-// =====================================================
-
-enum experience_type_enum {
-  Discovery_Learning
-  Project_Based_Learning
-  Multi_Device_Interactive
-  Adaptive_Learning
-  Inquiry_Based_Learning
-  Collaborative_Learning
-
-  @@schema("public")
-}
-
-enum session_status_enum {
-  active
-  paused
-  completed
-  abandoned
-
-  @@schema("public")
-}
-
-enum family_activity_type_enum {
-  Modo_Aventura_Familiar
-  Compartir_Descubrimientos
-  Actividad_Sin_Pantalla
-  Celebración_de_Logros
-  Ayuda_con_Tareas
 
   @@schema("public")
 }

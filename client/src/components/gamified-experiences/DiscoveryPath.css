@@ -1,0 +1,1781 @@
+/* =====================================================
+   DISCOVERY PATH - EXPERIENCIA GAMIFICADA
+   ===================================================== */
+
+.discovery-path {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFE8D6 100%);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #2D3748;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Efectos de fondo animados */
+.discovery-path::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 179, 71, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(1deg); }
+  66% { transform: translateY(10px) rotate(-1deg); }
+}
+
+/* =====================================================
+   PANTALLAS DE CARGA Y ERROR
+   ===================================================== */
+
+.loading-screen, .error-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFE8D6 100%);
+}
+
+.loading-content, .error-content {
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #FF6B35;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 2rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.retry-button {
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.retry-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   TUTORIAL OVERLAY
+   ===================================================== */
+
+.tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(10px);
+}
+
+.tutorial-modal {
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  border-radius: 25px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.teacher-avatar {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.tutorial-modal h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tutorial-modal p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.tutorial-button {
+  background: white;
+  color: #FF6B35;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tutorial-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   NUMBER SCALE DEMO
+   ===================================================== */
+
+.number-scale-demo {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+}
+
+.scale-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.scale-number {
+  width: 40px;
+  height: 40px;
+  background: white;
+  color: #FF6B35;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  animation: selectedPulse 1s infinite;
+}
+
+.scale-number.selected {
+  background: #4CAF50;
+  color: white;
+  transform: scale(1.1);
+}
+
+.scale-label {
+  font-size: 1rem;
+  color: white;
+  font-style: italic;
+}
+
+/* =====================================================
+   TEACHER MESSAGE
+   ===================================================== */
+
+.teacher-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #4ECDC4 0%, #A8E6CF 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideInRight 0.5s ease-out;
+  max-width: 300px;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.teacher-message .teacher-avatar {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.teacher-message p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* =====================================================
+   CELEBRATION
+   ===================================================== */
+
+.celebration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+  backdrop-filter: blur(5px);
+}
+
+.celebration-content {
+  background: linear-gradient(135deg, #FFD93D 0%, #FFB347 100%);
+  padding: 3rem;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: celebrationBounce 0.8s ease-out;
+}
+
+@keyframes celebrationBounce {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.celebration-avatar {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  animation: celebrationSpin 1s ease-out;
+}
+
+@keyframes celebrationSpin {
+  0% { transform: rotate(0deg) scale(0.5); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.celebration-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.celebration-content p {
+  font-size: 1.3rem;
+  color: white;
+}
+
+/* =====================================================
+   HEADER MEJORADO
+   ===================================================== */
+
+.discovery-header {
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.avatar-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  font-size: 2rem;
+  animation: avatarFloat 3s ease-in-out infinite;
+}
+
+@keyframes avatarFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.player-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.score-display, .level-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+}
+
+.score-label, .level-label {
+  font-size: 0.9rem;
+  color: #bdc3c7;
+}
+
+.score-value, .level-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-button {
+  background: linear-gradient(135deg, #4ECDC4 0%, #A8E6CF 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   CONTENIDO PRINCIPAL
+   ===================================================== */
+
+.discovery-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.discovery-content {
+  background: white;
+  border-radius: 25px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.discovery-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(255, 179, 71, 0.1) 0%, transparent 50%);
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.welcome-section h2 {
+  font-size: 2.5rem;
+  color: #2D3748;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.welcome-section p {
+  font-size: 1.3rem;
+  color: #4A5568;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   ÁREA DE JUEGO
+   ===================================================== */
+
+.game-area {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.number-grid {
+  text-align: center;
+}
+
+.number-grid h3 {
+  font-size: 2rem;
+  color: #2D3748;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.number-grid p {
+  font-size: 1.2rem;
+  color: #4A5568;
+  margin-bottom: 2rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.number-card {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid transparent;
+}
+
+.number-card:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-color: #FFD93D;
+}
+
+.number-card.selected {
+  background: linear-gradient(135deg, #4ECDC4 0%, #A8E6CF 100%);
+  transform: scale(1.1);
+  border-color: #2D3748;
+  animation: selectedPulse 1s infinite;
+}
+
+@keyframes selectedPulse {
+  0%, 100% { transform: scale(1.1); }
+  50% { transform: scale(1.2); }
+}
+
+.selected-numbers {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #155724;
+  border: 2px solid #28a745;
+}
+
+/* =====================================================
+   CONTROLES
+   ===================================================== */
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.game-button {
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+}
+
+.game-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.game-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.game-button.success {
+  background: linear-gradient(135deg, #4ECDC4 0%, #A8E6CF 100%);
+}
+
+/* =====================================================
+   PATTERN DISPLAY
+   ===================================================== */
+
+.pattern-display {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border-radius: 20px;
+  border: 3px solid #28a745;
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.pattern-display h4 {
+  font-size: 1.5rem;
+  color: #155724;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.pattern-display p {
+  font-size: 1.3rem;
+  color: #155724;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* =====================================================
+   ACTION STATUS
+   ===================================================== */
+
+.action-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border-radius: 15px;
+  border: 2px solid #ffc107;
+}
+
+.action-status p {
+  font-size: 1.1rem;
+  color: #856404;
+  font-weight: bold;
+}
+
+/* =====================================================
+   MODALES Y OVERLAYS
+   ===================================================== */
+
+.feedback-overlay, .rewards-overlay, .family-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.feedback-modal, .rewards-modal, .family-modal {
+  background: white;
+  border-radius: 25px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.5s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.feedback-modal h3, .rewards-modal h3, .family-modal h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.feedback-message {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  animation: messageSlideIn 0.5s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.feedback-message.success {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border: 2px solid #28a745;
+}
+
+.feedback-message.error {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  border: 2px solid #dc3545;
+}
+
+.close-button {
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.close-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   REWARDS INTERFACE
+   ===================================================== */
+
+.rewards-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.reward-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  border: 2px solid #dee2e6;
+}
+
+.reward-icon {
+  font-size: 2rem;
+}
+
+.reward-info {
+  flex: 1;
+}
+
+.reward-info h4 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.reward-info p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.claim-button {
+  background: linear-gradient(135deg, #4ECDC4 0%, #A8E6CF 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.claim-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.claim-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   FAMILY MODE
+   ===================================================== */
+
+.family-content {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.family-content p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.family-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.stat {
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* =====================================================
+   CHECKLIST DE LOGROS Y DESAFÍOS
+   ===================================================== */
+
+.checklist-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(10px);
+}
+
+.checklist-modal {
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  border-radius: 25px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.4s ease-out;
+}
+
+.checklist-content {
+  margin-top: 1rem;
+}
+
+.checklist-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.stat-item:hover {
+  transform: scale(1.05);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.challenge-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.challenge-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.challenge-item.completed {
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.challenge-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.challenge-info {
+  flex: 1;
+}
+
+.challenge-info h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.challenge-info p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.challenge-points {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.3);
+  color: #ffd700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.challenge-status {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.challenge-item.completed .challenge-status {
+  background: rgba(76, 175, 80, 0.3);
+  color: #4CAF50;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+  .discovery-main {
+    padding: 1rem;
+  }
+  
+  .discovery-content {
+    padding: 2rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .game-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .controls {
+    flex-direction: column;
+  }
+  
+  .game-button {
+    width: 100%;
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .number-card {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .welcome-section h2 {
+    font-size: 2rem;
+  }
+  
+  .number-grid h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutorial-modal, .feedback-modal, .rewards-modal, .family-modal {
+    padding: 1.5rem;
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  }
+  
+  .number-card {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* =====================================================
+   ACCESIBILIDAD
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .discovery-path {
+    background: #000;
+    color: #fff;
+  }
+  
+  .discovery-content {
+    background: #fff;
+    color: #000;
+    border: 3px solid #000;
+  }
+  
+  .number-card {
+    border: 3px solid #000;
+  }
+  
+  .game-button {
+    border: 3px solid #000;
+  }
+}
+
+/* =====================================================
+   PRINT STYLES
+   ===================================================== */
+
+@media print {
+  .discovery-path {
+    background: white;
+    color: black;
+  }
+  
+  .discovery-header,
+  .controls,
+  .tutorial-overlay,
+  .feedback-overlay,
+  .rewards-overlay,
+  .family-overlay {
+    display: none;
+  }
+} 
+
+/* =====================================================
+   MEJORAS EN HEADER ACTIONS
+   ===================================================== */
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.header-button {
+  background: linear-gradient(135deg, #4ECDC4 0%, #A8E6CF 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #A8E6CF 0%, #4ECDC4 100%);
+}
+
+/* =====================================================
+   ANIMACIONES ADICIONALES
+   ===================================================== */
+
+@keyframes achievementUnlock {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.challenge-item.completed {
+  animation: achievementUnlock 0.6s ease-out;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN PARA CHECKLIST
+   ===================================================== */
+
+@media (max-width: 768px) {
+  .checklist-modal {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+  
+  .checklist-stats {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .challenge-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .challenge-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .challenge-status {
+    align-self: center;
+  }
+}
+
+/* =====================================================
+   SCROLLBAR PERSONALIZADO PARA CHECKLIST
+   ===================================================== */
+
+.challenges-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.challenges-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.challenges-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.challenges-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+} 
+
+/* Estilos para el overlay de pistas siempre visible */
+.hint-overlay {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 300px;
+}
+
+.hint-modal {
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB347 100%);
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  animation: hintPulse 2s ease-in-out infinite;
+}
+
+.hint-modal h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hint-modal p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #f0f0f0;
+}
+
+@keyframes hintPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Mejorar el contraste de los títulos */
+.discovery-path h1,
+.discovery-path h2,
+.discovery-path h3 {
+  color: #2c3e50 !important;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+}
+
+.discovery-path .header h1 {
+  color: #34495e !important;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+/* Mejorar el checklist siempre visible */
+.always-visible-checklist {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 280px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.always-visible-checklist h4 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.always-visible-checklist .challenge-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(52, 152, 219, 0.1);
+  transition: all 0.3s ease;
+}
+
+.always-visible-checklist .challenge-item.completed {
+  background: rgba(46, 204, 113, 0.2);
+  border-left: 4px solid #2ecc71;
+}
+
+.always-visible-checklist .challenge-item.pending {
+  background: rgba(155, 155, 155, 0.1);
+  border-left: 4px solid #9b9b9b;
+}
+
+.always-visible-checklist .challenge-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  width: 24px;
+  text-align: center;
+}
+
+.always-visible-checklist .challenge-info {
+  flex: 1;
+}
+
+.always-visible-checklist .challenge-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 2px;
+}
+
+.always-visible-checklist .challenge-description {
+  font-size: 10px;
+  color: #7f8c8d;
+  line-height: 1.2;
+}
+
+.always-visible-checklist .challenge-status {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.always-visible-checklist .challenge-status.completed {
+  background: #2ecc71;
+  color: white;
+}
+
+.always-visible-checklist .challenge-status.pending {
+  background: #95a5a6;
+  color: white;
+} 
+
+/* =====================================================
+   CHECKLIST MINIMIZABLE Y MOVIBLE
+   ===================================================== */
+
+.always-visible-checklist {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 2px solid #667eea;
+  max-width: 300px;
+  min-width: 250px;
+  cursor: move;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.always-visible-checklist.minimized {
+  max-width: 200px;
+  min-width: 150px;
+}
+
+.always-visible-checklist:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.checklist-header h4 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.checklist-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.minimize-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.minimize-button:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.1);
+}
+
+.always-visible-checklist h4 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.always-visible-checklist .challenge-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.always-visible-checklist .challenge-item.completed {
+  background: rgba(46, 204, 113, 0.1);
+  border-color: #2ecc71;
+}
+
+.always-visible-checklist .challenge-item.pending {
+  background: rgba(241, 196, 15, 0.1);
+  border-color: #f1c40f;
+}
+
+.always-visible-checklist .challenge-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  min-width: 20px;
+}
+
+.always-visible-checklist .challenge-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.always-visible-checklist .challenge-title {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.always-visible-checklist .challenge-description {
+  color: #7f8c8d;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.always-visible-checklist .challenge-status {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.always-visible-checklist .challenge-status.completed {
+  color: #2ecc71;
+}
+
+.always-visible-checklist .challenge-status.pending {
+  color: #f1c40f;
+}
+
+/* =====================================================
+   REPORTE DE ACTIVIDAD
+   ===================================================== */
+
+.activity-report-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.activity-report-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideInUp 0.3s ease;
+}
+
+.activity-report-modal h3 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.report-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.report-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.report-stats .stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.report-stats .stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.report-stats .stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.report-recommendations {
+  background: rgba(241, 196, 15, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 4px solid #f1c40f;
+}
+
+.report-recommendations h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.report-recommendations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.report-recommendations li {
+  padding: 0.5rem 0;
+  color: #2c3e50;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.report-recommendations li::before {
+  content: '💡';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+.report-message {
+  background: rgba(46, 204, 113, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 4px solid #2ecc71;
+  text-align: center;
+}
+
+.report-message h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.report-message p {
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   PISTAS MEJORADAS CON BOTÓN DE AUDIO
+   ===================================================== */
+
+.hint-overlay {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.hint-modal {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 2px solid #667eea;
+  max-width: 350px;
+  min-width: 250px;
+  animation: hintPulse 2s infinite;
+}
+
+.hint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.hint-modal h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.audio-button {
+  background: linear-gradient(135deg, #4ECDC4 0%, #A8E6CF 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hint-modal p {
+  color: #2c3e50;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@keyframes hintPulse {
+  0%, 100% { 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+  }
+  50% { 
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE PARA CHECKLIST Y PISTAS
+   ===================================================== */
+
+@media (max-width: 768px) {
+  .always-visible-checklist {
+    max-width: 250px;
+    min-width: 200px;
+    left: 10px !important;
+    top: 80px !important;
+  }
+  
+  .hint-overlay {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .hint-modal {
+    max-width: 280px;
+    min-width: 200px;
+  }
+  
+  .activity-report-modal {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .report-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .always-visible-checklist {
+    max-width: 200px;
+    min-width: 150px;
+    font-size: 0.9rem;
+  }
+  
+  .hint-modal {
+    max-width: 250px;
+    min-width: 180px;
+  }
+  
+  .activity-report-modal {
+    padding: 1rem;
+  }
+  
+  .report-stats {
+    grid-template-columns: 1fr;
+  }
+} 
+
+/* Estilos para la pista minimizable */
+.hint-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.minimize-hint-button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.minimize-hint-button:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+}
+
+.hint-minimized {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.show-hint-button {
+  background: #FF6B35;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.show-hint-button:hover {
+  background: #45b7aa;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+} 

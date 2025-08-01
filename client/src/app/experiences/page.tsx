@@ -35,7 +35,7 @@ const ExperiencesPage = () => {
             const response = await fetch('/api/experiences', {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${user?.token}`
+                    'user-id': user?.user_id || 'test-user'
                 }
             });
 
@@ -116,7 +116,7 @@ const ExperiencesPage = () => {
                         <div className="flex items-center space-x-4">
                             <div className="text-right">
                                 <p className="text-sm text-gray-600">Bienvenido</p>
-                                <p className="font-semibold text-gray-900">{user?.name || 'Estudiante'}</p>
+                                <p className="font-semibold text-gray-900">{user ? `${user.first_name} ${user.last_name}` : 'Estudiante'}</p>
                             </div>
                         </div>
                     </div>
