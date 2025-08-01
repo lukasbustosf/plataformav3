@@ -1,0 +1,30 @@
+warning: in the working copy of 'client/vercel.json', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/client/vercel.json b/client/vercel.json[m
+[1mindex e7485d7..67ada6b 100644[m
+[1m--- a/client/vercel.json[m
+[1m+++ b/client/vercel.json[m
+[36m@@ -4,6 +4,24 @@[m
+       "maxDuration": 30[m
+     }[m
+   },[m
+[32m+[m[32m  "redirects": [[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "source": "/",[m
+[32m+[m[32m      "destination": "https://oalabs.cl",[m
+[32m+[m[32m      "permanent": true[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "source": "/:path*",[m
+[32m+[m[32m      "has": [[m
+[32m+[m[32m        {[m
+[32m+[m[32m          "type": "host",[m
+[32m+[m[32m          "value": "www.oalabs.cl"[m
+[32m+[m[32m        }[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "destination": "https://oalabs.cl/:path*",[m
+[32m+[m[32m      "permanent": true[m
+[32m+[m[32m    }[m
+[32m+[m[32m  ],[m
+   "rewrites": [[m
+     {[m
+       "source": "/api/(.*)",[m
