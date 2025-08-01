@@ -4,6 +4,24 @@
       "maxDuration": 30
     }
   },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://oalabs.cl",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.oalabs.cl"
+        }
+      ],
+      "destination": "https://oalabs.cl/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
