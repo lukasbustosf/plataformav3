@@ -83,7 +83,6 @@ router.get('/activities', async (req, res) => {
 
   const attemptQuery = async () => {
     try {
-      const userId = req.user.user_id;
       const { searchTerm, grade_level, subject, lab_material_id, page = 1, limit = 12 } = req.query;
       const filterConditions = [];
       if (searchTerm) {
@@ -106,7 +105,7 @@ router.get('/activities', async (req, res) => {
       const whereClause = {
         AND: [
           ...filterConditions,
-          { OR: [{ status: 'active' }, { creator_id: userId }] },
+          { status: 'active' },
         ],
       };
       const offset = (parseInt(page) - 1) * parseInt(limit);
