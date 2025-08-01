@@ -1,0 +1,665 @@
+/* =====================================================
+   ESTILOS PARA SISTEMA DE FEEDBACK
+   Optimizados para niños de 6-7 años
+   ===================================================== */
+
+.feedback-system {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* =====================================================
+   MENSAJE DE FEEDBACK PRINCIPAL
+   ===================================================== */
+
+.feedback-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 400px;
+    border: 4px solid var(--feedback-color, #4CAF50);
+    pointer-events: auto;
+    animation: slideInRight 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes slideInRight {
+    from { 
+        transform: translateX(100%); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+.feedback-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--feedback-color, #4CAF50)20, var(--feedback-color, #4CAF50)40);
+    z-index: -1;
+}
+
+.feedback-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-2px); }
+}
+
+.feedback-content {
+    flex: 1;
+}
+
+.feedback-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-text {
+    font-size: 1rem;
+    margin: 0;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+.feedback-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+
+.feedback-progress .progress-bar {
+    height: 100%;
+    background: var(--feedback-color, #4CAF50);
+    border-radius: 0 0 20px 20px;
+    animation: progress 4s linear;
+}
+
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* =====================================================
+   POPUP DE LOGROS
+   ===================================================== */
+
+.achievement-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 5px solid #FFD700;
+    pointer-events: auto;
+    animation: popIn 0.5s ease;
+    z-index: 1001;
+    min-width: 350px;
+}
+
+@keyframes popIn {
+    0% { 
+        transform: translate(-50%, -50%) scale(0); 
+        opacity: 0; 
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.1); 
+    }
+    100% { 
+        transform: translate(-50%, -50%) scale(1); 
+        opacity: 1; 
+    }
+}
+
+.achievement-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.achievement-icon {
+    font-size: 4rem;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.3));
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(5deg); }
+    50% { transform: scale(1.05) rotate(-3deg); }
+    75% { transform: scale(1.1) rotate(3deg); }
+}
+
+.achievement-info {
+    flex: 1;
+}
+
+.achievement-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-description {
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+.achievement-points {
+    background: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.achievement-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #f44336;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.achievement-close:hover {
+    transform: scale(1.1);
+    background: #d32f2f;
+}
+
+/* =====================================================
+   EFECTO DE CELEBRACIÓN
+   ===================================================== */
+
+.celebration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    z-index: 1002;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.celebration-container {
+    text-align: center;
+    animation: celebrationBounce 0.5s ease;
+}
+
+@keyframes celebrationBounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.celebration-icon {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    animation: celebrationSpin 2s infinite;
+}
+
+@keyframes celebrationSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1); }
+    75% { transform: rotate(270deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.celebration-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    animation: celebrationGlow 1s infinite alternate;
+}
+
+@keyframes celebrationGlow {
+    from { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); }
+    to { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.8); }
+}
+
+.celebration-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #FFD700;
+    border-radius: 50%;
+    animation: particleExplosion 2s ease-out forwards;
+    animation-delay: var(--delay);
+}
+
+@keyframes particleExplosion {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: 
+            translate(
+                calc(-50% + cos(var(--angle)) * var(--distance)),
+                calc(-50% + sin(var(--angle)) * var(--distance))
+            ) 
+            scale(0);
+        opacity: 0;
+    }
+}
+
+/* =====================================================
+   ESTADÍSTICAS DE FEEDBACK
+   ===================================================== */
+
+.feedback-stats {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 1rem;
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid #e0e0e0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 80px;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #7f8c8d;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* =====================================================
+   INDICADOR DE SONIDO
+   ===================================================== */
+
+.sound-indicator {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: soundPulse 0.5s ease;
+    pointer-events: none;
+}
+
+@keyframes soundPulse {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .feedback-message {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        padding: 1rem;
+    }
+    
+    .feedback-icon {
+        font-size: 2rem;
+    }
+    
+    .feedback-title {
+        font-size: 1.1rem;
+    }
+    
+    .feedback-text {
+        font-size: 0.9rem;
+    }
+    
+    .achievement-popup {
+        min-width: 300px;
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .achievement-icon {
+        font-size: 3rem;
+    }
+    
+    .achievement-title {
+        font-size: 1.3rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.9rem;
+    }
+    
+    .celebration-icon {
+        font-size: 4rem;
+    }
+    
+    .celebration-text {
+        font-size: 1.5rem;
+    }
+    
+    .feedback-stats {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 0.8rem;
+        gap: 0.5rem;
+    }
+    
+    .stat-item {
+        padding: 0.6rem;
+        min-width: 60px;
+    }
+    
+    .stat-icon {
+        font-size: 1.2rem;
+    }
+    
+    .stat-value {
+        font-size: 1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-message {
+        top: 5px;
+        right: 5px;
+        left: 5px;
+        padding: 0.8rem;
+    }
+    
+    .feedback-icon {
+        font-size: 1.8rem;
+    }
+    
+    .feedback-title {
+        font-size: 1rem;
+    }
+    
+    .feedback-text {
+        font-size: 0.8rem;
+    }
+    
+    .achievement-popup {
+        min-width: 280px;
+        padding: 1rem;
+    }
+    
+    .achievement-icon {
+        font-size: 2.5rem;
+    }
+    
+    .achievement-title {
+        font-size: 1.1rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.8rem;
+    }
+    
+    .celebration-icon {
+        font-size: 3rem;
+    }
+    
+    .celebration-text {
+        font-size: 1.2rem;
+    }
+    
+    .feedback-stats {
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.6rem;
+    }
+    
+    .stat-item {
+        padding: 0.4rem;
+        min-width: 50px;
+    }
+    
+    .stat-icon {
+        font-size: 1rem;
+    }
+    
+    .stat-value {
+        font-size: 0.9rem;
+    }
+    
+    .stat-label {
+        font-size: 0.5rem;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA TOUCH DEVICES
+   ===================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    .achievement-close {
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 1.5rem;
+    }
+    
+    .feedback-stats {
+        gap: 0.8rem;
+    }
+    
+    .stat-item {
+        min-height: 60px;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA ACCESIBILIDAD
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .feedback-message {
+        animation: none;
+    }
+    
+    .feedback-icon {
+        animation: none;
+    }
+    
+    .achievement-popup {
+        animation: none;
+    }
+    
+    .achievement-icon {
+        animation: none;
+    }
+    
+    .achievement-points {
+        animation: none;
+    }
+    
+    .celebration-icon {
+        animation: none;
+    }
+    
+    .celebration-text {
+        animation: none;
+    }
+    
+    .particle {
+        animation: none;
+    }
+    
+    .sound-indicator {
+        animation: none;
+    }
+    
+    .stat-item:hover {
+        transform: none;
+    }
+}
+
+/* =====================================================
+   ESTILOS PARA ALTO CONTRASTE
+   ===================================================== */
+
+@media (prefers-contrast: high) {
+    .feedback-message {
+        background: white;
+        border: 4px solid #000;
+    }
+    
+    .achievement-popup {
+        background: white;
+        border: 5px solid #000;
+    }
+    
+    .feedback-stats {
+        background: white;
+        border: 3px solid #000;
+    }
+    
+    .stat-item {
+        background: white;
+        border: 2px solid #000;
+    }
+    
+    .sound-indicator {
+        background: #000;
+        color: #fff;
+        border: 3px solid #fff;
+    }
+    
+    .celebration-overlay {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .celebration-text {
+        color: #000;
+        text-shadow: none;
+    }
+} 
