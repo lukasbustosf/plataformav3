@@ -52,6 +52,7 @@ const io = socketIo(server, {
       "http://localhost:3000",
       "https://plataforma-edu21-grlcir15d-lukasbustosfs-projects.vercel.app",
       "https://plataforma-edu21.vercel.app",
+      "https://plataformav3.vercel.app",
       "https://*.vercel.app"
     ],
     methods: ["GET", "POST"]
@@ -65,6 +66,7 @@ app.use(cors({
     "http://localhost:3000",
     "https://plataforma-edu21-grlcir15d-lukasbustosfs-projects.vercel.app",
     "https://plataforma-edu21.vercel.app",
+    "https://plataformav3.vercel.app",
     "https://*.vercel.app"
   ],
   credentials: true

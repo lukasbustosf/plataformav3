@@ -23,10 +23,10 @@ class ApiService {
     let baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
     
     // Si estamos en producción y no hay NEXT_PUBLIC_API_URL configurada,
-    // usar la URL de Vercel para que las rutas funcionen con vercel.json
+    // usar la URL de Railway para que las rutas funcionen con vercel.json
     if (typeof window !== 'undefined' && window.location.hostname === 'plataformav3.vercel.app') {
-      // En producción, usar el servidor backend desplegado
-      baseURL = 'https://plataformav3-server.vercel.app';
+      // En producción, usar el servidor backend en Railway
+      baseURL = 'https://plataformav3-production.up.railway.app';
     }
     
     this.baseURL = baseURL;
