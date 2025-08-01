@@ -24,7 +24,7 @@ const uploadEvidence = multer({ storage: evidenceStorage });
 // PRODUCTOS Y MATERIALES (CON PRISMA)
 // ============================================================================
 
-router.get('/products', authenticateToken, async (req, res) => {
+router.get('/products', async (req, res) => {
   try {
     const products = await prisma.lab_product.findMany({
       where: { status: 'active' },
