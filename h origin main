@@ -1,5 +1,3 @@
-[33mda25e0d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Fix TypeScript compilation errors: add type guards and missing interface properties
-[33me5505c1[m[33m ([m[1;31morigin/main[m[33m)[m feat: Implementación de experiencias gamificadas y mejoras en el sistema - Agregadas experiencias city-numeric y documentación completa - Mejorado sistema de gamificación con nuevas dinámicas - Actualizado schema de Prisma y rutas del servidor - Optimizado package-lock.json y dependencias - Listo para despliegue en producción
-[33m4560edd[m Update pnpm-lock.yaml - Fix dependency conflicts for production
-[33m0d66dc6[m Fix redirect loop - Remove problematic redirects from vercel.json
-[33mce0783d[m Fix pnpm-lock.yaml - Update dependencies to match package.json
+[33mb916dd7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Fix API routing: use relative URLs for production to work with Vercel proxy
+[33mda25e0d[m[33m ([m[1;31morigin/main[m[33m)[m Fix TypeScript compilation errors: add type guards and missing interface properties
+[33me5505c1[m feat: Implementación de experiencias gamificadas y mejoras en el sistema - Agregadas experiencias city-numeric y documentación completa - Mejorado sistema de gamificación con nuevas dinámicas - Actualizado schema de Prisma y rutas del servidor - Optimizado package-lock.json y dependencias - Listo para despliegue en producción
