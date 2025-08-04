@@ -9,6 +9,7 @@ import { ArrowLeftIcon, PlayCircleIcon, DocumentTextIcon, VideoCameraIcon, CubeI
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import ActivityDetailView from '@/components/lab/ActivityDetailView';
+import api from '@/lib/api';
 
 // Tipos de datos completos
 interface Material { name: string }
@@ -105,11 +106,9 @@ export default function ActivityDetailPage() {
 
   useEffect(() => {
     if (slug) {
-      fetch(`/lab/activities/${slug}`)
-        .then(res => res.json())
+      api.getLabActivityBySlug(slug)
         .then(result => {
-          if (result.success) setActivity(result.data);
-          else throw new Error(result.message);
+          setActivity(result);
         })
         .catch(err => setError(err.message))
         .finally(() => setLoading(false));
@@ -121,10 +120,8 @@ export default function ActivityDetailPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`/lab/activities/${slug}`);
-      const result = await res.json();
-      if (result.success) setActivity(result.data);
-      else throw new Error(result.message);
+      const result = await api.getLabActivityBySlug(slug);
+      setActivity(result);
     } catch (err: any) {
       setError(err.message);
     } finally {
