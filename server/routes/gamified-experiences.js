@@ -83,6 +83,45 @@ router.get('/experiences', authenticateUser, async (req, res) => {
                     color: '#4CAF50',
                     status: 'available',
                     progress: 0
+                },
+                {
+                    id: 'mock-experience-2',
+                    title: 'Diseña tu Ciudad Numérica',
+                    description: 'Construye una ciudad usando números del 1 al 100',
+                    subject: 'Matemáticas',
+                    grade: '1° Básico',
+                    oa_code: 'MA01OA01',
+                    experience_type: 'Project_Based_Learning',
+                    icon: '🏗️',
+                    color: '#FF6B35',
+                    status: 'available',
+                    progress: 0
+                },
+                {
+                    id: 'mock-experience-3',
+                    title: 'Granja Contador',
+                    description: 'Cuenta animales de la granja del 1 al 20 con patrones especiales',
+                    subject: 'Matemáticas',
+                    grade: '1° Básico',
+                    oa_code: 'MA01OA01',
+                    experience_type: 'Interactive_Counting',
+                    icon: '🐄',
+                    color: '#2E8B57',
+                    status: 'available',
+                    progress: 0
+                },
+                {
+                    id: 'mock-experience-4',
+                    title: 'El Jardín Mágico Personalizado',
+                    description: 'Crea tu jardín mágico mientras aprendes a contar de manera adaptativa',
+                    subject: 'Matemáticas',
+                    grade: '1° Básico',
+                    oa_code: 'MA01OA01',
+                    experience_type: 'Adaptive_Learning',
+                    icon: '🌱',
+                    color: '#4CAF50',
+                    status: 'available',
+                    progress: 0
                 }
             ];
             

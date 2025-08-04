@@ -1,0 +1,1629 @@
+/* Variables CSS del Jardín */
+:root {
+  /* Colores principales del jardín */
+  --garden-primary: #4CAF50;
+  --garden-secondary: #8BC34A;
+  --garden-accent: #FF9800;
+  --garden-light: #C8E6C9;
+  --garden-dark: #2E7D32;
+  
+  /* Colores de flores */
+  --flower-red: #F44336;
+  --flower-blue: #2196F3;
+  --flower-yellow: #FFEB3B;
+  --flower-purple: #9C27B0;
+  --flower-pink: #E91E63;
+  
+  /* Gradientes del jardín */
+  --garden-gradient: linear-gradient(135deg, #4CAF50, #8BC34A);
+  --flower-gradient: linear-gradient(135deg, #FF9800, #FFEB3B);
+  --magic-gradient: linear-gradient(135deg, #9C27B0, #E91E63);
+  
+  /* Sombras y efectos */
+  --garden-shadow: 0 8px 32px rgba(76, 175, 80, 0.3);
+  --flower-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+  --magic-shadow: 0 0 20px rgba(156, 39, 176, 0.6);
+}
+
+/* Contenedor principal */
+.garden-container {
+  min-height: 100vh;
+  background: var(--garden-gradient);
+  padding: 1rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #333;
+}
+
+/* Header del jardín */
+.garden-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--garden-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.garden-header h1 {
+  margin: 0;
+  color: var(--garden-dark);
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.garden-info {
+  display: flex;
+  gap: 2rem;
+  font-weight: bold;
+  color: var(--garden-dark);
+}
+
+.garden-info span {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Área principal del jardín */
+.garden-main {
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  gap: 2rem;
+  height: calc(100vh - 200px);
+}
+
+/* Panel de herramientas */
+.garden-tools {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--garden-shadow);
+  height: fit-content;
+}
+
+.garden-tools h3 {
+  margin: 0 0 1rem 0;
+  color: var(--garden-dark);
+  text-align: center;
+}
+
+/* Información del nivel */
+.level-info {
+  background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--garden-primary);
+}
+
+.level-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--garden-dark);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.level-info p {
+  margin: 0 0 1rem 0;
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.level-progress {
+  text-align: center;
+}
+
+.level-progress span {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--garden-dark);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--garden-primary), var(--garden-secondary));
+  transition: width 0.3s ease;
+}
+
+/* Actividad actual */
+.current-activity {
+  background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--garden-accent);
+}
+
+.current-activity h4 {
+  margin: 0 0 0.5rem 0;
+  color: #E65100;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.activity-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-info {
+  flex: 1;
+}
+
+.activity-name {
+  display: block;
+  font-weight: bold;
+  color: #E65100;
+  font-size: 0.9rem;
+}
+
+.activity-description {
+  display: block;
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.tool-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tool-btn {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  border: none;
+  border-radius: 15px;
+  padding: 1rem;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tool-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tool-btn.active {
+  background: linear-gradient(135deg, #FF9800, #FFEB3B);
+  transform: scale(1.05);
+}
+
+/* Indicador de agua */
+.water-indicator {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.water-indicator span {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--garden-dark);
+}
+
+.water-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.water-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #2196F3, #03A9F4);
+  transition: width 0.3s ease;
+}
+
+/* Área del jardín */
+.garden-area {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--garden-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.garden-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.garden-plot {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #8BC34A, #4CAF50);
+  border-radius: 15px;
+  border: 3px dashed #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.garden-plot:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.garden-plot.has-flower {
+  border: 3px solid #FF9800;
+  background: linear-gradient(135deg, #C8E6C9, #A5D6A7);
+}
+
+/* Flores */
+.flower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.flower-icon {
+  font-size: 2rem;
+  animation: flowerGrow 1s ease-out;
+}
+
+.flower.seed .flower-icon {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.flower.sprout .flower-icon {
+  font-size: 1.8rem;
+  opacity: 0.8;
+}
+
+.flower.bud .flower-icon {
+  font-size: 2.2rem;
+  opacity: 0.9;
+}
+
+.flower.flower .flower-icon {
+  font-size: 2.5rem;
+  opacity: 1;
+  animation: flowerBloom 2s ease-out;
+}
+
+.flower.watered {
+  filter: brightness(1.2);
+}
+
+.flower.counted {
+  border: 3px solid #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+}
+
+.petal-info {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, var(--garden-accent), #FFB74D);
+  color: white;
+  border-radius: 12px;
+  padding: 0.3rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  min-width: 30px;
+}
+
+.petal-count {
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.petal-label {
+  font-size: 0.6rem;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.counted-check {
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Panel de información */
+.garden-info-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--garden-shadow);
+  height: fit-content;
+}
+
+.garden-info-panel h3 {
+  margin: 0 0 1rem 0;
+  color: var(--garden-dark);
+  text-align: center;
+}
+
+.info-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.stat span:first-child {
+  color: var(--garden-dark);
+}
+
+.stat span:last-child {
+  color: var(--garden-primary);
+  font-size: 1.2rem;
+}
+
+/* Logros */
+.achievements-preview h4 {
+  margin: 0 0 1rem 0;
+  color: var(--garden-dark);
+  text-align: center;
+}
+
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.achievement.unlocked {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.achievement span:first-child {
+  font-size: 1.2rem;
+}
+
+.achievement span:last-child {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.view-all-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #FF9800, #FFEB3B);
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pistas */
+.garden-hints {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  box-shadow: var(--garden-shadow);
+  max-width: 600px;
+  z-index: 1000;
+}
+
+.hint-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hint-icon {
+  font-size: 1.5rem;
+}
+
+.hint-content p {
+  margin: 0;
+  font-weight: bold;
+  color: var(--garden-dark);
+}
+
+/* Overlay de logros */
+.achievements-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.achievements-container {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--garden-shadow);
+}
+
+.achievements-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.achievements-header h2 {
+  margin: 0;
+  color: var(--garden-dark);
+}
+
+.achievements-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--garden-dark);
+}
+
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.achievement-card.unlocked {
+  opacity: 1;
+  background: linear-gradient(135deg, #C8E6C9, #A5D6A7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-icon {
+  font-size: 2rem;
+}
+
+.achievement-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--garden-dark);
+}
+
+.achievement-info p {
+  margin: 0 0 0.5rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.achievement-reward {
+  color: var(--garden-primary);
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Overlay de completación */
+.completion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.completion-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--garden-shadow);
+  max-width: 500px;
+}
+
+.completion-card h2 {
+  margin: 0 0 1rem 0;
+  color: var(--garden-dark);
+  font-size: 2rem;
+}
+
+.completion-card p {
+  margin: 0 0 2rem 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.completion-card button {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  border: none;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.completion-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Bienvenida */
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4000;
+}
+
+.welcome-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--garden-shadow);
+  max-width: 500px;
+  animation: welcomeSlideIn 0.5s ease-out;
+}
+
+.welcome-header {
+  margin-bottom: 2rem;
+}
+
+.welcome-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.welcome-card h2 {
+  margin: 0;
+  color: var(--garden-dark);
+  font-size: 1.8rem;
+}
+
+.welcome-message {
+  margin-bottom: 2rem;
+}
+
+.welcome-message p {
+  margin: 0;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.welcome-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.welcome-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.welcome-btn.skip {
+  background: rgba(0, 0, 0, 0.1);
+  color: #666;
+}
+
+.welcome-btn.next {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  color: white;
+}
+
+.welcome-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Reportes */
+.report-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.report-container {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--garden-shadow);
+}
+
+.report-header {
+  margin-bottom: 2rem;
+}
+
+.report-header h2 {
+  margin: 0 0 1rem 0;
+  color: var(--garden-dark);
+  text-align: center;
+}
+
+.report-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.report-tab {
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  color: #666;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.report-tab.active {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  color: white;
+}
+
+.report-content {
+  margin-bottom: 2rem;
+}
+
+/* Reporte para niños */
+.child-report .report-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--garden-primary);
+}
+
+.next-challenge {
+  background: linear-gradient(135deg, #FF9800, #FFEB3B);
+  padding: 1.5rem;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+}
+
+.next-challenge h3 {
+  margin: 0 0 1rem 0;
+}
+
+.next-challenge p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Reporte para padres */
+.parent-report .skills-section {
+  margin-bottom: 2rem;
+}
+
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-bar span {
+  font-weight: bold;
+  color: var(--garden-dark);
+  min-width: 80px;
+}
+
+.bar {
+  flex: 1;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  transition: width 0.3s ease;
+}
+
+.recommendations h3 {
+  margin: 0 0 1rem 0;
+  color: var(--garden-dark);
+}
+
+.recommendations ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.recommendations li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+/* Reporte para docentes */
+.teacher-report .student-info {
+  margin-bottom: 2rem;
+}
+
+.teacher-report h3 {
+  margin: 0 0 1rem 0;
+  color: var(--garden-dark);
+}
+
+.teacher-report p {
+  margin: 0 0 0.5rem 0;
+  color: #666;
+}
+
+.academic-progress {
+  margin-bottom: 2rem;
+}
+
+.progress-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.metric span:first-child {
+  color: var(--garden-dark);
+  font-weight: bold;
+}
+
+.metric span:last-child {
+  color: var(--garden-primary);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.rec-section h3 {
+  margin: 0 0 1rem 0;
+  color: var(--garden-dark);
+}
+
+.rec-section ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.rec-section li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.report-actions {
+  text-align: center;
+}
+
+.report-btn {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  border: none;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.report-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones */
+@keyframes flowerGrow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flowerBloom {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes welcomeSlideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .garden-main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .garden-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .garden-plot {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .garden-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .garden-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .report-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .report-tabs {
+    flex-direction: column;
+  }
+  
+  .child-report .report-stats {
+    grid-template-columns: 1fr;
+  }
+} 
+
+/* Poderes mágicos */
+.magic-powers {
+  background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 2px solid var(--garden-accent);
+}
+
+.magic-powers h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--garden-primary);
+  font-size: 0.9rem;
+}
+
+.magic-points {
+  background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--garden-primary);
+}
+
+.power-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.power-btn {
+  background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
+  border: 2px solid var(--garden-accent);
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--garden-primary);
+}
+
+.power-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
+}
+
+.power-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.power-cost {
+  background: var(--garden-accent);
+  color: white;
+  border-radius: 12px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Botón de patrones */
+.pattern-btn {
+  background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+  border: 2px solid var(--garden-primary);
+  color: var(--garden-primary);
+}
+
+.pattern-btn:hover {
+  background: linear-gradient(135deg, #C8E6C9, #A5D6A7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Modal de conteo de pétalos */
+.counting-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.counting-modal-card {
+  background: linear-gradient(135deg, #fff5f5 0%, #fef7f0 100%);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ff6b6b;
+  animation: slideUp 0.4s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ffd93d;
+  padding-bottom: 15px;
+}
+
+.modal-header h2 {
+  color: #2d3748;
+  margin: 0;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-header button:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.flower-display {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 15px;
+  border: 2px solid #e2e8f0;
+}
+
+.flower-icon-large {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite;
+}
+
+.flower-display h3 {
+  color: #2d3748;
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+
+.petal-display {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 15px;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  word-wrap: break-word;
+}
+
+.counting-input {
+  margin-bottom: 25px;
+}
+
+.counting-input label {
+  display: block;
+  color: #2d3748;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.counting-input input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.3rem;
+  border: 3px solid #e2e8f0;
+  border-radius: 10px;
+  text-align: center;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.counting-input input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.error-message {
+  color: #e53e3e;
+  background: #fed7d7;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: 600;
+  border: 1px solid #feb2b2;
+  animation: shake 0.5s ease;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+.skip-btn {
+  background: linear-gradient(135deg, #a0aec0 0%, #718096 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skip-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+}
+
+/* Modal de patrones mejorado */
+.pattern-challenge-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.pattern-challenge-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 3px solid #3b82f6;
+  animation: slideUp 0.4s ease;
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #fbbf24;
+  padding-bottom: 15px;
+}
+
+.challenge-header h2 {
+  color: #1e293b;
+  margin: 0;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-header button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.challenge-header button:hover {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+.challenge-content {
+  text-align: center;
+}
+
+.challenge-content h3 {
+  color: #1e293b;
+  margin: 15px 0;
+  font-size: 1.5rem;
+}
+
+.challenge-content p {
+  color: #475569;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.pattern-example {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  border: 2px solid #e2e8f0;
+}
+
+.pattern-example h4 {
+  color: #1e293b;
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+}
+
+.pattern-display {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.pattern-number {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+  animation: bounce 1s infinite;
+}
+
+.pattern-input {
+  margin: 25px 0;
+}
+
+.pattern-input label {
+  display: block;
+  color: #1e293b;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pattern-input input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.3rem;
+  border: 3px solid #e2e8f0;
+  border-radius: 10px;
+  text-align: center;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.pattern-input input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.pattern-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pattern-btn {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.pattern-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Responsive design para modales */
+@media (max-width: 768px) {
+  .counting-modal-card,
+  .pattern-challenge-card {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .modal-header h2,
+  .challenge-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .flower-icon-large {
+    font-size: 3rem;
+  }
+  
+  .pattern-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .modal-actions,
+  .pattern-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .submit-btn,
+  .skip-btn,
+  .pattern-btn {
+    width: 100%;
+    padding: 15px;
+  }
+} 
+
+/* Mejoras en el panel de información */
+.info-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat {
+  background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid var(--garden-accent);
+}
+
+.stat span:first-child {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--garden-primary);
+  font-weight: bold;
+}
+
+.stat span:last-child {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--garden-accent);
+  font-weight: bold;
+}
+
+/* Animaciones mejoradas */
+@keyframes magicSparkle {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+.power-btn:hover:not(:disabled) .power-cost {
+  animation: magicSparkle 0.6s ease-in-out;
+}
+
+/* Responsive design para nuevos elementos */
+@media (max-width: 768px) {
+  .magic-powers {
+    padding: 0.8rem;
+  }
+  
+  .power-buttons {
+    gap: 0.3rem;
+  }
+  
+  .power-btn {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+  
+  .pattern-challenge-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .pattern-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .pattern-display {
+    gap: 0.3rem;
+  }
+  
+  .pattern-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+} 

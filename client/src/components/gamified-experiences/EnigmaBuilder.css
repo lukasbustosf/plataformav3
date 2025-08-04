@@ -1,0 +1,641 @@
+/* Estilos específicos para investigación - El Enigma Numérico */
+
+/* Variables de color específicas para investigación */
+:root {
+  --investigation-primary: #2C3E50;      /* Azul oscuro para investigación */
+  --investigation-secondary: #34495E;    /* Azul medio */
+  --investigation-accent: #3498DB;       /* Azul claro */
+  --investigation-success: #27AE60;      /* Verde para éxito */
+  --investigation-warning: #F39C12;      /* Naranja para advertencia */
+  --investigation-error: #E74C3C;        /* Rojo para errores */
+  --investigation-light: #ECF0F1;        /* Gris claro */
+  --investigation-dark: #2C3E50;         /* Azul oscuro */
+  --investigation-gradient: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+  --investigation-gradient-light: linear-gradient(135deg, #ECF0F1 0%, #BDC3C7 100%);
+}
+
+/* Contenedor principal */
+.enigma-container {
+  display: flex;
+  height: 100vh;
+  background: var(--investigation-gradient-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Área principal de trabajo */
+.enigma-main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.enigma-workspace {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.enigma-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--investigation-accent);
+}
+
+.enigma-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--investigation-dark);
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.enigma-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--investigation-secondary);
+}
+
+.enigma-stats span {
+  background: var(--investigation-gradient);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Tarjeta de enigma */
+.enigma-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+  border: 2px solid var(--investigation-accent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.enigma-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--investigation-dark);
+  margin-bottom: 15px;
+}
+
+.enigma-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--investigation-secondary);
+  margin-bottom: 20px;
+}
+
+.enigma-difficulty {
+  background: var(--investigation-gradient);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Sección de pistas */
+.enigma-clues {
+  margin: 25px 0;
+}
+
+.enigma-clues h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--investigation-dark);
+  margin-bottom: 15px;
+}
+
+.clue-item {
+  margin: 10px 0;
+}
+
+.clue-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid var(--investigation-accent);
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--investigation-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.clue-btn:hover {
+  background: linear-gradient(135deg, var(--investigation-accent) 0%, #2980B9 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.clue-btn.discovered {
+  background: linear-gradient(135deg, var(--investigation-success) 0%, #2ECC71 100%);
+  color: white;
+  border-color: var(--investigation-success);
+}
+
+.clue-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Botón de resolver */
+.enigma-solution {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.solve-btn {
+  background: linear-gradient(135deg, var(--investigation-success) 0%, #2ECC71 100%);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+}
+
+.solve-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+}
+
+/* Sidebar de investigación */
+.enigma-sidebar {
+  width: 350px;
+  background: var(--investigation-gradient);
+  padding: 20px;
+  overflow-y: auto;
+  color: white;
+}
+
+/* Herramientas de investigación */
+.investigation-tools {
+  margin-bottom: 30px;
+}
+
+.investigation-tools h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tool-item {
+  margin: 10px 0;
+}
+
+.tool-btn {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.tool-btn:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.4);
+  transform: translateY(-2px);
+}
+
+.tool-btn.unlocked {
+  background: rgba(39, 174, 96, 0.3);
+  border-color: var(--investigation-success);
+}
+
+.tool-btn.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tool-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.tool-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.tool-name {
+  flex: 1;
+  text-align: left;
+}
+
+.tool-cost {
+  font-weight: 600;
+  color: #F1C40F;
+}
+
+/* Área de investigación */
+.investigation-area {
+  margin-bottom: 30px;
+}
+
+.clues-section, .hypothesis-section {
+  margin-bottom: 25px;
+}
+
+.clues-section h3, .hypothesis-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.clue-display, .hypothesis-display {
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.formulate-btn {
+  background: linear-gradient(135deg, var(--investigation-accent) 0%, #2980B9 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.formulate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+/* Sección de colaboración */
+.collaboration-section {
+  text-align: center;
+}
+
+.collaboration-btn {
+  background: linear-gradient(135deg, var(--investigation-warning) 0%, #E67E22 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
+}
+
+.collaboration-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+}
+
+.collaboration-btn.active {
+  background: linear-gradient(135deg, var(--investigation-success) 0%, #2ECC71 100%);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+}
+
+/* Modal de colaboración */
+.collaboration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.collaboration-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: slideInUp 0.4s ease;
+}
+
+.collaboration-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.collaboration-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--investigation-dark);
+  margin: 0;
+}
+
+.collaboration-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--investigation-secondary);
+}
+
+.collaboration-content {
+  text-align: center;
+}
+
+.collaboration-content p {
+  font-size: 1.1rem;
+  color: var(--investigation-secondary);
+  margin-bottom: 25px;
+}
+
+.collaboration-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.collaboration-actions button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.collaboration-actions button:first-child {
+  background: linear-gradient(135deg, var(--investigation-success) 0%, #2ECC71 100%);
+  color: white;
+}
+
+.collaboration-actions button:last-child {
+  background: linear-gradient(135deg, var(--investigation-error) 0%, #E74C3C 100%);
+  color: white;
+}
+
+.collaboration-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Modal de solución */
+.solution-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.solution-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: slideInUp 0.4s ease;
+}
+
+.solution-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.solution-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--investigation-dark);
+  margin: 0;
+}
+
+.solution-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--investigation-secondary);
+}
+
+.solution-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--investigation-dark);
+  margin-bottom: 10px;
+}
+
+.solution-content p {
+  font-size: 1.1rem;
+  color: var(--investigation-secondary);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.solution-input {
+  margin: 25px 0;
+}
+
+.solution-input label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--investigation-dark);
+  margin-bottom: 10px;
+}
+
+.solution-input input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid var(--investigation-accent);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.solution-input input:focus {
+  outline: none;
+  border-color: var(--investigation-success);
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+.error-message {
+  color: var(--investigation-error);
+  font-size: 0.9rem;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.solution-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.solution-actions button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.solution-actions button:first-child {
+  background: linear-gradient(135deg, var(--investigation-success) 0%, #2ECC71 100%);
+  color: white;
+}
+
+.solution-actions button:last-child {
+  background: linear-gradient(135deg, var(--investigation-error) 0%, #E74C3C 100%);
+  color: white;
+}
+
+.solution-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .enigma-container {
+    flex-direction: column;
+  }
+  
+  .enigma-sidebar {
+    width: 100%;
+    order: -1;
+  }
+  
+  .enigma-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .enigma-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .enigma-workspace {
+    padding: 20px;
+  }
+  
+  .enigma-header h1 {
+    font-size: 2rem;
+  }
+  
+  .enigma-card {
+    padding: 20px;
+  }
+  
+  .enigma-card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .collaboration-modal, .solution-modal {
+    padding: 20px;
+    max-width: 95%;
+  }
+  
+  .collaboration-actions, .solution-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .enigma-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .enigma-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .enigma-stats span {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+  
+  .tool-btn {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+  
+  .tool-icon {
+    margin-right: 0;
+  }
+} 

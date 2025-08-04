@@ -4,25 +4,106 @@ import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { GameSessionProvider } from '@/contexts/GameSessionContext';
 import DiscoveryPath from '@/components/gamified-experiences/DiscoveryPath';
+import CityBuilder from '@/components/gamified-experiences/CityBuilder';
+import FarmCounter from '@/components/gamified-experiences/FarmCounter';
+import MagicGarden from '@/components/gamified-experiences/MagicGarden';
+import EnigmaBuilder from '@/components/gamified-experiences/EnigmaBuilder';
 
 const ExperiencePage = () => {
     const params = useParams();
     const router = useRouter();
     const experienceId = params.id as string;
     
-    // Datos mock de la experiencia
-    const experience = {
-        id: experienceId,
-        title: 'Descubriendo la Ruta Numérica',
-        description: 'Explora patrones del 0 al 100',
-        subject: 'Matemáticas',
-        grade: '1° Básico',
-        oa_code: 'MA01OA01',
-        experience_type: 'Discovery_Learning',
-        settings: {}
+    // Determinar qué experiencia mostrar basado en el ID
+    const getExperienceConfig = (id: string) => {
+        switch (id) {
+            case 'mock-experience-1':
+                return {
+                    title: 'Descubriendo la Ruta Numérica',
+                    description: 'Explora patrones del 0 al 100',
+                    subject: 'Matemáticas',
+                    grade: '1° Básico',
+                    oa_code: 'MA01OA01',
+                    experience_type: 'Discovery_Learning',
+                    component: 'discovery-path'
+                };
+            case 'mock-experience-2':
+                return {
+                    title: 'Diseña tu Ciudad Numérica',
+                    description: 'Construye una ciudad usando números del 1 al 100',
+                    subject: 'Matemáticas',
+                    grade: '1° Básico',
+                    oa_code: 'MA01OA01',
+                    experience_type: 'Project_Based_Learning',
+                    component: 'city-builder'
+                };
+            case 'mock-experience-3':
+                return {
+                    title: 'Granja Contador',
+                    description: 'Cuenta animales de la granja del 1 al 20 con patrones especiales',
+                    subject: 'Matemáticas',
+                    grade: '1° Básico',
+                    oa_code: 'MA01OA01',
+                    experience_type: 'Interactive_Counting',
+                    component: 'farm-counter'
+                };
+            case 'mock-experience-4':
+                return {
+                    title: 'El Jardín Mágico Personalizado',
+                    description: 'Crea tu jardín mágico mientras aprendes a contar de manera adaptativa',
+                    subject: 'Matemáticas',
+                    grade: '1° Básico',
+                    oa_code: 'MA01OA01',
+                    experience_type: 'Adaptive_Learning',
+                    component: 'magic-garden'
+                };
+            case 'mock-experience-5':
+                return {
+                    title: 'El Enigma Numérico',
+                    description: 'Resuelve enigmas matemáticos usando herramientas de investigación',
+                    subject: 'Matemáticas',
+                    grade: '1° Básico',
+                    oa_code: 'MA01OA01',
+                    experience_type: 'Inquiry_Based_Learning',
+                    component: 'enigma-builder'
+                };
+            default:
+                return {
+                    title: 'Experiencia Desconocida',
+                    description: 'Experiencia no encontrada',
+                    subject: 'Desconocido',
+                    grade: 'Desconocido',
+                    oa_code: 'Desconocido',
+                    experience_type: 'Desconocido',
+                    component: 'discovery-path'
+                };
+        }
     };
 
+    const experience = getExperienceConfig(experienceId);
     const sessionId = `session_${Date.now()}`;
+
+    // Renderizar el componente correcto según la experiencia
+    const renderExperienceComponent = () => {
+        switch (experience.component) {
+            case 'city-builder':
+                return <CityBuilder />;
+            case 'farm-counter':
+                return <FarmCounter />;
+            case 'magic-garden':
+                return <MagicGarden />;
+            case 'enigma-builder':
+                return <EnigmaBuilder />;
+            case 'discovery-path':
+            default:
+                return (
+                    <DiscoveryPath 
+                        experienceId={experienceId}
+                        sessionId={sessionId}
+                    />
+                );
+        }
+    };
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -59,10 +140,7 @@ const ExperiencePage = () => {
             {/* Contenido de la experiencia */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <GameSessionProvider>
-                    <DiscoveryPath 
-                        experienceId={experienceId}
-                        sessionId={sessionId}
-                    />
+                    {renderExperienceComponent()}
                 </GameSessionProvider>
             </div>
         </div>

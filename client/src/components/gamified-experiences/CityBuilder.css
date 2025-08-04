@@ -1,0 +1,1642 @@
+/* =====================================================
+   ESTILOS PARA CIUDAD NUMÉRICA
+   Paleta de colores cálida y amigable
+   ===================================================== */
+
+:root {
+  /* Colores principales - Paleta cálida probada */
+  --city-primary: #FF6B35;      /* Naranja cálido */
+  --city-secondary: #FFB347;    /* Amarillo-naranja */
+  --city-accent: #4ECDC4;       /* Turquesa vibrante */
+  --city-warm: #FFE8D6;         /* Crema suave */
+  
+  /* Colores de fondo */
+  --city-bg-primary: #FFF8F0;
+  --city-bg-secondary: #FFE8D6;
+  --city-bg-accent: #FFF8F0;
+  
+  /* Colores de texto */
+  --city-text-primary: #2D3748;
+  --city-text-secondary: #6C757D;
+  --city-text-light: #FFFFFF;
+  
+  /* Colores de estado */
+  --city-success: #48BB78;
+  --city-warning: #ED8936;
+  --city-error: #F56565;
+  --city-info: #4299E1;
+}
+
+/* =====================================================
+   LAYOUT PRINCIPAL
+   ===================================================== */
+
+.city-builder {
+  background: linear-gradient(135deg, var(--city-bg-primary) 0%, var(--city-bg-secondary) 100%);
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--city-text-primary);
+}
+
+.city-builder-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--city-bg-primary) 0%, var(--city-bg-secondary) 100%);
+}
+
+.loading-spinner {
+  font-size: 4rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.city-header {
+  background: linear-gradient(135deg, var(--city-primary) 0%, var(--city-secondary) 100%);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.city-title {
+  color: var(--city-text-light);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.city-stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.city-stats span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 25px;
+  color: var(--city-text-light);
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+}
+
+/* =====================================================
+   OVERLAY DE BIENVENIDA GUIADA
+   ===================================================== */
+
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.95) 0%, rgba(255, 179, 71, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.5s ease;
+}
+
+.welcome-content {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 25px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: slideInUp 0.6s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #FF6B35 0%, #FFB347 50%, #48BB78 100%);
+}
+
+.welcome-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.welcome-avatar {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: bounce 2s infinite;
+}
+
+.welcome-title {
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.welcome-message {
+  margin-bottom: 30px;
+}
+
+.welcome-message p {
+  color: #495057;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+  white-space: pre-line;
+}
+
+.welcome-progress {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+  background: #FF6B35;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+.progress-dot.completed {
+  background: #48BB78;
+}
+
+.welcome-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.welcome-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.welcome-btn.welcome-skip {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: white;
+}
+
+.welcome-btn.welcome-skip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.welcome-btn.welcome-next {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+  color: white;
+}
+
+.welcome-btn.welcome-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   OVERLAYS Y MODALES
+   ===================================================== */
+
+.tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.tutorial-content {
+  background: linear-gradient(135deg, var(--city-warm) 0%, var(--city-bg-accent) 100%);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.tutorial-content h2 {
+  color: var(--city-primary);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.tutorial-content p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: var(--city-text-primary);
+}
+
+.tutorial-content button {
+  background: linear-gradient(135deg, var(--city-primary) 0%, var(--city-secondary) 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.tutorial-content button:hover {
+  transform: scale(1.05);
+}
+
+.teacher-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--city-accent) 0%, var(--city-primary) 100%);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  z-index: 100;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.teacher-avatar {
+  font-size: 2rem;
+}
+
+.teacher-text {
+  color: white;
+}
+
+.teacher-text button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.celebration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.celebration-content {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.celebration-content h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.celebration-content p {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* =====================================================
+   LAYOUT PRINCIPAL
+   ===================================================== */
+
+.city-main {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: 20px;
+  height: calc(100vh - 200px);
+}
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.city-sidebar {
+  background: linear-gradient(135deg, var(--city-bg-accent) 0%, var(--city-warm) 100%);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.city-sidebar h3 {
+  color: var(--city-primary);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+/* =====================================================
+   DISTRITOS
+   ===================================================== */
+
+.district-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.district-card {
+  background: linear-gradient(135deg, var(--city-primary) 0%, var(--city-secondary) 100%);
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.district-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.district-card.active {
+  border: 3px solid var(--city-accent);
+  transform: scale(1.02);
+}
+
+.district-card.locked {
+  background: linear-gradient(135deg, #6C757D 0%, #495057 100%);
+  opacity: 0.7;
+}
+
+.district-card.completed {
+  background: linear-gradient(135deg, var(--city-success) 0%, #38A169 100%);
+}
+
+.district-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.district-info h4 {
+  color: white;
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.district-info p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.locked-badge, .completed-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+}
+
+/* =====================================================
+   CHECKLIST DE LOGROS
+   ===================================================== */
+
+.achievements-checklist {
+  background: linear-gradient(135deg, var(--city-accent) 0%, var(--city-primary) 100%);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.achievements-checklist.minimized {
+  padding: 10px;
+}
+
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checklist-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.minimize-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.challenge-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.challenge-item.completed {
+  background: rgba(72, 187, 120, 0.3);
+}
+
+.challenge-icon {
+  font-size: 1.2rem;
+}
+
+/* =====================================================
+   ÁREA DE CANVAS
+   ===================================================== */
+
+.city-canvas-area {
+  background: var(--city-bg-accent);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.canvas-header h3 {
+  color: var(--city-primary);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+
+
+.city-canvas {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+  overflow: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 2px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid-row {
+  display: contents;
+}
+
+.grid-cell {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #E2E8F0;
+  background: #F7FAFC;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.grid-cell:hover {
+  background: var(--city-warm);
+  border-color: var(--city-primary);
+}
+
+.grid-cell.highlighted {
+  background: var(--city-accent);
+  border-color: var(--city-primary);
+  transform: scale(1.1);
+}
+
+.building-placed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--city-primary) 0%, var(--city-secondary) 100%);
+  border-radius: 4px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos específicos por tipo de edificio para diferenciación visual */
+.building-placed[data-type="residential"] {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+  border-color: #FF6B35;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.building-placed[data-type="commercial"] {
+  background: linear-gradient(135deg, #FFB347 0%, #FFD700 100%);
+  border-color: #FFB347;
+  box-shadow: 0 2px 8px rgba(255, 179, 71, 0.3);
+}
+
+.building-placed[data-type="park"] {
+  background: linear-gradient(135deg, #48BB78 0%, #68D391 100%);
+  border-color: #48BB78;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+}
+
+/* Estilos específicos por distrito para carreteras */
+.road-placed[data-type="residential"] {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+  border-color: #FF6B35;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.road-placed[data-type="commercial"] {
+  background: linear-gradient(135deg, #FFB347 0%, #FFD700 100%);
+  border-color: #FFB347;
+  box-shadow: 0 2px 8px rgba(255, 179, 71, 0.3);
+}
+
+.road-placed[data-type="park"] {
+  background: linear-gradient(135deg, #48BB78 0%, #68D391 100%);
+  border-color: #48BB78;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+}
+
+/* Estilos específicos por distrito para parques */
+.park-placed[data-type="residential"] {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+  border-color: #FF6B35;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.park-placed[data-type="commercial"] {
+  background: linear-gradient(135deg, #FFB347 0%, #FFD700 100%);
+  border-color: #FFB347;
+  box-shadow: 0 2px 8px rgba(255, 179, 71, 0.3);
+}
+
+.park-placed[data-type="park"] {
+  background: linear-gradient(135deg, #48BB78 0%, #68D391 100%);
+  border-color: #48BB78;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+}
+
+.building-icon {
+  font-size: 0.8rem;
+}
+
+.building-number {
+  font-size: 0.6rem;
+  margin-top: 2px;
+}
+
+.road-placed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6C757D 0%, #495057 100%);
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.park-placed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #48BB78 0%, #38A169 100%);
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8rem;
+}
+
+/* =====================================================
+   CONTROLES DE MODO DE CONSTRUCCIÓN
+   ===================================================== */
+
+.build-mode-controls {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.build-mode-controls h4 {
+  color: #495057;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.build-mode-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.build-mode-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.build-mode-btn:hover {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-color: #2196f3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.build-mode-btn.active {
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  color: white;
+  border-color: #1976d2;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  transform: scale(1.02);
+}
+
+/* =====================================================
+   PALETA DE CONSTRUCCIÓN
+   ===================================================== */
+
+.building-palette {
+  margin-bottom: 20px;
+}
+
+.building-palette h4 {
+  color: var(--city-primary);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.building-type {
+  background: linear-gradient(135deg, var(--city-warm) 0%, var(--city-bg-secondary) 100%);
+  border: 2px solid var(--city-primary);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.building-type:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.building-type.selected {
+  background: linear-gradient(135deg, var(--city-primary) 0%, var(--city-secondary) 100%);
+  color: white;
+  transform: scale(1.02);
+}
+
+.building-icon {
+  font-size: 1.5rem;
+}
+
+.building-name {
+  font-weight: bold;
+  flex: 1;
+}
+
+.building-numbers {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* =====================================================
+   PALETA DE CARRETERAS
+   ===================================================== */
+
+.road-palette {
+  margin-bottom: 20px;
+}
+
+.road-palette h4 {
+  color: var(--city-info);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.road-type {
+  background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+  border: 2px solid var(--city-info);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.road-type:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.road-type.selected {
+  background: linear-gradient(135deg, var(--city-info) 0%, #3182CE 100%);
+  color: white;
+  transform: scale(1.02);
+}
+
+.road-icon {
+  font-size: 1.5rem;
+}
+
+.road-name {
+  font-weight: bold;
+  flex: 1;
+}
+
+/* =====================================================
+   PALETA DE PARQUES
+   ===================================================== */
+
+.park-palette {
+  margin-bottom: 20px;
+}
+
+.park-palette h4 {
+  color: var(--city-success);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.park-type {
+  background: linear-gradient(135deg, #F0FFF4 0%, #C6F6D5 100%);
+  border: 2px solid var(--city-success);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.park-type:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.park-type.selected {
+  background: linear-gradient(135deg, var(--city-success) 0%, #38A169 100%);
+  color: white;
+  transform: scale(1.02);
+}
+
+.park-icon {
+  font-size: 1.5rem;
+}
+
+.park-name {
+  font-weight: bold;
+  flex: 1;
+}
+
+/* =====================================================
+   PANEL DE PISTAS
+   ===================================================== */
+
+.hint-panel {
+  background: linear-gradient(135deg, var(--city-accent) 0%, var(--city-primary) 100%);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hint-panel.minimized {
+  padding: 10px;
+}
+
+.hint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.hint-header h4 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.hint-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.hint-audio-btn, .minimize-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.hint-audio-btn:hover, .minimize-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.hint-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* =====================================================
+   MODO FAMILIA
+   ===================================================== */
+
+.family-mode {
+  margin-bottom: 20px;
+}
+
+.family-btn {
+  background: linear-gradient(135deg, var(--city-success) 0%, #38A169 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.family-btn.active {
+  background: linear-gradient(135deg, #38A169 0%, var(--city-success) 100%);
+  transform: scale(1.02);
+}
+
+.family-suggestions {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(72, 187, 120, 0.1);
+  border-radius: 10px;
+  border-left: 4px solid var(--city-success);
+}
+
+.family-suggestions h4 {
+  color: var(--city-success);
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+
+.family-suggestions ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--city-text-primary);
+  font-size: 0.9rem;
+}
+
+.family-suggestions li {
+  margin: 5px 0;
+}
+
+/* =====================================================
+          REPORTE DE ACTIVIDAD
+          ===================================================== */
+       
+       .activity-report {
+         margin-bottom: 20px;
+       }
+       
+       .report-btn {
+         background: linear-gradient(135deg, var(--city-info) 0%, #3182CE 100%);
+         color: white;
+         border: none;
+         padding: 12px 20px;
+         border-radius: 25px;
+         cursor: pointer;
+         font-weight: bold;
+         width: 100%;
+         transition: all 0.3s ease;
+       }
+       
+       .report-btn:hover {
+         transform: scale(1.02);
+       }
+       
+       .report-content {
+         margin-top: 15px;
+         padding: 15px;
+         background: rgba(66, 153, 225, 0.1);
+         border-radius: 10px;
+         border-left: 4px solid var(--city-info);
+       }
+       
+       .report-content h4 {
+         color: var(--city-info);
+         margin: 0 0 10px 0;
+         font-size: 1rem;
+       }
+       
+       .report-stats p {
+         margin: 5px 0;
+         color: var(--city-text-primary);
+         font-size: 0.9rem;
+       }
+       
+       /* =====================================================
+          PESTAÑAS DE REPORTE
+          ===================================================== */
+       
+       .report-tabs {
+         display: flex;
+         gap: 5px;
+         margin-bottom: 15px;
+         flex-wrap: wrap;
+       }
+       
+       .report-tab {
+         background: rgba(255, 255, 255, 0.2);
+         border: none;
+         color: var(--city-text-primary);
+         padding: 8px 12px;
+         border-radius: 15px;
+         cursor: pointer;
+         font-size: 0.8rem;
+         transition: all 0.3s ease;
+       }
+       
+       .report-tab:hover {
+         background: rgba(255, 255, 255, 0.3);
+         transform: scale(1.05);
+       }
+       
+       .report-tab.active {
+         background: var(--city-primary);
+         color: white;
+         transform: scale(1.05);
+       }
+       
+       /* =====================================================
+          REPORTE PARA NIÑOS
+          ===================================================== */
+       
+       .child-report {
+         background: linear-gradient(135deg, var(--city-warm) 0%, var(--city-bg-accent) 100%);
+         border-radius: 15px;
+         padding: 20px;
+         margin: 10px 0;
+       }
+       
+       .child-report h4 {
+         color: var(--city-primary);
+         text-align: center;
+         font-size: 1.3rem;
+         margin-bottom: 20px;
+       }
+       
+       .metrics-grid {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 15px;
+         margin-bottom: 20px;
+       }
+       
+       .metric-card {
+         background: linear-gradient(135deg, var(--city-accent) 0%, var(--city-primary) 100%);
+         border-radius: 12px;
+         padding: 15px;
+         text-align: center;
+         color: white;
+       }
+       
+       .metric-icon {
+         font-size: 2rem;
+         margin-bottom: 8px;
+       }
+       
+       .metric-value {
+         font-size: 1.5rem;
+         font-weight: bold;
+         margin-bottom: 5px;
+       }
+       
+       .metric-label {
+         font-size: 0.9rem;
+         margin-bottom: 8px;
+       }
+       
+       .metric-achievement {
+         font-size: 0.8rem;
+         font-weight: bold;
+         opacity: 0.9;
+       }
+       
+       .achievement-gallery {
+         margin-top: 20px;
+       }
+       
+       .achievement-gallery h5 {
+         color: var(--city-primary);
+         text-align: center;
+         margin-bottom: 15px;
+         font-size: 1.1rem;
+       }
+       
+       .achievements-grid {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 10px;
+         justify-content: center;
+       }
+       
+       .achievement-badge {
+         background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+         border-radius: 50%;
+         width: 60px;
+         height: 60px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         color: white;
+         font-size: 0.8rem;
+         text-align: center;
+         transition: all 0.3s ease;
+       }
+       
+       .achievement-badge.locked {
+         background: linear-gradient(135deg, #6C757D 0%, #495057 100%);
+         opacity: 0.6;
+       }
+       
+       .achievement-badge.earned {
+         animation: pulse 2s infinite;
+       }
+       
+       .achievement-icon {
+         font-size: 1.2rem;
+         margin-bottom: 2px;
+       }
+       
+       .achievement-title {
+         font-size: 0.6rem;
+         line-height: 1;
+       }
+       
+       /* =====================================================
+          REPORTE PARA PADRES
+          ===================================================== */
+       
+       .parent-report {
+         background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+         border-radius: 15px;
+         padding: 20px;
+         margin: 10px 0;
+       }
+       
+       .parent-report h4 {
+         color: var(--city-primary);
+         margin-bottom: 15px;
+         font-size: 1.2rem;
+       }
+       
+       .summary-section,
+       .academic-section,
+       .activities-section {
+         background: white;
+         border-radius: 10px;
+         padding: 15px;
+         margin: 10px 0;
+         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+       }
+       
+       .summary-section h5,
+       .academic-section h5,
+       .activities-section h5 {
+         color: var(--city-primary);
+         margin-bottom: 10px;
+         font-size: 1rem;
+       }
+       
+       .metrics-list p {
+         margin: 5px 0;
+         color: var(--city-text-primary);
+         font-size: 0.9rem;
+       }
+       
+       .activities-section ul {
+         margin: 0;
+         padding-left: 20px;
+       }
+       
+       .activities-section li {
+         margin: 8px 0;
+         color: var(--city-text-primary);
+         font-size: 0.9rem;
+       }
+       
+       .activities-section small {
+         color: var(--city-text-secondary);
+         font-size: 0.8rem;
+       }
+       
+       /* =====================================================
+          REPORTE PARA PROFESORES
+          ===================================================== */
+       
+       .teacher-report {
+         background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+         border-radius: 15px;
+         padding: 20px;
+         margin: 10px 0;
+       }
+       
+       .teacher-report h4 {
+         color: var(--city-primary);
+         margin-bottom: 15px;
+         font-size: 1.2rem;
+       }
+       
+       .student-info,
+       .curricular-section {
+         background: white;
+         border-radius: 10px;
+         padding: 15px;
+         margin: 10px 0;
+         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+       }
+       
+       .student-info h5,
+       .curricular-section h5 {
+         color: var(--city-primary);
+         margin-bottom: 10px;
+         font-size: 1rem;
+       }
+       
+       .student-info p,
+       .curricular-section p {
+         margin: 5px 0;
+         color: var(--city-text-primary);
+         font-size: 0.9rem;
+       }
+       
+       .evidence-list,
+       .recommendations {
+         margin-top: 10px;
+       }
+       
+       .evidence-list h6,
+       .recommendations h6 {
+         color: var(--city-primary);
+         margin-bottom: 5px;
+         font-size: 0.9rem;
+       }
+       
+       .evidence-list ul,
+       .recommendations ul {
+         margin: 0;
+         padding-left: 20px;
+       }
+       
+       .evidence-list li,
+       .recommendations li {
+         margin: 3px 0;
+         color: var(--city-text-primary);
+         font-size: 0.8rem;
+       }
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 1200px) {
+  .city-main {
+    grid-template-columns: 250px 1fr 250px;
+  }
+}
+
+@media (max-width: 900px) {
+  .city-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  .city-sidebar {
+    order: 2;
+  }
+  
+  .city-canvas-area {
+    order: 1;
+  }
+  
+  .city-sidebar:last-child {
+    order: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .city-builder {
+    padding: 10px;
+  }
+  
+  .city-title {
+    font-size: 2rem;
+  }
+  
+  .city-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(15, 1fr);
+  }
+  
+  .grid-cell {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* =====================================================
+   ANIMACIONES
+   ===================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.city-builder > * {
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.building-type.selected {
+  animation: shake 0.5s ease;
+}
+
+/* =====================================================
+   INSTRUCCIONES CLARAS POR DISTRITO
+   ===================================================== */
+
+.district-instructions {
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.instructions-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  border: 2px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.instructions-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF6B35 0%, #FFB347 50%, #48BB78 100%);
+}
+
+.instructions-card h4 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.instructions-card h4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B35, #FFB347);
+  border-radius: 2px;
+}
+
+.instructions-description {
+  color: #495057;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  position: relative;
+}
+
+.instructions-description::before {
+  content: '🎯';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 1.2rem;
+  background: white;
+  padding: 0 8px;
+}
+
+.instructions-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.instruction-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.instruction-step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #FF6B35, #FFB347);
+  border-radius: 0 2px 2px 0;
+}
+
+.instruction-step:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+  transform: translateX(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-color: #2196f3;
+}
+
+.step-number {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+  position: relative;
+}
+
+.step-number::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #FF6B35, #FF8C42);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.step-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.step-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.step-text {
+  color: #2c3e50;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* Responsive para instrucciones */
+@media (max-width: 768px) {
+  .district-instructions {
+    padding: 0 10px;
+  }
+  
+  .instructions-card {
+    padding: 15px;
+  }
+  
+  .instructions-card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .instructions-description {
+    font-size: 0.9rem;
+  }
+  
+  .step-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive para bienvenida */
+@media (max-width: 768px) {
+  .welcome-content {
+    padding: 25px;
+    margin: 20px;
+  }
+  
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+  
+  .welcome-message p {
+    font-size: 1rem;
+  }
+  
+  .welcome-avatar {
+    font-size: 3rem;
+  }
+  
+  .welcome-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .welcome-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+} 

@@ -414,44 +414,46 @@ model schools {
 }
 
 model public_users {
-  user_id                                                      String                     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  school_id                                                    String?                    @db.Uuid
-  email                                                        String                     @unique @db.VarChar(255)
-  password_hash                                                String                     @db.VarChar(255)
-  first_name                                                   String                     @db.VarChar(100)
-  last_name                                                    String                     @db.VarChar(100)
-  rut                                                          String?                    @unique @db.VarChar(12)
-  role                                                         String                     @db.VarChar(50)
-  phone                                                        String?                    @db.VarChar(20)
-  address                                                      String?
-  emergency_contact_name                                       String?                    @db.VarChar(100)
-  emergency_contact_phone                                      String?                    @db.VarChar(20)
-  date_of_birth                                                DateTime?                  @db.Date
-  gender                                                       String?                    @db.VarChar(10)
-  profile_picture_url                                          String?
-  permissions                                                  Json?                      @default("{}")
-  role_permissions                                             Json?                      @default("{}")
-  last_role_update                                             DateTime?                  @db.Timestamptz(6)
-  email_verified                                               Boolean?                   @default(false)
-  email_verification_token                                     String?                    @db.VarChar(255)
-  password_reset_token                                         String?                    @db.VarChar(255)
-  password_reset_expires                                       DateTime?                  @db.Timestamptz(6)
-  last_login                                                   DateTime?                  @db.Timestamptz(6)
-  login_attempts                                               Int?                       @default(0)
-  locked_until                                                 DateTime?                  @db.Timestamptz(6)
-  active                                                       Boolean?                   @default(true)
-  created_at                                                   DateTime?                  @default(now()) @db.Timestamptz(6)
-  updated_at                                                   DateTime?                  @default(now()) @db.Timestamptz(6)
-  experience_sessions                                          experience_sessions[]
-  family_participation_family_participation_guardian_idTousers family_participation[]     @relation("family_participation_guardian_idTousers")
-  family_participation_family_participation_student_idTousers  family_participation[]     @relation("family_participation_student_idTousers")
-  lab_activity                                                 lab_activity[]
-  lab_activity_collections                                     lab_activity_collections[]
-  lab_activity_favorites                                       lab_activity_favorites[]
-  lab_activity_log                                             lab_activity_log[]
-  lab_evidence                                                 lab_evidence[]
-  lab_work_sessions                                            lab_work_sessions[]
-  schools                                                      schools?                   @relation(fields: [school_id], references: [school_id], onDelete: Cascade, onUpdate: NoAction)
+  user_id                                                                String                      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  school_id                                                              String?                     @db.Uuid
+  email                                                                  String                      @unique @db.VarChar(255)
+  password_hash                                                          String                      @db.VarChar(255)
+  first_name                                                             String                      @db.VarChar(100)
+  last_name                                                              String                      @db.VarChar(100)
+  rut                                                                    String?                     @unique @db.VarChar(12)
+  role                                                                   String                      @db.VarChar(50)
+  phone                                                                  String?                     @db.VarChar(20)
+  address                                                                String?
+  emergency_contact_name                                                 String?                     @db.VarChar(100)
+  emergency_contact_phone                                                String?                     @db.VarChar(20)
+  date_of_birth                                                          DateTime?                   @db.Date
+  gender                                                                 String?                     @db.VarChar(10)
+  profile_picture_url                                                    String?
+  permissions                                                            Json?                       @default("{}")
+  role_permissions                                                       Json?                       @default("{}")
+  last_role_update                                                       DateTime?                   @db.Timestamptz(6)
+  email_verified                                                         Boolean?                    @default(false)
+  email_verification_token                                               String?                     @db.VarChar(255)
+  password_reset_token                                                   String?                     @db.VarChar(255)
+  password_reset_expires                                                 DateTime?                   @db.Timestamptz(6)
+  last_login                                                             DateTime?                   @db.Timestamptz(6)
+  login_attempts                                                         Int?                        @default(0)
+  locked_until                                                           DateTime?                   @db.Timestamptz(6)
+  active                                                                 Boolean?                    @default(true)
+  created_at                                                             DateTime?                   @default(now()) @db.Timestamptz(6)
+  updated_at                                                             DateTime?                   @default(now()) @db.Timestamptz(6)
+  city_family_participation_city_family_participation_guardian_idTousers city_family_participation[] @relation("city_family_participation_guardian_idTousers")
+  city_family_participation_city_family_participation_student_idTousers  city_family_participation[] @relation("city_family_participation_student_idTousers")
+  experience_sessions                                                    experience_sessions[]
+  family_participation_family_participation_guardian_idTousers           family_participation[]      @relation("family_participation_guardian_idTousers")
+  family_participation_family_participation_student_idTousers            family_participation[]      @relation("family_participation_student_idTousers")
+  lab_activity                                                           lab_activity[]
+  lab_activity_collections                                               lab_activity_collections[]
+  lab_activity_favorites                                                 lab_activity_favorites[]
+  lab_activity_log                                                       lab_activity_log[]
+  lab_evidence                                                           lab_evidence[]
+  lab_work_sessions                                                      lab_work_sessions[]
+  schools                                                                schools?                    @relation(fields: [school_id], references: [school_id], onDelete: Cascade, onUpdate: NoAction)
 
   @@index([active], map: "idx_users_active")
   @@index([email], map: "idx_users_email")
@@ -680,6 +682,115 @@ model gamified_experiences {
   @@index([active], map: "idx_gamified_experiences_active")
   @@index([oa_id], map: "idx_gamified_experiences_oa_id")
   @@index([experience_type], map: "idx_gamified_experiences_type")
+  @@schema("public")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model city_achievements {
+  achievement_id          String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  project_id              String?        @db.Uuid
+  achievement_type        String         @db.VarChar(50)
+  achievement_name        String         @db.VarChar(100)
+  achievement_description String?
+  icon                    String?        @db.VarChar(10)
+  is_earned               Boolean?       @default(false)
+  earned_date             DateTime?      @db.Timestamp(6)
+  metadata                Json?          @default("{}")
+  created_at              DateTime?      @default(now()) @db.Timestamp(6)
+  city_projects           city_projects? @relation(fields: [project_id], references: [project_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([is_earned], map: "idx_city_achievements_earned")
+  @@index([project_id], map: "idx_city_achievements_project_id")
+  @@index([achievement_type], map: "idx_city_achievements_type")
+  @@schema("public")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model city_components {
+  component_id   String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  project_id     String?        @db.Uuid
+  component_type String         @db.VarChar(50)
+  position_x     Int
+  position_y     Int
+  number_value   Int
+  sequence_order Int?
+  district_type  String?        @db.VarChar(50)
+  metadata       Json?          @default("{}")
+  created_at     DateTime?      @default(now()) @db.Timestamp(6)
+  city_projects  city_projects? @relation(fields: [project_id], references: [project_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([district_type], map: "idx_city_components_district")
+  @@index([position_x, position_y], map: "idx_city_components_position")
+  @@index([project_id], map: "idx_city_components_project_id")
+  @@index([component_type], map: "idx_city_components_type")
+  @@schema("public")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model city_districts {
+  district_id        String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  project_id         String?        @db.Uuid
+  district_name      String         @db.VarChar(100)
+  district_type      String         @db.VarChar(50)
+  required_buildings Int?           @default(0)
+  required_roads     Int?           @default(0)
+  required_parks     Int?           @default(0)
+  sequence_challenge Json?          @default("{}")
+  is_completed       Boolean?       @default(false)
+  completion_date    DateTime?      @db.Timestamp(6)
+  unlock_date        DateTime?      @db.Timestamp(6)
+  created_at         DateTime?      @default(now()) @db.Timestamp(6)
+  city_projects      city_projects? @relation(fields: [project_id], references: [project_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([is_completed], map: "idx_city_districts_completed")
+  @@index([project_id], map: "idx_city_districts_project_id")
+  @@index([district_type], map: "idx_city_districts_type")
+  @@schema("public")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model city_family_participation {
+  participation_id                                   String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  project_id                                         String?        @db.Uuid
+  guardian_id                                        String?        @db.Uuid
+  student_id                                         String?        @db.Uuid
+  activity_type                                      String         @db.VarChar(50)
+  duration_minutes                                   Int?
+  details_json                                       Json?          @default("{}")
+  created_at                                         DateTime?      @default(now()) @db.Timestamp(6)
+  users_city_family_participation_guardian_idTousers public_users?  @relation("city_family_participation_guardian_idTousers", fields: [guardian_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+  city_projects                                      city_projects? @relation(fields: [project_id], references: [project_id], onDelete: Cascade, onUpdate: NoAction)
+  users_city_family_participation_student_idTousers  public_users?  @relation("city_family_participation_student_idTousers", fields: [student_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([guardian_id], map: "idx_city_family_guardian_id")
+  @@index([project_id], map: "idx_city_family_project_id")
+  @@index([student_id], map: "idx_city_family_student_id")
+  @@schema("public")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model city_projects {
+  project_id                String                      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  session_id                String?                     @db.Uuid
+  city_name                 String?                     @default("Mi Ciudad Numérica") @db.VarChar(100)
+  current_district          String?                     @default("residential") @db.VarChar(50)
+  total_buildings           Int?                        @default(0)
+  total_roads               Int?                        @default(0)
+  total_parks               Int?                        @default(0)
+  city_layout               Json?                       @default("{}")
+  progress_percentage       Int?                        @default(0)
+  is_completed              Boolean?                    @default(false)
+  completion_date           DateTime?                   @db.Timestamp(6)
+  created_at                DateTime?                   @default(now()) @db.Timestamp(6)
+  updated_at                DateTime?                   @default(now()) @db.Timestamp(6)
+  city_achievements         city_achievements[]
+  city_components           city_components[]
+  city_districts            city_districts[]
+  city_family_participation city_family_participation[]
+
+  @@index([current_district], map: "idx_city_projects_current_district")
+  @@index([is_completed], map: "idx_city_projects_is_completed")
+  @@index([session_id], map: "idx_city_projects_session_id")
   @@schema("public")
 }
 
