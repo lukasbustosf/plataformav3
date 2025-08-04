@@ -61,9 +61,13 @@ class ApiService {
       (response) => response,
       (error) => {
         if (error.response?.status === 401) {
-          this.clearAuth()
-          if (typeof window !== 'undefined') {
-            window.location.href = '/login'
+          // Solo redirigir si no es una ruta de lab
+          const url = error.config?.url || '';
+          if (!url.includes('/lab/')) {
+            this.clearAuth()
+            if (typeof window !== 'undefined') {
+              window.location.href = '/login'
+            }
           }
         }
         return Promise.reject(error)
