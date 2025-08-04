@@ -14,6 +14,7 @@ interface Enigma {
   reward: number;
   timeLimit?: number;
   requiredTools: string[];
+  icon?: string;
 }
 
 interface InvestigationTool {

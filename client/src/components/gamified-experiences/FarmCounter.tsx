@@ -379,21 +379,26 @@ const FarmCounter: React.FC = () => {
       const animalCount = currentActivityConfig.correctAnswer;
       const newAnimals: Animal[] = [];
       
-      for (let i = 0; i < animalCount; i++) {
-        newAnimals.push({
-          id: `animal-${i}`,
-          type: currentLevel,
-          emoji: currentLevel === 'pollitos' ? '🐣' : 
-                 currentLevel === 'gallinas' ? '🐔' : 
-                 currentLevel === 'vacas' ? '🐄' : '🚜',
-          x: Math.random() * 80 + 10,
-          y: Math.random() * 60 + 20,
-          count: i + 1,
-          isCounted: false
-        });
+      // Verificar que animalCount sea un número válido
+      if (typeof animalCount === 'number' && animalCount > 0) {
+        for (let i = 0; i < animalCount; i++) {
+          newAnimals.push({
+            id: `animal-${i}`,
+            type: currentLevel,
+            emoji: currentLevel === 'pollitos' ? '🐣' : 
+                   currentLevel === 'gallinas' ? '🐔' : 
+                   currentLevel === 'vacas' ? '🐄' : '🚜',
+            x: Math.random() * 80 + 10,
+            y: Math.random() * 60 + 20,
+            count: i + 1,
+            isCounted: false
+          });
+        }
+        
+        setAnimals(newAnimals);
+      } else {
+        setAnimals([]);
       }
-      
-      setAnimals(newAnimals);
     } else {
       // Para actividades especiales
       setAnimals([]);
