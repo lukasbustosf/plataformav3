@@ -105,7 +105,7 @@ export default function ActivityDetailPage() {
 
   useEffect(() => {
     if (slug) {
-      fetch(`http://localhost:5000/api/lab/activities/${slug}`)
+      fetch(`/lab/activities/${slug}`)
         .then(res => res.json())
         .then(result => {
           if (result.success) setActivity(result.data);
@@ -121,7 +121,7 @@ export default function ActivityDetailPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`http://localhost:5000/api/lab/activities/${slug}`);
+      const res = await fetch(`/lab/activities/${slug}`);
       const result = await res.json();
       if (result.success) setActivity(result.data);
       else throw new Error(result.message);
