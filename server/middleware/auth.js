@@ -9,7 +9,7 @@ async function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
     
     // HARDCODED USERS FOR DEVELOPMENT - SUPPORT MULTIPLE ROLES
-    if (true) { // Always use hardcoded users for now
+    if (token && token.startsWith('demo-token-')) {
       // Extract role from token if it's a demo token
       let userRole = 'TEACHER'; // default
       if (token && token.startsWith('demo-token-')) {
