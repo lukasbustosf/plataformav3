@@ -22,11 +22,14 @@ class ApiService {
     // Detectar automáticamente la URL base correcta
     let baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
     
-    // Si estamos en producción y no hay NEXT_PUBLIC_API_URL configurada,
-    // usar la URL de Railway para que las rutas funcionen con vercel.json
-    if (typeof window !== 'undefined' && window.location.hostname === 'plataformav3.vercel.app') {
-      // En producción, usar el servidor backend en Railway
-      baseURL = 'https://plataformav3-production.up.railway.app';
+    // Si estamos en producción, usar rutas relativas para que funcionen con vercel.json
+    if (typeof window !== 'undefined' && (
+      window.location.hostname === 'plataformav3.vercel.app' ||
+      window.location.hostname === 'www.oalabs.cl' ||
+      window.location.hostname === 'oalabs.cl'
+    )) {
+      // En producción, usar rutas relativas para que Vercel haga proxy a Railway
+      baseURL = '';
     }
     
     this.baseURL = baseURL;
@@ -117,7 +120,7 @@ class ApiService {
     }
   }
 
-  // Lab-specific request handler (doesn't add /api prefix)
+  // Lab-specific request handler (uses /lab prefix for Vercel proxy)
   private async labRequest<T>(
     method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE',
     endpoint: string,
@@ -127,7 +130,7 @@ class ApiService {
     try {
       const response: AxiosResponse<APIResponse<T>> = await this.client.request({
         method,
-        url: endpoint,
+        url: `/lab${endpoint}`,
         data,
         ...config,
       })
@@ -659,24 +662,24 @@ class ApiService {
 
   // Lab Activities methods
   async getLabActivity(id: string): Promise<any> {
-    return this.labRequest('GET', `/lab/activities/id/${id}`)
+    return this.labRequest('GET', `/activities/id/${id}`)
   }
 
   async getLabMaterials(): Promise<any> {
-    return this.labRequest('GET', '/lab/materials')
+    return this.labRequest('GET', '/materials')
   }
 
   async getLabActivities(params?: any): Promise<any> {
     const queryString = params ? `?${new URLSearchParams(params).toString()}` : '';
-    return this.labRequest('GET', `/lab/activities${queryString}`)
+    return this.labRequest('GET', `/activities${queryString}`)
   }
 
   async deleteLabActivity(id: string): Promise<any> {
-    return this.labRequest('DELETE', `/lab/activities/${id}`)
+    return this.labRequest('DELETE', `/activities/${id}`)
   }
 
   async updateLabActivity(id: string, data: any): Promise<any> {
-    return this.labRequest('PUT', `/lab/activities/${id}`, data)
+    return this.labRequest('PUT', `/activities/${id}`, data)
   }
 }
 
